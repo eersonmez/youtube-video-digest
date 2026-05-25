@@ -1,5 +1,22 @@
 # YouTube Video Digest
 
+## Following the Yamnaya Trail into India - David Reich
+
+- Channel: Dwarkesh Patel
+- Published: 2026-05-24T21:09:56+00:00
+- URL: https://www.youtube.com/shorts/BeOLjsymljI
+
+In this clip, geneticist David Reich describes the genetic history of India, tracing the influx of Steppe (Yamnaya-related) ancestry into South Asia. He explains that while the ancestral groups initially mixed, the introduction of the caste system 2,000 to 3,000 years ago created strict social boundaries that froze further mixing, preserving a unique genetic gradient of Ancestral North Indian (ANI) and Ancestral South Indian (ASI) ancestry into modern times.
+
+Key points:
+- The Yamnaya steppe pastoralist migration introduced West Eurasian-related ancestry into India approximately 4,000 years ago, coinciding with the decline of the Harappan (Indus Valley) Civilization.
+- Modern South Asian populations lie on a genetic gradient between two major ancestral groups: Ancestral North Indians (ANI) and Ancestral South Indians (ASI).
+- An initial period of rapid genetic mixing occurred between incoming steppe pastoralists, local hunter-gatherers, and Iranian-related agriculturalists.
+- This mixing abruptly 'froze' 2,000 to 3,000 years ago due to the cultural onset of endogamy and the caste system.
+- Because of the caste system's strict social boundaries, the genetic structure and diversity of Indian populations have been preserved with high fidelity for thousands of years.
+
+Tags: ai, interviews, genetics, history, india, yamnaya
+
 ## The biological clock that doomed the Neanderthals - David Reich
 
 - Channel: Dwarkesh Patel
