@@ -1,5 +1,72 @@
 # YouTube Video Digest
 
+## Is OpenAI Ready To IPO?, The Datacenters in Space Myth, The Kids Boo AI
+
+- Channel: Alex Kantrowitz
+- Published: 2026-05-25T18:00:06+00:00
+- URL: https://www.youtube.com/watch?v=aGBuhX1MYtw
+
+In this episode of the Big Technology Podcast, host Alex Kantrowitz and guest Ranjan Roy discuss major developments in the tech sector, focusing on OpenAI's financial readiness and strategic reasons for a potential IPO, debunking the idea of space-based datacenters, and analyzing the growing cultural backlash against AI, exemplified by Eric Schmidt's recent graduation speech reception.
+
+Key points:
+- OpenAI's potential IPO: Analysis of OpenAI's revenue growth against high operating losses, and the strategic timing of a potential public listing relative to Anthropic.
+- The Datacenters in Space Myth: A critical debunking of the feasibility of placing AI datacenters in space, noting it as a reflection of tech elite disconnect from physical and economic realities.
+- The Kids Boo AI: Examination of growing public and student skepticism towards AI technology and leadership, highlighted by Eric Schmidt being booed at a university commencement speech.
+- Other tech updates: Brief discussions covering SpaceX's rumored IPO plans, Meta's mass layoffs and keystroke tracking, and Marc Andreessen's commentary on HR complaints in the AI era.
+
+Tags: ai, technology
+
+## Sneaky Sign of Low Magnesium
+
+- Channel: Leonid Kim MD
+- Published: 2026-05-25T16:01:05+00:00
+- URL: https://www.youtube.com/shorts/v1Y6JvA-LbE
+
+Dr. Leonid Kim explains that numbness and tingling (paresthesia) in the hands, feet, or face is an often-missed indicator of low magnesium levels. Because magnesium helps stabilize nerve cell membranes, its absence causes nerves to become overly excitable and fire off signals incorrectly, resulting in tingling sensations.
+
+Key points:
+- Numbness and tingling in the hands, feet, fingers, toes, or face is a sneaky, frequently overlooked sign of magnesium deficiency.
+- Magnesium is vital for nerve conduction, specifically by stabilizing nerve cell membranes and regulating calcium and sodium channels.
+- Without sufficient magnesium, nerve channels become overly excitable and fire off signals inappropriately, causing the 'pins and needles' sensation.
+- Other common symptoms of low magnesium include muscle cramps, persistent fatigue, heart palpitations, and sleep disturbances.
+
+Tags: health, medicine
+
+## Why companies are losing the AI adoption race?
+
+- Channel: Alex Kantrowitz
+- Published: 2026-05-25T15:48:52+00:00
+- URL: https://www.youtube.com/shorts/ifaHUn8BViQ
+
+In this video, Boris Cherny (Head of Claude Code at Anthropic) talks with Alex Kantrowitz about the hurdles companies face in the AI adoption race. He draws parallels to the 1990s personal computer productivity paradox, explaining that real gains only occur when business processes are fundamentally restructured around the technology rather than just layering AI on top of old workflows.
+
+Key points:
+- Boris Cherny, Head of Claude Code at Anthropic, discusses why companies are struggling to see immediate productivity gains from AI.
+- He references the 1990s PC productivity paradox, where personal computer adoption did not yield immediate productivity increases because companies didn't change their workflows.
+- Cherny explains that for AI to drive real benefits, companies must restructure their core business processes around the technology instead of using it as a peripheral tool.
+- Currently, enterprises are in an experimental phase trying various strategies, as there is no single right playbook for AI integration yet.
+
+Tags: ai, technology, enterprise, productivity paradox, claude code
+
+## Build Muscle, Great Posture & Resilience to Injury | Jeff Cavaliere
+
+- Channel: Andrew Huberman
+- Published: 2026-05-25T12:00:01+00:00
+- URL: https://www.youtube.com/watch?v=s95KFJ2efm4
+
+Dr. Andrew Huberman hosts physical therapist and strength coach Jeff Cavaliere to explore science-based strategies for lifelong physical health. The conversation delves into functional strength assessments like the 'Old Man' test, biomechanical tools to resolve lower back and shoulder pain, muscle isolation versus integration, external rotation for rotator cuff health, grip adjustments to prevent inner elbow pain, and training protocols that support muscle hypertrophy, posture correction, and cardiovascular fitness.
+
+Key points:
+- Focus on building muscle and improving posture as a cohesive system to maximize resilience and minimize injury risk across all age groups.
+- The 'Old Man' Test serves as a key functional assessment tool to evaluate balance, coordination, mobility, and overall longevity.
+- Strengthening the posterior chain—specifically the glutes and lower back—helps address lower back pain and correct postural imbalances.
+- Targeted rotator cuff exercises, such as external rotations, are crucial for shoulder stability and preventing common upper-body training injuries.
+- Inner elbow pain can be mitigated through simple grip modifications and altering wrist position during resistance movements.
+- Workout efficiency is key: sessions should prioritize intensity over duration, typically lasting under an hour to avoid systemic overtraining.
+- A balanced fitness split should integrate strength training (e.g., 60% of volume) with cardiovascular conditioning (e.g., 40% including Zone 2 and HIIT).
+
+Tags: health, science
+
 ## Following the Yamnaya Trail into India - David Reich
 
 - Channel: Dwarkesh Patel
