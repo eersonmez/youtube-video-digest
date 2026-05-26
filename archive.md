@@ -1,5 +1,21 @@
 # YouTube Video Digest
 
+## Sid vs Career | With ChatGPT
+
+- Channel: OpenAI
+- Published: 2026-05-26T06:18:36+00:00
+- URL: https://www.youtube.com/watch?v=KHasJMg4zV4
+
+This 30-second video is a part of OpenAI's 'Everyday Superheroes' campaign in India, timed with the 2026 IPL season. Directed by Abhinav Pratiman and produced by Early Man Film, it highlights a character named Sid who uses ChatGPT to navigate career decisions and professional development, positioning the AI as an accessible everyday helper.
+
+Key points:
+- The video is a 30-second promotional advertisement from OpenAI's 'Everyday Superheroes' brand campaign in India.
+- It is directed by Abhinav Pratiman, produced by Early Man Film, and created by creative agency Hue & Why.
+- The narrative showcases a character named Sid utilizing ChatGPT to navigate career-related tasks and decision-making.
+- It aims to demonstrate how ChatGPT can be applied as a practical, real-world tool for career development and guidance.
+
+Tags: ai, research, chatgpt, advertising, everyday superheroes
+
 ## Is OpenAI Ready To IPO?, The Datacenters in Space Myth, The Kids Boo AI
 
 - Channel: Alex Kantrowitz
