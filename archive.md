@@ -1,5 +1,21 @@
 # YouTube Video Digest
 
+## Join us for Builders Unscripted Episode 3 on 5/29
+
+- Channel: OpenAI
+- Published: 2026-05-27T16:48:12+00:00
+- URL: https://www.youtube.com/shorts/ovPVaSmDFcw
+
+A YouTube Short promoting Episode 3 of OpenAI's 'Builders Unscripted' series, which drops on May 29, 2026. The episode features Matias Castillo and Romain Huet discussing how AI tooling has evolved the developer archetype, enabling rapid ideation-to-deployment cycles.
+
+Key points:
+- Teaser announcement for Episode 3 of OpenAI's 'Builders Unscripted' series, featuring a conversation between Pulsar co-founder Matias Castillo and OpenAI's Head of Developer Experience, Romain Huet.
+- Centers around the premise: 'The developer we’re building for has evolved.'
+- Highlights a new builder mindset where ideas transition from thought to working software faster than before using LLM-powered development environments.
+- Announces that the full episode is scheduled to be released on May 29, 2026.
+
+Tags: ai, research, developers, builders unscripted, pulsar
+
 ## Sid vs Career | With ChatGPT
 
 - Channel: OpenAI
