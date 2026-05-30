@@ -1,5 +1,312 @@
 # YouTube Video Digest
 
+## Were Neanderthals Culturally Modern Humans? - David Reich
+
+- Channel: Dwarkesh Patel
+- Published: 2026-05-29T22:35:47+00:00
+- URL: https://www.youtube.com/shorts/ci7_eJTrGhQ
+
+David Reich discusses the theory that Neanderthals were 'culturally modern humans' who shared a common ancestral technology and origin with modern Homo sapiens, but were genetically swamped by local archaic populations after migrating into Europe.
+
+Key points:
+- David Reich proposes a new evolutionary model suggesting Neanderthals should be considered 'culturally modern humans' despite genetically having mostly Denisovan-related ancestry.
+- The model is driven by archaeological evidence showing that Neanderthals and modern humans share highly similar technologies (e.g., Levallois stone-tool techniques and fire use) while Denisovans do not.
+- He suggests a 'heretical' expansion theory where a population with Middle Stone Age technology from the Caucasus/Northeast Africa expanded in two directions ~300,000 years ago.
+- The group migrating into Europe mixed with local archaic populations (ancestors of Denisovans), became 'genetically swamped' (retaining only about 5% of their original DNA), and evolved into Neanderthals.
+- The group migrating into Africa mixed with other archaic groups, resulting in modern Homo sapiens, meaning both lineages share the same cultural ancestry.
+
+Tags: ai, interviews, genetics, paleoanthropology, neanderthals
+
+## Builders Unscripted: Ep. 3 - Matias Castello, Product Leader at Alchemy
+
+- Channel: OpenAI
+- Published: 2026-05-29T20:29:25+00:00
+- URL: https://www.youtube.com/watch?v=8QKqENa_eQQ
+
+In Episode 3 of OpenAI's 'Builders Unscripted', Matias Castello, Product Leader at Alchemy, joins Romain Huet to discuss how AI tools are transforming the software development lifecycle. Castello describes his journey from using AI for personal productivity to driving a team-wide shift in adopting AI as a collaborative partner, highlighting how it accelerates developer workflows and reshapes the expectations of modern builders.
+
+Key points:
+- AI is shifting from a tool for simple automation to a collaborative partner that assists with generating creative ideas, adjusting tone, and refining formats.
+- Castello's adoption of AI began with individual productivity tasks like writing documentation and building custom writing assistants, which eventually inspired team-wide integration at Alchemy.
+- Integrating AI has allowed engineers and product managers to achieve much faster cycles from ideation to deployment.
+- The modern developer role is evolving to inherently assume co-building with AI, making strategic AI adoption essential for staying competitive.
+
+Tags: ai, research
+
+## Windows Computer Use and mobile access for Codex
+
+- Channel: OpenAI
+- Published: 2026-05-29T18:31:52+00:00
+- URL: https://www.youtube.com/watch?v=MPIAB-8VmCo
+
+OpenAI announced the release of Computer Use capabilities for the Codex application on Windows. This feature allows Codex to control Windows desktop applications by visually interpreting the screen, moving the cursor, clicking, and typing in the foreground. In addition, users can now remotely monitor, control, and steer Codex tasks running on Windows using the ChatGPT mobile app on iOS and Android devices.
+
+Key points:
+- Codex on Windows can now interact with desktop applications by visually capturing screens, moving pointers, clicking, and typing.
+- Computer Use on Windows runs in the foreground, taking control of the user's active session.
+- Users can pair their Windows Codex app with the ChatGPT mobile app (iOS/Android) using a QR code to remotely start, steer, and monitor execution.
+- The features are designed to automate UI-based workflows such as reproducing UI bugs, testing desktop apps, and configuring settings.
+- The release is initially unavailable in the European Economic Area (EEA), United Kingdom, and Switzerland.
+
+Tags: ai, research
+
+## These Models are Crazy!
+
+- Channel: OpenAI
+- Published: 2026-05-29T17:10:58+00:00
+- URL: https://www.youtube.com/shorts/JA3tmYqCacA
+
+In this YouTube Short, Lauren Steinberg, Chief Digital Officer at Loblaw Companies Limited, describes how OpenAI's AI models (such as Codex) are revolutionizing their development workflows, enabling tasks that once took teams weeks or months to be finished by individuals in minutes or hours.
+
+Key points:
+- Lauren Steinberg, Chief Digital Officer at Loblaw Companies Limited, discusses the rapid adoption of AI tools like OpenAI Codex in software engineering workflows.
+- She describes the disbelief within her engineering leadership team, who frequently message each other on Slack saying 'these models are crazy!'
+- Steinberg highlights the dramatic increase in speed and efficiency, stating that individuals can now accomplish tasks in minutes or hours that used to take entire teams weeks or months to complete.
+
+Tags: ai, research
+
+## Loblaw Ships Faster with Codex
+
+- Channel: OpenAI
+- Published: 2026-05-29T17:03:52+00:00
+- URL: https://www.youtube.com/watch?v=EYvzpZX2-Ww
+
+This video features Lauren Steinberg, Chief Digital Officer of Loblaw Companies Limited, highlighting how the retail giant leverages OpenAI's Codex to accelerate its digital transformation. By integrating Codex into engineering workflows, Loblaw has drastically reduced software development cycles, with about 46.9% of its code now being AI-generated, allowing the company to ship new customer-facing and operational features faster.
+
+Key points:
+- Loblaw integrated OpenAI's Codex to streamline its engineering operations and accelerate its digital transformation across its grocery, pharmacy, apparel, and beauty lines.
+- The use of Codex has significantly boosted developer productivity, enabling engineering teams to complete tasks in minutes or hours that previously took weeks or months.
+- Internal metrics show that approximately 46.9% of code written at Loblaw is now AI-generated.
+- The partnership with OpenAI extends beyond development, including launching ChatGPT Enterprise for corporate staff and integrating PC Express grocery delivery services with ChatGPT.
+
+Tags: ai, research, codex, developer productivity, enterprise, retail, case study
+
+## Do This After 40 To Slow Down Aging
+
+- Channel: Leonid Kim MD
+- Published: 2026-05-29T16:00:06+00:00
+- URL: https://www.youtube.com/watch?v=OhC1Miqp3Ls
+
+Dr. Leonid Kim explains that aging acceleration after age 40 is primarily driven by chronic systemic inflammation, metabolic shifts, and hormonal changes. He presents three key actionable strategies (levers) to slow down aging: quieting chronic inflammation by adopting a whole-foods-focused diet, improving metabolic movement to trigger mitochondrial biogenesis and metabolic flexibility, and managing stress/cortisol to maintain hormonal and muscle health.
+
+Key points:
+- Low-grade, chronic systemic inflammation is a primary driver of accelerated aging after age 40.
+- Visceral fat, chronic stress, poor sleep, and a diet high in ultra-processed foods are major sources of background inflammation.
+- Shifting the diet toward whole foods, fiber, and minimally processed proteins is a key strategy to quiet inflammation without requiring dietary perfection.
+- Physical activity serves as a signal to the body to reduce inflammation and improve metabolic flexibility.
+- Slightly increasing exercise intensity stimulates mitochondrial biogenesis, which helps redirect energy processing toward repair and movement rather than fat storage.
+- Managing stress and cortisol levels is essential because high cortisol breaks down muscle and degrades insulin sensitivity.
+
+Tags: health, medicine
+
+## Spec-Driven Development: The Fast Track to 10x? - Jerry Nixon - NDC Sydney 2026
+
+- Channel: NDC Conferences
+- Published: 2026-05-29T15:00:23+00:00
+- URL: https://www.youtube.com/watch?v=m0Le7rXlsNs
+
+Jerry Nixon presents Spec-Driven Development (SDD) at NDC Sydney 2026, defining a structured framework where specifications act as the central source of truth and contract for software systems. He demonstrates the GitHub Spec Kit and Specify CLI to show how developer intent can be precisely structured to guide AI agents in generating, testing, and verifying code, aiming to move beyond simple autocomplete to achieve a 10x boost in developer productivity.
+
+Key points:
+- Spec-Driven Development (SDD) is framed as a revolution in software engineering rather than just a minor evolution, placing the specification as the central contract.
+- Instead of 'vibe coding' or relying solely on AI autocompletion, SDD introduces structured specifications as the single source of truth for AI agents and human developers.
+- The methodology is described as 'software engineering through prompt precision', ensuring that inputs to AI systems are structured, predictable, and verifiable.
+- The talk includes a practical demonstration using the GitHub Spec Kit and its Specify CLI, showing how to generate templates, design options, plans, tasks, and project 'constitutions'.
+- Commands like /specify, /plan, and /tasks are highlighted to illustrate how they guide AI agents in real-time comparison of libraries, architectural designs, and automated testing.
+
+Tags: software, conferences, spec-driven development, AI, github spec kit, developer productivity
+
+## Is Claude Code losing to Codex?
+
+- Channel: Alex Kantrowitz
+- Published: 2026-05-29T13:41:20+00:00
+- URL: https://www.youtube.com/shorts/XsauJ_YHXPI
+
+Tech journalist Alex Kantrowitz discusses whether Anthropic's Claude Code is losing its edge to OpenAI's Codex. He highlights that while Claude Code had a massive surge in popularity earlier in 2026, recent anecdotal feedback from the developer community indicates a shift in momentum, with heavy users migrating towards Codex. He notes that this highlights the competitive, fast-evolving nature of agentic coding platforms in the AI sector.
+
+Key points:
+- Alex Kantrowitz highlights the ongoing competition between AI coding agents, specifically Anthropic's Claude Code and OpenAI's Codex.
+- Despite Claude Code's explosive growth and popularity inflection point earlier in 2026, developer sentiment is showing signs of shifting.
+- Kantrowitz reports anecdotal accounts from developers who previously used Claude Code for the vast majority of their workflows but are now migrating to Codex.
+- The rapid growth in Codex adoption marks a significant momentum shift and a potential win for OpenAI in the agentic coding race.
+- The rivalry between these tools represents a central narrative in the AI industry, showcasing how agentic computer-control features are driving tool preference.
+
+Tags: ai, technology
+
+## The Next Steps to Becoming a Space-Faring Civilization - Richard Campbell - NDC Sydney 2026
+
+- Channel: NDC Conferences
+- Published: 2026-05-29T10:00:19+00:00
+- URL: https://www.youtube.com/watch?v=H3TMugtJbaA
+
+In this NDC Sydney 2026 talk, Richard Campbell outlines the practical engineering, economic, and medical steps required to transition humanity into a space-faring civilization. He highlights how reusable rocket technology (such as Starship) has lowered launch costs, the critical role of in-situ resource utilization (ISRU) on the Moon and asteroids, the necessity of building orbital refueling depots, and the medical challenges of microgravity. He advocates for O'Neill cylinders as long-term artificial gravity habitats over planet colonization, and notes a narrow 50-year window to establish these systems while Earth's resources are still accessible.
+
+Key points:
+- Access to space is being revolutionized by reusable rockets like the Falcon 9 and Starship, significantly lowering the launch cost per kilogram.
+- Humanity needs to transition from 'expeditions' (like the ISS) which are fully dependent on Earth, to permanent settlements that can sustain themselves.
+- In-situ resource utilization (ISRU) is crucial; water from the Moon's South Pole and materials from asteroids must be used to create propellant, oxygen, and structure.
+- Establishing orbital infrastructure such as fuel depots and space stations is an essential stepping stone to deep space travel.
+- Human spaceflight causes severe health issues (e.g., bone loss and cerebral spinal fluid buildup); rotating space habitats (artificial gravity) are a required solution.
+- O'Neill cylinders—large, rotating habitats constructed from asteroid materials—are a more practical and scalable long-term solution than terraforming Mars.
+- There is a finite window (estimated at roughly 50 years) to build the necessary space-faring infrastructure before Earth's resource constraints make it economically unfeasible.
+
+Tags: software, conferences, space exploration, aerospace, O'Neill cylinders, in-situ resource utilization, future history
+
+## Build Hour: Agents SDK
+
+- Channel: OpenAI
+- Published: 2026-05-28T20:09:34+00:00
+- URL: https://www.youtube.com/watch?v=tK32trvj_b4
+
+This OpenAI Build Hour session introduces the official OpenAI Agents SDK, a lightweight and powerful framework designed for building autonomous, multi-agent workflows. The session details how the model-native harness handles orchestration and tool execution, highlights security features like sandboxed execution, and provides real-world demonstrations of long-running developer workflows, code analysis, and data-processing agents.
+
+Key points:
+- Transition from standard request-response chat interfaces to persistent, autonomous agents that can perform multi-step, end-to-end tasks.
+- Introduction of a model-native harness that manages the core agent execution loop, state tracking, and tool invocation, simplifying developer plumbing.
+- Execution of agents within secure, sandboxed environments to safely inspect files, run shell commands, edit code, and manage dependencies.
+- Support for handoffs, which allows a main agent to delegate specific tasks to specialized sub-agents for modular and collaborative architectures.
+- Language support for both Python and TypeScript/JavaScript, with deployment flexibility across local machines, Docker, or cloud infrastructure.
+- Practical demonstrations of the SDK including codebase vulnerability scanners, internal data analysis tools, and security agents.
+
+Tags: ai, research, agents, openai, sdk, developer tools
+
+## How Abridge uses GPT-5.5 for clinical decision support
+
+- Channel: OpenAI
+- Published: 2026-05-28T18:11:11+00:00
+- URL: https://www.youtube.com/watch?v=tXBRYPpIvms
+
+In this video, Chaitanya Asawa, Head of Engineering for Clinical Decision Support at Abridge, outlines how the company integrates OpenAI's GPT-5.5 model to enhance clinical documentation and decision support. By utilizing the model's advanced reasoning capabilities, Abridge synthesizes patient conversations, clinical documentation, and medical guidelines to offer context-aware clinical insights. As an early access partner, Abridge reported a 25% lift in clinical quality coverage and 30% more concise responses using GPT-5.5 as part of their multi-model healthcare strategy.
+
+Key points:
+- Abridge partnered with OpenAI as an early tester of GPT-5.5 to power advanced Clinical Decision Support (CDS) capabilities.
+- Integrating GPT-5.5 resulted in a 25% improvement in clinical quality coverage and produced 30% more concise responses.
+- Chaitanya Asawa, Head of Engineering for Clinical Decision Support at Abridge, explains how they evaluate and deploy large language models within high-stakes clinical workflows.
+- Abridge leverages a 'constellation of models' strategy, using models like GPT-5.4 for structured flowsheet generation and GPT-5.5 for complex reasoning and evidence synthesis.
+- The platform synthesizes patient-clinician conversations, clinical notes, and authoritative medical guidelines to provide real-time, context-aware insights to clinicians.
+
+Tags: ai, research, healthcare, gpt-5.5, clinical documentation
+
+## R&D Part 1
+
+- Channel: OpenAI
+- Published: 2026-05-28T16:01:56+00:00
+- URL: https://www.youtube.com/watch?v=DHfZqTWlSc4
+
+OpenAI's 'R&D Part 1' documents a partnership with Chip Ganassi Racing, demonstrating how AI is applied to real-world high-stakes scenarios. OpenAI researchers and racing engineers collaborate to analyze real-time telemetry, track conditions, and competitor strategies. The goal is to provide fast, actionable insights for pit timing and fuel management, converting AI research into tangible race-winning advantages. The video series is directed by Rob Wills, known for directing Netflix's 'Formula 1: Drive to Survive'.
+
+Key points:
+- Documents the strategic collaboration between OpenAI and Chip Ganassi Racing to integrate real-time AI into INDYCAR motorsports.
+- OpenAI research engineer Joyce explains their role in helping the racing team utilize AI to process data and gain competitive advantages.
+- Highlights the high-pressure environment of the timing stand, where decision-makers must filter massive streams of telemetry, sensor, and competitor data.
+- Will Palmer, a human performance trainer at Chip Ganassi Racing, discusses the intense physical and mental demands placed on pit crews.
+- Stresses the importance of pre-race preparation, with data analysis from past years representing over 50% of the team's weekend performance.
+- Covers the documentary project capturing this partnership, directed by Rob Wills (director of Netflix's 'Formula 1: Drive to Survive').
+
+Tags: ai, research, motorsports, indycar, openai, chip ganassi racing
+
+## Why ApoB beats LDL in assessing heart disease risk
+
+- Channel: Leonid Kim MD
+- Published: 2026-05-28T16:00:33+00:00
+- URL: https://www.youtube.com/shorts/zyfeh_weNGE
+
+In this video, Leonid Kim, MD, explains why Apolipoprotein B (ApoB) is a superior predictor of cardiovascular disease risk compared to standard LDL cholesterol (LDL-C). Using the cargo ship/truck analogy, he clarifies that while LDL-C measures the amount of cholesterol cargo, ApoB directly counts the actual number of atherogenic particles carrying that cargo. This difference is especially critical for individuals with insulin resistance or metabolic syndrome who have high numbers of small, dense LDL particles that standard LDL-C tests miss. Measuring ApoB provides a more accurate view of cumulative lifetime exposure and arterial plaque buildup risk.
+
+Key points:
+- ApoB measures the total number of atherogenic (plaque-forming) particles, whereas LDL-C only measures the total cholesterol content (cargo) inside those particles.
+- Measuring LDL-C is like measuring cargo volume, while measuring ApoB is like counting the actual number of cargo trucks, which is the driver of arterial damage.
+- For individuals with insulin resistance, pre-diabetes, or metabolic syndrome, LDL-C can underestimate heart disease risk due to high counts of small, dense LDL particles, which ApoB successfully measures.
+- ApoB assessment is crucial for measuring long-term, cumulative exposure to plaque-causing particles starting early in life.
+
+Tags: health, medicine
+
+## Join Me At Info-Tech LIVE This June in Las Vegas
+
+- Channel: Alex Kantrowitz
+- Published: 2026-05-28T15:27:46+00:00
+- URL: https://www.youtube.com/shorts/b6tF0kf7Za4
+
+In this short video, tech journalist Alex Kantrowitz invites his audience to join him at the Info-Tech LIVE 2026 conference in Las Vegas, happening from June 9–11 at The Bellagio. He highlights his role as a speaker at the event, which centers on the theme 'Agentic IT: From Hype to Value,' and aims to help senior IT leaders move AI projects from experimentation to realized enterprise value.
+
+Key points:
+- Alex Kantrowitz, the founder of Big Technology, announces his partnership with Info-Tech Research Group as a speaker for Info-Tech LIVE 2026.
+- The event is scheduled to take place in Las Vegas, Nevada, at The Bellagio from June 9 to June 11, 2026.
+- The conference features the theme 'Agentic IT: From Hype to Value,' with a major focus on transitioning artificial intelligence from initial experimentation to measurable enterprise ROI.
+- The event targets CIOs, technology executives, and senior IT leaders to discuss AI governance, infrastructure modernization, and operational excellence.
+- Kantrowitz invites his audience to join him at the conference in person, noting that virtual options such as a digital pass are also available.
+
+Tags: ai, technology, conference, event, las vegas
+
+## It's Time To Talk About Signals - Julian Burr - NDC Sydney 2026
+
+- Channel: NDC Conferences
+- Published: 2026-05-28T15:00:04+00:00
+- URL: https://www.youtube.com/watch?v=1g278F7qgj4
+
+In this NDC Sydney 2026 presentation, Julian Burr explores the resurgence and evolution of 'Signals' in frontend web development. He covers the historical context of reactivity—drawing lines from early observables in KnockoutJS and refs in VueJS to modern SolidJS signals. Burr discusses the mechanics of signal-based reactivity (push-vs-pull, dirty checking, dependency tracking) and the active TC39 proposal to build native Signals into JavaScript, explaining how standardizing signals can prevent frameworks from reinventing the wheel and allow browsers to optimize execution performance.
+
+Key points:
+- Signals represent a fine-grained reactivity model that acts as an event system, triggering updates in dependent functions automatically when state changes.
+- Reactivity patterns have evolved through various forms over the years, including observables in KnockoutJS, refs in VueJS, and the modern formulation popularized by SolidJS.
+- The 'carcinization' of frontend web frameworks refers to the industry trend of diverse frameworks independently converging toward signal-based solutions to optimize state updates.
+- Standardizing signals via the active TC39 proposal aims to make reactivity a first-class citizen in the JavaScript language, reducing framework bloat and enabling native browser optimizations.
+- The talk covers technical implementation details, demonstrating how dependency tracking works under the hood by recording active effects during evaluation.
+
+Tags: software, conferences, javascript, frontend, signals, reactivity
+
+## The Science & Process of Healing from Grief | Huberman Lab Essentials
+
+- Channel: Andrew Huberman
+- Published: 2026-05-28T12:00:26+00:00
+- URL: https://www.youtube.com/watch?v=PlQyGIIAGNo
+
+In this Huberman Lab Essentials episode, Dr. Andrew Huberman explains the neurobiological and psychological processes involved in grief. He details how the brain maps relationships across space, time, and closeness, and how the loss of a loved one requires remapping these neural pathways. He distinguishes grief from clinical depression, highlights the roles of oxytocin and foundational biology (like sleep and cortisol), and offers practical, science-based protocols for adaptive grieving, such as managing counterfactual thinking and decoupling attachment from episodic memory.
+
+Key points:
+- The brain maps relationships across three dimensions: space, time, and closeness (emotional depth).
+- Grief is a motivational state of yearning, similar to a physical 'phantom limb', activating dopamine and search circuits.
+- Grief and depression are distinct processes; while they share symptoms like sleep issues, they require different management strategies.
+- Oxytocin helps drive the attachment and the persistent sense of yearning felt after losing a loved one.
+- Maintaining physical foundations, especially quality sleep and stable cortisol rhythms, is critical to having the capacity to process grief.
+- Adaptive healing involves decoupling attachment emotions from episodic memories and avoiding counterfactual 'what if' thinking.
+
+Tags: health, science
+
+## Industrial Strength Testing for Complex Software - Ashley Mannix - NDC Sydney 2026
+
+- Channel: NDC Conferences
+- Published: 2026-05-28T10:00:07+00:00
+- URL: https://www.youtube.com/watch?v=61ZjS4Pfcns
+
+Ashley Mannix, an engineer at Datalust, discusses advanced testing methodologies used to build and maintain Seq (a diagnostics log database) and its Rust-based storage engine (Flare) over a decade of development. The talk highlights how system complexity renders basic unit testing insufficient, as bugs often arise from unexpected component interactions. To ensure robustness, Mannix advocates for 'industrial-strength' testing strategies, including property-based testing, fuzzing, model-based testing, and the implementation of 'checked builds' (debug++) to swap out unsafe optimized code paths for safe checked variants during test runs.
+
+Key points:
+- Traditional unit testing is insufficient for complex systems, where bugs are often activated by interactions between seemingly unrelated components.
+- Good tests must serve as hard-working productivity multipliers, whereas bad or low-value tests slow development down without catching meaningful edge cases.
+- Model-based testing compares system behavior against a reference model to systematically verify logic and state transitions in database engines.
+- Fuzzing (using tools like AFL) is crucial for identifying panics, hangs, and memory safety issues in high-performance, low-level components like JSON parsers.
+- Checked builds ('debug++') enable swapping performance-oriented unsafe operations with safe, checked variants under unit and fuzz tests to guarantee undefined behavior (UB) freedom.
+- Maintaining high reliability in performance-critical Rust/C# codebases requires property-based testing (e.g., QuickCheck) to explore edge cases automatically.
+
+Tags: software, conferences, testing, rust, database, fuzzing, model-based testing
+
+## A Pit in Spain Holds the Key to a Neanderthal DNA Mystery - David Reich
+
+- Channel: Dwarkesh Patel
+- Published: 2026-05-27T23:20:22+00:00
+- URL: https://www.youtube.com/shorts/PhB3QgFnjGQ
+
+Geneticist David Reich explains the genetic discordance found in the 430,000-year-old Sima de los Huesos fossils in Spain, where the nuclear DNA is Neanderthal-like but mitochondrial DNA and Y chromosomes resemble Denisovans. He proposes a hypothesis where a modern human range expansion around 300,000 years ago introgressed a small amount (~5%) of modern human-related ancestry, which via sex-biased gene flow completely replaced the uniparental (mtDNA and Y chromosome) lineages of the population, forming classic Neanderthals.
+
+Key points:
+- Sima de los Huesos in Spain contains 430,000-year-old hominin fossils presenting a mito-nuclear discordance: their nuclear DNA is Neanderthal-like, but their mitochondrial DNA and Y chromosomes resemble Denisovans.
+- Geneticist David Reich proposes a hypothesis that classic Neanderthals originated from an admixture event between this local Sima de los Huesos-like population and an expanding modern human-related lineage ~300,000 years ago.
+- The modern human range expansion resulted in about 5% modern human genetic ancestry in the classic Neanderthal nuclear genome.
+- This expansion was highly sex-biased, resulting in a near 100% replacement of the Neanderthal mitochondrial DNA and Y chromosomes with those of the modern human-related group.
+
+Tags: ai, interviews, genetics, neanderthals, sima-de-los-huesos, evolutionary-biology
+
 ## Join us for Builders Unscripted Episode 3 on 5/29
 
 - Channel: OpenAI
@@ -15,6 +322,194 @@ Key points:
 - Announces that the full episode is scheduled to be released on May 29, 2026.
 
 Tags: ai, research, developers, builders unscripted, pulsar
+
+## Predicting the SpaceX, OpenAI, and Anthropic IPOs — With Dick Costolo
+
+- Channel: Alex Kantrowitz
+- Published: 2026-05-27T16:30:06+00:00
+- URL: https://www.youtube.com/watch?v=mczUp5h-cWc
+
+In this Big Technology Podcast episode, host Alex Kantrowitz and former Twitter CEO Dick Costolo analyze the potential public market debuts of SpaceX, OpenAI, and Anthropic. Costolo stresses that managing a company's narrative and preparing employee culture for stock price volatility are just as vital as achieving quarterly financial performance. He compares SpaceX's robust long-term vision, OpenAI's high-cost compute challenges, and Anthropic's steadier enterprise model, while also discussing physical infrastructure bottlenecks facing the AI sector.
+
+Key points:
+- Late-stage private companies must maintain strict 'narrative discipline' before an IPO, proactively defining the metrics by which they want to be measured rather than letting Wall Street analysts set them.
+- Going public introduces significant internal culture shifts and anxiety for employees due to daily stock price volatility; leaders must prepare their workforces for this transition.
+- SpaceX has a strong public-market narrative setup because Elon Musk successfully maintains investor focus on long-term, visionary goals rather than short-term operational numbers.
+- OpenAI faces a highly challenging IPO setup due to its enormous, ongoing capital commitments for compute power contrasted against a business model and governance structure still in development.
+- Anthropic occupies a cleaner middle path with a more stable, enterprise-focused approach and less public consumer hype, potentially easing its transition to public markets.
+- AI companies face physical scaling constraints, such as data center electricity/water availability and local zoning, which differ significantly from traditional software or SaaS challenges.
+
+Tags: ai, technology, ipo, spacex, openai, anthropic, finance, business
+
+## This TRIPLES Heart Attack Risk
+
+- Channel: Leonid Kim MD
+- Published: 2026-05-27T16:00:16+00:00
+- URL: https://www.youtube.com/shorts/SqCO93fkuoM
+
+Dr. Leonid Kim, MD, explains that Lipoprotein(a) or Lp(a)—a genetic variation of LDL cholesterol that accelerates plaque buildup and clotting—can triple the risk of a heart attack, particularly in people under 45. Because it is genetic, he recommends checking Lp(a) levels at least once, especially for those with a family history of early heart disease.
+
+Key points:
+- Lipoprotein(a) or Lp(a) is a genetic lipid particle that acts as a highly atherogenic and thrombotic form of LDL cholesterol.
+- Elevated levels of Lp(a) can triple the risk of a heart attack, especially in individuals under the age of 45.
+- Roughly 20% (1 in 5) of the population has elevated Lp(a) levels.
+- Since Lp(a) is genetic and remains constant over a lifetime, a person generally only needs to be tested for it once.
+- Dr. Kim recommends getting tested, particularly if there is a family history of premature cardiovascular disease.
+
+Tags: health, medicine
+
+## Get a Grip on your Telemetry using the OpenTelemetry Collector - Adam Gardner - NDC Sydney 2026
+
+- Channel: NDC Conferences
+- Published: 2026-05-27T15:00:27+00:00
+- URL: https://www.youtube.com/watch?v=6yyMKvprds4
+
+At NDC Sydney 2026, Adam Gardner delivers a hands-on presentation on utilizing the OpenTelemetry Collector. Through 16 real-world scenarios, the talk explains how to construct data pipelines, enrich and filter telemetry, use the OpenTelemetry Transformation Language (OTTL), extract metrics from logs, and manage deployments at scale using OpAMP.
+
+Key points:
+- The OpenTelemetry (OTel) Collector serves as a vendor-agnostic proxy to receive, process, and export telemetry data.
+- Demonstrates 16 practical scenarios including log batching, correcting timestamps, and dynamically setting severity levels to filter logs and control costs.
+- Covers telemetry enrichment with host/OS metadata and the redaction of sensitive information, such as passwords and user IDs, for security compliance.
+- Introduces the OpenTelemetry Transformation Language (OTTL) for flexible, inline modifications on telemetry payloads.
+- Explains how to convert log fields into metrics using the signaltometric connector, parse file formats like CSV and JSON-L, and conditionally route logs to multiple backends.
+- Provides guidance on managing collector fleets via the OpAMP protocol and building custom collector binaries using the OpenTelemetry Collector Builder (OCB).
+
+Tags: software, conferences, opentelemetry, observability, telemetry-collector
+
+## Designing technology for dirty gloves - Leanora Horne - NDC Sydney 2026
+
+- Channel: NDC Conferences
+- Published: 2026-05-27T10:00:13+00:00
+- URL: https://www.youtube.com/watch?v=QEUseCP6zPI
+
+In this talk from NDC Sydney 2026, digital product and transformation specialist Leanora Horne addresses the challenges of designing technology for workers in harsh industrial settings like mining. She highlights that standard UIs fail in noisy, dusty environments where operators wear thick, dirty gloves. Horne advocates for Human-Centered Design (HCD) and emphasizes the importance of field observation, low-fidelity prototyping (such as paper apps and hardware pilots), and iterative testing to create safer and more effective products.
+
+Key points:
+- Heavy industry environments like mining are hot, dusty, and noisy, making standard consumer-grade user interfaces unusable for workers wearing dirty protective gloves.
+- Developers and designers often make assumptions from the comfort of their offices, leading to poor technology adoption and costly failures in the field.
+- Applying Human-Centered Design (HCD) involves going into the field to observe real users in their actual working environments.
+- Prototyping solutions using low-fidelity methods, such as paper-based apps, visual playback, and early hardware pilots, helps validate ideas before full-scale development.
+- Iterating designs based on real-world feedback rather than laboratory simulations is crucial for building safer, smarter, and widely adopted industrial solutions.
+
+Tags: software, conferences, human-centered design, heavy industry, ux design, prototyping
+
+## The cultural transformations in Africa and Eurasia were linked - David Reich
+
+- Channel: Dwarkesh Patel
+- Published: 2026-05-26T19:46:53+00:00
+- URL: https://www.youtube.com/shorts/UN_zKhmFHjs
+
+In this clip, Dwarkesh Patel and geneticist David Reich discuss the hypothesis that prehistoric cultural and technological transformations in Africa and Eurasia were connected. Reich points out that current research keeps the study of modern human substructure in Africa separate from the study of ancient DNA and archaic relationships in Eurasia. He suggests that when integrated, the timing of their substructuring lines up, offering a much simpler, more parsimonious model of human history.
+
+Key points:
+- Dwarkesh Patel uses the historical dismissal of the heliocentric theory as an analogy to ask what implausible-sounding but correct implications the genetic data might hold.
+- David Reich argues that scientists should assume a direct linkage between prehistoric cultural transformations in Africa and Eurasia.
+- Reich highlights a research gap: studies on modern human substructure in Africa are kept separate from studies on ancient DNA and archaic relationships in Eurasia.
+- Integrating these separate fields shows that their timing of population substructuring lines up, offering a simpler, more parsimonious model of human evolutionary history.
+
+Tags: ai, interviews
+
+## On .NET Live - DuckDB & Orleans: When Fake Asynchrony Starves Your App!
+
+- Channel: dotnet
+- Published: 2026-05-26T16:52:30+00:00
+- URL: https://www.youtube.com/watch?v=VvT5mRpsLdA
+
+This upcoming episode of On .NET Live features Ledjon Behluli discussing the integration of DuckDB within Microsoft Orleans. Ledjon explains the concept of 'fake asynchrony,' where synchronous database calls inside Orleans grains starve the cooperative multitasking scheduler, resulting in decreased application throughput and responsiveness. The episode covers benchmarks showing the degradation and details practical mitigation strategies to restore true asynchronous performance.
+
+Key points:
+- The session examines the performance implications of integrating DuckDB within Microsoft Orleans grains.
+- It addresses 'fake asynchrony,' which occurs when synchronous or blocking calls (such as blocking database operations) are executed inside Orleans grains.
+- Orleans relies on cooperative multitasking; blocking calls starve the scheduler, preventing other grain tasks from executing and reducing system throughput.
+- The presentation demonstrates the performance impact through benchmark results.
+- It provides practical mitigation strategies and architectural solutions to avoid scheduler starvation.
+
+Tags: dotnet, software, orleans, duckdb, asynchrony, performance
+
+## The Right Way To Build AI Agents — With NVIDIA's Adel El Hallak and ServiceNow's Joe Davis
+
+- Channel: Alex Kantrowitz
+- Published: 2026-05-26T16:30:34+00:00
+- URL: https://www.youtube.com/watch?v=HQxX7DeQmsU
+
+In this Big Technology Podcast episode, host Alex Kantrowitz discusses enterprise-grade AI agents with Adel El Hallak (VP of Product Management at NVIDIA's Agentic AI division) and Joe Davis (EVP of AI Engineering and Delivery at ServiceNow). The discussion centers on mitigating the security risks of the 'lethal trifecta' (combining web access, internal databases, and code execution) through a 'deny by default' permission model. They introduce Open Shell, an open-source secure runtime from NVIDIA that sandboxes agents to enforce deterministic action policies. Additionally, they share real-world insights from ServiceNow's L1 IT Specialist agent, which automated 90% of Level 1 tickets using these architectural principles.
+
+Key points:
+- The 'lethal trifecta' in enterprise AI is the dangerous combination of unfettered internet access, access to an internal knowledge base, and a coding terminal inside an autonomous agent, creating severe security vulnerabilities.
+- A 'deny by default' model starts agents with zero permissions at runtime, requiring explicit, scoped access to specific systems or APIs to prevent unauthorized actions.
+- Open Shell is an open-source secure runtime developed by NVIDIA that acts as a sandbox, enforcing access governance policies deterministically at the moment of execution.
+- While an AI agent's reasoning remains probabilistic, its actions must be enforced deterministically through systematic governance, including assigning unique identities to agents to govern system access.
+- ServiceNow's L1 AI IT Specialist agent demonstrates this architecture in production, automating 90% of Level 1 IT support tickets and reducing resolution times by up to 99%.
+- Competitive differentiation in enterprise AI is shifting from the foundational models themselves, which are increasingly commoditized, to the secure harness, integrations, and governance stack built around them.
+
+Tags: ai, technology
+
+## Magnesium is essential for cellular energy
+
+- Channel: Leonid Kim MD
+- Published: 2026-05-26T16:00:37+00:00
+- URL: https://www.youtube.com/shorts/pfFseAp-nZA
+
+Dr. Leonid Kim, MD, explains that magnesium is crucial for cellular energy because the body's main energy molecule, ATP, is only biologically active when bound to magnesium. A deficiency in magnesium slows down ATP production in the mitochondria, leading to cellular exhaustion and fatigue regardless of caloric intake.
+
+Key points:
+- Magnesium is essential for the function of mitochondria, which act as the cell's energy powerhouses.
+- Adenosine triphosphate (ATP), the primary energy currency of the body, must be bound to magnesium to become biologically active.
+- A deficiency in magnesium can lead to decreased cellular energy production, causing exhaustion and a feeling of an empty tank even if caloric intake is adequate.
+
+Tags: health, medicine
+
+## Skill Degradation: An Empirical Analysis of 400+ AI‑Generated Security Fixes - Pedram Hayati
+
+- Channel: NDC Conferences
+- Published: 2026-05-26T15:00:22+00:00
+- URL: https://www.youtube.com/watch?v=1tcir8BPP3M
+
+Dr. Pedram Hayati analyzes the impact of generative AI on software security remediation through an empirical study of over 400 AI-generated patches. The talk shows that developers who rely on AI for security fixes experience reduced remediation accuracy and a failure to understand the underlying issues. This creates automation complacency and skill degradation, emphasizing that AI should augment rather than replace foundational secure coding knowledge.
+
+Key points:
+- The research evaluates over 400 AI-generated security patches to assess their effectiveness and their impact on developer learning.
+- Relying solely on generative AI for vulnerability remediation leads to a significant decrease in patch accuracy.
+- A large portion of study participants could not explain how the AI-generated patches addressed the security vulnerabilities, indicating a lack of comprehension.
+- Instead of acting as a mentor, AI coding assistants tend to act as a crutch, promoting passive code consumption and over-reliance.
+- This over-reliance leads to automation complacency and skill degradation, where developers' secure coding abilities decay over time.
+
+Tags: software, conferences, cybersecurity, generative AI, secure coding, skill degradation
+
+## Building fun and creative messaging experiences on WhatsApp - Michelle “MishManners” Duke
+
+- Channel: NDC Conferences
+- Published: 2026-05-26T10:26:03+00:00
+- URL: https://www.youtube.com/watch?v=q26-3exWpso
+
+In this NDC Sydney presentation, Developer Evangelist Michelle 'MishManners' Duke explores how developers can move beyond traditional SMS to create interactive and fun messaging experiences on WhatsApp. She walks through a live demonstration of a generative AI pipeline where users text an image to a WhatsApp number, which triggers a Twilio webhook tunneled via ngrok to process the image. The image is transformed using OpenAI's APIs (like GPT-4o mini) into a styled/anime version, and then sent back to the user via WhatsApp. The talk covers the historical context of messaging, technical setup, managing latency, and strategies for engaging audiences at events.
+
+Key points:
+- Evolution of Messaging: MishManners transitions from the history of SMS (originating in 1992) to modern messaging frameworks like WhatsApp and RCS, which boast much higher open and engagement rates than traditional email.
+- Twilio Integration: Demonstrates using Twilio for routing WhatsApp messages, handling media payloads, and utilizing TwiML (Twilio Markup Language) to build dynamic workflows.
+- Generative AI Integration: Uses OpenAI's APIs (specifically GPT-4o mini) to receive user-submitted images (e.g., photos or selfies) via WhatsApp, process them, and return a stylized or anime version.
+- Developer Tools: Showcases how to set up ngrok for local webhook tunneling and the sharp image processing library for applying overlays and transformations.
+- User Experience & Architecture: Emphasizes handling input latency, managing message queues, and designing dashboards to trace submissions at live events.
+
+Tags: software, conferences, whatsapp, twilio, openai, ai, messaging
+
+## AI Agents That Don’t Suck: How to Build Ones That Actually Drive Business Value - Robert Koch
+
+- Channel: NDC Conferences
+- Published: 2026-05-26T10:00:37+00:00
+- URL: https://www.youtube.com/watch?v=_vaIfRXXiIY
+
+In this NDC Conferences talk, Robert Koch explores why many enterprise AI agents fail in production and outlines a strategic framework for creating value-driven agents. Drawing on the 'Hole vs. Drill' philosophy, Koch argues that agents should be designed around specific customer outcomes rather than general chat capabilities. He recommends limiting agent scopes to specific tasks to combat Lucc's Law of compounding errors in multi-step workflows. Additionally, Koch discusses practical engineering patterns, such as using prompt caching for cost-efficiency, establishing continuous eval harnesses, using robust guardrails to block prompt injections, and containerizing critical services.
+
+Key points:
+- AI agent projects frequently fail when optimized for 'shiny demos' rather than production reliability, clear success metrics, and robust guardrails.
+- The outcome-focused 'Hole vs. Drill' philosophy stresses that companies must focus on the customer's actual problem rather than treating the agent as the product.
+- Broad, catch-all agents fail due to Lucc's Law (compounding unreliability over multi-step workflows); narrow-scoping tasks (e.g., password resets) yields much higher success rates.
+- Key engineering practices include using prompt caching to optimize costs and latency, and running eval harnesses for continuous testing.
+- Isolating server environments (e.g., separating web and call servers into containerized environments) prevents system-wide compromise.
+- Robust guardrails are essential to prevent prompt injection attacks that could lead to financial or legal liabilities.
+
+Tags: software, conferences, ai agents, artificial intelligence, software engineering, ndc sydney
 
 ## Sid vs Career | With ChatGPT
 
