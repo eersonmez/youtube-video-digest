@@ -1,5 +1,39 @@
 # YouTube Video Digest
 
+## Why Neanderthals Might Be Our Cousins After All - David Reich
+
+- Channel: Dwarkesh Patel
+- Published: 2026-05-30T22:11:51+00:00
+- URL: https://www.youtube.com/shorts/iuVDb9hKn3w
+
+David Reich proposes a heretical model of human origins: rather than Neanderthals and modern humans being distant evolutionary lineages, they share a common ancestral population that expanded from the Caucasus. Neanderthals arose when this group migrated to Europe and was genetically swamped by local archaic humans, while modern humans arose from a parallel expansion and mixture with archaic populations in Africa.
+
+Key points:
+- Geneticist David Reich challenges the consensus that Neanderthals are a completely separate, distant archaic lineage.
+- He proposes a model where Neanderthals and modern humans share a common cultural ancestry originating 300,000 to 400,000 years ago, possibly near the Caucasus.
+- According to this model, the population expanding into Europe interbred with local archaic humans and was 'genetically swamped,' becoming Neanderthals.
+- A parallel expansion of the same core population into Africa mixed with local archaic populations, eventually becoming modern Homo sapiens.
+- This suggests that Neanderthals are closer genetic and cultural cousins to modern humans than previously assumed.
+
+Tags: ai, interviews, genetics, human evolution, neanderthals
+
+## Terence Tao on How AI Is Changing Mathematics
+
+- Channel: OpenAI
+- Published: 2026-05-30T13:19:23+00:00
+- URL: https://www.youtube.com/watch?v=cdflu9ZXZGE
+
+In this video, Fields Medalist Terence Tao and OpenAI Chief Research Officer Mark Chen discuss the transformative impact of artificial intelligence on mathematics. Tao explains how AI tools reduce cognitive friction by handling tedious computation and proof verification, allowing mathematicians to experiment more freely. He also highlights improvements in literature search and collaborative efforts, expressing a hope that future mathematicians will document and share their trial-and-error processes. Chen highlights OpenAI's focus on designing AI tools that accelerate scale-level scientific discovery.
+
+Key points:
+- AI reduces 'cognitive friction' in mathematical research, allowing mathematicians to delegate tedious computations and proof checks to AI tools.
+- By outsourcing routine details, mathematicians can experiment more freely and focus on high-level creative and conceptual exploration.
+- AI tools make searching mathematical literature and managing collaborative research projects significantly more accurate and efficient.
+- Tao envisions a shift where mathematicians share their experimental paths and trial-and-error processes rather than just the final proof.
+- The video features insights from OpenAI Chief Research Officer Mark Chen, highlighting the goal of empowering researchers to achieve scientific breakthroughs at scale.
+
+Tags: ai, research, mathematics, terence tao, openai
+
 ## Were Neanderthals Culturally Modern Humans? - David Reich
 
 - Channel: Dwarkesh Patel
