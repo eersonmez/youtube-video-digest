@@ -1,5 +1,21 @@
 # YouTube Video Digest
 
+## Ex-Twitter CEO Dick Costolo reacts to Eric Schmidt’s Commencement Booing
+
+- Channel: Alex Kantrowitz
+- Published: 2026-05-31T19:30:20+00:00
+- URL: https://www.youtube.com/shorts/Ct6PgBryb8Q
+
+Former Twitter CEO Dick Costolo reacts to former Google CEO Eric Schmidt being booed at a commencement speech. Costolo explains that if he were a graduating student without a job, he would likely boo too when lectured about AI by a tech billionaire. He critiques current tech leaders for focusing on petty disputes and failing to communicate a positive societal narrative for AI and advanced technology, which has soured public perception.
+
+Key points:
+- Former Twitter CEO Dick Costolo reacts to former Google CEO Eric Schmidt being booed by graduates during a college commencement speech.
+- Costolo states that the students' negative reaction is understandable, particularly for graduates facing a difficult job market while hearing about AI from tech billionaires.
+- He notes a negative shift in public perception of tech leaders, who are increasingly viewed as being focused on wealth and petty disputes.
+- Costolo emphasizes that the tech industry has failed to build a narrative explaining how technology and AI are beneficial to the public rather than just tech companies.
+
+Tags: ai, technology
+
 ## Why Neanderthals Might Be Our Cousins After All - David Reich
 
 - Channel: Dwarkesh Patel
