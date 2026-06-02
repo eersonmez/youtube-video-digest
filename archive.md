@@ -1,5 +1,107 @@
 # YouTube Video Digest
 
+## On .NET Live - Fluent UI Blazor: The next step
+
+- Channel: dotnet
+- Published: 2026-06-01T21:59:49+00:00
+- URL: https://www.youtube.com/watch?v=CRVLURJjFBk
+
+An upcoming On .NET Live stream session where Vincent Baaij and Denis Voituron introduce and demonstrate the new features, web components, and architectural improvements coming in the next major version of the Microsoft Fluent UI Blazor library.
+
+Key points:
+- This is an upcoming live stream event scheduled to air on June 8, 2026, at 4:00 PM UTC (9:00 AM PDT).
+- The session features presenters Vincent Baaij and Denis Voituron.
+- It will show what is new in the next major version of the Microsoft Fluent UI Blazor library.
+- The presentation will cover new web components, performance and architectural updates, and include live demonstrations.
+
+Tags: dotnet, software, dotnetdeveloper, developer, dotnet11, fluentUI, blazor, demo, microsoft
+
+## The Texas Town at the forefront of OpenAI's Stargate Project
+
+- Channel: OpenAI
+- Published: 2026-06-01T19:40:47+00:00
+- URL: https://www.youtube.com/watch?v=dnzxcYl4xYI
+
+This video highlights the town of Abilene, Texas, which serves as the flagship deployment site for OpenAI's Stargate Project. It explores the regional model of distributed computing, partnerships with Oracle and Crusoe to build next-generation data centers, and the launch of the Stargate Community OpenAI Academy to prepare local workforces for AI infrastructure jobs.
+
+Key points:
+- Abilene, Texas, serves as the flagship location and epicenter for the first major deployment of OpenAI's Stargate Project.
+- The project represents a strategic shift in the AI industry, moving compute capacity away from traditional coastal tech hubs to regionally embedded facilities.
+- The Abilene campus is designed to scale to gigawatt capacity, housing high-density NVIDIA Blackwell GB200 GPU clusters for frontier AI research.
+- OpenAI has partnered with Oracle, Crusoe Energy Systems, and Blue Owl Capital to construct and manage this massive infrastructure.
+- To support local workforce development, OpenAI is launching its first Stargate Community OpenAI Academy in Abilene to train and certify workers in technical roles.
+
+Tags: ai, research
+
+## Anthropic Files For An IPO: Rapid Reaction — With M.G. Siegler
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-01T17:48:50+00:00
+- URL: https://www.youtube.com/watch?v=oj0EssDYqCc
+
+In this rapid reaction episode, Alex Kantrowitz and M.G. Siegler discuss the breaking news of Anthropic confidentially filing Form S-1 for a proposed IPO. The discussion centers around Anthropic's recent massive $65 billion funding round and $965 billion valuation, the intense competition and race to public markets between Anthropic and OpenAI, the high capital requirements for AI training/compute, and how public markets might value a trillion-dollar scale AI company.
+
+Key points:
+- Anthropic confidentially submitted a draft registration statement on Form S-1 to the SEC for a proposed initial public offering (IPO) on June 1, 2026.
+- The filing follows a massive $65 billion funding round that recently brought the artificial intelligence startup's valuation to approximately $965 billion.
+- A confidential filing allows Anthropic to undergo SEC review without publicizing sensitive financial figures, which is a common corporate strategy to protect sensitive information.
+- Host Alex Kantrowitz and guest M.G. Siegler analyze the market implications and the competitive race to go public between Anthropic, OpenAI, and SpaceX.
+- They discuss the enormous compute cost requirements facing leading AI companies and how going public helps secure long-term capital to compete.
+- The discussion touches upon the potential market receptivity of a multi-hundred-billion dollar AI startup with high capital expenditures, and how Anthropic's Public Benefit Corporation (PBC) status could factor into a public listing.
+
+Tags: ai, technology, anthropic, ipo, finance, venture capital, alex kantrowitz, m.g. siegler
+
+## Lovable on How GPT-5.5 Unlocks Better Planning for Complex Builds
+
+- Channel: OpenAI
+- Published: 2026-06-01T17:41:51+00:00
+- URL: https://www.youtube.com/watch?v=ZrEc46wUIPU
+
+This video details how OpenAI's GPT-5.5 model enables Lovable to plan and build complex software applications more effectively. The model's long-horizon reasoning and 1.05M-token context window result in 23.1% fewer tool calls, making autonomous, agentic coding tasks like managing state and provisioning databases faster and more reliable.
+
+Key points:
+- Lovable's integration of GPT-5.5 shows a 23.1% reduction in required tool calls compared to prior models, minimizing context switching and overhead.
+- The decreased tool call frequency allows the agent to handle complex development tasks with fewer interruptions, keeping developers in their creative flow.
+- GPT-5.5 provides superior multi-step planning, high instruction fidelity, and long-context coherence for complex web app creation.
+- Lovable leverages these agentic capabilities to automate complex developer workflows, including database provisioning, state management, and fixing complicated bugs.
+
+Tags: ai, research
+
+## Why I Check Homocysteine in My Patients
+
+- Channel: Leonid Kim MD
+- Published: 2026-06-01T16:00:25+00:00
+- URL: https://www.youtube.com/shorts/dKsJOG5cd7E
+
+Dr. Leonid Kim MD explains the clinical importance of monitoring homocysteine levels. He describes it as a protein metabolism byproduct resembling factory smoke. When clearance mechanisms fail due to deficiencies in vitamins B6, B9, and B12, or genetic variations like the MTHFR mutation, homocysteine accumulates in the blood. Dr. Kim uses this test to assess patient B-vitamin status and customize supplementation with methylated B vitamins to support long-term metabolic and cardiovascular health.
+
+Key points:
+- Homocysteine is a natural byproduct of protein metabolism, which can be thought of as metabolic 'smoke' from a factory.
+- Elevated levels in the blood suggest a failure in the body's clearance pathways or 'exhaust system'.
+- Vitamins B6, B9 (folate), and B12 are critical cofactors required to process and recycle homocysteine.
+- Genetic variations like the MTHFR mutation can impair homocysteine metabolism, and checking this marker helps guide targeted therapies such as methylated B vitamins.
+
+Tags: health, medicine
+
+## Peptides: The Science, Uses & Safety | Dr. Abud Bakri
+
+- Channel: Andrew Huberman
+- Published: 2026-06-01T12:00:36+00:00
+- URL: https://www.youtube.com/watch?v=_DfqnpSbMfE
+
+Dr. Andrew Huberman hosts Dr. Abud Bakri, a board-certified internal medicine physician, to explore the clinical utility, science, and safety of peptide therapies. The conversation covers a wide array of peptides, including BPC-157, TB-500, GHK-Cu, GLP-1 receptor agonists, retatrutide, epithalon, and pinealon. They address the crucial gap between promising animal research and limited human trials, and highlight safety concerns related to purchasing unregulated research chemicals, highlighting the risks of contamination with endotoxins like lipopolysaccharides (LPS). The episode provides a comprehensive guide for evaluating the benefits and risks of peptide treatments under proper medical supervision.
+
+Key points:
+- Peptides are short chains of amino acids that serve as signaling molecules in the body, influencing processes like healing, tissue repair, metabolism, and immune function.
+- A major focus is the gap between animal models and human clinical research, highlighting that many popular peptides lack large-scale human safety and efficacy trials.
+- Popular healing peptides like BPC-157 and TB-500 are explored for their role in tissue regeneration, but clinical safety data is still evolving.
+- Sourcing peptides carries significant risk: compounding pharmacies offer regulated, sterile options, while grey-market 'research chemical' websites pose risks of contamination, specifically with endotoxins like lipopolysaccharides (LPS).
+- Metabolic peptides like GLP-1 receptor agonists and retatrutide are highly effective for weight management and glycemic control, but require precise clinical administration.
+- Cognitive and anti-aging peptides like Pinealon, Epithalon, and GHK-Cu are discussed in terms of sleep, skin health, and biological aging.
+- Dr. Bakri emphasizes the necessity of physician oversight and personalized diagnosis before beginning any peptide therapy to mitigate potential health risks and regulatory issues.
+
+Tags: health, science, peptides, medicine, podcast
+
 ## Ex-Twitter CEO Dick Costolo reacts to Eric Schmidt’s Commencement Booing
 
 - Channel: Alex Kantrowitz
