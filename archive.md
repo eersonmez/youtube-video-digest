@@ -1,5 +1,39 @@
 # YouTube Video Digest
 
+## It's time to fly | Codex
+
+- Channel: OpenAI
+- Published: 2026-06-03T19:11:26+00:00
+- URL: https://www.youtube.com/watch?v=bJcA23ckzcY
+
+A cinematic promotional brand video released by OpenAI to tease the next phase of their Codex platform under the tagline 'It's time to fly.' The cryptic trailer features people flying and was launched with little context, sparking speculation about Codex's expanding agentic and software engineering capabilities.
+
+Key points:
+- Released by OpenAI on June 3, 2026, as a cinematic promotional teaser for the Codex platform.
+- Features creative imagery of people appearing to fly, centered around the tagline 'It's time to fly.'
+- Published with minimal context, generating high curiosity, speculation, and discussion across online developer communities such as Reddit.
+- Aligns with a broader marketing and update campaign highlighting Codex's evolution from code completion to a comprehensive agentic software development tool.
+
+Tags: ai, research, codex, openai, teaser
+
+## Home Assistant 2026.6: Small Changes, Big Relief
+
+- Channel: BeardedTinker
+- Published: 2026-06-03T15:00:37+00:00
+- URL: https://www.youtube.com/watch?v=pmpMN-eaU20
+
+In this video, BeardedTinker covers the Home Assistant 2026.6 release, emphasizing it as a 'polish' update focused on quality-of-life and user experience improvements. Major features highlighted include a redesigned entity-first card picker for dashboards, helper notes and live condition debugging in the automation editor, native infrared receiver support, and the final removal of legacy templates.
+
+Key points:
+- Home Assistant 2026.6 features a complete overhaul of the dashboard card picker, allowing users to select an entity first and receive card recommendations with live previews of their actual data.
+- The automation editor now includes a highly requested feature enabling users to add notes to individual automation steps for better documentation.
+- The automation editor introduces live test indicators on conditions and target counts (for devices, areas, floors, and labels) to make building and debugging automations more transparent.
+- Native Infrared (IR) receiver support is introduced, allowing hardware like ESPHome receivers to act as smart home controllers by listening to IR remote commands.
+- The Energy Dashboard adds state-of-charge sensors for batteries and supports custom naming of energy sources.
+- Legacy template formats (e.g., sensor, binary_sensor under the old legacy template configuration style) are officially removed in this release, requiring migration to modern syntax.
+
+Tags: smart-home, home-assistant
+
 ## The Neanderthal DNA Puzzle No One Can Explain - David Reich
 
 - Channel: Dwarkesh Patel
