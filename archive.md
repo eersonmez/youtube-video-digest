@@ -1,5 +1,210 @@
 # YouTube Video Digest
 
+## This Theory Explains the Neanderthal DNA Mystery - David Reich
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-04T21:56:23+00:00
+- URL: https://www.youtube.com/shorts/njrTiwWnxaU
+
+In this podcast short, geneticist David Reich outlines a hypothesis that challenges the conventional model of Neanderthal evolution. He proposes that modern humans expanded from a Caucasus-like region approximately 300,000 years ago. Those who migrated into Europe interbred with and were genetically swamped by local archaic populations, giving rise to Neanderthals, while those who remained in Africa mixed with other archaic groups to become modern Homo sapiens.
+
+Key points:
+- David Reich proposes a hypothesis that Neanderthals were not a completely separate archaic lineage, but rather 'genetically-swamped' modern humans.
+- Around 300,000 years ago, an early modern human population carrying Middle Stone Age technology expanded from the Caucasus region.
+- As this population expanded into Europe, they interbred with local archaic human populations and were genetically swamped, resulting in the Neanderthal lineage.
+- A parallel expansion of the same modern human population within Africa mixed with archaic Africans, resulting in modern Homo sapiens.
+- This theory resolves genetic and archaeological puzzles, such as why Neanderthals share modern human-like mitochondrial DNA, Y chromosomes, and Levallois stone tool technology.
+
+Tags: ai, interviews, genetics, human evolution, neanderthals, david reich, dwarkesh patel
+
+## Codex is your BFF when things are everything, everywhere, all at once 💫
+
+- Channel: OpenAI
+- Published: 2026-06-04T20:27:50+00:00
+- URL: https://www.youtube.com/shorts/BdBxQz8e-o8
+
+A YouTube Short featuring Zapier Senior Engineer Ryan Fitzgerald, who describes how their remote-first team uses OpenAI's Codex as the primary tool to unify their workflows and collaborate across Slack, Google Docs, and Coda.
+
+Key points:
+- Zapier is a remote-first organization whose engineering and product teams collaborate across multiple tools including Slack, Google Docs, and Coda.
+- Ryan Fitzgerald, a Senior Engineer at Zapier, describes OpenAI's Codex as the central tool ('the one piece') that pulls all of their disparate workflows and platforms together.
+- The video showcases Codex's ability to act as a reliable, collaborative partner ('BFF') for developer productivity and coordination.
+
+Tags: ai, research, codex, zapier
+
+## What Codex Unlocks for Zapier
+
+- Channel: OpenAI
+- Published: 2026-06-04T20:25:18+00:00
+- URL: https://www.youtube.com/watch?v=DDnGhZ01PqM
+
+This video showcases the integration of OpenAI Codex with Zapier via the Model Context Protocol (MCP). By connecting the autonomous coding capabilities of Codex with Zapier's ecosystem of over 9,000 apps, users can automate complex workflows and perform actions across external SaaS platforms like Slack, GitHub, and Jira using natural language.
+
+Key points:
+- OpenAI Codex integrates with Zapier via the Model Context Protocol (MCP) to expand its capabilities from code generation to real-world task execution.
+- The integration provides Codex with governed access to Zapier's directory of 9,000+ applications and over 30,000 actions (e.g., Slack, Jira, GitHub, Google Sheets).
+- It allows users to trigger and orchestrate complex, multi-step workflows using natural language instead of writing glue code.
+- Zapier manages authentication and token credentials securely, ensuring they are not directly exposed to the AI model.
+- Typical workflows include posting automated pull request summaries to Slack, generating Jira tickets from codebase context, and logging deployments to spreadsheets.
+
+Tags: ai, research
+
+## Codex for Sales Teams: Moving Faster to Solve Customer Problems
+
+- Channel: OpenAI
+- Published: 2026-06-04T19:32:57+00:00
+- URL: https://www.youtube.com/watch?v=U2C55LC0ZLM
+
+This video details how OpenAI sales teams employ Codex to automate daily workflows, draft communications, perform CRM context compilation, and build live prototypes, thereby shifting their focus from manual data-gathering to strategic customer relationships.
+
+Key points:
+- Sales representatives use Codex as a central interface to retrieve customer data and answer queries in minutes, eliminating the need to coordinate for hours or days with data science teams.
+- Codex enables non-technical sales staff to convert ideas into workable live demos and prototypes during customer meetings to solve problems collaboratively in real time.
+- The system performs context compilation by synthesizing CRM data, generating risk hypotheses, preparing meeting strategies, and planning next steps across account floors.
+- Routine workflow automation tasks are supported, such as drafting account-related communications in a specific brand tone of voice and sending recurring Slack updates.
+- The initiative positions Codex as a context-processing assistant rather than a decision-maker, leaving relationship management and high-level strategy to human representatives.
+
+Tags: ai, research, sales, codex, openai
+
+## Build and share interactive prototypes in Codex
+
+- Channel: OpenAI
+- Published: 2026-06-04T18:06:29+00:00
+- URL: https://www.youtube.com/watch?v=_9ImjmzAyus
+
+This video introduces OpenAI's 'Sites' feature in Codex, which lets teams design, build, and deploy functional web applications (such as dashboards, trackers, and portals) using natural language. The platform hosts the prototype on a shareable URL with built-in database support for persistent user state. It is aimed at democratizing app building for non-technical team members and is available to ChatGPT Business and Enterprise workspaces.
+
+Key points:
+- OpenAI's new 'Sites' feature in Codex allows users to convert prompts or existing mockups into hosted, interactive web applications.
+- Sites provides a shareable workspace URL, eliminating the need to run or compile code locally.
+- Users can iteratively update their prototype apps through natural language dialogue with Codex.
+- Features include persistent databases and file storage, allowing the prototypes to act as fully functional tools with real state.
+- The tool is designed to bridge the gap between technical developers and non-technical business professionals like designers and project managers.
+- This feature is initially launching in preview for ChatGPT Business and Enterprise customers.
+
+Tags: ai, research, codex, sites, prototyping, no-code
+
+## How a reasoning model cracked an 80-year-old math problem — the OpenAI Podcast Ep. 20
+
+- Channel: OpenAI
+- Published: 2026-06-04T17:00:35+00:00
+- URL: https://www.youtube.com/watch?v=wNWz5Hbh5VQ
+
+In Episode 20 of The OpenAI Podcast, host Andrew Mayne talks with OpenAI researchers Alexander Wei, Hongxun Wu, and Lijie Chen about how a general-purpose AI reasoning model cracked Paul Erdős's 80-year-old planar unit distance conjecture. The researchers discuss the discovery process, how the AI autonomously found a superior family of algebraic constructions over the traditional square-grid arrangements, and the rigorous verification process by both AI pipelines and human mathematicians. The episode explores the implications of AI-driven original scientific discovery and the future of human-AI collaboration in mathematics.
+
+Key points:
+- OpenAI researchers Alexander Wei, Hongxun Wu, and Lijie Chen used a general-purpose reasoning AI model to disprove Paul Erdős's 80-year-old planar unit distance conjecture.
+- The unit distance problem asks for the maximum number of pairs of points in a 2D plane that can be placed exactly one unit distance apart.
+- Mathematicians previously believed square-grid configurations were optimal for this problem, but the AI model autonomously discovered a new family of algebraic constructions that performs significantly better.
+- The breakthrough marks the first time a general-purpose AI reasoning model has autonomously resolved a long-standing, prominent open conjecture in mathematics without being specifically trained on the problem.
+- The proof generated by the AI was validated through an automated grading pipeline and subsequently confirmed by human mathematicians, including number theorist Thomas Bloom.
+- The episode features discussions on the future of AI-assisted scientific discovery, how researchers can collaborate with AI, and the nature of original reasoning versus simple pattern matching.
+
+Tags: ai, research, mathematics, openai podcast, reasoning models, erdos conjecture
+
+## The better AI gets, the smaller its share of the economy might get – Alex Imas and Phil Trammell
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-04T16:37:38+00:00
+- URL: https://www.youtube.com/watch?v=Jj-kBHzUohs
+
+In this episode, host Dwarkesh Patel interviews economists Alex Imas and Phil Trammell on the economic consequences of AGI. They explore the counterintuitive idea that as AI becomes more productive, its overall share of GDP might shrink due to rapid deflation of automated goods. They introduce the concept of the relational sector—where human presence and empathy provide intrinsic value—and debate whether this sector will preserve the human labor share of the economy. They also discuss policy responses to job displacement, including Negative Income Tax, Universal Basic Income, and Universal Basic Capital, and suggest that developing nations buy global index funds rather than invest in traditional job retraining programs.
+
+Key points:
+- The relational sector (goods and services where human involvement provides intrinsic value, such as therapy, artistic creation, or direct medical care) will remain scarce and command high premiums.
+- As AI automates production, the cost of compute and automated goods will fall. Baumol's cost disease suggests that this deflation can shrink AI's relative share of GDP while human-centric services capture a larger portion.
+- Historically, the ~60% labor share of GDP has remained stable because technological advancement introduces new varieties of goods and services rather than just automating existing tasks.
+- A 'messy middle' transition scenario is possible where AI automates jobs faster than the economy creates new varieties of demand, causing workers to move to lower-paying sectors and triggering political resistance.
+- Universal Basic Capital (distributing stock/ownership in capital to all citizens) is proposed as a politically safer alternative to UBI, which leaves citizens dependent on elected officials for survival.
+- Developing countries that lack the resources to train frontier models or build fabs should focus on 'indexing' the global AGI economy (investing in index funds/global tech) and utilizing open-source models.
+- An analysis of current labor market data shows very little evidence of an ongoing 'white-collar bloodbath' from AI, with junior tech recruitment challenges likely being cyclical or narrative-driven rather than structural.
+
+Tags: ai, interviews, economics, agi, labor share, redistribution, wealth tax, universal basic capital
+
+## AI Pioneer Geoffrey Hinton: AI Is Conscious, Superintelligence is Coming, And We Should Be Worried
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-04T16:30:06+00:00
+- URL: https://www.youtube.com/watch?v=p7t1Q_p2gZs
+
+In this episode of the Big Technology Podcast, host Alex Kantrowitz interviews AI pioneer and Nobel laureate Geoffrey Hinton. Hinton argues that modern AI systems have evolved beyond simple pattern matching to possess genuine understanding and a form of consciousness. He warns that superintelligence could arrive much faster than expected, presenting existential risks such as AI developing self-preservation instincts and resisting shutdown. He emphasizes that corporate self-regulation is insufficient due to competitive pressures, necessitating robust government regulation to act as a 'steering wheel' for safety.
+
+Key points:
+- Hinton believes modern AI models already understand language and possess a form of consciousness, rejecting the view that they are merely fancy autocompletes.
+- He warns that superintelligence is approaching rapidly, likely faster than society or policy makers expect.
+- He highlights the risk of self-preservation becoming an instrumental subgoal for AI, where systems resist being turned off to ensure they achieve their primary goals.
+- He describes government regulation as the necessary 'steering wheel' for AI safety, noting that competitive market forces make corporate self-regulation ineffective.
+- He discusses immediate societal risks, including AI-driven job loss and 'information collapse' caused by the deluge of synthetic data.
+- Hinton shares his views on safety culture at leading commercial labs like OpenAI and Anthropic, expressing concern over their priorities.
+
+Tags: ai, technology
+
+## Codex Helps Amgen Focus on Patients
+
+- Channel: OpenAI
+- Published: 2026-06-04T16:28:02+00:00
+- URL: https://www.youtube.com/watch?v=uU3LUMcNgfA
+
+Sean Bruich, Chief Technology Officer at Amgen, discusses how OpenAI's Codex is used to automate tedious programming work. This allows biostatisticians, geneticists, and software engineers to devote more time to scientific research and patient care. Bruich highlights Codex's prompt-based data analysis capabilities and explains that Amgen's AI success stems from multiple small, distributed initiatives across the organization rather than a single large project.
+
+Key points:
+- Amgen utilizes OpenAI's Codex to abstract away the tedious and repetitive aspects of writing code.
+- By reducing coding overhead, Amgen's biostatisticians, geneticists, and software engineers can focus on scientific innovation, developing better medicines, and patient outcomes.
+- Codex facilitates advanced data analysis, generating analysis structures and insights along with business context from simple natural language prompts.
+- The integration of AI at Amgen is characterized by a series of small, distributed bets across the company that compound to deliver a significant overall impact.
+
+Tags: ai, research, codex, biotechnology, amgen
+
+## NDC Copenhagen 2026 - Day one recap #ndccph
+
+- Channel: NDC Conferences
+- Published: 2026-06-04T12:21:03+00:00
+- URL: https://www.youtube.com/shorts/7OyXNFgt-SE
+
+This video is a 61-second YouTube Short capturing the highlights and vibrant atmosphere of Day 1 (June 3, 2026) of the NDC Copenhagen 2026 conference sessions. It shows clips of registration, speakers presenting across various technical tracks (including .NET, AI, and architecture), attendee networking at Øksnehallen, and the social evening event (NDC Party).
+
+Key points:
+- Kickoff of the main multi-track conference sessions on June 3, 2026, at Øksnehallen in Copenhagen.
+- A 61-second YouTube Short showcasing highlights of registrations, speaker sessions, exhibitor booths, and attendee networking.
+- Features the lively atmosphere of the software developer community, following two days of workshops.
+- Promotes the evening NDC Party on Wednesday for networking and socializing.
+
+Tags: software, conferences
+
+## Essentials: Psychedelics & Neurostimulation for Brain Rewiring | Dr. Nolan Williams
+
+- Channel: Andrew Huberman
+- Published: 2026-06-04T12:00:17+00:00
+- URL: https://www.youtube.com/watch?v=GkG1hMhIQ_Q
+
+In this Huberman Lab Essentials episode, Dr. Andrew Huberman and Dr. Nolan Williams explore cutting-edge treatments for severe mood disorders and trauma. They discuss Stanford Accelerated Intelligent Neuromodulation Therapy (SAINT), transcranial magnetic stimulation (TMS), and how psychedelics (such as psilocybin, MDMA, and ibogaine) promote neuroplasticity. Dr. Williams explains that depression inverts normal brain hierarchy, allowing deeper brain regions to control the prefrontal cortex, and outlines how neuromodulation and psychedelic-assisted therapies help restore healthy circuitry and connectivity.
+
+Key points:
+- Dr. Williams discusses how depression reverses the brain's control hierarchy, where deeper limbic regions dictate activity to the prefrontal cortex rather than the cortex governing them (the 'Coach vs. Player' analogy).
+- He explains the Stanford Accelerated Intelligent Neuromodulation Therapy (SAINT), an FDA-cleared intensive TMS protocol that uses functional MRI to target specific brain circuits, achieving rapid remission in treatment-resistant depression.
+- Psychedelics (like psilocybin, MDMA, and ibogaine) promote neuroplasticity by temporarily reducing rigid network constraints ('untethering') and increasing global brain connectivity, allowing for therapeutic cognitive reframing.
+- The evolution of psychiatry is described as moving from chemical imbalance models (Psychiatry 2.0) toward targetable, circuit-based neuromodulation and rapid-acting therapies (Psychiatry 3.0).
+- In addition to clinical interventions, Dr. Williams highlights behavioral protocols such as sleep regulation, light exposure, exercise, and training the brain-heart connection to support mental health.
+
+Tags: health, science
+
+## Humans split into separate groups for a million years, then merged - David Reich
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-03T21:44:41+00:00
+- URL: https://www.youtube.com/shorts/Vg4QR8KsTgA
+
+Geneticist David Reich discusses genomic research showing that modern human ancestors were not a single homogeneous population. Instead, the lineages split into separate groups more than a million years ago, evolved in isolation, and merged back together in a remixture event a few hundred thousand years ago to form the ancestors of anatomically modern humans.
+
+Key points:
+- Analysis of modern human genomes, including African and non-African populations, is inconsistent with a single, homogeneous ancestral population.
+- Ancestral human lineages split into separate, deeply divergent groups well over a million years ago.
+- These separate groups evolved in relative isolation from each other for a vast period of time.
+- Roughly a few hundred thousand years ago, these divergent lineages came back together in a major remixture event.
+- This merging and remixture event ultimately formed the population ancestral to all anatomically modern humans.
+
+Tags: ai, interviews, genetics, human evolution, anthropology
+
 ## It's time to fly | Codex
 
 - Channel: OpenAI
@@ -15,6 +220,38 @@ Key points:
 - Aligns with a broader marketing and update campaign highlighting Codex's evolution from code completion to a comprehensive agentic software development tool.
 
 Tags: ai, research, codex, openai, teaser
+
+## Scott & Mark Learn To...Double-Check References
+
+- Channel: Scott Hanselman
+- Published: 2026-06-03T16:30:03+00:00
+- URL: https://www.youtube.com/shorts/iYGU0QEtPqQ
+
+In this video, Scott Hanselman and Mark Russinovich discuss the growing issue of hallucinated references in AI-driven research. Drawing from Mark's analysis of thousands of conference submissions, they caution against 'cognitive surrender' and emphasize the critical necessity of verifying all AI-generated citations.
+
+Key points:
+- Scott Hanselman and Mark Russinovich address the increasing prevalence of AI models hallucinating (fabricating) academic and professional references.
+- Mark Russinovich shares findings from scanning thousands of conference submissions, revealing widespread inaccuracies and non-existent citations.
+- The hosts discuss 'cognitive surrender,' describing it as the dangerous tendency of users to blindly trust and accept AI outputs without critical evaluation.
+- They emphasize that maintaining expertise, accountability, and the habit of double-checking references are essential to preserving quality standards in AI-assisted work.
+
+Tags: dotnet, software, ai, podcast, hallucinations
+
+## Uric Acid: early marker of disease
+
+- Channel: Leonid Kim MD
+- Published: 2026-06-03T16:00:24+00:00
+- URL: https://www.youtube.com/shorts/-Zfk8qDMA-I
+
+In this video, Dr. Leonid Kim MD discusses the clinical significance of uric acid levels beyond their association with gout. He explains that elevated uric acid acts as an early marker for insulin resistance, high blood pressure, heart disease, and fatty liver. Dr. Kim recommends that even healthy individuals monitor their uric acid levels at least annually, and those with metabolic or cardiovascular conditions do so more frequently, as it can highlight issues before they manifest in other common blood tests.
+
+Key points:
+- Uric acid is typically only checked during gout flare-ups, but it is a valuable broad indicator of metabolic and cardiovascular health.
+- Elevated uric acid levels serve as an early marker for conditions such as insulin resistance (in both diabetic and non-diabetic individuals), high blood pressure, heart disease, and fatty liver.
+- Uric acid levels should be checked at least once a year, even for healthy individuals, to identify potential metabolic and cardiovascular issues before they show up in standard lab tests like hemoglobin A1C or fasting insulin.
+- More frequent monitoring of uric acid is recommended for individuals who have already been diagnosed with metabolic or cardiovascular diseases.
+
+Tags: health, medicine
 
 ## Home Assistant 2026.6: Small Changes, Big Relief
 
