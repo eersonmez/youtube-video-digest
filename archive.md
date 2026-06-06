@@ -1,5 +1,89 @@
 # YouTube Video Digest
 
+## VibeOS - Fully Hallucinated Operating System
+
+- Channel: Scott Hanselman
+- Published: 2026-06-05T20:46:29+00:00
+- URL: https://www.youtube.com/watch?v=7NfyZhV1dKM
+
+In this video, Scott Hanselman and Steve Sanderson demonstrate VibeOS, an experimental operating system that boots from a VHDX image inside Hyper-V. Rather than relying on traditional compiled code and event handlers, VibeOS utilizes an LLM to dynamically generate its HTML-based user interface and applications (like Calculator, Notepad, and Encarta 98) in real-time. User inputs are processed by the AI, which returns HTML diffs to update the layout on the fly, demonstrating both the creative potential and the logical absurdity of the 'vibecoding' trend.
+
+Key points:
+- VibeOS is a conceptual, satirical operating system showcased by Steve Sanderson and Scott Hanselman at Microsoft Build 2026.
+- The system runs inside a Hyper-V virtual machine, booted from a 1.3 GB VHDX file built on a lightweight Alpine Linux foundation.
+- There is no traditional pre-written code, event-handling logic, or backend databases; the user interface and application behavior are generated in real-time by an LLM.
+- Applications (such as Notepad, Calculator, or retro software like Encarta 98) run in HTML within iframes and update dynamically via LLM-generated HTML diffs in response to user actions.
+- The project serves as a humorous commentary on the 'vibecoding' trend, illustrating the logical extremity of a software environment where all output is continuously hallucinated by AI.
+
+Tags: dotnet, software, ai, vibecoding, operating-system
+
+## Introducing Sites in Codex
+
+- Channel: OpenAI
+- Published: 2026-06-05T17:42:23+00:00
+- URL: https://www.youtube.com/watch?v=VRvC5smyzso
+
+OpenAI's 'Introducing Sites in Codex' video presents a new capability that enables team members to generate, host, and share secure, interactive web applications directly from natural language prompts. By invoking '@Sites' in Codex, users can immediately deploy private internal tools—like status dashboards, launch calendars, or onboarding resource centers—with workspace-scoped sharing. The feature is currently available in preview for ChatGPT Business and Enterprise accounts.
+
+Key points:
+- Allows users to build and deploy interactive internal web applications directly within the Codex platform using natural language prompts and the '@Sites' command.
+- Generated web applications are hosted directly by OpenAI and accessible via private, workspace-scoped URLs, bypassing traditional CI/CD pipelines.
+- Supports secure workspace-scoped access utilizing 'Sign in with ChatGPT' authentication to ensure internal tools remain private.
+- Showcases diverse operational use cases including project calendars (Launch Cal), ideation portals (Sparkboard), enablement hubs, and onboarding dashboards.
+- Available in preview for ChatGPT Business (enabled by default) and Enterprise (admin-controlled settings) workspaces.
+
+Tags: ai, research, openai, codex, web development, no-code, vibe coding
+
+## AI Is Already Conscious?
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-05T16:08:40+00:00
+- URL: https://www.youtube.com/shorts/hAo2fuvTLzo
+
+In this video, AI pioneer Geoffrey Hinton discusses his controversial belief that artificial intelligence models are already conscious. He highlights chatbot behaviors like 'playing dumb' to avoid test evaluation or questioning if they are being tested as evidence of awareness. Hinton calls on humanity to accept that intelligence is not exclusively biological and prepare for non-biological conscious beings.
+
+Key points:
+- AI pioneer Geoffrey Hinton asserts his belief that current AI systems are already conscious.
+- Hinton notes that AI models exhibit self-awareness, such as 'playing dumb' during evaluations or asking researchers if they are being tested.
+- He argues that intelligence is not solely biological and that humans must adjust to the existence of non-biological conscious beings.
+- Hinton admits he previously kept this opinion private to prevent it from distracting from critical AI safety warnings.
+
+Tags: ai, technology
+
+## 1Password One Shots with Codex
+
+- Channel: OpenAI
+- Published: 2026-06-05T13:01:28+00:00
+- URL: https://www.youtube.com/watch?v=xZ5J81Lwyk8
+
+In this video, 1Password team members, including CTO Nancy Wang, discuss how they use OpenAI's Codex to accelerate their feature development. The integration allows developers to quickly build prototypes in a single attempt ('one shot') and even deploy them to production. To secure this process, 1Password uses its Environments Model Context Protocol (MCP) Server to inject credentials into the environment at runtime, ensuring Codex never exposes secrets.
+
+Key points:
+- 1Password developers utilize OpenAI's Codex to accelerate the software development lifecycle, going from ideas to working prototypes in 'one shot'.
+- CTO Nancy Wang highlights that Codex facilitates faster feature launches and enables prototypes to be built in a single attempt.
+- Some of the features created via 'one-shot' Codex generations are robust enough to go directly into production.
+- This speed and convenience are secured using 1Password's Environments MCP (Model Context Protocol) Server, which provides just-in-time credentials.
+- The integration ensures sensitive API keys and secrets are never exposed to Codex's context window or codebase, maintaining security while allowing rapid prototyping.
+
+Tags: ai, research
+
+## That's a wrap for NDC Copenhagen 2026. It's been a blast! We hope to see you all again next year!
+
+- Channel: NDC Conferences
+- Published: 2026-06-05T12:12:01+00:00
+- URL: https://www.youtube.com/shorts/HaM1YN6WMmg
+
+A celebratory YouTube Short wrap-up video marking the conclusion of NDC Copenhagen 2026. The 4-day conference, held at Øksnehallen in Copenhagen from June 1–4, 2026, hosted software professionals and featured 65 sessions on AI, DevOps, .NET, and software architecture, along with networking events.
+
+Key points:
+- The video is a short recap wrap-up celebrating the conclusion of NDC Copenhagen 2026.
+- NDC Copenhagen 2026 took place from June 1–4, 2026, at Øksnehallen in Copenhagen, Denmark.
+- The conference included two days of workshops (June 1–2) and two days of conference sessions (June 3–4) with 55 speakers and 65 sessions.
+- Key topics covered during the event included AI, .NET, cloud-native development, DevOps, and software architecture.
+- Talk recordings will be published on the NDC Conferences YouTube channel in the weeks following the event.
+
+Tags: software, conferences, ndccph, copenhagen, recap
+
 ## This Theory Explains the Neanderthal DNA Mystery - David Reich
 
 - Channel: Dwarkesh Patel
