@@ -1,5 +1,22 @@
 # YouTube Video Digest
 
+## The one sentence that opened up the universe for a stranger - Adam Brown
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-07T21:44:42+00:00
+- URL: https://www.youtube.com/shorts/U8oM9ggxaxg
+
+Physicist Adam Brown shares a memorable story from hitchhiking in Wyoming, where he was picked up by a successful cowboy. When explaining his cosmology work failed to connect, Brown told him that the stars are just like the sun, only much further away. This simple fact completely blew the cowboy's mind, leading him to call his wife in excitement, take Brown to a gun store, and buy him lunch.
+
+Key points:
+- While hitchhiking in Wyoming, theoretical physicist Adam Brown was picked up by a successful rancher/cowboy driving a fancy truck.
+- When asked about his work, Brown struggled to explain cosmology until they discussed the stars.
+- Brown shared the simple fact: 'the stars in the sky are just like the sun, only much further away.'
+- This was a fact the 50-year-old cowboy had never encountered, and it completely blew his mind and reoriented his view of the universe's scale.
+- Blown away by the revelation, the cowboy called his wife to tell her, took Brown to a gun store, and bought him lunch.
+
+Tags: ai, interviews, physics, hitchhiking, cosmology, anecdote
+
 ## OpenAI Investor Innovation Day
 
 - Channel: OpenAI
