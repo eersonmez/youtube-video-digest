@@ -1,5 +1,210 @@
 # YouTube Video Digest
 
+## Intelligence At Work - Enterprise Readiness
+
+- Channel: OpenAI
+- Published: 2026-06-08T21:51:05+00:00
+- URL: https://www.youtube.com/watch?v=gRSzTChV_bk
+
+This video details OpenAI's enterprise-focused 'Intelligence at Work' initiative, highlighting the transition of Codex into ChatGPT to serve as a proactive AI teammate. Key features demonstrated include role-specific plugins for business workflows, Codex Sites for launching internal apps via natural language, and document annotations for localized editing. The update emphasizes security, scalability, and seamless integration into enterprise applications to automate complex operational tasks.
+
+Key points:
+- OpenAI transitions its Codex model from a developer-focused coding assistant into an enterprise-wide knowledge work platform.
+- Introduction of role-specific Codex plugins covering key business areas like sales, data analytics, creative production, product design, and finance.
+- Unveiling of 'Codex Sites' to allow users to generate, host, and deploy internal dashboards and business tools using natural language.
+- Introduction of 'Annotations' for in-place localized document editing, review, and tracking sources across enterprise files.
+- Integration of Codex capabilities directly into ChatGPT on mobile, desktop, and web, acting as a single entry point for enterprise AI agents.
+- Focus on proactive AI agents acting as colleagues rather than passive chatbots, prioritizing security, data privacy, and governance.
+
+Tags: ai, research, enterprise, codex, chatgpt
+
+## Palo Alto Networks Moves Faster with GPT-5.5
+
+- Channel: OpenAI
+- Published: 2026-06-08T18:06:21+00:00
+- URL: https://www.youtube.com/watch?v=KWAE5G7nF8Q
+
+The video showcases how Palo Alto Networks uses OpenAI's GPT-5.5 model to speed up their security analyst workflows. It explains how the model's parallel tool execution, context retention, and token efficiency enable security teams to rapidly resolve complex, open-ended threats and report vulnerabilities.
+
+Key points:
+- Palo Alto Networks has integrated OpenAI's GPT-5.5 (specifically the GPT-5.5-Cyber variant) into their cybersecurity operations.
+- Gunjan Patel, Senior Director of Product Management, highlights that the model's ability to execute tools in parallel and consider multiple angles without losing context dramatically accelerates security workflows.
+- The model delivers high-quality analysis with improved token efficiency, allowing security analysts to receive actionable information faster.
+- By facilitating complex, open-ended problem-solving, GPT-5.5 helps security teams find critical threats ('needles in the haystack') and reduce exposures more rapidly.
+
+Tags: ai, research, cybersecurity, gpt-5.5, openai
+
+## Codex Unlocks Next Level Intelligence for Balyasny Asset Management
+
+- Channel: OpenAI
+- Published: 2026-06-08T14:38:03+00:00
+- URL: https://www.youtube.com/watch?v=m1PV1a9BWao
+
+This video highlights OpenAI's collaboration with Balyasny Asset Management (BAM) to build a proprietary, agent-based AI research engine. By employing advanced reasoning models, BAM has successfully scaled specialized AI agents to 95% of its investment teams, allowing analysts to parse complex market data and compress research times from days to hours.
+
+Key points:
+- Balyasny Asset Management (BAM) partnered with OpenAI as a design collaborator to build a custom, agent-based AI research platform.
+- The platform leverages OpenAI's reasoning models as a central layer to ingest, synthesize, and analyze massive volumes of structured and unstructured financial data.
+- BAM achieved roughly 95% internal adoption across its 180 investment teams, integrating specialized AI agents into day-to-day decision-making workflows.
+- The system dramatically compresses research timelines, reducing workflows that once took days down to hours (e.g., central bank speech analysis time cut from two days to 30 minutes).
+- To deploy the tools safely, Balyasny established a rigorous internal evaluation pipeline checking models across 12+ dimensions, including numerical reasoning and hallucination reduction.
+
+Tags: ai, research, finance, openai, codex, balyasny-asset-management
+
+## Eating for Better Sleep & Foods that Improve Metabolic Health | Dr. Marie-Pierre St-Onge
+
+- Channel: Andrew Huberman
+- Published: 2026-06-08T12:00:22+00:00
+- URL: https://www.youtube.com/watch?v=jjaFnKtytqI
+
+In this Huberman Lab episode, Dr. Marie-Pierre St-Onge explains the complex connection between sleep and diet. She describes how sleep deprivation increases appetite hormones and leads to weight gain, and outlines how specific dietary adjustments—such as incorporating fiber, tryptophan, and omega-3s while reducing processed foods and saturated fats—can enhance sleep. Additionally, she discusses the importance of aligning meal timing with circadian biology to optimize metabolism.
+
+Key points:
+- Nutrition and sleep have a bidirectional relationship: nutrition affects sleep quality, and sleep quality directly impacts metabolism, cardiovascular health, and weight regulation.
+- Moderate sleep loss impairs appetite and hunger hormones, leading to increased calorie intake and weight gain without conscious effort.
+- To support sleep quality, diets should be high in fiber, micronutrients, and phytochemicals, and low in saturated fats, sodium, and sugars.
+- Specific beneficial foods include tryptophan-rich proteins (turkey, tofu, clams), omega-3 fatty acids (salmon, chia seeds), complex carbohydrates (oats, buckwheat), and spices like turmeric and ginger.
+- Meal timing is crucial; eating in alignment with circadian rhythms (such as eating earlier in the day and restricting the feeding window) supports metabolic health and fat burning.
+- Dietary patterns like the Mediterranean and DASH diets are highly recommended frameworks for improving sleep and long-term cardiometabolic health.
+
+Tags: health, science
+
+## OpenAI on OpenAI: Stacie Faggioli, Business Finance Officer Applications, OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:39+00:00
+- URL: https://www.youtube.com/watch?v=1NtS2KdnDok
+
+Stacie Faggioli, Business Finance Officer for Applications at OpenAI, discusses how the company's finance team utilizes an 'AI-native' approach to modernize operations. By integrating ChatGPT, ChatGPT for Excel, Codex, and custom agents, OpenAI automates core tasks like financial modeling, forecasting, and risk analysis. This strategic shift enables the finance team to move beyond legacy manual processes to achieve greater operational output and real-time, data-driven forecasting without increasing headcount.
+
+Key points:
+- Advocates for a mindset shift to being 'AI-native by design,' where AI is built into finance workflows from the ground up instead of just augmenting legacy processes.
+- Aims to achieve greater operational leverage, increasing output and efficiency without growing headcount proportionally.
+- Highlights internal use cases of OpenAI tools like ChatGPT, ChatGPT for Excel, Codex, and custom agents to handle financial modeling, risk assessments, and financial projections.
+- Enables strategic finance teams to move away from manually intensive, spreadsheet-heavy tasks toward more real-time, data-driven planning and forecasting.
+- Forms part of the 'OpenAI on OpenAI' series, illustrating how the company operationalizes its own enterprise AI technology to scale its business applications.
+
+Tags: ai, research, finance, openai, business-operations
+
+## Operationalizing AI in workflows: Lee Spacagna, Solutions Engineer, OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:21+00:00
+- URL: https://www.youtube.com/watch?v=fAxlEcXiSts
+
+At the OpenAI Financial Services Summit on June 8, 2026, OpenAI Solutions Engineer Lee Spacagna presented 'Operationalizing AI in workflows'. He proposed moving beyond traditional conversational chatbots to embedding AI agents directly within core business systems (like Teams, Outlook, SharePoint, and Salesforce). This shift allows agents to handle multi-step workflows, manage context, and reduce the administrative coordination tax, while meeting strict governance and compliance standards required by sectors like financial services.
+
+Key points:
+- Shift from Chatbots to Agents: Shifting the enterprise AI focus from standalone conversational assistants to integrating AI agents directly into the 'machinery' of office work.
+- Agent-Led Workflows: Shifting from human-led AI assistance (where a person prompts, reviews, and edits) to agent-led workflows, where agents proactively monitor communication, prepare information, and connect context across systems, only involving humans for final decisions.
+- Enterprise Integration: Connecting AI agents to standard enterprise systems (such as Microsoft Outlook, Microsoft Teams, SharePoint, and Salesforce) to execute multi-step business processes.
+- Addressing Regulated Industries: Highvaluing secure, governable, and compliant AI agents for sensitive roles in sectors like financial services (e.g., CFO chiefs of staff and Anti-Money Laundering investigation analysts).
+- Reducing Coordination Tax: Automating the connective tissue and coordination tax between office applications, reducing the need for manual data transfer and reconciliation.
+
+Tags: ai, research, enterprise-ai, agents, workflows, financial-services
+
+## Frontier Intelligence & Financial Services: Katy Elkin, GTM Lead, OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:20+00:00
+- URL: https://www.youtube.com/watch?v=ykNmTvRcqPQ
+
+In this presentation, Katy Elkin (GTM Lead for Financial Services at OpenAI) discusses the application of frontier intelligence to financial services. Focusing on workflow automation, productivity enhancement, and AI-native consumer products, she outlines the roles of GPT-5.5 and ChatGPT Enterprise in modern banking. Key examples include deployments at NatWest and CBA, along with new security programs like the Trusted Access Program for infrastructure red-teaming.
+
+Key points:
+- OpenAI's framework for AI integration in financial services is structured around three strategic pillars: transforming workflows, amplifying workforce productivity, and building AI-native customer products.
+- The presentation introduces GPT-5.5 as a state-of-the-art model designed to execute complex professional financial tasks, analysis, and coding.
+- Real-world deployments are showcased, including Commonwealth Bank of Australia (CBA) rolling out ChatGPT Enterprise to 50,000 employees and NatWest boosting customer satisfaction scores by over 150%.
+- New enterprise security and governance initiatives are discussed, highlighting European inference residency and the launch of the 'Trusted Access Program' which grants access to a specialized GPT-5.5 cyber model for infrastructure red-teaming.
+- OpenAI outlines its vision for an 'Enterprise Intelligence Platform' designed to help financial institutions safely govern, monitor, and scale AI workloads.
+
+Tags: ai, research
+
+## Customer Ignite Talk: Maurizio Poletto (Chief Platform Officer & COO, Erste Group) & OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:19+00:00
+- URL: https://www.youtube.com/watch?v=gli3gNI2saU
+
+In this OpenAI Customer Ignite Talk, Maurizio Poletto, Chief Platform Officer & COO of Erste Group, describes the bank's strategic transition from monolithic systems to a platform-based AI infrastructure. This model enables Erste Group to scale AI experiments into production efficiently, enhancing their George digital banking platform and back-office operations while complying with European cloud sovereignty and banking data security regulations.
+
+Key points:
+- Maurizio Poletto, Chief Platform Officer & COO of Erste Group, discusses the bank's digital transformation journey and how they are integrating AI into their operations.
+- Erste Group transitioned from a siloed, monolithic IT structure to a centralized, platform-based AI strategy to allow more agile development and deployment of AI features.
+- The primary objectives of the AI implementation are to enhance the digital customer banking experience (specifically for their George platform) and to improve internal operational efficiency.
+- Poletto emphasizes the importance of balancing innovative global AI platforms with data security, regulatory compliance, and cloud sovereignty in the European financial sector.
+
+Tags: ai, research, digital banking, fintech, platform strategy, customer experience
+
+## Customer Ignite Talk: Emily Prince (Group Head of AI, LSEG) & OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:10+00:00
+- URL: https://www.youtube.com/watch?v=LJKzZAH0bEw
+
+In this Customer Ignite Talk, Emily Prince, Group Head of AI at London Stock Exchange Group (LSEG), discusses how the organization is driving AI-led transformation. In partnership with OpenAI, LSEG is utilizing ChatGPT Enterprise internally to boost productivity and has built a Model Context Protocol (MCP) connector to securely bring LSEG's licensed financial data, news, and analytics directly into ChatGPT. The talk outlines how LSEG balances fast iteration cycles with strict governance to build 'Trusted Agents' for financial professionals.
+
+Key points:
+- Details LSEG's 'LSEG Everywhere' strategy, aimed at embedding trusted financial data and analytics directly into customer workflows.
+- Highlights LSEG's internal deployment of ChatGPT Enterprise to over 4,000 employees to boost productivity and accelerate AI solutions.
+- Focuses on the collaboration with OpenAI to create a Model Context Protocol (MCP) connector, enabling licensed users to access LSEG financial data and news directly inside ChatGPT.
+- Emphasizes the critical importance of grounding AI in deterministic, finance-grade data with clear provenance to create 'Trusted Agents'.
+- Highlights the operational shift from traditional long-term development to agile, fast-paced iteration and experimentation.
+- Underlines the balance between rapid deployment and strict governance/Responsible AI principles in regulated financial environments.
+
+Tags: ai, research, finance, mcp
+
+## Win through AI powered products: Conor Spicer, Solutions Engineer, OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:05+00:00
+- URL: https://www.youtube.com/watch?v=re-18gil_ec
+
+Conor Spicer, Solutions Engineer at OpenAI, presents strategies for leveraging AI tools like Codex to transform the software development lifecycle. He demonstrates a shift toward agentic engineering, showing how developers can steer AI agents to inspect repositories, write front-end and back-end code, and run tests directly in the workspace. By automating routine engineering workflows, organizations can improve productivity and security, allowing engineering teams to focus on building high-value, AI-native customer products.
+
+Key points:
+- Transition to agentic engineering where developers act as high-level planners and validators while AI agents inspect codebases and implement full-stack features.
+- Elimination of cross-team coordination bottlenecks by enabling developers to run ad-hoc tasks and extract codebase summaries instantly, even during live meetings.
+- Seamless workspace integration that allows developers to steer AI agents, run tests, and validate code without switching between multiple external tools.
+- Scaling engineering best practices across organizations using template solutions and custom automations, such as automated weekly engineering summaries.
+- Strategic leverage of AI to accelerate development speed, improve security, and free engineers to focus on architectural decisions and customer value.
+
+Tags: ai, research, agentic engineering, software development, codex
+
+## Multiplying workforce impact: Stephanie Anani, Solutions Engineer, OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:01+00:00
+- URL: https://www.youtube.com/watch?v=m2TV8slGQKc
+
+Stephanie Anani, a Solutions Engineer at OpenAI, presents on how AI acts as a force multiplier for the workforce. She details how businesses can integrate AI to handle repetitive tasks and details five key dimensions of workforce impact. She demonstrates an end-to-end workflow transformation in financial services using GPT-5.5, OpenAI Bankerbench, and features like extended thinking to automate complex tasks and generate strategic decision deliverables.
+
+Key points:
+- AI serves as a force multiplier by automating repetitive, manual tasks such as searching policies, reconciling complex data, and formatting reports, freeing workers for high-value strategic work.
+- The presentation outlines five dimensions of workforce impact: more context, deep research, shareable skills, intelligence everywhere, and governance and control.
+- 75% of ChatGPT Enterprise users report being able to perform tasks with AI that they previously could not do, demonstrating capability expansion beyond simple speed increases.
+- The presentation highlights applications in financial services using GPT-5.5 and the 'OpenAI Bankerbench' tool, which evaluates model performance on financial sector tasks.
+- Anani demonstrates a complete workflow transformation from trusted context and deep research, through financial modeling, to generating Investment Committee presentations using extended thinking.
+
+Tags: ai, research, workforce-impact, financial-services, GPT-5.5, OpenAI-Bankerbench
+
+## Customer Ignite Talk: Ravneet Shah (CTO, Allica Bank) & OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-08T08:30:01+00:00
+- URL: https://www.youtube.com/watch?v=pcAtJDBO3hw
+
+In this OpenAI Customer Ignite Talk, Ravneet Shah, CTO of Allica Bank, shares the bank's journey of integrating AI. He explains Allica's transition to small 'squadlets' using an AI-optimized stack, the application of deterministic and non-deterministic AI agents in business lending to simplify credit assessment, and the bank's focus on augmenting human relationship managers. The talk highlights Allica's collaboration with OpenAI to scale senior engineering expertise and deliver faster value under robust governance.
+
+Key points:
+- Allica Bank has significantly evolved its AI strategy since its 2019 inception to integrate AI-first models across its business operations.
+- The bank restructured its engineering and product teams from large agile squads (~10 people) to smaller, highly autonomous 'squadlets' (ranging from 2 to 6 people) to maximize development speed and reduce hand-offs.
+- Allica Bank utilizes a combination of deterministic and non-deterministic AI agents to dramatically simplify and accelerate complex loan underwriting and credit assessment processes.
+- Instead of replacing human relationship managers, Allica Bank uses AI to augment them, providing deeper customer insights to deliver higher-quality customer experiences and faster value.
+- The partnership with OpenAI focuses on establishing fast feedback loops to deploy more cost-efficient, high-performance models while maintaining strict compliance, risk, and security standards.
+
+Tags: ai, research, fintech, allica bank, openai, squadlets, lending
+
 ## The one sentence that opened up the universe for a stranger - Adam Brown
 
 - Channel: Dwarkesh Patel
