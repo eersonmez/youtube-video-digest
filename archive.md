@@ -1,5 +1,90 @@
 # YouTube Video Digest
 
+## Codex for Finance: Faster Reports, Dashboards, and Decisions
+
+- Channel: OpenAI
+- Published: 2026-06-09T21:42:40+00:00
+- URL: https://www.youtube.com/watch?v=IEYU-CgLo3E
+
+OpenAI's 'Codex for Finance' is an initiative and suite of tools designed to transition Codex from a coding assistant into a broader enterprise solution for financial professionals. The system automates monthly business review narratives, flags discrepancies, and cleans up complex financial models by checking formulas and links. It also accelerates variance analysis, executive reporting, and scenario planning, integrating directly with existing enterprise software stacks.
+
+Key points:
+- Introduction of Codex for Finance to automate and accelerate complex corporate finance workflows.
+- Automation of Monthly Business Review (MBR) narratives by analyzing variances and summarizing forecast changes.
+- Detection and cleanup of financial model issues, including formula errors, broken links, and structural problems.
+- Streamlining of recurring executive and board reporting by integrating KPI dashboards and forecast models.
+- Variance driver bridging to explain discrepancies across P&L, balance sheet, and cash flow statements.
+- Rapid scenario planning capabilities to evaluate base, upside, and downside forecasts and cash impacts.
+- Evolution of OpenAI's Codex into an enterprise operating environment featuring role-specific plugins.
+
+Tags: ai, research, finance, codex, enterprise
+
+## Codex for data science
+
+- Channel: OpenAI
+- Published: 2026-06-09T21:30:13+00:00
+- URL: https://www.youtube.com/watch?v=Lvk_VZOppIY
+
+This video introduces the modern, agentic capabilities of OpenAI Codex tailored for data science workflows. It demonstrates how Codex acts as a collaborative partner by automating data cleaning, exploratory data analysis, and the creation of reproducible python notebooks. The video also highlights new database and analytics platform integrations—such as Snowflake, Databricks, Hex, and Tableau—allowing analysts to query metrics and construct dashboards using natural language.
+
+Key points:
+- Evolution of Codex from a basic code-completion assistant to an autonomous, agentic partner capable of executing complex multi-step data science workflows.
+- Streamlining core data tasks such as importing, cleaning, merging datasets, and performing exploratory data analysis (EDA).
+- Direct integration with major enterprise platforms of the modern data stack, including Snowflake, Databricks, Hex, and Tableau, via specialized analytics plugins.
+- Automating the compilation of structured data deliverables, generating review-ready analysis briefs, KPI root-cause memos, and dashboard specifications.
+- Translating high-level natural language requests into reproducible Python scripts and interactive visualizations, freeing human data scientists to focus on pressure-testing assumptions and final recommendations.
+
+Tags: ai, research, data science, codex, openai, analytics, agents
+
+## What Codex Unlocks for Nextdoor
+
+- Channel: OpenAI
+- Published: 2026-06-09T20:39:20+00:00
+- URL: https://www.youtube.com/watch?v=evPsMeSiP_4
+
+In this video, Corey Dolphin, Head of Engineering at Nextdoor, explains how OpenAI's Codex has transformed their engineering workflow. He describes Codex as a reliable companion that helps engineers overcome technical hurdles, brainstorm solutions, and build and ship features significantly faster. As an example, a single engineer successfully leveraged Codex to quickly build and deploy Nextdoor's 'Opportunity Alerts' feature, connecting local home service professionals with customers across multiple platforms simultaneously.
+
+Key points:
+- OpenAI Codex acts as a reliable companion for Nextdoor engineers, helping them brainstorm solutions and overcome complex development blocks.
+- Codex enables individual engineers to build and deploy features across all Nextdoor platforms simultaneously, streamlining the path from concept to production.
+- Nextdoor Head of Engineering Corey Dolphin highlights 'Opportunity Alerts'—a feature connecting home service professionals with local customers—as a successful feature rapidly built and shipped by a single engineer using Codex.
+- Nextdoor, which serves over 105 million people across 350,000 neighborhoods globally, leverages Codex to let developers focus more on product innovation and user experience.
+
+Tags: ai, research
+
+## OpenAI's CFO Presents the Future of Finance with University of California’s Chief Investment Officer
+
+- Channel: OpenAI
+- Published: 2026-06-09T20:38:48+00:00
+- URL: https://www.youtube.com/watch?v=76ABuBGX4IY
+
+A fireside chat between OpenAI CFO Sarah Friar and University of California CIO Jagdeep Singh Bachher covering the impact of artificial intelligence on financial teams, institutional investing, and essential advice for navigating modern careers.
+
+Key points:
+- OpenAI CFO Sarah Friar and UC CIO Jagdeep Singh Bachher discuss how AI is transforming the finance sector, highlighting human-AI collaboration.
+- Friar shares how OpenAI's own finance team uses custom GPTs for tasks such as investor relations and audit support, allowing lean teams to expand capabilities.
+- Key skills emphasized for the future workforce include curiosity, adaptability, and kindness.
+- Bachher provides institutional insights from managing the UC investment portfolio, discussing investment in AI and balancing innovation with risk management.
+
+Tags: ai, research, finance, openai
+
+## Cut Your DEMENTIA Risk in HALF (What Actually Works)
+
+- Channel: Leonid Kim MD
+- Published: 2026-06-08T22:30:07+00:00
+- URL: https://www.youtube.com/watch?v=UaWxB8EyeYWA
+
+Dr. Leonid Kim, MD, presents evidence-based lifestyle strategies to reduce the risk of dementia. He focuses on the critical roles of maintaining vascular health, optimizing sleep to support the glymphatic system's toxin clearance, building cognitive reserve, and promoting BDNF for neurogenesis.
+
+Key points:
+- Lifestyle choices throughout life have a significant impact on dementia risk, meaning genetics are not the sole factor.
+- Vascular health is critical, as midlife hypertension can damage small blood vessels, leading to white matter lesions that slow communication in the brain.
+- The glymphatic system, which acts as the brain's cleaning system to clear toxins, is most active during deep, slow-wave sleep.
+- Building cognitive reserve through mentally challenging activities and physical exercise (such as racket sports) helps the brain adapt and grow.
+- Brain-Derived Neurotrophic Factor (BDNF) supports neuron survival, strengthens connections, and drives the creation of new brain cells in the hippocampus.
+
+Tags: health, medicine
+
 ## Intelligence At Work - Enterprise Readiness
 
 - Channel: OpenAI
@@ -221,6 +306,22 @@ Key points:
 - Blown away by the revelation, the cowboy called his wife to tell her, took Brown to a gun store, and bought him lunch.
 
 Tags: ai, interviews, physics, hitchhiking, cosmology, anecdote
+
+## Why Hinton's Biggest AI Prediction Failed!
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-07T16:27:23+00:00
+- URL: https://www.youtube.com/shorts/AhmfIqdQKYE
+
+In this video, AI pioneer Geoffrey Hinton reflects on his 2016 prediction that AI would replace radiologists within five years. He explains that the prediction failed because healthcare demand is elastic—meaning increased efficiency led to more scans rather than fewer jobs—and because he initially misunderstood the full breadth of a radiologist's responsibilities, which extend beyond scan reading to patient consultations and treatment planning.
+
+Key points:
+- Geoffrey Hinton admits his 2016 prediction that AI would replace radiologists within five years was incorrect.
+- The demand for healthcare is elastic; AI making scan interpretation faster and cheaper led to more scans being performed rather than fewer radiologists being employed.
+- Hinton acknowledges he misunderstood the full scope of a radiologist's job, which includes consulting with patients and discussing treatment plans, not just interpreting scans.
+- His prediction was biased by a former student who worked exclusively on scan interpretation.
+
+Tags: ai, technology
 
 ## OpenAI Investor Innovation Day
 
