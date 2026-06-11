@@ -1,5 +1,21 @@
 # YouTube Video Digest
 
+## Zendure SolarFlow 800 Pro: Was It Worth It?
+
+- Channel: BeardedTinker
+- Published: 2026-06-10T15:00:38+00:00
+- URL: https://www.youtube.com/watch?v=CFAhlM_lnS4
+
+A long-term, data-driven review of the Zendure SolarFlow 800 Pro balcony solar system. The video highlights that optimizing panel placement and using smart home automation to align energy demand with solar production is far more valuable than focusing solely on peak solar capacity.
+
+Key points:
+- Chasing theoretical peak solar production is less critical than understanding actual daily household consumption patterns and baseline loads.
+- Real-world daily power generation varies by weather: sunny days yield around 4.4 to 4.5 kWh, mixed days yield 2 to 3 kWh, and bad weather days drop below 1 kWh.
+- Physical installation conditions such as shading, panel orientation, and installation angle (e.g., 30 degrees) have a major impact on performance.
+- Smart home integration via Home Assistant is essential to synchronize high-energy appliance usage with peak solar generation periods.
+
+Tags: smart-home, home-assistant, solar-energy, balcony-solar, zendure
+
 ## Codex for Finance: Faster Reports, Dashboards, and Decisions
 
 - Channel: OpenAI
@@ -68,6 +84,76 @@ Key points:
 
 Tags: ai, research, finance, openai
 
+## .NET Data Community Standup: Temporal tables and constraints in SQL Server and PostgreSQL 18
+
+- Channel: dotnet
+- Published: 2026-06-09T19:10:49+00:00
+- URL: https://www.youtube.com/watch?v=BcbhBFm1MuU
+
+This upcoming .NET Data Community Standup session features Shay Rojansky and Jiri Cincura discussing and comparing temporal tables and constraints in SQL Server and PostgreSQL 18. They will explore how PostgreSQL 18's new temporal constraints differ from SQL Server's temporal tables, and examine two completely different paradigms for managing temporal data in databases.
+
+Key points:
+- The session covers temporal tables and constraints in SQL Server and PostgreSQL 18.
+- PostgreSQL 18 introduces new temporal constraint functionality.
+- While PostgreSQL 18's temporal constraints look similar to SQL Server's temporal tables, they are in reality quite different.
+- The presenters will dive into the details, compare the two systems, and discuss two different concepts of storing temporal data in databases.
+- The stream features Shay Rojansky and Jiri Cincura.
+
+Tags: dotnet, software, ef, efcore, data, temporal, sqlserver, postgres, demo, microsoft
+
+## .NET MAUI Community Standup: CoreCLR & Profiling your MAUI app
+
+- Channel: dotnet
+- Published: 2026-06-09T18:49:13+00:00
+- URL: https://www.youtube.com/watch?v=F1isgO3XTbk
+
+In this .NET MAUI Community Standup, hosts David Ortinau and Gerald Versluis are joined by Šimon Rozsíval from the .NET MAUI team to discuss the transition of mobile platforms to CoreCLR in .NET 11. The session details how CoreCLR unifies mobile runtimes with desktop and backend workloads, providing performance benefits like tiered JIT, PGO, and NativeAOT foundation. Šimon presents the new 'maui profile' tool in MAUI Labs/DevFlow that simplifies profiling CPU, memory, and GC allocations on emulators and devices. The standup also covers the stable .NET MAUI 10.0.70 release and highlights from Microsoft Build 2026.
+
+Key points:
+- Introduction of the transition of .NET MAUI mobile platforms (Android, iOS, and Mac Catalyst) from the Mono runtime to the CoreCLR runtime starting in .NET 11.
+- Unification of the .NET ecosystem by aligning mobile platforms with the same runtime used by ASP.NET Core, Azure, and desktop workloads, offering tiered JIT, PGO, and NativeAOT support.
+- Introduction of the new 'maui profile' CLI command in the experimental MAUI Labs / DevFlow diagnostic toolkit, developed by guest Šimon Rozsíval, simplifying CPU, memory, and GC tracing on emulators and devices.
+- Streamlining of diagnostics in CoreCLR, making built-in diagnostics available by default and enabling developers to use standard CLI tools like 'dotnet-trace' and 'dotnet-gcdump'.
+- Highlights of the stable .NET MAUI 10.0.70 release which introduces 135 commits focusing on quality, stability, and performance fixes.
+- Recap of .NET sessions from Microsoft Build 2026 covering upcoming .NET 11 features, C# union types, and the roadmap for .NET MAUI.
+
+Tags: dotnet, software
+
+## On .NET Live - Demystifying Microsoft Agent Framework Middleware
+
+- Channel: dotnet
+- Published: 2026-06-09T18:23:05+00:00
+- URL: https://www.youtube.com/watch?v=v7VLSZqAssU
+
+An upcoming On .NET Live session where Daniel Costea explains how to use ChatClient and Agent middleware to transform basic .NET AI agents into production-ready systems. He explores common failure modes such as cost spikes, privacy leaks, and unsafe tool calls, and demonstrates how to apply the ASP.NET Core middleware pattern to layer in observability, safety, and cost control.
+
+Key points:
+- The Microsoft Agent Framework (MAF) is a framework designed to build, orchestrate, and deploy production-ready AI agents and multi-agent workflows.
+- Middleware serves as a critical component in the framework to intercept, inspect, and modify agent interactions at different stages.
+- Daniel Costea demonstrates how to address real-world failure modes (cost spikes, privacy leaks, and unsafe tool calls) by adding SharedFunction, Response, and FunctionCalling middleware.
+- The framework connects middleware concepts directly to the familiar ASP.NET Core middleware pattern, utilizing a pipeline pattern of ordered components.
+- The session features presenter Daniel Costea alongside hosts/co-hosts Katie Savage, Scott Addie, and Frank Boucher.
+
+Tags: dotnet, software, ai agents, middleware, microsoft agent framework
+
+## Introducing Claude Fable 5
+
+- Channel: Anthropic
+- Published: 2026-06-09T17:00:05+00:00
+- URL: https://www.youtube.com/watch?v=Y9Wz2PV404E
+
+This video introduces Claude Fable 5, the first model in Anthropic's new high-end 'Mythos-class' tier. Designed to surpass previous models in reasoning and long-horizon autonomy, Fable 5 can work on complex software engineering and research tasks for multiple days. The announcement covers its safety architecture, including a mechanism that routes sensitive queries to Claude Opus 4.8, and introduces the restricted, unsafeguarded Claude Mythos 5 for vetted partners. Fable 5 offers a 1M token context window and a 128k output limit, priced at $10/M input and $50/M output tokens.
+
+Key points:
+- Anthropic introduces Claude Fable 5, the first AI model under its new 'Mythos-class' tier, which sits above the 'Opus' class in capability.
+- The model is optimized for long-horizon autonomy, enabling it to plan, use tools, delegate tasks to sub-agents, and self-verify over multi-day projects.
+- Claude Fable 5 includes integrated safety classifiers; requests flagged as high-risk (e.g., offensive cybersecurity or sensitive chemistry/biology) fall back automatically to Claude Opus 4.8.
+- A restricted version without safety classifiers, Claude Mythos 5, is made available to vetted partners under 'Project Glasswing' for cybersecurity defense.
+- Both Fable 5 and Mythos 5 feature a 1-million-token context window and support up to 128,000 output tokens.
+- Pricing is set at $10 per million input tokens and $50 per million output tokens, with availability on API and cloud platforms.
+
+Tags: ai, research, anthropic, claude fable 5, mythos-class
+
 ## Cut Your DEMENTIA Risk in HALF (What Actually Works)
 
 - Channel: Leonid Kim MD
@@ -118,6 +204,39 @@ Key points:
 - By facilitating complex, open-ended problem-solving, GPT-5.5 helps security teams find critical threats ('needles in the haystack') and reduce exposures more rapidly.
 
 Tags: ai, research, cybersecurity, gpt-5.5, openai
+
+## Did Apple (Finally) Get AI Right At WWDC?, Anthropic’s Worry, Microsoft vs. OpenAI
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-08T16:00:06+00:00
+- URL: https://www.youtube.com/watch?v=ain0OoBx74A
+
+Host Alex Kantrowitz and guest Ranjan Roy discuss the tech landscape surrounding Apple's WWDC, evaluating if Apple's distribution-focused AI model will succeed. The episode also explores Anthropic's public concerns regarding recursive self-improvement in AI and the escalating competition between Microsoft and OpenAI.
+
+Key points:
+- Apple's WWDC Strategy: Evaluating Apple's approach of integrating third-party AI models (like Gemini) and focusing on on-device processing rather than building frontier models from scratch.
+- Anthropic's Worry: Discussing Anthropic's warnings about the safety risks of recursive self-improvement in AI, and whether this functions as a marketing angle or a genuine safety concern.
+- Microsoft vs. OpenAI: Analyzing the growing friction between the two partners as Microsoft moves to build its own in-house AI models (MAI) and OpenAI searches for alternative cloud platforms.
+- AI Distribution Platform: Noting how Apple positions its operating system and devices as a key gatekeeper and distributor of AI applications, maintaining the iPhone's centrality.
+
+Tags: ai, technology, apple, wwdc, anthropic, openai, microsoft
+
+## How A Beauty Company Built An AI Agent — With Rachel Williamson and Josh Siebert
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-08T15:00:24+00:00
+- URL: https://www.youtube.com/watch?v=NriS3aTPBRo
+
+In this episode of the Big Technology Podcast, host Alex Kantrowitz interviews Rachel Williamson (VP of People Strategy, Systems and Operations) and Josh Siebert (VP of AI Data and Enterprise Platforms) from Ulta Beauty. They discuss how the company partnered with ServiceNow to deploy an AI HR agent for its 65,000 employees. The conversation details how they balance automated self-service with human HR support, the importance of focusing on business outcomes over technology, and strategies for execution and change management.
+
+Key points:
+- Ulta Beauty partnered with ServiceNow to build and deploy an AI-powered HR platform to support their workforce of 65,000 associates.
+- The AI agent automates high-volume, low-complexity administrative and inquiry tasks, allowing HR staff to focus on high-touch, human-centric interactions.
+- The implementation follows a 'human-in-the-loop' philosophy, routing complex or sensitive associate concerns to human HR professionals.
+- The leaders advise that companies should avoid using AI just for its own sake, but rather treat it as an enabler for specific, well-defined business outcomes.
+- Successful execution depends on strong change management, early stakeholder identification, and starting with the end goal in mind.
+
+Tags: ai, technology
 
 ## Codex Unlocks Next Level Intelligence for Balyasny Asset Management
 
@@ -289,6 +408,23 @@ Key points:
 - The partnership with OpenAI focuses on establishing fast feedback loops to deploy more cost-efficient, high-performance models while maintaining strict compliance, risk, and security standards.
 
 Tags: ai, research, fintech, allica bank, openai, squadlets, lending
+
+## Did Google Just Fall Behind Again?, WWDC Preview, Anthropic Files To Go Public
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-08T02:56:16+00:00
+- URL: https://www.youtube.com/watch?v=o4pwkwg0zfk
+
+In this episode of the Big Technology Podcast, host Alex Kantrowitz and guest M.G. Siegler discuss the shifting dynamics in the tech sector. They examine if Google is losing its AI lead to competitors like Anthropic and OpenAI, evaluate the market impact of Anthropic's confidential IPO filing, preview Apple's WWDC strategy, and critique Meta's subscription plan.
+
+Key points:
+- Discussion on whether Google is falling behind in the AI race as rivals OpenAI and Anthropic advance with coding agents and 'super-apps'.
+- Analysis of Anthropic's confidential filing to go public, breaking during the recording, and its potential impact on OpenAI's valuation and IPO plans.
+- A preview of Apple's upcoming Worldwide Developers Conference (WWDC), including expectations around Siri's AI capabilities and rumors of a foldable iPhone.
+- Critique of Meta's current business model and messy subscription strategies.
+- Exploration of how AI agents could fundamentally reshape user interaction with browsers, email, and the web, posing a risk to Google's search-based business model.
+
+Tags: ai, technology
 
 ## The one sentence that opened up the universe for a stranger - Adam Brown
 
