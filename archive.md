@@ -1,5 +1,280 @@
 # YouTube Video Digest
 
+## Debug web apps with browser use in Codex
+
+- Channel: OpenAI
+- Published: 2026-06-12T00:15:38+00:00
+- URL: https://www.youtube.com/watch?v=bhgYFRZLyKI
+
+This video demonstrates the 'browser use' feature set in OpenAI Codex designed for web app debugging. It highlights two main mechanisms: a sandboxed in-app browser for local server previews, static files, and DOM inspection, and a Codex Chrome extension to access authenticated staging or SaaS environments. It also introduces visual comment annotations to easily communicate design/layout modifications to the AI agent.
+
+Key points:
+- Demonstrates the built-in in-app browser in Codex, accessed via shortcut or toolbar, for local development server preview and debugging.
+- Explains the Codex Chrome extension that links the AI to the user's actual authenticated Chrome session for workflows requiring login or session state.
+- Highlights autonomous browser interaction capabilities, including DOM inspection, element clicking, text input, and screenshot generation.
+- Showcases visual annotations (browser comments) where developers can comment directly on page elements to direct UI and layout fixes.
+- Details privacy and security controls, such as site allowlists/blocklists and sandboxed session isolation for public pages.
+
+Tags: ai, research, codex, debugging, browser-use
+
+## .NET AI Community Standup: Multi-Agent Apps with Aspire + MAF
+
+- Channel: dotnet
+- Published: 2026-06-12T00:08:35+00:00
+- URL: https://www.youtube.com/watch?v=uVDrweMmYMU
+
+An upcoming .NET AI Community Standup featuring Bruno Capuano and Tommaso Stocchi. The session covers building distributed multi-agent systems with .NET Aspire and the Microsoft Agent Framework (MAF), focusing on service composition, agent coordination, and Foundry-oriented scenarios, highlighted by a live ski resort demo.
+
+Key points:
+- Exploring how to build distributed multi-agent systems using .NET Aspire and the Microsoft Agent Framework (MAF).
+- Examining how agentic applications are composed across services and coordinate in a distributed architecture.
+- Showcasing a live ski resort demo where multiple agents collaborate, exchange context, and drive intelligent outcomes.
+- Discussing how these patterns shape Foundry-oriented scenarios.
+- Featuring presenters Bruno Capuano and Tommaso Stocchi.
+
+Tags: dotnet, dotnetdeveloper, multiagentapps, aspire, MAF, developer, ai, microsoft, developercommunity
+
+## ASP.NET Community Standup: Boosting Razor productivity
+
+- Channel: dotnet
+- Published: 2026-06-11T23:53:11+00:00
+- URL: https://www.youtube.com/watch?v=SYwZK7Al0X4
+
+This upcoming ASP.NET Community Standup focuses on boosting Razor developer productivity. Presenters Daniel Roth, Devin Breshears, David Wengier, and Chris Sienkiewicz will showcase the latest Razor editor and tooling improvements. The standup will feature live demos and team insights explaining how these enhancements streamline development workflows, reduce friction, and improve editing reliability in ASP.NET Core apps.
+
+Key points:
+- This is an upcoming live stream scheduled to broadcast on June 16, 2026, at 11:00 PM UTC (4:00 PM PDT).
+- The session focuses on boosting developer productivity when writing Razor code in ASP.NET Core applications.
+- The team will highlight recent Razor editor and tooling improvements in Visual Studio / .NET designed to reduce friction and improve reliability.
+- The broadcast will feature live demonstrations of these tooling changes in real development workflows.
+- Presenters include Daniel Roth, Devin Breshears, David Wengier, and Chris Sienkiewicz.
+
+Tags: dotnet, software
+
+## Cloud Commitments Without the Lock-In with Archera's Aran Khanna
+
+- Channel: Scott Hanselman
+- Published: 2026-06-11T23:37:06+00:00
+- URL: https://www.youtube.com/watch?v=7F984IcA8c0
+
+Scott Hanselman sits down with Aran Khanna, co-founder and CEO of Archera, to discuss 'Insured Commitments'—a financial strategy designed to give organizations long-term cloud discounts without the typical 1-to-3-year vendor lock-in. They detail the friction points in traditional cloud reservation options, how Archera's platform provides flexible 30-day commitments, and how the GPU demand driven by AI is reshaping capacity planning and the FinOps landscape.
+
+Key points:
+- Aran Khanna, co-founder and CEO of Archera and former AWS SageMaker team member, introduces the concept of 'Insured Commitments' to manage cloud costs.
+- Traditional cloud purchasing forces companies into rigid 1- or 3-year commitments to receive discounts, introducing risk if their infrastructure needs change.
+- Archera enables organizations to get long-term commitment discounts with terms as short as 30 days by insuring and underwriting the risk of under-utilization.
+- The rise of AI workloads and GPU scarcity is shifting the FinOps focus from purely optimizing cost to securing and guaranteeing resource capacity.
+- The discussion outlines how the complexity of cloud pricing models makes automated, flexible tooling necessary for modern engineering teams.
+
+Tags: dotnet, software, cloud computing, finops, archera, aws
+
+## Codex for Creatives: Riff, Design, Ship
+
+- Channel: OpenAI
+- Published: 2026-06-11T21:28:51+00:00
+- URL: https://www.youtube.com/watch?v=K6wxZOqD-HY
+
+In this video, OpenAI Creative Specialist Chad Nelson demonstrates how Codex can be leveraged in creative design workflows rather than just software engineering. He showcases a case study where a creative director must build a campaign proposal in a single day. By feeding Codex brand guidelines, fonts, and emotional cues, Nelson rapidly visualizes ideas and iterates on campaign concepts, showing how AI can act as a collaborative partner in design, advertising, and branding.
+
+Key points:
+- Chad Nelson, Creative Specialist at OpenAI, demonstrates how Codex can serve as an AI-powered collaborator or 'art director' for creative professionals.
+- Shows a practical scenario of a creative director facing a tight one-day deadline to complete a campaign proposal for a client.
+- Illustrates how Codex can interpret design fundamentals—including brand style guides, font preferences, visual composition, and emotional cues—to generate ideas.
+- Promotes the 'Riff, Design, Ship' methodology, showing how non-engineers can use AI to rapidly iterate, refine concepts, and deliver final creative products.
+- Highlights the shift of Codex beyond traditional software engineering into branding, design, and advertising workflows.
+
+Tags: ai, research, codex, creative, design, openai
+
+## Life Near OpenAI's Stargate Project
+
+- Channel: OpenAI
+- Published: 2026-06-11T20:58:53+00:00
+- URL: https://www.youtube.com/watch?v=6QoMzZ8FdTA
+
+This short documentary focuses on the local impact of OpenAI's Stargate data center project on Buffalo Gap, Texas. It features interviews with residents and local business owners, including Tom and Lisa Perini of the historic Perini Ranch Steakhouse, highlighting the economic benefits (such as a 20% customer increase) and new opportunities for the younger generation. The video shows how host communities are balancing global AI infrastructure development with the preservation of their traditional ranching culture and local lifestyle.
+
+Key points:
+- Explores the economic and cultural impact of OpenAI's flagship Stargate AI data center project in Abilene, Texas, on the neighboring town of Buffalo Gap.
+- Features Tom and Lisa Perini, owners of the 43-year-old Perini Ranch Steakhouse, who report a 20% customer increase driven by data center workers and global visitors.
+- Discusses how the massive infrastructure investment provides new employment options, enabling young people to return to the area for high-quality jobs.
+- Depicts the community's efforts to balance rapid technological modernization with the preservation of West Texas ranching, agriculture, and heritage.
+- Highlights the collaborative efforts of Stargate project companies to integrate into the local community through events and charitable support.
+
+Tags: ai, research, infrastructure, stargate, texas, community-impact
+
+## Why Inventing General Relativity Is the Final Test for AI - Adam Brown
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-11T20:28:05+00:00
+- URL: https://www.youtube.com/shorts/y9eGsI2C9iY
+
+Physicist Adam Brown discusses whether Large Language Models can cross the final frontier of human intelligence: making massive intellectual leaps like inventing general relativity from Newtonian physics. He argues that this form of discovery can be conceptualized as interpolation at a highly elevated level of abstraction and speculates that AI might reach this milestone in about 10 years.
+
+Key points:
+- Adam Brown proposes that inventing general relativity from foundational physics laws is the ultimate benchmark/final test for AI.
+- He suggests that even if LLMs are 'interpolators', scientific discovery like general relativity could be seen as interpolation at a grand level of abstraction.
+- Transitioning from Newtonian physics to general relativity is one of the greatest leaps in human intellectual history, highlighting the scale of the challenge.
+- Brown estimates that AI might achieve this level of scientific breakthrough within approximately 10 years.
+
+Tags: ai, interviews, general relativity, physics
+
+## Customer Ignite Talk: Antonio Bravo Acin (Global Head of AI Transformation, BBVA) & OpenAI
+
+- Channel: OpenAI
+- Published: 2026-06-11T19:51:04+00:00
+- URL: https://www.youtube.com/watch?v=UNJSk90Lz1c
+
+In this Customer Ignite Talk, Antonio Bravo Acin (Global Head of AI Transformation at BBVA) discusses how the bank transitioned from digital pioneer to an AI-driven institution. BBVA deployed ChatGPT Enterprise to 120,000 employees globally, focusing its AI initiatives on six core pillars (Retail, Corporate, Risk, Back Office, Software, and Enterprise). The bank drives successful adoption through a top-down approach, combining dedicated enablement teams with monthly AI usage dashboards sent to the executive leadership. With over 100 custom GPTs already yielding significant productivity gains, BBVA's next phase centers on the industrialization and governance of autonomous AI agents.
+
+Key points:
+- Enterprise-wide rollout of ChatGPT Enterprise to BBVA's 120,000 employees globally.
+- A top-down AI strategy structured around six key focus areas ('6 Robots'): Retail, Corporate Banking, Risk Management, Back Office, Software Development, and Enterprise Adoption.
+- High adoption rates and productivity gains, with over 100 custom GPTs deployed, saving up to 80% of task completion time for over 1,000 active employees.
+- The 'accompaniment' enablement model, which uses dedicated support teams to guide departments through their AI adoption journeys.
+- Strong executive sponsorship and accountability, including monthly AI usage dashboards sent directly to top leaders, including the Chairman and CEO, to drive engagement.
+- Transition from pilot phases and basic training to the industrialization of AI agents and agentic workflows under strict enterprise governance.
+
+Tags: ai, research, enterprise, finance, chatgpt, openai
+
+## Build sales account strategies and outreach with Codex
+
+- Channel: OpenAI
+- Published: 2026-06-11T19:24:28+00:00
+- URL: https://www.youtube.com/watch?v=4YkOAYNZVOQ
+
+This demonstration showcases how OpenAI Codex streamlines the sales prospecting workflow by integrating with tools like Salesforce, Gmail, and PowerPoint. Codex automatically retrieves top accounts, creates customized PowerPoint sales decks, and drafts tailored emails for Gmail. The system also runs a daily 'heartbeat' automation to detect major changes in target accounts, updating plans and drafting new emails automatically to keep engagement relevant and prompt.
+
+Key points:
+- Demonstrates OpenAI Codex integrating directly with CRM and productivity tools like Salesforce, Gmail, and PowerPoint to automate sales workflows.
+- Extracts top account information from Salesforce to automatically build customized sales collateral in PowerPoint.
+- Generates persona-specific and context-aware email drafts in Gmail based on target company insights.
+- Features a 'heartbeat' automation that runs daily to scan for business changes (such as M&A activity or news) affecting target accounts.
+- Automatically updates account plans and drafts new outreach emails in response to daily account changes to maintain timely, relevant customer engagement.
+
+Tags: ai, research, sales, codex, automation, salesforce, outreach, productivity
+
+## What Should An AI Device Look Like? — With Alex Himel
+
+- Channel: Alex Kantrowitz
+- Published: 2026-06-11T16:30:21+00:00
+- URL: https://www.youtube.com/watch?v=Jyet6TZ1jIE
+
+Alex Kantrowitz interviews Alex Himel, Meta's VP of Wearables, to explore why Meta believes smart glasses represent the future of AI hardware. The discussion covers the design principles of the Ray-Ban Meta glasses, the utility of head-worn AI compared to screens, the key differences between Meta's approach and past failures like Google Glass, and how Meta is positioning itself against competitors in the AI space.
+
+Key points:
+- Meta positions smart glasses, specifically the Ray-Ban Meta line, as the next major computing platform.
+- Himel uses the 'escalator that never breaks' analogy: glasses remain functional as eyewear even if they run out of battery power.
+- Smart glasses are the ideal form factor for AI because they provide heads-up, real-world utility without pulling users out of the physical moment.
+- Lessons from the failure of Google Glass show that style, design, comfort, and partnerships (like Ray-Ban) are critical for mainstream adoption.
+- The conversation addresses privacy challenges like facial recognition and recording indicators, and details Meta's focus on on-device AI.
+- Meta is actively competing with Apple, Google, OpenAI, and Amazon to build the primary consumer AI assistant.
+
+Tags: ai, technology, wearables, meta, smart glasses, hardware
+
+## Creating black hole simulations with Codex
+
+- Channel: OpenAI
+- Published: 2026-06-11T16:14:47+00:00
+- URL: https://www.youtube.com/watch?v=4XSI4SClBMA
+
+The video highlights how computational astrophysicist Chi-kwan 'CK' Chan uses OpenAI Codex to speed up research for the Event Horizon Telescope project. To simulate the complex plasma surrounding black holes, Chan must write and test numerous numerical algorithms—a process that normally takes over a week. By leveraging Codex to generate and brainstorm these coding schemes, he can execute the same work in minutes. This demonstrates how generative AI can augment scientific research and accelerate discoveries in astrophysics.
+
+Key points:
+- Computational astrophysicist Chi-kwan 'CK' Chan utilizes OpenAI Codex to write and test numerical schemes for simulating black hole plasma dynamics.
+- Modeling the hot plasma and particle interactions near a black hole event horizon is a computationally intractable problem that requires tracking electron and ion movement around magnetic fields.
+- Traditionally, writing and testing ten different numerical schemes to solve these equations would take around ten days of manual coding and debugging.
+- With OpenAI Codex, Chan can generate and run candidate algorithms in minutes, allowing him to quickly explore a wider variety of mathematical approaches.
+- These simulations support the Event Horizon Telescope project's effort to transition from static black hole images to the first moving images (videos).
+- The human scientist remains central to the process, serving as the evaluator and verifier of the candidate algorithms generated by Codex.
+
+Tags: ai, research, astrophysics, codex, simulation, black hole
+
+## Training to cycle across Antarctica | with ChatGPT
+
+- Channel: OpenAI
+- Published: 2026-06-11T15:59:45+00:00
+- URL: https://www.youtube.com/watch?v=ACue0bPkrPs
+
+This video features adventurer James Benson-King preparing for a historic, solo, and unsupported cycling expedition across Antarctica to the South Pole. To train for the 911 km trek in temperatures as low as -40 degrees Celsius, Benson-King used ChatGPT as a virtual coach to construct and refine a comprehensive training program. The AI assisted with endurance and strength planning (including tire dragging to simulate a 150kg sled), survival strategy, and real-time fatigue tracking during training in the Icelandic highlands, illustrating a novel application of generative AI for extreme physical preparation.
+
+Key points:
+- Adventurer James Benson-King is preparing for a world-first attempt in November 2026 to cycle solo and unsupported from the edge of Antarctica to the South Pole.
+- The 911-kilometer journey across snow and ice involves sub-zero temperatures down to -40 degrees Celsius and requires dragging a 150kg sled (pulk) with supplies.
+- Operating on a strict budget, Benson-King bypassed hiring a professional expedition coach and instead used ChatGPT to build a comprehensive, multi-discipline training regimen.
+- The AI-generated training plan incorporates endurance cycling, strength training for sled pulling, and technical cold-weather survival skills.
+- Benson-King uses ChatGPT in real time to log workout data, track fatigue levels, brainstorm logistics, and troubleshoot challenges during training phases in the Icelandic highlands.
+
+Tags: ai, research, chatgpt, antarctica, cycling, james benson-king, expedition
+
+## Essentials: Sleep Toolkit for Optimizing Sleep & Sleep-Wake Timing
+
+- Channel: Andrew Huberman
+- Published: 2026-06-11T12:00:33+00:00
+- URL: https://www.youtube.com/watch?v=RTgJSQtvo88
+
+In this Huberman Lab Essentials episode, Dr. Andrew Huberman summarizes the core science-supported tools and daily protocols to optimize sleep, regulate circadian rhythms, and enhance daytime alertness. The toolkit covers critical actions across three periods of the 24-hour cycle: morning (viewing sunlight, delayed caffeine, cold exposure/exercise), afternoon (caffeine limits, power naps), and evening (minimizing bright artificial light, temperature regulation, and proper bedroom cooling). Huberman also outlines sleep supplements, cautions against melatonin, and offers guidance on managing jet lag and shift work using the temperature minimum concept.
+
+Key points:
+- Morning Sunlight: View natural light within 30-60 minutes of waking for 10-30 minutes to trigger a healthy cortisol spike, anchor circadian rhythms, and pre-program nighttime melatonin release.
+- Caffeine Timing: Delay morning caffeine intake by 90-120 minutes after waking to avoid the afternoon crash, and avoid consuming it within 8-10 hours of sleep.
+- Temperature Regulation: Use deliberate cold exposure or exercise in the morning to raise core temperature, and keep the bedroom cool (60-67°F / 15-19°C) or use hot tubs/saunas in the evening to facilitate a rapid drop in core body temperature for sleep onset.
+- Evening Light Mitigation: Minimize exposure to bright artificial light, particularly overhead lights, between 10:00 p.m. and 4:00 a.m. to prevent suppression of melatonin.
+- Sleep Supplements: Fundamentals of behavior should be addressed first, followed by optional supplements such as Magnesium Threonate (145 mg), Apigenin (50 mg), and L-Theanine (100-400 mg) taken 30-60 minutes before bedtime.
+- Melatonin & Substances: Restrict or avoid alcohol and THC as they disrupt sleep architecture, and use caution with melatonin due to potential disruptions of the endocrine system.
+- Jet Lag & Shift Work: Utilize the temperature minimum (typically 2 hours before natural waking) to shift the circadian clock forward or backward, and use red light to protect melatonin levels during shift work.
+
+Tags: health, science
+
+## How a perfectly even universe grew galaxies - Adam Brown
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-10T22:09:35+00:00
+- URL: https://www.youtube.com/shorts/v-BMWHEaFdw
+
+Physicist Adam Brown explains how quantum fluctuations in the extremely early universe created the initial, minute density variations that gravity later grew into galaxies and all cosmic structures.
+
+Key points:
+- Studies of the cosmic microwave background (the echo of the Big Bang) have confirmed the quantum origin of all cosmic structure.
+- Gravity naturally explains how structure grows: regions with slightly higher density pull matter from less dense regions, amplifying inhomogeneities over time.
+- The initial, tiny density variations—on the order of one part in a million—were seeded by quantum fluctuations in the early universe.
+- Because the universe was extremely small shortly after the Big Bang, quantum mechanical effects were highly significant, leaving an imprint on the density of matter.
+- These tiny, quantum-seeded density fluctuations eventually grew to form all the large-scale structures in the universe, including galaxies and stars.
+
+Tags: ai, interviews, physics, cosmology, quantum mechanics
+
+## Create campaign concepts and assets with Codex
+
+- Channel: OpenAI
+- Published: 2026-06-10T17:15:03+00:00
+- URL: https://www.youtube.com/watch?v=2ey7znf8SI0
+
+This official demonstration showcases OpenAI Codex's Creative Production plugin, which helps creative teams quickly translate campaign briefs into editable visual assets, mood boards, and ad layouts. By integrating with design platforms like Canva and Figma, Codex produces multi-component files that designers can refine, speeding up the production process from concept to final asset.
+
+Key points:
+- OpenAI introduces the Creative Production plugin for the Codex platform, tailored to automate and streamline creative marketing workflows.
+- The plugin features integrations with major creative applications including Figma, Canva, Shutterstock, Picsart, and Fal.
+- Generated assets are delivered as multi-component editable files rather than flat static images, allowing designers to manipulate individual layers.
+- Marketers can refine visual output directly in Codex using inline annotations, style prompts, and remix functions.
+- The platform supports building interactive campaign strategy hubs using Codex Sites and enforcing brand rules via configuration files like agents.md.
+
+Tags: ai, research, OpenAI, Codex, marketing, creative production, automation
+
+## That's it for NDC AI, and what a great turnout. We hope to see you all again next time! #ndcai
+
+- Channel: NDC Conferences
+- Published: 2026-06-10T15:18:14+00:00
+- URL: https://www.youtube.com/shorts/tiG4zbyiuKY
+
+A short closing video by NDC Conferences wrapping up the NDC AI 2026 conference. The video celebrates a successful event with a great turnout of attendees and looks forward to future iterations of the conference.
+
+Key points:
+- The video serves as a wrap-up and closing message for the NDC AI 2026 conference.
+- The organizers highlight a very successful event with a great turnout of delegates.
+- The conference was held at Rebel in Oslo, Norway, from June 8 to June 10, 2026.
+- The video concludes with an invitation and hope to see the audience again next time.
+
+Tags: software, conferences, ndcai
+
 ## Zendure SolarFlow 800 Pro: Was It Worth It?
 
 - Channel: BeardedTinker
@@ -15,6 +290,22 @@ Key points:
 - Smart home integration via Home Assistant is essential to synchronize high-energy appliance usage with peak solar generation periods.
 
 Tags: smart-home, home-assistant, solar-energy, balcony-solar, zendure
+
+## Why Particle Physics Became a Victim of Its Own Success - Adam Brown
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-09T22:12:49+00:00
+- URL: https://www.youtube.com/shorts/U7aYxYwNS5Y
+
+Physicist Adam Brown explains that particle physics became a victim of its own success because the Standard Model, established in the 1970s and 1980s, was extremely accurate at predicting the outcomes of all particle accelerator experiments. Because the theories were so successful, they effectively 'cleaned up' the field, leaving no experimental anomalies or new data within reach to guide future conceptual breakthroughs.
+
+Key points:
+- The Standard Model developed in the 1970s and 1980s was extraordinarily successful at predicting all experimental outcomes of particle accelerators.
+- Because the predictions were so accurate, they 'cleaned up' the field, leaving no unexpected results or anomalies for physicists to investigate.
+- Without new experimental data or failures of the existing model, particle physicists struggle to find directions for new conceptual breakthroughs.
+- This completeness makes particle physics a 'victim of its own success' because it won the game of predicting accelerator results, leading to stagnation.
+
+Tags: ai, interviews, physics, particle physics
 
 ## Codex for Finance: Faster Reports, Dashboards, and Decisions
 
@@ -135,6 +426,24 @@ Key points:
 - The session features presenter Daniel Costea alongside hosts/co-hosts Katie Savage, Scott Addie, and Frank Boucher.
 
 Tags: dotnet, software, ai agents, middleware, microsoft agent framework
+
+## Sarah Paine - Why Putin and Xi can't escape geography
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-09T18:14:13+00:00
+- URL: https://www.youtube.com/watch?v=OS1NZLgKM2c
+
+In this Dwarkesh Podcast episode, military historian Dr. Sarah Paine presents a grand strategy framework distinguishing continental powers from maritime powers. Continental empires seek security through territorial depth and buffer zones, leading to costly land-based defense and chronic instability on their borders. In contrast, maritime powers pursue prosperity through trade, sea lane security, and a rules-based international order. Paine explains that Vladimir Putin and Xi Jinping cannot escape their geographical constraints, forcing them into aggressive-defensive land postures. She discusses Nicholas Spykman's Rimland theory, argues that Russia and China are transactional partners rather than natural allies, and explores how the Industrial Revolution shifted the balance of power in favor of maritime coalitions.
+
+Key points:
+- Continental powers like Russia and China seek security primarily through territorial conquest, maintaining land-based borders, and establishing buffer zones, which historically leads to costly conflicts and friction with neighbors.
+- Maritime powers like the United States and Great Britain pursue prosperity and security through global trade, naval dominance, and a rules-based international order rather than land occupation.
+- The 'Whales vs. Elephants' analogy contrasts trade-based maritime security (whales) with land-bound continental security (elephants), illustrating how geography shapes different grand strategic orientations.
+- Russia and China are transactional partners rather than natural allies; their current alignment is driven by a shared opposition to the maritime order, but their long-term interests remain divided by historical border disputes and competing regional ambitions.
+- Nicholas Spykman's 'Rimland' theory provides historical context, emphasizing that control over Eurasia's coastal fringes (the Rimland) is critical to containing the continental Heartland (dominated by Russia).
+- Vladimir Putin's invasion of Ukraine and Xi Jinping's strategy regarding Taiwan reflect persistent, geography-driven security anxieties that continental leaders cannot easily escape.
+
+Tags: geopolitics, history, strategy, interviews, foreign-policy
 
 ## Introducing Claude Fable 5
 
