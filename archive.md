@@ -1,5 +1,56 @@
 # YouTube Video Digest
 
+## Analyze earnings and update your investment thesis with Codex
+
+- Channel: OpenAI
+- Published: 2026-06-12T20:36:47+00:00
+- URL: https://www.youtube.com/watch?v=Rlju1Z9e110
+
+This video demonstrates OpenAI's Public Equity Investing plugin for Codex, which streamlines and automates the workflow for public equity research. By integrating real-time web searches with high-quality institutional data from platforms like FactSet, S&P Global, Moody's, Daloopa, and PitchBook, the Codex AI agent normalizes financial metrics, analyzes earnings call transcripts, and compares results against estimates. It automatically creates interactive dashboards mapping out bull, bear, and neutral scenarios to help analysts validate their investment theses with verified sources, significantly reducing manual research time.
+
+Key points:
+- Demonstrates the Public Equity Investing plugin for Codex, showing how AI agents can automate public equity research workflows.
+- Eliminates the manual effort of aggregating raw financial metrics, earnings transcripts, and analyst estimates from fragmented sources.
+- Integrates institutional-grade financial data providers such as FactSet, S&P Global, Moody's, LSEG, PitchBook, Daloopa, Datasite, and Hebbia.
+- Performs automatic comparison of actual company earnings results against market consensus and expectations.
+- Generates interactive, link-verified dashboards (via Codex 'Sites') analyzing bull, neutral, and bear cases to help update and validate investment theses.
+
+Tags: ai, research, codex, openai, finance, equity-research, investment-thesis, earnings-analysis
+
+## From data to decisions: how LSEG is scaling trusted AI
+
+- Channel: OpenAI
+- Published: 2026-06-12T16:24:47+00:00
+- URL: https://www.youtube.com/watch?v=sU9-u5p-jA0
+
+This case study video highlights the partnership between OpenAI and the London Stock Exchange Group (LSEG) to scale trusted AI across LSEG's global business. By leveraging ChatGPT Enterprise, OpenAI APIs, and the Model Context Protocol (MCP), LSEG connects its vast financial data directly to AI workflows. This integration automates routine tasks, empowers employees to focus on high-value analysis, and accelerates product release cycles from several months to just two weeks.
+
+Key points:
+- LSEG is scaling trusted, governed AI across its global operations by integrating ChatGPT Enterprise and OpenAI APIs.
+- The collaboration utilizes the Model Context Protocol (MCP) to securely connect LSEG's high-quality financial datasets to AI models.
+- Product release cycles at LSEG have been significantly shortened, moving from 3-6 months down to 2-week intervals.
+- By automating routine data analysis tasks, the integration allows analysts to focus on deeper research and complex, multi-faceted insights.
+- The initiative demonstrates how enterprise-grade AI can be deployed securely and compliantly within the highly regulated financial sector.
+
+Tags: ai, research
+
+## How Preply combines AI and human tutors to personalize learning
+
+- Channel: OpenAI
+- Published: 2026-06-12T09:53:26+00:00
+- URL: https://www.youtube.com/watch?v=-Jm-Bf3g9r8
+
+The video highlights Preply's collaboration with OpenAI to enhance language learning using a 'human-first, AI-enabled' approach. By incorporating AI-driven features like automated lesson feedback, personalized daily exercises, and real-world conversation scenarios, Preply reduces the administrative burden on tutors and personalizes the educational path for students, while maintaining the critical role of human connection in tutoring.
+
+Key points:
+- Preply integrates OpenAI's language models to power a 'human-first, AI-enabled' language learning platform.
+- The AI acts as a co-pilot for human tutors, automating administrative tasks and generating customized educational content to save tutors time.
+- Three main features driven by AI include Lesson Insights (automatic summaries and progress tracking), Daily Exercises (bite-sized customized practice), and Scenario Practice (interactive speaking exercises for real-world scenarios).
+- Preply emphasizes that the human connection, cultural context, and accountability provided by tutors are irreplaceable, and AI is designed to augment rather than replace them.
+- This hybrid model helps students achieve proficiency faster by combining data-driven personalization with empathetic, one-on-one human instruction.
+
+Tags: ai, research, education, language learning, openai, preply
+
 ## Debug web apps with browser use in Codex
 
 - Channel: OpenAI
