@@ -1,5 +1,52 @@
 # YouTube Video Digest
 
+## What sanctions are actually designed to do - Sarah Paine
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-13T21:26:49+00:00
+- URL: https://www.youtube.com/shorts/2JZtp7i8ICE
+
+Professor Sarah Paine explains that the true purpose of sanctions is often misunderstood. Rather than immediately forcing a change in an adversary's behavior, sanctions are designed to suppress economic growth over generations. This long-term economic stifling ensures the imposing nation grows relatively stronger while the target becomes weaker, a dynamic famously illustrated by the historical divergence of North and South Korea.
+
+Key points:
+- Sanctions are often mistakenly judged by whether they immediately force an adversary to change behavior.
+- The true strategic purpose of sanctions is to suppress an adversary's economic growth over the long term.
+- Over time, sanctions create asymmetric strength, making the imposing party relatively stronger and the target weaker.
+- The effects of sanctions are often generational, rather than immediate, as seen in the historical divergence between North and South Korea.
+
+Tags: ai, interviews, geopolitics, sanctions, history, economics
+
+## How I’m Starting a New Smart Home from Scratch!
+
+- Channel: Smart Home Solver
+- Published: 2026-06-13T16:44:50+00:00
+- URL: https://www.youtube.com/watch?v=U9PANPoOdm0
+
+The video outlines the creator's strategy for starting a brand new smart home from scratch. It discusses the planning process, choosing a central ecosystem, and selecting the initial devices required for a successful home automation setup.
+
+Key points:
+- Planning a new smart home ecosystem from the ground up
+- Selecting the right central smart home platform or hub
+- Choosing essential starter smart devices
+- Strategies for effective home automation
+
+Tags: smart-home, automation, setup, smart devices, home improvement
+
+## The historical trap Putin can't escape - Sarah Paine
+
+- Channel: Dwarkesh Patel
+- Published: 2026-06-12T22:04:27+00:00
+- URL: https://www.youtube.com/shorts/z5BkwnEBw8I
+
+In this clip, Sarah C. M. Paine discusses the historical trap that autocrats like Vladimir Putin fall into when they silence dissent and insulate themselves from accurate information. This 'death of information' cycle prevents leaders from receiving reliable intelligence, which inevitably leads them to make disastrous and irreversible strategic choices by backing themselves into corners.
+
+Key points:
+- Autocrats who silence dissent insulate themselves from accurate information.
+- This 'death of information' cycle leads to catastrophic and irreversible strategic decisions.
+- Putin's situation is an example of this historical trap where leaders back themselves into corners.
+
+Tags: ai, interviews, history, strategy, geopolitics
+
 ## Analyze earnings and update your investment thesis with Codex
 
 - Channel: OpenAI
