@@ -1,5 +1,7 @@
 # YouTube Video Digest Archive
 
+- 2026-06-19T15:00:09+00:00 - BeardedTinker: [I Gave This Robot My Worst Terrain](https://www.youtube.com/watch?v=27a0ysIcHag)
+- 2026-06-19T11:14:37+00:00 - NDC Conferences: [Above the Cloud: Building Data Centers in Space - Richard Campbell - NDC Copenhagen 2026](https://www.youtube.com/watch?v=eo7MEPgWGic)
 - 2026-05-22T22:48:37+00:00 - OpenAI: [Workspace agents in ChatGPT: Admin and builder controls](https://www.youtube.com/watch?v=HaaKUFAOi84)
 - 2026-05-22T19:41:41+00:00 - OpenAI: [Create and edit presentations faster in PowerPoint](https://www.youtube.com/watch?v=ECkHTfvf2e8)
 - 2026-05-22T16:56:18+00:00 - OpenAI: [Personal Finance in ChatGPT](https://www.youtube.com/watch?v=ksfHQLmV-Fg)
