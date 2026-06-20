@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Richard Campbell evaluates whether AI/data-center workloads make sense in orbit, using rough engineering, orbital, cooling, power, networking, debris, launch, and economics constraints.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=eo7MEPgWGic">Watch video</a></nav>
+  <h1>Richard Campbell evaluates whether AI/data-center workloads make sense in orbit, using rough engineering, orbital, cooling, power, networking, debris, launch, and economics constraints.</h1>
+  <div class="meta">NDC Conferences · 2026-06-19T11:14:37+00:00 · Above the Cloud: Building Data Centers in Space - Richard Campbell - NDC Copenhagen 2026</div>
+  <h2>Above the Cloud: Building Data Centers in Space - Richard Campbell</h2>
+<h2>What This Video Is About</h2>
+<p>This video critically evaluates the concept of building data centers in space, specifically focusing on whether current AI and data-center workloads are viable outside of Earth&#x27;s surface. The speaker, Richard Campbell, systematically analyzes the engineering constraints—including power generation, thermal management (cooling), networking latency, orbital mechanics, and launch economics—to determine the practicality of such endeavors.</p>
+<p>The central argument is that while the idea of massive orbital compute farms is visually appealing, it is largely impractical for serving Earth-based users due to fundamental physics limitations. The speaker distinguishes between large-scale model *training* (which requires extremely low latency terrestrial networking) and running localized *inference*. He concludes that space computing makes more sense when the data and end-users are already in space, such as around the Moon or future off-Earth infrastructure, rather than for general Earth applications.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The discussion begins by addressing the popular notion of putting massive data centers in orbit, citing examples like StarCloud&#x27;s mockups involving giant 5 GW solar panel arrays [5:00]. Campbell dismisses these large-scale concepts as &quot;infinitely impractical&quot; due to assembly challenges and protection from micrometeoroids.</p>
+<p>He then details different orbital regimes based on latency: *   **Geostationary Orbit (GEO):** At $\approx 35,786$ km, satellites appear stationary over the equator, suitable for one-way broadcasts but suffering from high latency ($\approx 600$ ms), making it unsuitable for real-time applications. *   **Medium Altitude:** Above 2,000 km and below GEO, offering latencies around $100$ ms (used by GPS). *   **Low Earth Orbit (LEO):** Offers the lowest ping times ($\approx 20$ ms), making it the most exciting for communication, but is plagued by atmospheric drag which requires constant orbital monitoring due to solar radiation and coronal mass ejections [9:34].</p>
+<p>Orbital mechanics also involve **inclination**, the angle relative to the planet. For instance, the International Space Station orbits at a $51^\circ$ inclination to ensure coverage over Russia [10:26]. Satellites are categorized into generations (e.g., Generation 1 and Generation 2 for Starlink), with modern units being relatively small ($\approx 800$ kg) but heavy enough to be significant payloads [10:53].</p>
+<p>The speaker then focuses on a unit of work, selecting the **NVIDIA NVL72** (a $50\text{U}$ rack space unit capable of handling a trillion-parameter GPT model), as the basis for calculation. This unit requires substantial resources: *   **Power:** $\approx 135$ kilowatts ($\text{kW}$) per rack [14:38]. *   **Mass/Heat:** $1.3$ metric tons, requiring liquid cooling [14:38].</p>
+<p>The satellite construction process is broken down into components: the bus (structure, command and control computers), payload (the AI unit), power system, thermal management, and communication systems [15:00]. *   **Attitude Determination and Control:** Uses inertial measurement systems (gyroscopes) corrected by star trackers and sun trackers. Orientation changes are managed via reaction wheels, which eventually require desaturation using magnetorquers in LEO to interact with Earth&#x27;s magnetic field [16:37]. Propulsion for maneuvering is achieved via hypergolic fuels or Hall effect thrusters (used by Starlink) [18:04]. *   **Power Generation:** To supply $135\text{kW}$ in LEO, approximately $450$ square meters of solar panels are needed, equating to roughly four arrays measuring $30 \text{m} \times 7.5 \text{m}$ [19:28]. *   **Cooling:** Heat must be radiated into the vacuum using a system involving ammonia pumped through blocks, vaporizing and then being expelled via plates on the spacecraft to dissipate heat (requiring two arrays similar to those on the International Space Station) [19:50]. *   **Networking:** Terrestrial AI clusters use Infiniband ($400\text{Gbit}$, $800\text{Gbit}$, etc.) for sub-millisecond communication. In space, current technology like Starlink&#x27;s optical mesh system offers $\approx 100$ gigabits but introduces latency of $5$ to $10$ milliseconds between satellites, which is insufficient for tightly coupled training [20:38]. This reinforces the viability of only running inference workloads in orbit.</p>
+<p>The final component involves orbital dynamics and logistics: *   **Power Storage:** Due to LEO&#x27;s 90-minute orbit (45 minutes sun/45 minutes dark), massive batteries are required, adding significant mass [21:38]. An alternative is using a **sun-synchronous orbit** to eliminate the need for large batteries [22:37]. *   **Scale and Risk:** A single data center satellite could be $70$ to $150$ meters wide and weigh $12$ to $15$ metric tons. While this size is not unprecedented (military spy satellites are larger), it requires significant launch capacity, such as Starship V3 [24:48]. *   **Debris/Kessler Syndrome:** The proliferation of mega-constellations (Starlink at $\approx 12,000$, Amazon Leo at $3,300$, Chinese constellations totaling $\approx 15,000$ by 2030) pushes the orbital environment toward capacity limits. While coordination systems could theoretically support up to $100,000$ satellites, current projections suggest only a fraction of this is feasible before collision risks become critical [29:48].</p>
+<h2>Key Takeaways</h2>
+<p>*   Training large AI models in space is currently deemed unrealistic due to the need for ultra-low latency networking (like terrestrial Infiniband). *   The most plausible near-term application for space compute is running inference workloads on rack-scale hardware located in orbit. *   A single, representative AI processing unit (e.g., NVL72) requires substantial resources: $135\text{kW}$ of power and weighs $1.3$ metric tons when liquid cooled. *   Power generation for such a unit necessitates large solar arrays ($\approx 450 \text{m}^2$) in LEO, while cooling relies on radiating heat into the vacuum using phase-change systems (e.g., ammonia). *   Orbital mechanics dictate that GEO is too slow due to light speed delays, whereas LEO offers low latency but suffers from atmospheric drag requiring constant monitoring. *   The sheer volume of planned mega-constellations (Starlink, Amazon Leo, Chinese constellations) significantly increases the risk associated with Kessler Syndrome and orbital debris. *   Launch costs are dominated by the launch platform; a $15$-ton satellite could cost tens of millions per flight, making the lift expense disproportionately high compared to the payload mass [43:08]. *   The most viable long-term strategy for space compute is moving workloads to locations where users and data already reside, such as around the Moon or in deep space infrastructure.</p>
+<h2>Practical Notes</h2>
+<p>**Implementation/Design Considerations:** *   **Workload Selection:** Focus on inference rather than large model training clusters. *   **Power Budgeting (LEO):** Requires $\approx 135\text{kW}$ per rack; solar array size must be calculated based on incident solar energy ($\approx 1356 \text{W}/\text{m}^2$ in view of the sun). *   **Thermal Management:** Heat rejection relies entirely on radiation into a vacuum, necessitating large radiator systems (e.g., two arrays comparable to ISS radiators) using working fluids like ammonia. *   **Orbital Strategy:** Utilizing a sun-synchronous orbit can eliminate the need for massive battery banks required to bridge the 45-minute orbital night in LEO. *   **Debris Mitigation:** Responsible operators must implement de-orbit procedures (e.g., using remaining fuel) or passive systems like solar sails when satellites reach end-of-life, though this does not address existing debris.</p>
+<p>**Risks and Caveats:** *   **Kessler Syndrome:** The increasing density of LEO objects raises the risk of catastrophic collisions that could render orbits unusable. *   **Launch Economics:** The cost of launching large, heavy satellites remains a primary barrier to mass deployment. *   **Data Throughput vs. Latency:** Current space communication links (e.g., optical lasers) cannot replicate the sub-millisecond latency required for tightly coupled AI training clusters on Earth.</p>
+<h2>What To Revisit In The Video</h2>
+<p>*   [5:00] - Initial dismissal of large, visually appealing orbital data center concepts. *   [9:34] - Comparison of GEO vs. LEO communication characteristics (latency). *   [14:38] - Breakdown of the NVL72 unit&#x27;s power and mass requirements. *   [15:00] - Overview of satellite bus components (structure, C&amp;C, attitude control). *   [19:50] - Detailed explanation of heat rejection via ammonia phase change in a vacuum. *   [20:38] - Analysis of networking limitations (Infiniband vs. optical links) and the inference-only conclusion. *   [24:48] - Discussion on satellite size, mass estimates, and launch vehicle requirements. *   [29:48] - Overview of current mega-constellation numbers and collision risks.</p>
+</main>
+</body>
+</html>

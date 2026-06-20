@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andrej Karpathy gives a practical tour of how he uses LLMs across models, search, tools, coding, audio, vision, and reusable prompts.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=EWvNQjAaOHw">Watch video</a></nav>
+  <h1>Andrej Karpathy gives a practical tour of how he uses LLMs across models, search, tools, coding, audio, vision, and reusable prompts.</h1>
+  <div class="meta">Andrej Karpathy · 2025-02-27T22:29:56+00:00 · How I use LLMs</div>
+  <h2>How I use LLMs</h2>
+<h2>What This Video Is About</h2>
+<p>This video provides a practical, in-depth walkthrough of how the creator utilizes various Large Language Model (LLM) applications and features in 2025. Rather than focusing on the underlying technical training of these models, the discussion centers on the operational ecosystem—including different providers (like OpenAI&#x27;s ChatGPT, Anthropic&#x27;s Claude, Google&#x27;s Gemini), their capabilities, and how to leverage them for complex tasks across text, code, audio, and vision. The central theme is that users must be mindful of model selection, tool integration, and output verification because LLMs are probabilistic systems, not infallible knowledge bases.</p>
+<p>The video emphasizes moving beyond simple text prompts by demonstrating advanced workflows such as using external tools (like web search or Python interpreters), creating custom applications via &quot;artifacts,&quot; and integrating multimodal inputs like images and voice. The overarching advice is to experiment across these different tools and features to maximize utility while maintaining a critical eye on the generated output, especially for high-stakes tasks.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The video begins by establishing that the LLM ecosystem has grown significantly beyond the initial success of ChatGPT [0:00]. While OpenAI remains an incumbent, competitors like Gemini (Google), Copilot (Microsoft), and Claude (Anthropic) offer unique experiences. The creator explains that models function as a self-contained entity—a &quot;zip file&quot; representing parameters—that possesses knowledge up to its pre-training cutoff date [10:00].</p>
+<p>The process of interaction is described as building a one-dimensional token sequence through back-and-forth collaboration between the user and the model [5:00]. A crucial distinction is made between **pre-training** (which provides general internet knowledge) and **post-training** (which imbues the model with an assistant persona) [10:00].</p>
+<p>The creator advises users to be mindful of cost versus capability, noting that larger models require more computational power and are thus more expensive [20:00]. He contrasts fast, non-thinking models with &quot;thinking models&quot; (e.g., those starting with &#x27;o&#x27; in OpenAI) which take longer but can provide higher accuracy for difficult problems by simulating deeper reasoning [25:00].</p>
+<p>**Tool Use:** The video details how to augment the LLM beyond its internal knowledge base. 1.  **Internet Search:** This is essential for recent, niche, or changing information (e.g., release dates of new TV episodes) [35:00]. Tools like Perplexity&#x27;s &quot;Deep Research&quot; or Grok&#x27;s &quot;Deep Search&quot; can generate comprehensive reports with citations [45:00]. 2.  **Document Context:** Users can upload concrete documents to provide the model with specific, verifiable context, bypassing reliance on its general training data [50:00]. 3.  **Code Execution/Python Interpreter:** LLMs are trained to recognize when they cannot solve a problem internally and instead write code for tools like Python to execute (e.g., complex calculations or data plotting) [1:00:00]. 4.  **Artifact Generation:** Claude can generate custom, runnable applications directly in the browser using frameworks like React, effectively creating bespoke local apps without needing traditional software engineering infrastructure [1:10:00].</p>
+<p>**Multimodal and Advanced Features:** The workflow extends to various inputs: *   **Voice/Audio:** Applications like Super Whisper allow for system-wide speech-to-text transcription via keyboard shortcuts (e.g., F5) [1:25:00]. Output can also be read back using text-to-speech features found in many apps [1:30:00]. *   **Image Understanding:** Images can be represented as token streams by chopping them into patches and quantizing those patches, allowing the Transformer architecture to process visual data similarly to text or audio [1:40:00]. *   **Vision/Camera Interaction:** Live camera feeds allow users to point a device at objects (e.g., reading ingredients on toothpaste, identifying books) for immediate analysis [1:53:00].</p>
+<p>Finally, the video covers quality-of-life features like **Memory Banks**, which store personalized knowledge about the user and prepend it to future conversations, making the model more contextually relevant over time [1:55:00]. Furthermore, using **Few-Shot Prompts** (providing concrete examples) is highlighted as a superior strategy for increasing accuracy compared to zero-shot prompting [2:00:00].</p>
+<h2>Key Takeaways</h2>
+<p>*   Model selection is critical; choose between fast/cheap models and slower/more expensive &quot;thinking&quot; models based on task complexity. *   Always treat LLM output—especially tables, code, and factual claims—as a first draft requiring rigorous human verification. *   Use web search for current or obscure information, while document uploads provide concrete context for specific data sets. *   Advanced tools allow LLMs to move beyond text generation: Python executes math/code, and artifacts build custom browser applications. *   Multimodal capabilities (voice, image input) treat different data types as token streams that the core model processes statistically. *   Memory banks and few-shot prompting are effective strategies for maintaining consistency and improving accuracy in repeated tasks without re-explaining context.</p>
+<h2>Practical Notes</h2>
+<p>*   **Model Tiering:** Be aware of pricing tiers across providers (e.g., ChatGPT Pro vs. free versions) to match usage needs with cost. *   **Context Management:** When switching topics, start a new chat to reset the token window and prevent irrelevant old context from biasing new queries. *   **Code Scrutiny:** When using Python interpreters or code generation tools (like Cursor), always review the generated code for implicit assumptions or errors before execution. *   **Customization:** Use &quot;Custom GPT&quot; builders or similar features to save complex, multi-step prompts as reusable workflows (e.g., a custom translator that OCR&#x27;s and translates dialogue from specific media). *   **Architecture Note:** Understand the difference between native multimodal models (where audio/image is handled internally) and tacked-on tools (which communicate with the main model via text).</p>
+<h2>What To Revisit In The Video</h2>
+<p>*   [5:00] - Understanding the token stream and conversation format. *   [10:00] - Distinction between pre-training knowledge and post-training persona. *   [25:00] - Comparison of fast vs. thinking models. *   [35:00] - Demonstration of using web search tools for recent information. *   [1:00:00] - How the Python interpreter functions by writing and executing code. *   [1:10:00] - Example of generating custom applications via artifacts (Claude). *   [1:25:00] - Demonstration of system-wide voice input using Super Whisper. *   [1:40:00] - Explanation of how images are tokenized into patch sequences. *   [1:55:00] - Overview of the Memory Bank feature and its function as a persistent knowledge base about the user.</p>
+</main>
+</body>
+</html>
