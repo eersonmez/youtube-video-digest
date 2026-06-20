@@ -9,6 +9,7 @@
 - 2026-06-18T12:00:18+00:00 - Andrew Huberman: [Improve Flexibility with Research-Supported Stretching Protocols | Huberman Lab Essentials](https://www.youtube.com/watch?v=syJYZm5OZhE)
 - 2026-06-17T17:05:04+00:00 - Scott Hanselman: [Can you cheat cloud insurance?](https://www.youtube.com/watch?v=DrrSCSfs2jQ)
 - 2026-06-17T17:00:06+00:00 - Alex Kantrowitz: [AI Fact or Fiction: The Fable Ban, Tokenmaxxing, Saaspocolypse — With Ara Kharazian](https://www.youtube.com/watch?v=-5rc6m3-6Ek)
+- 2026-06-16T20:00:30+00:00 - dotnet: [Cloud-Native Data Without Starting Over](https://www.youtube.com/watch?v=kk9sqCTQBd0)
 - 2026-06-16T11:15:34+00:00 - Nick Chapsas: [Where Are the Coding Tutorials?](https://www.youtube.com/watch?v=TjuQLoGSa5w)
 - 2026-06-15T22:00:11+00:00 - Leonid Kim MD: [What's the Best Blood Pressure for Older Adults?](https://www.youtube.com/watch?v=6Rywa1Xya8M)
 - 2026-06-13T16:44:50+00:00 - Smart Home Solver: [How I’m Starting a New Smart Home from Scratch!](https://www.youtube.com/watch?v=U9PANPoOdm0)
