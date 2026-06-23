@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The space between the Commits with Zed and DeltaDB&#x27;s Nathan Sobo</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=F0lCI3lulSo">Watch video</a></nav>
+  <h1>The space between the Commits with Zed and DeltaDB&#x27;s Nathan Sobo</h1>
+  <div class="meta">Scott Hanselman · 2026-06-21T23:17:37+00:00 · The space between the Commits with Zed and DeltaDB&#x27;s Nathan Sobo</div>
+  <h2>What This Video Is About</h2>
+<p>The space between the Commits with Zed and DeltaDB&#x27;s Nathan Sobo is summarized from recovered transcript evidence. The sampled transcript covers: Hi, I&#x27;m Scott Hanssel and this is another episode of Hansel Minutes. Today I have the pleasure of speaking with Nathan Zobo. He is the founder of Zed and they&#x27;re working on something amazing called Delta DB. How are you, sir? I any problem I solve I&#x27;m going to need a code editor to solve it. I mean, uh, now that that&#x27;s shifting, I still think of the interactions can take place rather than the snapshots of the code. I think there&#x27;s this assumption that Yeah. You just scratched my brain a little bit because when you said multiplayer, it&#x27;s like get everyone talks about how like Git&#x27;s the first source control system that really I was going to ask you this is great. I was going to say what is a thing that Delta DB can let a developer do that This has been another episode of Hansel Minutes ...</p>
+<p>This brief was generated from the recovered timestamped transcript because the configured local Gemma service was unavailable during the scheduled digest run. It is intentionally extractive and conservative.</p>
+<h2>Detailed Walkthrough</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=13s">[0:13]</a> Hi, I&#x27;m Scott Hanssel and this is another episode of Hansel Minutes. Today I have the pleasure of speaking with Nathan Zobo. He is the founder of Zed and they&#x27;re working on something amazing called Delta DB. How are you, sir?</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=194s">[3:14]</a> based on your you know connection um they were working on Visual Studio for the cloud basically like a browserbased</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=375s">[6:15]</a> support web standards across you know multiple all those different browsers. I guess maybe maybe now no it&#x27;s just chromium and that&#x27;s all you need to do.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=561s">[9:21]</a> excited to use. Um, and holding ourselves to a really high standard. It almost doesn&#x27;t matter what other people are doing with uh forks of VS Code, etc.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=739s">[12:19]</a> an opportunity to bring the interaction around software off of the snapshots the artifacts that we left behind uh that</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=914s">[15:14]</a> conversation on these downstream artifacts by versioning everything together by versioning the conversation</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1111s">[18:31]</a> stack tracing if you kind of conversational stack tracing and how the agent and I carved or sculpted the code</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1287s">[21:27]</a> conversation introduced to any version of that code. And because we have a basically the ability to translate, it&#x27;s basically once you can locate a</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1474s">[24:34]</a> actually muddling it here because there&#x27;s a couple Okay, let me let me try to ask a more clarifying question. If you preserve everything, Yeah. How do you decide what moments are meaningful semantically?</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1642s">[27:22]</a> and indexing everything that happened, we&#x27;re much more able to like rapidly answer these kinds of questions. Yeah, Delta DB is hard to explain because it</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1810s">[30:10]</a> Yeah. I I I think about like I have no idea what I&#x27;m doing and I&#x27;m typing that to the agent. Like I&#x27;d rather not uh have my part of the process, my panic</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1991s">[33:11]</a> This has been another episode of Hansel Minutes and we&#x27;ll see you again next week.</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>0:13: Hi, I&#x27;m Scott Hanssel and this is another episode of Hansel Minutes. Today I have the pleasure of speaking with Nathan Zobo. He is the founder ...</li>
+<li>6:51: I any problem I solve I&#x27;m going to need a code editor to solve it. I mean, uh, now that that&#x27;s shifting, I still think</li>
+<li>13:32: of the interactions can take place rather than the snapshots of the code. I think there&#x27;s this assumption that</li>
+<li>20:21: Yeah. You just scratched my brain a little bit because when you said multiplayer, it&#x27;s like get everyone talks about how like Git&#x27;s the first source ...</li>
+<li>26:47: I was going to ask you this is great. I was going to say what is a thing that Delta DB can let a developer do ...</li>
+<li>33:11: This has been another episode of Hansel Minutes and we&#x27;ll see you again next week.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>Use this as a transcript-backed skim. Revisit the source video for nuance, demos, diagrams, or claims that need exact wording.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=13s">[0:13]</a> Hi, I&#x27;m Scott Hanssel and this is another episode of Hansel Minutes. Today I have the pleasure of ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=194s">[3:14]</a> based on your you know connection um they were working on Visual Studio for the cloud basically like ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=375s">[6:15]</a> support web standards across you know multiple all those different browsers. I guess maybe maybe now no it&#x27;s ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=561s">[9:21]</a> excited to use. Um, and holding ourselves to a really high standard. It almost doesn&#x27;t matter what other ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=739s">[12:19]</a> an opportunity to bring the interaction around software off of the snapshots the artifacts that we left behind ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=914s">[15:14]</a> conversation on these downstream artifacts by versioning everything together by versioning the conversation</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1111s">[18:31]</a> stack tracing if you kind of conversational stack tracing and how the agent and I carved or sculpted ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1287s">[21:27]</a> conversation introduced to any version of that code. And because we have a basically the ability to translate ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1474s">[24:34]</a> actually muddling it here because there&#x27;s a couple Okay, let me let me try to ask a more ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1642s">[27:22]</a> and indexing everything that happened, we&#x27;re much more able to like rapidly answer these kinds of questions. Yeah ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1810s">[30:10]</a> Yeah. I I I think about like I have no idea what I&#x27;m doing and I&#x27;m typing that ...</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0lCI3lulSo&amp;t=1991s">[33:11]</a> This has been another episode of Hansel Minutes and we&#x27;ll see you again next week.</li>
+</ul>
+</main>
+</body>
+</html>
