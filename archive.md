@@ -15,6 +15,7 @@
 - 2026-06-19T21:43:28+00:00 - Dwarkesh Patel: [The strangest riot in papal history - Ada Palmer](https://www.youtube.com/watch?v=H0Tgz9Nnx2s)
 - 2026-06-19T17:17:05+00:00 - Dwarkesh Patel: [The data black hole at the center of AI](https://www.youtube.com/watch?v=4pG3SJQPAwk)
 - 2026-06-19T15:00:09+00:00 - BeardedTinker: [I Gave This Robot My Worst Terrain](https://www.youtube.com/watch?v=27a0ysIcHag)
+- 2026-06-19T13:00:37+00:00 - Big Think: [Gut Expert: Eating these 3 foods could improve your mental health | Tim Spector: Full Interview](https://www.youtube.com/watch?v=A3_fG1h2a_g)
 - 2026-06-19T11:14:37+00:00 - NDC Conferences: [Above the Cloud: Building Data Centers in Space - Richard Campbell - NDC Copenhagen 2026](https://www.youtube.com/watch?v=eo7MEPgWGic)
 - 2026-06-18T19:10:18+00:00 - OpenAI: [Improving health intelligence in ChatGPT](https://www.youtube.com/watch?v=UxY8zJKRrHU)
 - 2026-06-18T12:00:18+00:00 - Andrew Huberman: [Improve Flexibility with Research-Supported Stretching Protocols | Huberman Lab Essentials](https://www.youtube.com/watch?v=syJYZm5OZhE)
@@ -59,4 +60,3 @@
 - 2022-11-21T00:32:48+00:00 - Andrej Karpathy: [Building makemore Part 5: Building a WaveNet](https://www.youtube.com/watch?v=t3YJ5hKiMQ0)
 - 2022-10-11T17:56:19+00:00 - Andrej Karpathy: [Building makemore Part 4: Becoming a Backprop Ninja](https://www.youtube.com/watch?v=q8SA3rM6ckI)
 - 2022-10-04T16:41:03+00:00 - Andrej Karpathy: [Building makemore Part 3: Activations & Gradients, BatchNorm](https://www.youtube.com/watch?v=P6sfmUTpUmc)
-- 2022-09-12T14:43:06+00:00 - Andrej Karpathy: [Building makemore Part 2: MLP](https://www.youtube.com/watch?v=TCH_1BHY58I)
