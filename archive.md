@@ -2,6 +2,7 @@
 
 - 2026-06-23T18:47:59+00:00 - Dwarkesh Patel: [Why Italians Saw the Pope Very Differently - Ada Palmer](https://www.youtube.com/watch?v=9VmJewRHL7s)
 - 2026-06-23T18:45:29+00:00 - OpenAI: [ChatGPT Futures, Class of 2026: The Next Generation of AI Leaders](https://www.youtube.com/watch?v=mVpCDzoNtxA)
+- 2026-06-23T15:48:06+00:00 - Google DeepMind: [When millions of AI agents meet](https://www.youtube.com/watch?v=V04bm-3d6EQ)
 - 2026-06-23T14:30:10+00:00 - Leonid Kim MD: [Who Actually Needs Magnesium? Which Type Is Right For You (Doctor Explains)](https://www.youtube.com/watch?v=oD8_9_Att0I)
 - 2026-06-23T14:01:14+00:00 - NDC Conferences: [Building fun and creative messaging experiences on WhatsApp - Michelle "MishManners" Duke](https://www.youtube.com/watch?v=fRvawa5whsQ)
 - 2026-06-23T07:30:27+00:00 - Scott Hanselman: [The space between the Commits with Zed and DeltaDB's Nathan Sobo](https://www.youtube.com/watch?v=9pEw0sBNukw)
@@ -59,4 +60,3 @@
 - 2023-01-17T16:33:27+00:00 - Andrej Karpathy: [Let's build GPT: from scratch, in code, spelled out.](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 - 2022-11-21T00:32:48+00:00 - Andrej Karpathy: [Building makemore Part 5: Building a WaveNet](https://www.youtube.com/watch?v=t3YJ5hKiMQ0)
 - 2022-10-11T17:56:19+00:00 - Andrej Karpathy: [Building makemore Part 4: Becoming a Backprop Ninja](https://www.youtube.com/watch?v=q8SA3rM6ckI)
-- 2022-10-04T16:41:03+00:00 - Andrej Karpathy: [Building makemore Part 3: Activations & Gradients, BatchNorm](https://www.youtube.com/watch?v=P6sfmUTpUmc)
