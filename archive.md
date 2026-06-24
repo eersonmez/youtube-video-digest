@@ -1,6 +1,13 @@
 # YouTube Video Digest Archive
 
+- 2026-06-23T18:47:59+00:00 - Dwarkesh Patel: [Why Italians Saw the Pope Very Differently - Ada Palmer](https://www.youtube.com/watch?v=9VmJewRHL7s)
+- 2026-06-23T18:45:29+00:00 - OpenAI: [ChatGPT Futures, Class of 2026: The Next Generation of AI Leaders](https://www.youtube.com/watch?v=mVpCDzoNtxA)
+- 2026-06-23T14:30:10+00:00 - Leonid Kim MD: [Who Actually Needs Magnesium? Which Type Is Right For You (Doctor Explains)](https://www.youtube.com/watch?v=oD8_9_Att0I)
+- 2026-06-23T14:01:14+00:00 - NDC Conferences: [Building fun and creative messaging experiences on WhatsApp - Michelle "MishManners" Duke](https://www.youtube.com/watch?v=fRvawa5whsQ)
+- 2026-06-23T07:30:27+00:00 - Scott Hanselman: [The space between the Commits with Zed and DeltaDB's Nathan Sobo](https://www.youtube.com/watch?v=9pEw0sBNukw)
 - 2026-06-22T12:00:17+00:00 - Andrew Huberman: [Science of Attraction, Compatibility & Romance | Dr. Paul Eastwick](https://www.youtube.com/watch?v=CV0GtUlJ6NM)
+- 2026-06-21T23:17:37+00:00 - Scott Hanselman: [The space between the Commits with Zed and DeltaDB's Nathan Sobo](https://www.youtube.com/watch?v=F0lCI3lulSo)
+- 2026-06-21T16:23:19+00:00 - Alex Kantrowitz: [Mike Krieger on Why Most AI Startups Will Struggle](https://www.youtube.com/watch?v=QatuNwfJME4)
 - 2026-06-20T20:22:07+00:00 - Dwarkesh Patel: [They loved Trajan so much they rewrote the afterlife for him - Ada Palmer](https://www.youtube.com/watch?v=IsWr9Lir8Pc)
 - 2026-06-20T18:41:40+00:00 - Alex Kantrowitz: [Greg Brockman on AI's Real Bottleneck](https://www.youtube.com/watch?v=IZQEgTRFa5Q)
 - 2026-06-20T16:09:24+00:00 - Smart Home Solver: [15 Cool Smart Home Devices You’ll Actually Want in 2026!](https://www.youtube.com/watch?v=T4Zux64mDsM)
@@ -53,5 +60,3 @@
 - 2022-10-11T17:56:19+00:00 - Andrej Karpathy: [Building makemore Part 4: Becoming a Backprop Ninja](https://www.youtube.com/watch?v=q8SA3rM6ckI)
 - 2022-10-04T16:41:03+00:00 - Andrej Karpathy: [Building makemore Part 3: Activations & Gradients, BatchNorm](https://www.youtube.com/watch?v=P6sfmUTpUmc)
 - 2022-09-12T14:43:06+00:00 - Andrej Karpathy: [Building makemore Part 2: MLP](https://www.youtube.com/watch?v=TCH_1BHY58I)
-- 2022-09-07T19:14:47+00:00 - Andrej Karpathy: [The spelled-out intro to language modeling: building makemore](https://www.youtube.com/watch?v=PaCmpygFfXo)
-- 2022-08-16T22:44:26+00:00 - Andrej Karpathy: [The spelled-out intro to neural networks and backpropagation: building micrograd](https://www.youtube.com/watch?v=VMj-3S1tku0)
