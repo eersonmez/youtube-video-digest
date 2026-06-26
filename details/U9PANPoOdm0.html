@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Home Solver rebuilds a smart home from the network upward with Home Assistant, Z-Wave, scenes, and resilient automations.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=U9PANPoOdm0">Watch video</a></nav>
+  <h1>Smart Home Solver rebuilds a smart home from the network upward with Home Assistant, Z-Wave, scenes, and resilient automations.</h1>
+  <div class="meta">Smart Home Solver · 2026-06-13T16:44:50+00:00 · How I’m Starting a New Smart Home from Scratch!</div>
+  <h2>What This Video Is About</h2>
+<p>This video details the process of rebuilding a smart home system from first principles, emphasizing that a robust underlying network is the essential foundation upon which all other smart features must rest. The creator advocates for a highly customized setup using Home Assistant as the central automation platform to overcome the limitations of proprietary ecosystems like Apple, Amazon, or Google.</p>
+<p>The core philosophy presented is to prioritize solving high-annoyance problems in frequently used areas first, rather than simply adding devices randomly. By carefully selecting hardware and structuring automations around reusable &quot;scenes,&quot; the goal is to achieve a smart home experience that removes daily irritations while maintaining the reliability of traditional, non-automated systems.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The process begins with establishing a reliable network infrastructure <a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=19s">[0:19]</a>. The creator advises taking an ISP&#x27;s all-in-one modem/router and putting it into bridge mode to prevent double NAT issues, warning that using the ISP device as the router will lead to frequent crashes [0:34–0:57]. For routing hardware, while UniFi is mentioned, a budget TP-Link mesh system can suffice for beginners. The setup involves upgrading to components like a 10 gig switch and U7 Pro XG wireless access points [1:18–1:29]. A key architectural decision is minimizing Wi-Fi usage; devices like computers are hardwired through Ethernet to low-voltage switches, which feed into the main 10 gig switch where smart home hubs reside [2:05–2:27].</p>
+<p>The choice of automation platform is Home Assistant <a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=175s">[2:55]</a>, praised for its ability to integrate nearly every smart device and its open-source nature. The selection criteria for initial devices are based on two factors: the severity of the annoyance, and whether the area receives high traffic [4:17–4:23]. In the living room, the first target was solving shadow issues caused by ceiling fans and lights when both were active [4:48–4:50]. The solution implemented involved using a Zooz ZEN32 smart switch <a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=308s">[5:08]</a>, which allows for customization of button functions (e.g., bright white light, orange dim, blue fan control) and is reliable because it uses Z-Wave technology [5:16–5:41].</p>
+<p>For pendant lights, the creator opted for high-quality &quot;dumb&quot; bulbs paired with Lutron dimmer switches instead of smart bulbs to ensure 100% reliability when using the physical switch [6:48–7:02]. The preference for communication protocols is strictly ordered based on perceived reliability: Z-Wave first, then Zigbee, then Thread, with Wi-Fi being the last choice [7:32–7:51].</p>
+<p>Before writing complex automations, the workflow dictates creating reusable scenes—such as &quot;bright,&quot; &quot;dim,&quot; or &quot;TV watching&quot;—to serve as a single source of truth for all controls [7:59–8:46]. For instance, five living room scenes were established. Automations are then built upon these scenes; one example addresses the fan/light conflict by creating an automation with two triggers (fan on, light on) and using conditions to turn off the conflicting device [8:54–10:02].</p>
+<p>A critical implementation lesson involves Home Assistant&#x27;s automation mode. Initial testing failed because rapid button presses were ignored; this was resolved by changing the automation mode from single to parallel mode, allowing multiple actions to run simultaneously when triggered rapidly [10:32–11:07]. Furthermore, schedules can be made intelligent; for example, an evening light schedule is conditioned to skip changes if the Apple TV is playing content, preventing glare on the screen [11:37–11:54]. Finally, desk-light automation was achieved by triggering based on the computer turning on and connecting to a second screen, avoiding unreliable motion sensors [12:18–12:40].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li><strong>Network First:</strong> A reliable network foundation is paramount; this requires bridging ISP modem/routers and prioritizing wired connections for high-value devices.</li>
+<li><strong>Platform Choice:</strong> Home Assistant is recommended over proprietary systems due to its extensive compatibility (Matter, Z-Wave, etc.) and open-source nature.</li>
+<li><strong>Prioritization Strategy:</strong> Start automation efforts by targeting the most annoying problems in the areas of highest traffic usage.</li>
+<li><strong>Scene Management:</strong> Always build reusable scenes first; this centralizes settings so that updating a scene updates all associated buttons and automations simultaneously.</li>
+<li><strong>Protocol Hierarchy:</strong> When selecting devices, prioritize Z-Wave over Zigbee, then Thread, with Wi-Fi being the least preferred due to reliability concerns.</li>
+<li><strong>Automation Mode:</strong> In Home Assistant, ensure complex interactions involving rapid inputs are set to &quot;parallel mode&quot; rather than the default &quot;single mode.&quot;</li>
+<li><strong>Predictability Over Sensors:</strong> Automating based on existing device states (e.g., computer power state) is more predictable and less prone to false triggers than relying solely on motion sensors.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Network Setup:</strong> Change ISP all-in-one device to bridge mode <a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=36s">[0:36]</a>. Consider using UniFi or a budget TP-Link mesh system for routing.</li>
+<li><strong>Device Selection Workflow:</strong> Check for Z-Wave versions first, then Zigbee, then Thread, and finally Wi-Fi [7:32–7:40].</li>
+<li><strong>Switch Implementation:</strong> Zooz ZEN32 is cited as an example of a customizable, wired Z-Wave switch that allows multiple functions per button.</li>
+<li><strong>Dimmer Reliability:</strong> For critical lighting control where physical switches must work 100% of the time, use smart dimmer switches (e.g., Lutron) paired with high-quality dumb bulbs [6:48–7:02].</li>
+<li><strong>Automation Logic:</strong> Complex interactions can be managed in Home Assistant using multiple triggers and conditions within a single automation entity to control device states simultaneously.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=78s">[1:18]</a> - Network hardware setup (UniFi/TP-Link configuration).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=125s">[2:05]</a> - Strategy for minimizing Wi-Fi congestion via wired backbones.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=257s">[4:17]</a> - Criteria for selecting the first automations to implement.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=308s">[5:08]</a> - Demonstration of using a customizable smart switch (Zooz ZEN32).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=479s">[7:59]</a> - Explanation and demonstration of creating reusable scenes.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=632s">[10:32]</a> - Crucial step regarding changing the automation mode in Home Assistant for responsiveness.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=U9PANPoOdm0&amp;t=697s">[11:37]</a> - Implementation of conditional logic to prevent automated changes when media (Apple TV) is playing.</li>
+</ul>
+</main>
+</body>
+</html>
