@@ -1,7 +1,11 @@
 # YouTube Video Digest Archive
 
+- 2026-06-26T01:06:39+00:00 - Alex Kantrowitz: [The Biggest Problem With AI Isn't Intelligence](https://www.youtube.com/watch?v=P9NCfNUHAY0)
+- 2026-06-25T19:55:43+00:00 - Dwarkesh Patel: [When Forgiveness Was a Trap - Ada Palmer](https://www.youtube.com/watch?v=DdU9PJP7Cbs)
+- 2026-06-25T18:04:28+00:00 - Scott Hanselman: [300 AI conversations touched this one line](https://www.youtube.com/watch?v=f69jc99G9w8)
 - 2026-06-25T17:19:53+00:00 - OpenAI: [What if plants could talk?](https://www.youtube.com/watch?v=q_diWy3xdrw)
 - 2026-06-25T12:00:33+00:00 - Andrew Huberman: [Essentials: The Science of Eating for Health, Fat Loss & Lean Muscle | Dr. Layne Norton](https://www.youtube.com/watch?v=WWe4up63hb4)
+- 2026-06-24T14:23:56+00:00 - NDC Conferences: [Dangerous Reactivity: Why AI Output Is the New XSS - Ramona Schwering - NDC Copenhagen 2026](https://www.youtube.com/watch?v=1uhV9yR-WZg)
 - 2026-06-23T18:47:59+00:00 - Dwarkesh Patel: [Why Italians Saw the Pope Very Differently - Ada Palmer](https://www.youtube.com/watch?v=9VmJewRHL7s)
 - 2026-06-23T18:45:29+00:00 - OpenAI: [ChatGPT Futures, Class of 2026: The Next Generation of AI Leaders](https://www.youtube.com/watch?v=mVpCDzoNtxA)
 - 2026-06-23T15:48:06+00:00 - Google DeepMind: [When millions of AI agents meet](https://www.youtube.com/watch?v=V04bm-3d6EQ)
@@ -56,7 +60,3 @@
 - 2026-04-02T12:00:02+00:00 - Andrew Huberman: [Essentials: How to Build Strength, Muscle Size & Endurance | Dr. Andy Galpin](https://www.youtube.com/watch?v=0VSOoMuStvg)
 - 2025-02-27T22:29:56+00:00 - Andrej Karpathy: [How I use LLMs](https://www.youtube.com/watch?v=EWvNQjAaOHw)
 - 2025-02-05T18:23:47+00:00 - Andrej Karpathy: [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI)
-- 2024-06-09T23:31:35+00:00 - Andrej Karpathy: [Let's reproduce GPT-2 (124M)](https://www.youtube.com/watch?v=l8pRSuU81PU)
-- 2024-02-20T17:11:35+00:00 - Andrej Karpathy: [Let's build the GPT Tokenizer](https://www.youtube.com/watch?v=zduSFxRajkE)
-- 2023-11-23T02:27:48+00:00 - Andrej Karpathy: [[1hr Talk] Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g)
-- 2023-01-17T16:33:27+00:00 - Andrej Karpathy: [Let's build GPT: from scratch, in code, spelled out.](https://www.youtube.com/watch?v=kCc8FmEb1nY)
