@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Greg Brockman discusses the limitations of current AI voice interactions and the need for more human-like conversation.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=mcS54Lu4X5w">Watch video</a></nav>
+  <h1>Greg Brockman discusses the limitations of current AI voice interactions and the need for more human-like conversation.</h1>
+  <div class="meta">Alex Kantrowitz · 2026-06-27T16:49:52+00:00 · Greg Brockman on Why ChatGPT Voice Still Feels Frustrating</div>
+  <h2>What This Video Is About</h2>
+<p>This video features Greg Brockman discussing the current limitations of AI voice interactions, particularly in systems like those powering ChatGPT. The central theme is that existing implementations feel unnatural and frustrating because they do not mimic the fluid nature of human conversation. Currently, these systems operate through a sequential chain of separate components, which creates a clunky user experience.</p>
+<p>Brockman highlights that even when unified models are used to handle input and output, a significant hurdle remains: turn-taking. These AI systems require the user to wait for the entire response before they can speak again; interruptions or overlapping speech are not supported, which is fundamentally different from how humans converse. The ultimate goal of research in this area is to develop an AI model capable of processing incoming input concurrently while simultaneously generating its output, leading to more natural and human-like conversational interfaces.</p>
+<h2>Detailed Walkthrough</h2>
+<p>Brockman begins by describing the traditional architecture for voice interactions <a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=0s">[0:00]</a>. This setup involves chaining three distinct models together: a speech-to-text model, followed by a text-to-text model, and finally a text-to-speech model. He describes this chained process as &quot;horribleness&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=8s">[0:08]</a>.</p>
+<p>He then addresses the situation where even a single unified model is employed to handle both input and output <a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=16s">[0:16]</a>. Despite unification, a persistent problem exists concerning turn taking. The current limitation dictates that once a user speaks in their turn, they must wait for the AI to complete its entire response before they can speak again; interruptions or overlapping speech are not possible <a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=25s">[0:25]</a>.</p>
+<p>The desired advancement, according to Brockman, is an AI model that functions more like human interaction by being able to process input at the same time it is processing output <a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=33s">[0:33]</a>. He notes that many researchers in the field are actively working toward this capability. He concludes by stating that moving towards these natural and fluid conversational interfaces will be a very exciting development for the future of AI [0:41, 0:48].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Traditional voice systems rely on chaining separate models: speech-to-text, text-to-text, and text-to-speech.</li>
+<li>Even with unified models, current AI suffers from turn-taking issues where users cannot overlap or interrupt the AI&#x27;s response.</li>
+<li>Human conversation allows for overlapping speech and interruptions, which current AI lacks.</li>
+<li>The ideal future AI model should be capable of processing input concurrently while generating output.</li>
+<li>This shift toward natural, fluid conversational interfaces is considered a very exciting area of development in AI.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>No specific implementation steps, commands, product names beyond general reference to ChatGPT voice, or architectural diagrams were provided in the transcript excerpts. The primary decision point discussed is moving from sequential processing (chaining models) to concurrent processing (simultaneous input and output handling).</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=0s">[0:00]</a> - For an explanation of the original chained model architecture.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=16s">[0:16]</a> - To understand the limitation regarding turn-taking even with unified models.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=mcS54Lu4X5w&amp;t=33s">[0:33]</a> - To hear the description of the desired concurrent processing capability.</li>
+</ul>
+</main>
+</body>
+</html>

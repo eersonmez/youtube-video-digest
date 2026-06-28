@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using Artificial Intelligence to Assist in Test-Driven Development for Code</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=VX4qE02JcF8">Watch video</a></nav>
+  <h1>Using Artificial Intelligence to Assist in Test-Driven Development for Code</h1>
+  <div class="meta">NDC Conferences · 2026-06-24T13:43:07+00:00 · Test Driving Code with the Help of AI - Venkat Subramaniam - NDC Copenhagen 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video explores the concept of &quot;test driving code&quot; by integrating Artificial Intelligence (AI) tools into the Test-Driven Development (TDD) workflow. The central argument is that automated testing serves two critical purposes in software development: providing regression benefits and acting as an act of design rather than mere verification <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=0s">[0:00]</a>. While AI can generate test cases, the speaker strongly cautions that its output quality is entirely dependent on the skill and guidance provided by the human developer.</p>
+<p>The presentation uses Conway&#x27;s Game of Life as a practical case study to demonstrate how an experienced developer acts as an &quot;active navigator&quot; when using AI. The core message is that AI functions as an amplifier of existing expertise; it does not possess inherent understanding or design intuition. Therefore, developers must remain highly vigilant, directing the AI&#x27;s efforts precisely rather than passively accepting its suggestions.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The speaker begins by establishing the value proposition of automated testing, noting that while regression benefits are important, the design benefit—writing tests first to drive code structure—is paramount <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=0s">[0:00]</a>. The speaker expresses excitement about using AI because it can handle repetitive tasks like generating variations of tests, freeing up human time for higher-level concerns.</p>
+<p>The demonstration begins with Conway&#x27;s Game of Life, specifically aiming to model an infinite universe rather than a finite grid <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=300s">[5:00]</a>. The initial step involves creating a &quot;canary test,&quot; which is described as the simplest possible test (e.g., asserting true equals true) used solely to confirm that the testing environment is set up correctly and functioning <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=454s">[7:34]</a>.</p>
+<p>The speaker then moves into the core TDD loop, emphasizing an incremental design process where one first examines and refines tests before writing code. When prompting AI for a test (e.g., &quot;test two&quot;), the initial output might be useless or overly generic, such as checking if something is not null <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=600s">[10:00]</a>. The speaker notes that AI often learns from common but poor practices in existing codebases, leading it to generate similarly weak tests.</p>
+<p>To guide the AI effectively, the developer must provide highly specific instructions. For instance, when testing a dead cell&#x27;s behavior, the prompt moves beyond simple assertions to define inputs (current state is dead, live neighbors is zero) and expected outputs (next state equals dead) <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=900s">[15:00]</a>. The speaker highlights that AI tends to &quot;jump ahead&quot; by inferring complex structures like Arrange-Act-Assert or generating subsequent related tests prematurely.</p>
+<p>The process continues with refinement. When the AI generates multiple independent assertions within a single test, the developer corrects this, adhering to the principle of never putting multiple independent asserts in one test so that failure visibility is complete <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1140s">[19:00]</a>. The AI quickly adapts after these corrections, demonstrating &quot;instantaneous learning&quot; by generating related tests for alive cells based on the initial dead cell logic <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1428s">[23:48]</a>.</p>
+<p>The discussion then addresses limitations. The speaker points out the AI&#x27;s &quot;stopping problem&quot;—it may not know when enough test cases have been written and will continue to generate them unnecessarily—and its tendency toward an &quot;edge case&quot; obsession, such as testing for negative cell counts which are nonsensical in this context <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1496s">[24:56]</a>.</p>
+<p>A significant portion of the demonstration focuses on evolving design patterns. The speaker moves away from state-based testing (using setters and getters) towards behavior testing. When prompting AI to generate signals for a single cell with specific neighbors (e.g., two and one), it can correctly infer the required structure, including visualizing positions <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1740s">[29:00]</a>. However, the speaker warns that this apparent intelligence is often just pattern matching or copying from existing code, which they term &quot;plagiarism&quot; in an AI context <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1908s">[31:48]</a>.</p>
+<p>Finally, when testing aggregation functions like `count signals`, the AI initially defaults to imperative programming styles because it has seen more examples of that style. By explicitly directing the AI with directives such as &quot;write this in functional style,&quot; the speaker successfully guides it toward using appropriate functional operations like flat map/select many <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=2700s">[45:00]</a>. The ultimate philosophy presented is that AI is an &quot;amplified intelligence&quot;—it enhances the capabilities of a skilled user but cannot compensate for fundamental lack of knowledge.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Automated testing provides both regression benefits and acts as a crucial act of design in software development.</li>
+<li>AI excels at automating repetitive tasks in test generation, minimizing manual effort like copy-pasting variations.</li>
+<li>The quality of AI-generated tests is directly proportional to the skill and specificity of the human developer guiding it.</li>
+<li>Developers must be &quot;active navigators,&quot; constantly directing the AI&#x27;s focus rather than passively accepting its output.</li>
+<li>Initial AI outputs are often useless or based on common but poor coding patterns, requiring immediate expert correction.</li>
+<li>A canary test is useful for quickly verifying that the testing environment itself is correctly configured before diving into application logic.</li>
+<li>Developers should strive to design code as stateless as possible when writing tests to encourage behavior-focused testing over state manipulation.</li>
+<li>AI exhibits a &quot;stopping problem,&quot; meaning it may continue generating unnecessary tests if not explicitly directed to stop or pivot.</li>
+<li>To elicit desired coding styles (e.g., functional vs. imperative), developers must provide explicit stylistic directives in prompts or skill files.</li>
+<li>The speaker advises treating the AI as a tool that amplifies intelligence, not a substitute for foundational knowledge.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Workflow:</strong> Start with a canary test to validate the environment <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=454s">[7:34]</a>. Follow this with highly specific TDD steps (Test -&gt; Refine Test/Design Interface -&gt; Implement Code).</li>
+<li><strong>AI Prompting Strategy:</strong> Begin with minimal, high-level descriptions of desired behavior rather than complex implementation details. For example, instead of asking for a full class structure, ask for the test asserting the expected outcome for a specific input pattern <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=900s">[15:00]</a>.</li>
+<li><strong>Code Style Directives:</strong> To enforce preferred coding styles (e.g., functional), use explicit directives in prompts or skill files, such as &quot;Where possible, write functional style code&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=2700s">[45:00]</a>.</li>
+<li><strong>Risk Mitigation:</strong> Always manually verify that the AI-generated tests are logically correct and meaningful; do not assume correctness based on successful generation [31:48, 55:00]. Be mindful of potential source derivation/plagiarism warnings from tools like Copilot <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1926s">[32:06]</a>.</li>
+<li><strong>Design Philosophy:</strong> Focus initial tests on defining the &quot;skin&quot; or interface of a method before writing tests that probe its internal implementation details (&quot;guts&quot;) <a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=2415s">[40:15]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=454s">[7:34]</a> Initial setup and demonstration of the canary test.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=600s">[10:00]</a> Examples of useless or generic AI-generated tests (e.g., checking for null).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1428s">[23:48]</a> Demonstration of AI&#x27;s ability to learn from corrected patterns, generating related tests automatically.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=1908s">[31:48]</a> Discussion on how AI generates code by pattern matching and copying existing examples.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=2700s">[45:00]</a> Direct prompting for functional style implementation (e.g., using flat map/select many).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VX4qE02JcF8&amp;t=3300s">[55:00]</a> Final warning about the necessity of human vigilance in verifying test correctness.</li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The speaker discusses the nature of machines, learning, and machine learning while contrasting technological hype with real-world limitations.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=xunx7VvlOgs">Watch video</a></nav>
+  <h1>The speaker discusses the nature of machines, learning, and machine learning while contrasting technological hype with real-world limitations.</h1>
+  <div class="meta">NDC Conferences · 2026-06-22T08:31:32+00:00 · Machines, Learning, and Machine Learning - Dylan Beattie - NDC Copenhagen 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video explores the fundamental disconnect between the perceived intelligence of modern technology, particularly Artificial Intelligence (AI), and its actual operational mechanics. The speaker argues that many advanced AI systems are not conscious or truly intelligent; rather, they function by predicting the next token based on probability derived from massive datasets. The discussion contrasts this probabilistic nature with the deterministic processes found in computer science and the inherently non-deterministic nature of real life, citing chaos theory as an example.</p>
+<p>The presentation delves into how human psychology predisposes us to attribute intelligence or personality to systems that merely appear smart—a phenomenon related to pareidolia. It examines concepts like &quot;vibe coding&quot; as a manifestation of iterative prompting with AI tools. Ultimately, the video serves as a critical examination of technological hype, urging viewers to understand the limitations of current AI capabilities while acknowledging its vital role in development and future workflows.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The speaker begins by illustrating how humans tend to project intelligence onto technology, referencing Richard&#x27;s keynote mention of pareidolia—the tendency to see faces where none exist <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=60s">[1:00]</a>. This human wiring is a result of natural selection favoring those good at spotting intelligence. The speaker then contrasts this with the reality that many systems are merely complex tools; for instance, a smart blood pressure monitor might only be tracking data and displaying it, not truly understanding health <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=0s">[0:00]</a>.</p>
+<p>The discussion shifts to contrasting different types of experiences: things that are enjoyable while happening (like eating pizza) versus things that are satisfying because they were completed despite being difficult (like running a marathon) <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=300s">[5:00]</a>. This leads into the concept of determinism, which is central to fair societal structures—if two people do the same thing under the same conditions, the outcome should be predictable. In contrast, real life is non-deterministic; while one can forecast trends like traffic volume, specific unpredictable events exist, such as &quot;black swan events&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=900s">[15:00]</a>.</p>
+<p>Technology attempts to impose determinism onto this randomness. For example, TCP/IP builds guaranteed, in-order delivery on top of the inherently unreliable IP layer, ensuring a FaceTime call routes around damaged cables without user notice <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=900s">[15:00]</a>. Similarly, database transactions ensure money moves atomically—it either succeeds or fails completely, preventing loss <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=1200s">[20:00]</a>.</p>
+<p>The speaker then addresses AI&#x27;s limitations. Language models do not possess consciousness; they predict the next token based on probability from a massive vector database <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=1500s">[25:00]</a>. This leads to &quot;hallucinations,&quot; which are misrepresentations because humans project consciousness onto these non-conscious systems. The practice of &quot;vibe coding&quot; is described as an iterative process where prompts are given, and the AI generates code that goes straight into production, relying on repeated prompting rather than deep understanding <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=1500s">[25:00]</a>.</p>
+<p>The speaker draws a parallel between this reliance on reinforcement in AI and B.F. Skinner&#x27;s operant conditioning experiments with rats and pigeons <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=1800s">[30:00]</a>. Variable ratio reinforcement—where rewards are unpredictable—is what drives addictive behaviors, such as checking social media notifications or playing slot machines <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=1800s">[30:00]</a>.</p>
+<p>The conversation moves to the distinction between programs and products. While many tools exist (like JPEG compression), they are often just utilities that solve a specific problem. Products, however, are designed for consumption by users. The speaker argues that software delivery is solved; the real question is how the code itself gets created <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=2400s">[40:00]</a>.</p>
+<p>Finally, regarding AI&#x27;s future role, the speaker asserts it will change software engineering fundamentally but not replace it entirely. True intelligence requires novel input beyond existing data corpora, suggesting a plateau for current LLMs <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=3600s">[1:00:00]</a>. The most crucial takeaway is that humans must maintain control and accountability; therefore, the &quot;human in the loop&quot; remains necessary because AI cannot be legally liable or desire profit <a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=2400s">[40:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>AI models operate by predicting the next token based on probability from a massive vector database, not through consciousness.</li>
+<li>Human tendency to seek patterns and intelligence in non-intelligent systems is rooted in evolutionary biology (pareidolia).</li>
+<li>&quot;Vibe coding&quot; describes an iterative workflow where prompts are fed into AI tools until acceptable code is produced for production use.</li>
+<li>Real life exhibits non-deterministic elements, contrasting with the deterministic guarantees achievable within computer systems (e.g., database transactions).</li>
+<li>Variable ratio reinforcement mechanisms, similar to those in social media and gambling, drive compulsive user behavior.</li>
+<li>The distinction between a useful &quot;program&quot; (a utility) and a marketable &quot;product&quot; is critical for understanding software creation.</li>
+<li>AI tools are subject to external control by their providers (e.g., cloud services), meaning dependency on them introduces risks of sudden change or cost increases.</li>
+<li>To mitigate reliance on proprietary, non-deterministic AI tools, running models locally using open-source options and powerful hardware is a viable strategy.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Local Development:</strong> To avoid external control, users can run open-source language models locally using tools like LM Studio, provided they have sufficient local hardware (e.g., modern Apple MacBook Pro M5 with maxed unified memory).</li>
+<li><strong>Core Skills:</strong> Regardless of AI advancements, proficiency in HTML, CSS, and JavaScript is recommended as the foundational interface for web interaction. Backend languages such as C# or Java are suggested due to their relevance in financially stable industries like banking.</li>
+<li><strong>Verification Workflow:</strong> When receiving code from any source (human or AI), it must be treated skeptically; always isolate dependencies and test the line of code directly rather than accepting its claims on faith.</li>
+<li><strong>AI Limitations:</strong> Current LLMs are constrained by their training data corpus, and achieving an order of magnitude improvement would require a significantly larger dataset than currently exists.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=0s">[0:00]</a> Initial discussion using the smart blood pressure monitor example to illustrate projection onto technology.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=300s">[5:00]</a> Explanation contrasting enjoyable experiences with satisfying accomplishments (e.g., marathon vs. pizza).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=900s">[15:00]</a> Detailed explanation of how TCP/IP builds determinism over unreliable data layers.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=1500s">[25:00]</a> Definition and demonstration context for &quot;vibe coding&quot; using AI prompts.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=1800s">[30:00]</a> Explanation of B.F. Skinner&#x27;s operant conditioning, specifically variable ratio reinforcement in social media design.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=2400s">[40:00]</a> Discussion on the necessity of the &quot;human in the loop&quot; due to legal liability and accountability.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=xunx7VvlOgs&amp;t=3300s">[55:00]</a> Advice on running models locally using open-source options like LM Studio to maintain control over workflows.</li>
+</ul>
+</main>
+</body>
+</html>

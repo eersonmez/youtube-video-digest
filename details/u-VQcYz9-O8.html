@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strategies for building resilient frontend components within a design system.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=u-VQcYz9-O8">Watch video</a></nav>
+  <h1>Strategies for building resilient frontend components within a design system.</h1>
+  <div class="meta">NDC Conferences · 2026-06-23T10:11:18+00:00 · Building Better Components - A Journey to a More Resilient Frontend - Daniel Yuschick</div>
+  <h2>What This Video Is About</h2>
+<p>This video outlines strategies for constructing frontend components within a design system that are resilient to constant content and product evolution. The central premise is that component libraries alone are insufficient; true resilience comes from establishing robust patterns, conventions, and cross-team trust between design and development teams. Since content is perpetually changing, the goal is to build frontends that accommodate this change without accumulating significant technical debt or breaking existing functionality.</p>
+<p>The discussion focuses heavily on leveraging TypeScript interfaces as a primary mechanism for achieving component stability. By carefully structuring how props are defined—moving away from sprawling boolean flags toward categorized union types and adhering strictly to established web standards—developers can create components that scale gracefully alongside evolving product requirements. Ultimately, the speaker argues that a design system is fundamentally an exercise in building organizational trust through predictable patterns.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by framing the challenge: how to componentize frontends effectively when content is always changing <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=157s">[2:37]</a>. The speaker shares experience leading design systems at OP (Osuuspankki) and Posti, noting that while components are the visible output, the underlying system architecture is crucial for longevity.</p>
+<p>The core technical discussion revolves around managing TypeScript interfaces to prevent them from becoming bloated due to evolving needs like new themes or sizes <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=331s">[5:31]</a>. A common anti-pattern identified is relying on numerous boolean props (e.g., separate flags for high contrast mode or extra-large size) <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=401s">[6:41]</a>. This leads to complex defensive logic within the component and makes extensions difficult. The solution proposed is grouping related properties into categories using string literal union types <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=479s">[7:59]</a>. For instance, instead of multiple booleans controlling label rendering, theme, and size, a single `labelType`, `theme`, and `size` prop can be used, allowing new options (like &quot;high contrast&quot; or &quot;extra small&quot;) to be added simply by extending the union without breaking existing code <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=516s">[8:36]</a>.</p>
+<p>Another pattern discussed is avoiding the &quot;data gate model,&quot; where a boolean flag like `hasError` controls the visibility of an error message string. The recommendation is to simplify this by using a single prop, such as `errorMessage`, and assuming that if the prop is provided, the component should render in its appropriate state (e.g., toggling `aria-invalid`) <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=720s">[12:00]</a>.</p>
+<p>A critical concept introduced is establishing a universal terminology system across the entire design system <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=866s">[14:26]</a>. This means defining shared properties—like `disabled`, `busy`, or size definitions using two-letter T-shirt values (e.g., &#x27;s&#x27;, &#x27;m&#x27;, &#x27;l&#x27;)—so that if a developer learns how to use one component, they intuitively know how to use all others <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=871s">[14:31]</a>. This convention must be enforced across interactive controls and static media alike <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1048s">[17:28]</a>.</p>
+<p>The final major technical point is the directive to &quot;do not reinvent HTML&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1340s">[22:20]</a>. When building components that abstract native HTML elements (like `&lt;button&gt;` or `&lt;input&gt;`), developers should separate standard HTML attributes from custom component props. Deviating from established HTML conventions creates friction because application teams must learn your component&#x27;s specific rules instead of relying on universal web standards <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1396s">[23:16]</a>. For instance, a button should be treated as a semantic interactive container capable of holding various children; scoping it only to a single `text` prop breaks this convention and limits its adaptability <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1977s">[32:57]</a>.</p>
+<p>Finally, for complex interactions like popover menus or dialogues, the video suggests using centralized component stores (e.g., via custom hooks in React) <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=2282s">[38:02]</a>. This store manages state and behavior across different files—such as keeping a trigger button in one file synchronized with the menu logic in another—by providing a single reference point for actions like `open` and `close` <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=2589s">[43:09]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Component libraries are only part of the solution; building a design system is fundamentally about establishing trust between organizational teams [1:26, 47:07].</li>
+<li>Group similar component properties into categories using string literal union types instead of relying on numerous boolean flags to prevent interface bloat <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=482s">[8:02]</a>.</li>
+<li>Establish a consistent terminology system that governs shared props (like `size` or `variant`) across all components in the design system, ensuring predictable behavior regardless of the specific element <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1003s">[16:43]</a>.</li>
+<li>Do not reinvent native HTML conventions; when building abstractions over standard elements like `&lt;input&gt;`, separate inherent HTML attributes from component-specific properties to maintain compatibility and reduce learning curves <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1670s">[27:50]</a>.</li>
+<li>Simplify data flow by removing &quot;gate props&quot; (e.g., `hasError`) in favor of single, comprehensive props that imply the desired state when present (e.g., `errorMessage`) <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=785s">[13:05]</a>.</li>
+<li>Use centralized component stores or hooks to manage complex interactive states (like popover open/close status) across multiple files and disparate UI elements, keeping them synchronized <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=2320s">[38:40]</a>.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Prop Structuring:</strong> When designing props for components like inputs or buttons, use union types for constrained values. Example: Instead of `isLarge`, `isExtraSmall`, define a single `size` prop that accepts `&quot;small&quot; | &quot;medium&quot; | &quot;large&quot; | &quot;extra-small&quot;` <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=492s">[8:12]</a>.</li>
+<li><strong>HTML Abstraction:</strong> When building components wrapping native elements, use TypeScript&#x27;s ability to extend framework types (e.g., extending HTML input attributes) so your component interface inherits all standard browser attributes automatically <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1683s">[28:03]</a>. This keeps your custom props clean and focused only on unique behavior.</li>
+<li><strong>State Management for Interactions:</strong> For components spanning multiple files (like a trigger button and its associated menu), implement a centralized hook/store (e.g., `usePopoverMenu`) that holds the state (`isOpen`, `ref` to trigger) and exposes methods (`open()`, `close()`) to both elements <a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=2346s">[39:06]</a>.</li>
+<li><strong>Collaboration:</strong> Align on conventions (like default sizes or variants) between design and development teams early in the process; this alignment is crucial for UI consistency across large applications [18:24, 20:13].</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=401s">[6:41]</a> - Demonstration of how boolean props lead to interface bloat.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=479s">[7:59]</a> - Explanation and example of using string literal union types for prop categorization.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=720s">[12:00]</a> - Discussion on simplifying data flow by removing gate props (e.g., `hasError`).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=871s">[14:31]</a> - Conceptual discussion on the necessity of a universal terminology system across components.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=1670s">[27:50]</a> - Detailed breakdown of separating native HTML attributes from custom component properties using type extension.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=u-VQcYz9-O8&amp;t=2282s">[38:02]</a> - Introduction to centralized component stores for managing cross-file state synchronization (e.g., popover menus).</li>
+</ul>
+</main>
+</body>
+</html>
