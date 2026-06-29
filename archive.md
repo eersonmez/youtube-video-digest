@@ -1,5 +1,6 @@
 # YouTube Video Digest Archive
 
+- 2026-06-28T15:05:21+00:00 - Alex Kantrowitz: [AI’s True Cyber Risk: Fable, Mythos, China, and The Rest — With Alex Stamos](https://www.youtube.com/watch?v=rJ6YdXhvGpY)
 - 2026-06-27T21:51:54+00:00 - Dwarkesh Patel: [What Machiavelli thought freedom actually was - Ada Palmer](https://www.youtube.com/watch?v=w3-bxLJ2ms0)
 - 2026-06-27T16:49:52+00:00 - Alex Kantrowitz: [Greg Brockman on Why ChatGPT Voice Still Feels Frustrating](https://www.youtube.com/watch?v=mcS54Lu4X5w)
 - 2026-06-27T15:00:27+00:00 - Leonid Kim MD: [Metabolic Warning Sign Hiding in a Gout test (Uric Acid)](https://www.youtube.com/watch?v=rDFOYAuksuc)
@@ -59,4 +60,3 @@
 - 2026-06-19T21:22:26+00:00 - OpenAI: [Plan with ChatGPT](https://www.youtube.com/watch?v=YPNOjXTDP9c)
 - 2026-06-19T21:20:04+00:00 - OpenAI: [Score with ChatGPT](https://www.youtube.com/watch?v=5sDfhQq_g8A)
 - 2026-06-19T17:17:05+00:00 - Dwarkesh Patel: [The data black hole at the center of AI](https://www.youtube.com/watch?v=4pG3SJQPAwk)
-- 2026-06-19T15:00:09+00:00 - BeardedTinker: [I Gave This Robot My Worst Terrain](https://www.youtube.com/watch?v=27a0ysIcHag)
