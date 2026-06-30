@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The presentation details state-of-the-art agentic coding using OpenCode, custom workflows, and various model providers.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=EowOzx0NiOA">Watch video</a></nav>
+  <h1>The presentation details state-of-the-art agentic coding using OpenCode, custom workflows, and various model providers.</h1>
+  <div class="meta">NDC Conferences · 2026-06-29T11:05:37+00:00 · SOTA Agentic Coding with OpenCode, Greek Gods and Custom Workflows - Tjalve Aarflot</div>
+  <h2>What This Video Is About</h2>
+<p>This video presents a deep dive into state-of-the-art agentic coding practices using the framework OpenCode. The central theme is leveraging this tool to create sophisticated, autonomous software development agents capable of handling complex tasks over extended periods, potentially working overnight without constant human intervention. It addresses the limitations of simple one-shot prompts by detailing a structured workflow that moves from high-level specifications down to actionable GitHub issues.</p>
+<p>The presentation emphasizes OpenCode&#x27;s role as a model and provider agnostic harness for agentic coding. This allows users flexibility in mixing and matching different AI models (e.g., cloud vs. open-source) based on the specific needs of a task—using powerful models for complex reasoning while employing cheaper ones for exploration or routine checks. The discussion covers advanced concepts like defining primary and sub-agents, implementing granular permissions, and integrating custom quality gates to ensure code consistency and security throughout the development lifecycle.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The speaker introduces OpenCode as a general harness for agentic coding <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=54s">[0:54]</a>, noting its key advantage is being agnostic to underlying models and providers, unlike tools like Cloud Code which are tied to specific model families <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=77s">[1:17]</a>. It can be accessed via CLI, IDE extensions, or desktop applications <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=99s">[1:39]</a>. OpenCode supports standard features such as skills, rules, agents, custom tools, plugins, and hooks <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=121s">[2:01]</a>.</p>
+<p>The initial demonstrations showcase simple one-shot tasks, like creating a chess opening study tool <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=173s">[2:53]</a>, though the speaker notes these are not ideal for showcasing advanced capabilities. The core of the presentation shifts to demonstrating how to customize agents. Agents in OpenCode are defined as markdown files with YAML front matter specifying their name, description, and permissions <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=782s">[13:02]</a>.</p>
+<p>A crucial concept is the hierarchy of agents: primary agents orchestrate work, while sub-agents perform specific tasks (e.g., code exploration) <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=755s">[12:35]</a>. The speaker demonstrates creating a specialized &quot;chess developer&quot; primary agent <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=856s">[14:16]</a> and configuring its permissions. A highly controlled setup involves denying all default sub-agents and only allowing custom ones to execute, thereby restricting the agent&#x27;s scope [15:04, 16:07].</p>
+<p>The workflow is further refined by integrating external systems like GitHub. Instead of local tasks, the system can use GitHub skills to view and start issues <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=1439s">[23:59]</a>. A sophisticated &quot;cycle agent&quot; acts as a primary orchestrator, managing sub-agents through defined handoffs—a mechanism that signals success or failure back to the main cycle agent, effectively creating a small state machine [24:36, 25:08].</p>
+<p>The speaker details how to enforce quality and consistency using custom scripts. For instance, a &quot;supply chain guard&quot; skill is integrated to verify packages before installation, mitigating supply chain attacks <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=547s">[9:07]</a>. Furthermore, the system can be configured with extensive instructions that dictate adherence to coding standards, running end-to-end tests, linting, formatting, type checking, and unit testing [43:56–44:12].</p>
+<p>The ultimate goal discussed is achieving a fully autonomous solver. This requires careful management of context through mechanisms like &quot;continuation prompts&quot; and custom tools that handle state tracking, preventing the agent from getting lost or stopping due to token limits (context compaction) [33:00, 33:47]. The speaker advocates for using structured bootstrapping—defining extensive specifications, milestones, and breaking them into detailed GitHub issues—to ensure long-term task continuation [1:00:15–1:00:48].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>OpenCode functions as a model-agnostic interface for agentic coding, allowing users to mix providers (e.g., cloud vs. open-source) and models based on task requirements <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=77s">[1:17]</a>.</li>
+<li>Agents are configured using markdown files with YAML front matter, defining their role, instructions, and permissions <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=782s">[13:02]</a>.</li>
+<li>A hierarchical structure allows primary agents to orchestrate specialized sub-agents for tasks like code exploration or UX guidance <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=755s">[12:35]</a>.</li>
+<li>Granular control is achieved by explicitly setting agent permissions—for example, denying default tasks and only allowing custom ones <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=967s">[16:07]</a>.</li>
+<li>The workflow can be integrated with external platforms like GitHub using specific skills to manage issues and branches <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=1439s">[23:59]</a>.</li>
+<li>Custom scripts and tools (like supply chain guards) can enforce quality checks and maintain code consistency throughout the development process [9:07, 48:10].</li>
+<li>Long-term autonomy relies on structured bootstrapping: defining detailed specifications, milestones, and breaking them into sequential GitHub issues to ensure task continuation [1:00:15–1:00:48].</li>
+<li>Context management is critical; advanced setups use custom tools or &quot;continuation prompts&quot; to maintain state across multiple API calls despite token limitations [33:47, 45:15].</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Tool/Framework:</strong> OpenCode (or its evolution, like OMO).</li>
+<li><strong>Agent Definition:</strong> Agents are defined in specific folders using markdown files with YAML front matter.</li>
+<li><strong>Model Selection:</strong> Users can define which model a specific agent should use within the configuration <a class="timestamp" href="https://www.youtube.com/watch?v=EowOzx0NiOA&amp;t=1290s">[21:30]</a>.</li>
+<li><strong>Permission Control:</strong> Permissions must be managed carefully; the system processes rules from top down, meaning later definitions can override earlier ones [17:32–18:40]. A recommended strategy is to deny everything first and then explicitly allow necessary actions.</li>
+<li><strong>Workflow Structure (Bootstrapping):</strong> The ideal process involves creating a detailed specification document, deriving milestones from it, and finally breaking those milestones into concrete GitHub issues for the agent to execute [43:21–43:50].</li>
+<li><strong>Quality Gates:</strong> Custom tools like &quot;AIQ&quot; can be used to run linting, formatting checks, type checking, and unit tests on generated code before it proceeds further in the workflow [55:35–56:23].</li>
+<li><strong>Continuation Mechanism:</strong> To ensure an agent works overnight, there must always be at least one open task or issue for the continuation prompt to trigger its next action [50:19–50:36].</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li>0:54 - 2:39: Overview of OpenCode as a model-agnostic interface and its available interfaces (CLI, IDE).</li>
+<li>12:16 - 13:28: Explanation of customizing agents, defining primary vs. sub-agents, and the structure of agent definitions.</li>
+<li>14:06 - 17:06: Demonstration of creating a specialized &quot;chess developer&quot; primary agent and initial testing.</li>
+<li>25:08 - 26:34: Detailed look at implementing a cycle/orchestrator agent that manages sub-agents via defined handoffs.</li>
+<li>43:21 - 45:28: Discussion on the ideal end-to-end workflow, including bootstrapping with specifications and enforcing quality gates (lint, test, PR flow).</li>
+</ul>
+</main>
+</body>
+</html>

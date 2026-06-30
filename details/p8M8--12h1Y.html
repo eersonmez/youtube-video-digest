@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The implementation of an autonomous development workflow at Nordic Corporate Bank using an AI agent named Nil Skorg.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=p8M8--12h1Y">Watch video</a></nav>
+  <h1>The implementation of an autonomous development workflow at Nordic Corporate Bank using an AI agent named Nil Skorg.</h1>
+  <div class="meta">NDC Conferences · 2026-06-29T11:37:13+00:00 · How We Built an Autonomous Development Workflow at Nordic Corporate Bank -</div>
+  <h2>What This Video Is About</h2>
+<p>This video details the implementation of an autonomous development workflow at Nordic Corporate Bank, a small financial institution with 26 employees. The core subject is the deployment and evolution of an AI agent named Nil Skorg within Azure to automate significant portions of the software development lifecycle (SDLC). Initially, the agent was integrated into Azure DevOps to handle coding, testing, and documentation. Over time, the workflow has been advanced to include an AI-driven requirement validation stage, aiming to mimic the critical thinking of a senior developer.</p>
+<p>The implementation showcases how this agent can drastically increase code output—moving from 141 pull requests in one month previously to 572 after Nil Skorg was deployed. The system operates as a multi-stage pipeline utilizing various models for research, planning, implementation, and review. While the AI handles much of the execution, the human team remains responsible for high-level architecture, risk assessment, and strategic prioritization.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The process began in November 2025 after inspiration was drawn from external talks on agent coding. The development team made a deliberate choice to build an independent, cloud-based AI agent rather than running it locally. Nil Skorg was deployed in Azure and integrated with Azure DevOps using webhooks, gaining its own user identity in Entra and email address <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=403s">[6:43]</a>.</p>
+<p>The initial capabilities of Nil Skorg included answering questions, writing code, creating and running tests, generating pull requests (PRs), reviewing PRs, arguing within PR threads, and creating documentation like ADR records. A key feature is the memory system, adapted from a framework called Squad; when the agent completes a task, it assesses its output for reusable knowledge and updates its own memory file to facilitate self-improvement on new tasks <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=488s">[8:08]</a>.</p>
+<p>The workflow evolved significantly by addressing bottlenecks. Initially, coding was the bottleneck, but once Nil Skorg took over implementation, requirement gathering became the primary constraint. To solve this, instructions were given to Nil Skorg regarding epic specifications—requiring a description, acceptance criteria, and a certain confidence level for implementation <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=657s">[10:57]</a>. If these requirements are insufficient, the agent is instructed to ask clarifying questions back to the product owner rather than proceeding blindly <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=683s">[11:23]</a>.</p>
+<p>The interaction between the AI and human stakeholders is demonstrated through examples in Azure DevOps. For instance, when a Product Owner (like Kaya) submits an epic without technical detail, Nil Skorg can either stop due to hard rules or proceed by self-generating descriptions and acceptance criteria before starting implementation <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=771s">[12:51]</a>. This allows for rapid iteration; one example showed an epic moving from creation to verification within the same day <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=870s">[14:30]</a>.</p>
+<p>The underlying architecture is a complex system built around Nil Skorg. It starts with triggers (manual mention, task assignment, or CI build failures routed via Azure Service Bus) which create tasks stored in a Cosmos DB hub <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=1925s">[32:05]</a>. These tasks spin up a worker running as a Docker image within an Azure Container App Job, powered by the GitHub Copilot SDK <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=1959s">[32:39]</a>.</p>
+<p>The core of the development process is the implementation workflow, which consists of five stages, each pinned to a specific model and reasoning level. The first stage is a research phase where the most expensive model performs planning and codebase understanding <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=2162s">[36:02]</a>. This is followed by a cheap sanity check using a fast model <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=2177s">[36:17]</a>, then the implementation phase <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=2188s">[36:28]</a>, a mechanical build/test/commit/PR creation stage using a fast model <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=2208s">[36:48]</a>, and finally, a self-review pool. The review pool involves multiple models—one set for initial review, a faster cheaper model for another review, and GPT5 as the consolidator that verifies findings before assigning it to a human <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=2221s">[37:01]</a>. Crucially, Nil Skorg is instructed to act like a senior developer who must be critical and push back against assumptions <a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=2278s">[37:58]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>The AI agent, Nil Skorg, was deployed in Azure and integrated with Azure DevOps via webhooks for task management.</li>
+<li>A multi-stage pipeline utilizes different models (some expensive, some cheap/fast) across research, planning, implementation, and review to mimic senior developer critical thinking.</li>
+<li>The workflow has evolved from simple coding assistance to an AI-driven requirement validation stage that prevents premature implementation errors.</li>
+<li>Nil Skorg maintains a self-improving memory system by assessing completed work and updating its internal knowledge base.</li>
+<li>The system architecture relies on Azure services: API Gateway (App Service), task storage (Cosmos DB), and execution environment (Container App Jobs).</li>
+<li>Human oversight remains critical for high-level architectural decisions, risk assessment, and final approval of PRs, even as the agent automates coding.</li>
+<li>To ensure predictable behavior, the system uses guardrails like regex expressions to filter technical jargon when communicating with non-technical product owners.</li>
+<li>The development process is becoming less about writing code and more about defining high-value problems and managing the AI&#x27;s output.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Implementation Steps/Architecture:</strong></p>
+<ul>
+<li><strong>Trigger Mechanism:</strong> Tasks can be initiated by mentioning Nil Skorg, assigning tasks to him, or receiving exceptions via Azure Service Bus (Application Insights monitoring).</li>
+<li><strong>Task Hub:</strong> An API Gateway reads triggers and stores the task in a Cosmos DB instance, which acts as the central hub.</li>
+<li><strong>Execution:</strong> A worker, built on the GitHub Copilot SDK within an Azure Container App Job, is spun up to process the task.</li>
+<li><strong>Workflow Control:</strong> The implementation workflow has five stages: Research (most expensive model for planning), Sanity Check (cheap/fast model), Implementation, Mechanical Build/Test/Commit/PR Creation (cheapest model), and Self-Review Pool (multiple models culminating in GPT5).</li>
+<li><strong>Guardrails &amp; Determinism:</strong> To prevent unpredictable behavior, the system uses:</li>
+<li>Specific instructions for how to create agent skills, optimizing them for AI consumption rather than human reading.</li>
+<li>Regex expressions applied to output directed at Product Owners to strip technical file paths or jargon.</li>
+<li>Context management limits (e.g., compaction borders set at 68 and a hard stop at 92) and response caps on tools to prevent context flooding.</li>
+</ul>
+<p><strong>Risks/Caveats:</strong></p>
+<ul>
+<li>The current bottleneck has shifted from coding to requirement definition, which the team is actively trying to automate by having Nil Skorg validate epics.</li>
+<li>Full autonomy (removing humans entirely from PR verification) has not yet been achieved and requires further development.</li>
+<li>Developers must accept a shift in role; they are moving away from deep code diving toward higher-level developing, architecture, and risk judgment.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=771s">[12:51]</a> - Demonstration of Nil Skorg handling an epic with insufficient detail from a Product Owner.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=870s">[14:30]</a> - Example showing the rapid progression of an epic from creation to acceptance on the same day.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=1087s">[18:07]</a> - Live demo initiating a search field implementation request for customer documents.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=1253s">[20:53]</a> - Review of statistics showing the massive increase in completed pull requests post-deployment (572 vs 141).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=1877s">[31:17]</a> - Overview of the technical architecture, including the API Gateway and Cosmos DB hub.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=p8M8--12h1Y&amp;t=2162s">[36:02]</a> - Detailed breakdown of the five stages within the implementation workflow, highlighting model usage per stage.</li>
+</ul>
+</main>
+</body>
+</html>

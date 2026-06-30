@@ -1,5 +1,11 @@
 # YouTube Video Digest Archive
 
+- 2026-06-29T16:00:36+00:00 - Leonid Kim MD: [These 7 Foods Lower Blood Sugar QUICKLY (Backed by Science)](https://www.youtube.com/watch?v=z-y93VWvCKU)
+- 2026-06-29T14:30:09+00:00 - OpenAI: [Advent Accelerates Deals with ChatGPT + Codex](https://www.youtube.com/watch?v=f-HiB82Tl94)
+- 2026-06-29T12:11:28+00:00 - NDC Conferences: [The playbook we built for 2,000 developers (and the parts... - Håkon Eriksson & Øyvind Viken](https://www.youtube.com/watch?v=hvBYTbdfH2k)
+- 2026-06-29T12:00:18+00:00 - Andrew Huberman: [Movement Practice to Strengthen Your Mind-Body Connection | Ido Portal](https://www.youtube.com/watch?v=Zz8chJwh3S4)
+- 2026-06-29T11:37:13+00:00 - NDC Conferences: [How We Built an Autonomous Development Workflow at Nordic Corporate Bank -](https://www.youtube.com/watch?v=p8M8--12h1Y)
+- 2026-06-29T11:05:37+00:00 - NDC Conferences: [SOTA Agentic Coding with OpenCode, Greek Gods and Custom Workflows - Tjalve Aarflot](https://www.youtube.com/watch?v=EowOzx0NiOA)
 - 2026-06-28T15:05:21+00:00 - Alex Kantrowitz: [AI’s True Cyber Risk: Fable, Mythos, China, and The Rest — With Alex Stamos](https://www.youtube.com/watch?v=rJ6YdXhvGpY)
 - 2026-06-27T21:51:54+00:00 - Dwarkesh Patel: [What Machiavelli thought freedom actually was - Ada Palmer](https://www.youtube.com/watch?v=w3-bxLJ2ms0)
 - 2026-06-27T16:49:52+00:00 - Alex Kantrowitz: [Greg Brockman on Why ChatGPT Voice Still Feels Frustrating](https://www.youtube.com/watch?v=mcS54Lu4X5w)
@@ -54,9 +60,3 @@
 - 2026-06-21T16:23:19+00:00 - Alex Kantrowitz: [Mike Krieger on Why Most AI Startups Will Struggle](https://www.youtube.com/watch?v=QatuNwfJME4)
 - 2026-06-20T20:22:07+00:00 - Dwarkesh Patel: [They loved Trajan so much they rewrote the afterlife for him - Ada Palmer](https://www.youtube.com/watch?v=IsWr9Lir8Pc)
 - 2026-06-20T18:41:40+00:00 - Alex Kantrowitz: [Greg Brockman on AI's Real Bottleneck](https://www.youtube.com/watch?v=IZQEgTRFa5Q)
-- 2026-06-20T16:09:24+00:00 - Smart Home Solver: [15 Cool Smart Home Devices You’ll Actually Want in 2026!](https://www.youtube.com/watch?v=T4Zux64mDsM)
-- 2026-06-19T22:57:58+00:00 - OpenAI: [What Codex Unlocks for NTT Data](https://www.youtube.com/watch?v=0JIbgZ544wU)
-- 2026-06-19T21:43:28+00:00 - Dwarkesh Patel: [The strangest riot in papal history - Ada Palmer](https://www.youtube.com/watch?v=H0Tgz9Nnx2s)
-- 2026-06-19T21:22:26+00:00 - OpenAI: [Plan with ChatGPT](https://www.youtube.com/watch?v=YPNOjXTDP9c)
-- 2026-06-19T21:20:04+00:00 - OpenAI: [Score with ChatGPT](https://www.youtube.com/watch?v=5sDfhQq_g8A)
-- 2026-06-19T17:17:05+00:00 - Dwarkesh Patel: [The data black hole at the center of AI](https://www.youtube.com/watch?v=4pG3SJQPAwk)
