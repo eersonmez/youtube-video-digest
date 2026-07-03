@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ten tips to enhance productivity when using AI-assisted coding tools.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=K7dBRuSDWTw">Watch video</a></nav>
+  <h1>Ten tips to enhance productivity when using AI-assisted coding tools.</h1>
+  <div class="meta">NDC Conferences · 2026-07-01T14:36:06+00:00 · 10 tips to level up your ai-assisted coding - Aleksander Stensby - NDC AI 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides a comprehensive guide on how developers and non-developers can move beyond passively accepting outputs from AI coding agents, such as Claude Code. The central theme is shifting the interaction with AI from simple prompting to active collaboration, adopting a &quot;pair programming mindset.&quot; As generative AI capabilities advance rapidly—with significant leaps in models like Opus and new benchmarks—the focus must shift from the ability to write code to defining clear human intent, goals, and desired outcomes.</p>
+<p>The presentation details several advanced techniques for managing these powerful tools effectively. Key concepts include optimizing the finite context window, leveraging portable &quot;skills&quot; to enforce preferences or grant new capabilities, structuring work using planning modes, and understanding how bottlenecks are shifting from coding ability to human oversight and verification. The goal is to become a more effective collaborator with AI rather than just a consumer of its output.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The speaker begins by establishing that the most crucial mindset when using AI coding tools is adopting a pair programming approach <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=0s">[0:00]</a>. This means actively collaborating with the AI instead of lazily throwing prompts and accepting results, which risks making users less capable over time. A concept introduced is &quot;compound engineering,&quot; where the goal is to have the AI learn from every mistake made during collaboration so it never repeats that error again <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=300s">[5:00]</a>.</p>
+<p>A critical technical aspect discussed is context management, as the context window of any AI model is a finite resource <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=600s">[10:00]</a>. The speaker likens this window to a glass; system prompts, agent configuration files (like agent.md or Claude.md), tool definitions, and conversation history all fill this space. While modern windows are large (e.g., around 200,000 tokens, with some reaching one million), results deteriorate when approaching 70-80% capacity <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=600s">[10:00]</a>. Users can monitor this using commands like {slash} status line in Claude Code or by checking usage summaries in tools like Cursor <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=600s">[10:00]</a>.</p>
+<p>To manage rules and preferences across different AI harnesses, the speaker suggests a &quot;hack&quot;: placing rules in both agent.md and Claude.md files so that either tool picks them up <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=900s">[15:00]</a>. Memory is another concept, allowing state persistence between sessions via files like memory.md, which must be actively managed and pruned to prevent critical rules from being lost in excessive information <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=900s">[15:00]</a>.</p>
+<p>The speaker strongly advocates for using &quot;skills&quot; as a portable solution <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=1200s">[20:00]</a>. Skills are essentially text or markdown files that can teach the AI preferences (e.g., workflow, taste) or grant it new capabilities not inherent to the base model (e.g., enabling image generation via an API skill). A key recommendation is to build custom skills rather than downloading existing ones <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=1500s">[25:00]</a>.</p>
+<p>A major shift in focus involves moving from writing code to defining clear goals and outcomes <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=1800s">[30:00]</a>. Plan mode, available in many solutions like Cursor, allows for safe exploration of a codebase by having the AI create plans. It is recommended to persist these plans externally so the AI can verify its own work against the initial plan later <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=1500s">[25:00]</a>.</p>
+<p>As coding becomes more reliable, the bottleneck shifts from writing code to human intent and verification—the &quot;human bottleneck&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=1800s">[30:00]</a>. To combat this, users should challenge existing team processes (like code reviews or sprint planning) when integrating AI. Furthermore, staying engaged requires using formats beyond simple text; presenting plans in interactive HTML files can create a more engaging feedback loop with the AI <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=2100s">[35:00]</a>.</p>
+<p>The process of verification is evolving toward &quot;agentation,&quot; where one agent verifies another&#x27;s work <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=2400s">[40:00]</a>. The ultimate goal is to move towards defining an outcome (using features like {slash} goal) and trusting the system, which operates as a multi-agent loop where agents check each other&#x27;s results until the goal is met.</p>
+<p>Finally, for scaling productivity, users should explore &quot;loop engineering,&quot; which involves having agents store state or tasks across sessions to perform continuous work autonomously <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=3600s">[1:00:00]</a>. For advanced use cases, Ultra Code allows Claude to write its own harness on top of existing tools <a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=3600s">[1:00:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Adopt a pair programming mindset when using AI coding agents; actively collaborate rather than passively accepting outputs.</li>
+<li>Treat the context window as a scarce resource and optimize for high-impact tokens, monitoring usage via commands like {slash} status line.</li>
+<li>Utilize &quot;skills&quot; (portable text/markdown files) to teach the AI your preferences or equip it with new capabilities.</li>
+<li>Shift focus from writing code lines to defining clear goals and desired outcomes for the AI agent.</li>
+<li>Manage memory and rules actively; do not let configuration files like Claude.md grow disproportionately, as this can hold back model improvements.</li>
+<li>Invest time in planning and describing intent using features like Plan Mode or creating persistent markdown plans that the AI can verify against.</li>
+<li>Challenge existing team processes (e.g., code reviews) to adapt to a world where AI handles much of the coding.</li>
+<li>Use subagents to engineer effectively infinite context windows, though be mindful not to over-specify them if newer models are capable of defining agents on the fly.</li>
+<li>Employ hooks for deterministic guardrails, ensuring actions happen outside of inference based on specific events.</li>
+<li>Explore loop engineering by having agents store state or tasks across sessions to enable continuous work.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Context Management:</strong> Use {slash} status line (in Claude Code) or check usage summaries in tools like Cursor to monitor context window consumption. If auto-compaction occurs, guide it using {slash} compact with specific instructions.</li>
+<li><strong>Rule Enforcement:</strong> Rules can be placed in agent.md or Claude.md; placing them in both allows cross-tool compatibility.</li>
+<li><strong>Skill Creation:</strong> The best skills are built by the user *with* the AI through iterative feedback. Use the skill creator to build and test these, potentially leveraging its built-in evaluation suite.</li>
+<li><strong>Goal Setting:</strong> Instead of describing *how* to do something, define the desired outcome using features like {slash} goal to allow the agent to determine the steps.</li>
+<li><strong>Tool Integration (MCP/CLI):</strong> Equip your AI with necessary tools (e.g., CLI commands) so it can perform actions on your behalf; this is crucial for verification and task execution.</li>
+<li><strong>Verification:</strong> Give the AI the ability to verify its own work by providing it with testing tools or instructing it to check output against a persisted plan.</li>
+<li><strong>Optimization:</strong> For token usage, run {slash} /usage in the terminal to get a summary of what is consuming tokens, including specific skills.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=600s">[10:00]</a> - Discussion on context window limitations and monitoring tools.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=1200s">[20:00]</a> - Introduction and explanation of portable &quot;skills.&quot;</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=2100s">[35:00]</a> - Demonstration/discussion regarding using interactive HTML formats for feedback loops.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=2400s">[40:00]</a> - Concepts related to agentation and multi-agent verification loops.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=K7dBRuSDWTw&amp;t=3600s">[1:00:00]</a> - Overview of loop engineering and Ultra Code for complex, repeatable workflows.</li>
+</ul>
+</main>
+</body>
+</html>

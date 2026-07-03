@@ -1,5 +1,11 @@
 # YouTube Video Digest Archive
 
+- 2026-07-02T18:10:30+00:00 - Alex Kantrowitz: [Big Tech AI Summit Highlights!](https://www.youtube.com/watch?v=cJEiD01ugMM)
+- 2026-07-02T12:00:35+00:00 - Andrew Huberman: [Essentials: Tools for Hormone Optimization in Males | Dr. Kyle Gillett](https://www.youtube.com/watch?v=O-groYMqrQw)
+- 2026-07-01T18:31:25+00:00 - OpenAI: [Codex for Solutions Engineers: Making AI Tangible for Customers](https://www.youtube.com/watch?v=08hgAtg-P_8)
+- 2026-07-01T15:00:21+00:00 - BeardedTinker: [Home Assistant 2026.7 Finally Fixes This](https://www.youtube.com/watch?v=m4SDwP_l5cc)
+- 2026-07-01T14:36:06+00:00 - NDC Conferences: [10 tips to level up your ai-assisted coding - Aleksander Stensby - NDC AI 2026](https://www.youtube.com/watch?v=K7dBRuSDWTw)
+- 2026-06-30T16:30:04+00:00 - Dwarkesh Patel: [Grant Sanderson (3Blue1Brown) – AI and the future of math](https://www.youtube.com/watch?v=TfyPshgMbug)
 - 2026-06-29T16:00:36+00:00 - Leonid Kim MD: [These 7 Foods Lower Blood Sugar QUICKLY (Backed by Science)](https://www.youtube.com/watch?v=z-y93VWvCKU)
 - 2026-06-29T14:30:09+00:00 - OpenAI: [Advent Accelerates Deals with ChatGPT + Codex](https://www.youtube.com/watch?v=f-HiB82Tl94)
 - 2026-06-29T12:11:28+00:00 - NDC Conferences: [The playbook we built for 2,000 developers (and the parts... - Håkon Eriksson & Øyvind Viken](https://www.youtube.com/watch?v=hvBYTbdfH2k)
@@ -54,9 +60,3 @@
 - 2026-06-22T09:21:40+00:00 - NDC Conferences: [Let’s catch up with C#! Exciting new features in C# 9 to C# 14! - Filip Ekberg - NDC Copenhagen 2026](https://www.youtube.com/watch?v=a-oaUcwfuYE)
 - 2026-06-22T08:31:32+00:00 - NDC Conferences: [Machines, Learning, and Machine Learning - Dylan Beattie - NDC Copenhagen 2026](https://www.youtube.com/watch?v=xunx7VvlOgs)
 - 2026-06-21T23:17:37+00:00 - Scott Hanselman: [The space between the Commits with Zed and DeltaDB's Nathan Sobo](https://www.youtube.com/watch?v=F0lCI3lulSo)
-- 2026-06-21T22:35:57+00:00 - Scott Hanselman: [Braille Is Freedom with Bristol Braille's Ed Rogers](https://www.youtube.com/watch?v=L7ItaDwe0DM)
-- 2026-06-21T22:07:58+00:00 - Scott Hanselman: ["Observabilitying" the Future of Software with Charity Majors](https://www.youtube.com/watch?v=Ravx4uJxhWQ)
-- 2026-06-21T21:01:40+00:00 - Dwarkesh Patel: [Checkbook Diplomacy - Sarah Paine](https://www.youtube.com/watch?v=ZuJpE5HIIYE)
-- 2026-06-21T16:23:19+00:00 - Alex Kantrowitz: [Mike Krieger on Why Most AI Startups Will Struggle](https://www.youtube.com/watch?v=QatuNwfJME4)
-- 2026-06-20T20:22:07+00:00 - Dwarkesh Patel: [They loved Trajan so much they rewrote the afterlife for him - Ada Palmer](https://www.youtube.com/watch?v=IsWr9Lir8Pc)
-- 2026-06-20T18:41:40+00:00 - Alex Kantrowitz: [Greg Brockman on AI's Real Bottleneck](https://www.youtube.com/watch?v=IZQEgTRFa5Q)
