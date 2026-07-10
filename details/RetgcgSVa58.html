@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This presentation demonstrates how to integrate an AI agent into applications using the GitHub Copilot SDK.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=RetgcgSVa58">Watch video</a></nav>
+  <h1>This presentation demonstrates how to integrate an AI agent into applications using the GitHub Copilot SDK.</h1>
+  <div class="meta">NDC Conferences · 2026-07-10T11:09:31+00:00 · Put an Agent Inside Your App in 10 Minutes or Less with the GitHub Copilot SDK - Daniel Ward</div>
+  <h2>What This Video Is About</h2>
+<p>This video introduces the concept of building AI agents directly into applications using the GitHub Copilot SDK. The central theme is demystifying what an &quot;agent&quot; is—it is fundamentally a Large Language Model (LLM) augmented with external tools and looping capabilities, moving beyond simple text-in, text-out interactions. By providing LLMs access to functions like web browsing or code execution, they gain agency and decision-making power.</p>
+<p>The presentation details how the Copilot SDK allows developers to embed this agent functionality quickly into their applications. It moves from foundational concepts—like what the SDK is and how it works—to advanced use cases such as automatically suggesting fixes for production errors or generating daily summaries by aggregating data from services like Jira and Teams. The speaker emphasizes that while prompt chaining can be easy to prototype, using the SDK provides a more reliable path for repeatable tasks because it integrates deterministic code to handle non-creative steps, leading to higher success rates.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation is structured into two main parts: Foundation and Application.</p>
+<p><strong>Foundation:</strong> The Copilot SDK is described as an open-source SDK from GitHub designed to call GitHub Copilot or other AI services (supporting bring your own key for Anthropic, OpenAI, or local models). It officially supports TypeScript, Python, Go, C, Rust, and Java, with unofficial support in Closure and C++. A basic working example involves creating a `CopilotClient`, calling `startAsync()` to spawn the Copilot process, and then creating a `Session` (which is equivalent to a conversation) <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=240s">[4:00]</a>. Prompts are sent via the session rather than directly on the client.</p>
+<p><strong>Defining an Agent:</strong> An agent is defined as an LLM enhanced with tools and looping capabilities <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=300s">[5:00]</a>. Since an LLM inherently only takes text in and outputs text, tools allow it to interact with the outside world. A simple example involves giving the LLM access to a `web fetch JSON` tool. The LLM uses its English prompt description of the tool to decide when to use it; if the user asks about a website, the agent delegates the task to the underlying code (the harness), which fetches the content and feeds it back to the LLM for synthesis <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=420s">[7:00]</a>.</p>
+<p><strong>Agent Capabilities and Use Cases:</strong> The core value proposition is giving the LLM agency. Examples of potential applications include:</p>
+<ul>
+<li><strong>Production Error Fixing:</strong> When a production error occurs, an agent could collect logs, clone the source code, suggest a fix, and open a pull request <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=600s">[10:00]</a>.</li>
+<li><strong>Ticket Routing:</strong> A support team agent could read incoming tickets, judge severity and team assignment, and route them appropriately <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=600s">[10:00]</a>.</li>
+<li><strong>Daily Briefing (Current Project):</strong> The speaker&#x27;s current project aggregates information from Jira, Teams messages, GitHub repos, and pull requests to provide a daily summary of what the user needs to care about <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=600s">[10:00]</a>.</li>
+</ul>
+<p><strong>SDK Implementation Demo (The 10-Minute Bit):</strong> The initial demo focuses on getting the SDK running. The process involves starting the `CopilotClient` asynchronously and then creating a session with specific configurations, such as setting the model (e.g., Claude Sonnet 4.6) <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=900s">[15:00]</a>. When sending a message, one can choose between `sendAsync()` (returns when the message is queued) or `sendAndWaitAsync()` (waits for the full response) <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1050s">[17:30]</a>.</p>
+<p><strong>Streaming and Custom Tools:</strong> The SDK supports reacting to granular events on the session using event handlers. For user-facing applications, streaming responses are crucial; this allows the LLM&#x27;s output to be delivered in chunks as it is generated, rather than waiting for the entire response <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1170s">[19:30]</a>.</p>
+<p>Custom tools can be created by decorating standard functions (e.g., a C# function) with specific attributes. The SDK uses an `AI Function Factory` to handle the conversion of this decorated code into a format Copilot understands as a tool, including its description and parameters <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1455s">[24:15]</a>. When prompted correctly, Copilot can autonomously decide to call this custom tool (e.g., asking for weather in San Antonio triggers the fake weather tool) <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1800s">[30:00]</a>.</p>
+<p><strong>SDK vs. Prompt Chaining:</strong> The speaker contrasts using sequential prompts versus using the SDK with deterministic code. While prompt chaining is easy to prototype, its success rate compounds negatively; if each step has a 10% failure chance, the overall success rate drops significantly (e.g., to 59%) <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1800s">[30:00]</a>. In contrast, when using the SDK, non-creative steps are handled by deterministic code (100% reliability), meaning the overall success rate is limited only by the AI component&#x27;s performance <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1800s">[30:00]</a>.</p>
+<p><strong>Advanced Concepts and Production Considerations:</strong> The speaker showcases more complex applications, such as a &quot;Showdan&quot; bot that processes images and queries GitHub repos/notes via Telegram integration <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=2100s">[35:00]</a>. Another advanced feature demonstrated is session forking, where child sessions are cloned from a parent session, allowing users to explore different strategies while maintaining shared history (e.g., in vacation planning) <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=2880s">[48:00]</a>.</p>
+<p>For production deployment, several considerations must be addressed:</p>
+<ul>
+<li><strong>Sandboxing:</strong> Running the agent outside of &quot;YOLO mode&quot; by using containers like Docker or separate VMs to limit its access <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=3150s">[52:30]</a>.</li>
+<li><strong>User Experience:</strong> Implementing streaming responses for perceived speed and logging all session events via OpenTelemetry, which is supported out of the box <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=3240s">[54:00]</a>.</li>
+<li><strong>Authentication &amp; Architecture:</strong> Deciding between using a logged-in CLI user, bringing your own API key (e.g., Anthropic), or using GitHub OAuth/environment variables. The SDK can be configured to use a bundled process or an external one on a remote server <a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=3060s">[51:00]</a>.</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>An AI agent is fundamentally an LLM augmented with tools and looping capabilities, not just the LLM itself.</li>
+<li>The GitHub Copilot SDK allows developers to embed this agent functionality into applications quickly by interfacing with the Copilot CLI.</li>
+<li>Agents gain agency by being given access to external functions (tools), which are defined via descriptions and parameters that the LLM uses for decision-making.</li>
+<li>Using the SDK is superior to pure prompt chaining for repeatable tasks because it allows deterministic code to handle non-creative steps, ensuring higher reliability.</li>
+<li>The SDK supports granular event handling on sessions, enabling features like streaming responses crucial for user experience in AI applications.</li>
+<li>Custom tools can be created by decorating standard functions with specific attributes, which the SDK translates into callable interfaces for the LLM.</li>
+<li>For production use, sandboxing (e.g., Docker) is necessary to limit an agent&#x27;s access and prevent misuse of its capabilities.</li>
+<li>The SDK supports various authentication methods, including using personal API keys directly without relying on a logged-in GitHub user session.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Implementation Steps:</strong></p>
+<ul>
+<li>Create a `CopilotClient`.</li>
+<li>Call `startAsync()` to initialize the Copilot process/CLI child process.</li>
+<li>Create a `Session` object, configuring it with desired properties like the model (e.g., Claude Sonnet 4.6) and permission handlers.</li>
+<li>Send prompts using either `sendAsync()` or `sendAndWaitAsync()`.</li>
+<li>To implement custom tools, decorate your language-specific functions (e.g., C# methods) with appropriate attributes and register them in the session&#x27;s `tools` property via the `AI Function Factory.create` method.</li>
+</ul>
+<p><strong>Architecture Choices:</strong></p>
+<ul>
+<li>The SDK communicates with a Copilot CLI process, which can be bundled within the application or run on a remote server accessible via URL.</li>
+<li>For user-facing apps, consider implementing streaming responses to manage perceived latency.</li>
+<li>OpenTelemetry is supported out of the box for logging session events and spans.</li>
+</ul>
+<p><strong>Risks/Caveats:</strong></p>
+<ul>
+<li>AI is non-deterministic; code integration provides guardrails around AI outputs by passing them into deterministic execution paths.</li>
+<li>Governance regarding API access (e.g., allowing Copilot to interact with Jira or make PRs) is a significant hurdle in enterprise deployments.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=900s">[15:00]</a> - Initial setup and starting the `CopilotClient` process.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1050s">[17:30]</a> - Difference between `sendAsync()` and `sendAndWaitAsync()`.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1170s">[19:30]</a> - Implementation of streaming responses via session event handling (Assistant Message Delta Event).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1455s">[24:15]</a> - Creating a custom tool using decorated functions and the AI Function Factory.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=1800s">[30:00]</a> - Comparison between prompt chaining success rates versus SDK reliability.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=2880s">[48:00]</a> - Demonstration of session forking to maintain history across related tasks (e.g., mind mapping).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=RetgcgSVa58&amp;t=3150s">[52:30]</a> - Production considerations, specifically the need for sandboxing and limiting YOLO mode usage.</li>
+</ul>
+</main>
+</body>
+</html>

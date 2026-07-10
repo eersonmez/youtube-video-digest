@@ -1,5 +1,10 @@
 # YouTube Video Digest Archive
 
+- 2026-07-10T11:09:31+00:00 - NDC Conferences: [Put an Agent Inside Your App in 10 Minutes or Less with the GitHub Copilot SDK - Daniel Ward](https://www.youtube.com/watch?v=RetgcgSVa58)
+- 2026-07-10T09:19:42+00:00 - OpenAI: [How Deutsche Telekom is rewiring telecommunications with AI](https://www.youtube.com/watch?v=SvGLxXHYCd8)
+- 2026-07-09T12:00:07+00:00 - Andrew Huberman: [The Science & Treatment of Obsessive Compulsive Disorder (OCD) | Huberman Lab Essentials](https://www.youtube.com/watch?v=AtU3EvMzZDY)
+- 2026-07-08T15:00:32+00:00 - BeardedTinker: [Why Some Zigbee Devices Work So Much Better](https://www.youtube.com/watch?v=JRWi3f05z_U)
+- 2026-07-07T21:15:35+00:00 - Leonid Kim MD: [What 20 Squats a Day Actually Does to Your Body (9 Benefits Explained)](https://www.youtube.com/watch?v=wIpH6LVuyQ4)
 - 2026-07-02T18:10:30+00:00 - Alex Kantrowitz: [Big Tech AI Summit Highlights!](https://www.youtube.com/watch?v=cJEiD01ugMM)
 - 2026-07-02T12:00:35+00:00 - Andrew Huberman: [Essentials: Tools for Hormone Optimization in Males | Dr. Kyle Gillett](https://www.youtube.com/watch?v=O-groYMqrQw)
 - 2026-07-01T18:31:25+00:00 - OpenAI: [Codex for Solutions Engineers: Making AI Tangible for Customers](https://www.youtube.com/watch?v=08hgAtg-P_8)
@@ -55,8 +60,3 @@
 - 2026-06-22T17:45:36+00:00 - OpenAI: [How Zendesk CEO Tom Eggemeier goes from Idea to Action](https://www.youtube.com/watch?v=27-GjDIWGo0)
 - 2026-06-22T17:30:05+00:00 - Alex Kantrowitz: [Are AI Glasses Over? + Big Technology AI Summit Audience Questions](https://www.youtube.com/watch?v=7Z1kn6JNUbE)
 - 2026-06-22T15:39:05+00:00 - Alex Kantrowitz: [How the Fable Ban Changed Enterprise AI](https://www.youtube.com/watch?v=r3PLO_5vB2o)
-- 2026-06-22T12:00:17+00:00 - Andrew Huberman: [Science of Attraction, Compatibility & Romance | Dr. Paul Eastwick](https://www.youtube.com/watch?v=CV0GtUlJ6NM)
-- 2026-06-22T09:35:08+00:00 - NDC Conferences: [10 tips to level up your ai-assisted coding - Aleksander Stensby - NDC Copenhagen 2026](https://www.youtube.com/watch?v=JpXlTDQHEoo)
-- 2026-06-22T09:21:40+00:00 - NDC Conferences: [Let’s catch up with C#! Exciting new features in C# 9 to C# 14! - Filip Ekberg - NDC Copenhagen 2026](https://www.youtube.com/watch?v=a-oaUcwfuYE)
-- 2026-06-22T08:31:32+00:00 - NDC Conferences: [Machines, Learning, and Machine Learning - Dylan Beattie - NDC Copenhagen 2026](https://www.youtube.com/watch?v=xunx7VvlOgs)
-- 2026-06-21T23:17:37+00:00 - Scott Hanselman: [The space between the Commits with Zed and DeltaDB's Nathan Sobo](https://www.youtube.com/watch?v=F0lCI3lulSo)
