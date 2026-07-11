@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The author details a five-year journey of overcoming severe technical debt while developing SDK Cabin.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=deke8dAsLTI">Watch video</a></nav>
+  <h1>The author details a five-year journey of overcoming severe technical debt while developing SDK Cabin.</h1>
+  <div class="meta">NDC Conferences · 2026-07-07T09:14:24+00:00 · Completing the Rewrite from Hell: Five Years of Technical Debt and How We Escaped - Aaron Stannard</div>
+  <h2>What This Video Is About</h2>
+<p>This video details a five-year journey by Aaron Stannard regarding the development and subsequent massive refactoring of &quot;SDK Cabin,&quot; a product intended to solve internal sales issues for his company, Pedbridge. The central theme is the severe consequences of accumulating technical debt due to initial poor architectural decisions, lack of oversight, and communication breakdowns during rapid development.</p>
+<p>The project started with the goal of creating a platform that could help sell their existing observability module, Phobos, to more customers by providing an easier fulfillment system. However, early ambition led to over-engineering, resulting in &quot;code gore&quot;—a codebase riddled with inflexible patterns and an overly complex microservice deployment structure. The initial launch was an immediate disaster upon real customer contact due to numerous critical bugs across payment processing, data aggregation, and core functionality.</p>
+<p>The video chronicles the painful transition from this state of failure—where constant firefighting consumed engineering resources—to a strategic refactoring process aimed at making SDK Cabin viable for business growth. This involved adopting advanced patterns like the strangler fig pattern, implementing rigorous documentation via Architecture Decision Records (ADRs), and fundamentally redesigning core components like authorization and billing to achieve stability and scalability.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The narrative begins by setting the context of Pedbridge, a company whose traditional consulting-based business model was not scalable for complex clients like sports betting platforms <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=0s">[0:00]</a>. The need for SDK Cabin arose from failures in their previous product, Phobos, which suffered from customer rejection due to per-node pricing and confusing distribution via private NuGet feeds [3:00-4:00].</p>
+<p>The initial vision for SDK Cabin was ambitious; the author intended it as a multi-tenant marketplace, not just an internal tool. The team consisted of himself (CEO/developer), a former startup CTO based in Russia, and another Oca.net engineer <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=300s">[5:00]</a>. Despite setting an August 2020 launch target, foundational issues emerged early on.</p>
+<p>A critical failure point was the lack of proactive architectural review due to significant time zone differences between the author (Houston) and the SDK Cabin lead (Russia). The developer proceeded with unchecked design decisions, including implementing a generic repository pattern <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=600s">[10:00]</a>, which proved totally inflexible and led to DTO spam. Furthermore, instead of building necessary services for a small team, he designed seven microservices, each with its own database, relying on complex HTTP calls across the system—a massive over-engineering effort for a two-person startup <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=754s">[12:34]</a>. Another failure was ignoring explicit architectural requirements; despite being told to use SQL Azure (for low cost and managed services), the developer chose Postgres <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=900s">[15:00]</a>.</p>
+<p>The project then shifted focus due to external pressures, including COVID-19 lockdowns impacting customer obligations and personal life events for the CEO <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1200s">[20:00]</a>. By mid-February 2020, the design was already flawed. The team pushed forward with integration testing by April 2020, but structural problems persisted.</p>
+<p>The UI development became a crisis when the developer lacked experience implementing the detailed user flows provided in mockups. To meet an accelerated deadline, they panic-built the entire front end using Razor Pages <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=900s">[15:00]</a>. This led to &quot;code gore,&quot; exemplified by injecting numerous repositories into views and gluing data together in application memory instead of querying efficiently <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1200s">[20:00]</a>. A specific example cited was a public-facing product display list causing a Cartesian explosion, maxing out the SQL Azure DTU budget despite having no actual traffic <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1200s">[20:00]</a>.</p>
+<p>The launch in October 2020 revealed catastrophic functional failures. The payment system stored prices in cookies, allowing easy manipulation via developer tools; the NuGet feed timed out due to package upload sizes; and statistical reporting used an aggregate-on-write strategy that caused reports to fail after only a few days of use <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1380s">[23:00]</a>. Later issues included cross-organization data leakage and billing actor failures where annual subscriptions were granted for free if the renewal actor failed to run at midnight <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1500s">[25:00]</a>.</p>
+<p>The management response involved taking control, but this led to decreased sales efforts as the CEO spent time on QA instead of revenue-generating activities. The engineer eventually became incapable of implementing new features like transactional email onboarding due to the system&#x27;s inherent inflexibility and brittleness <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1800s">[30:00]</a>. After three years of &quot;band-aiding,&quot; a decision was made in 2024 to execute a strategic refactoring using the strangler fig pattern, focusing first on the performance-critical NuGet package layer <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2100s">[35:00]</a>.</p>
+<p>The refactoring involved several key architectural shifts. First, documentation became mandatory through Architecture Decision Records (ADRs) <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2100s">[35:00]</a>. Second, authorization was moved off Razor Pages onto MBC controllers to enable fine-grained permissioning and testability using ROS <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2400s">[40:00]</a>. Third, the team embraced Command Query Responsibility Segregation (CQRS), implementing a composable view context system instead of relying on monolithic views <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2400s">[40:00]</a>.</p>
+<p>The billing system, previously tightly coupled to Stripe and lacking proper financial history tracking (it simply modified subscription creation dates rather than using ledgers) <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2700s">[45:00]</a>, was addressed by modeling subscriptions as long-running finite state machines using Oca.net <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2700s">[45:00]</a>. This allowed for simulating complex business scenarios like late payments or multi-year subscriptions, providing confidence in the system&#x27;s ability to support future complexity <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2700s">[45:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Severe technical debt can cripple a product, leading to immediate failure upon real customer contact, even if initial commercial goals (like increasing Phobos sales) are met <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1380s">[23:00]</a>.</li>
+<li>Lack of proactive architectural review, especially across time zones, is a fatal mistake in software development <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=600s">[10:00]</a>.</li>
+<li>Over-engineering—such as building seven microservices for a small team—is an anti-pattern that introduces unnecessary complexity and overhead <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=754s">[12:34]</a>.</li>
+<li>Generic repository patterns can lead to extreme inflexibility, forcing developers into inefficient data handling like joining results in application memory <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1200s">[20:00]</a>.</li>
+<li>Poor testing practices are dangerous; having tests cover old APIs while the live code uses entirely different paths provides zero confidence in system stability <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1800s">[30:00]</a>.</li>
+<li>The strangler fig pattern is a viable strategy for tackling massive technical debt by incrementally replacing parts of an old, failing system while keeping it operational <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2100s">[35:00]</a>.</li>
+<li>Adopting Architecture Decision Records (ADRs) creates necessary institutional knowledge and context around why specific architectural choices were made <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2100s">[35:00]</a>.</li>
+<li>Moving from monolithic views to patterns like CQRS allows for decoupling data storage concerns from how the data is presented to different end-users <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2400s">[40:00]</a>.</li>
+<li>Modeling complex business processes, such as subscriptions, as finite state machines (Sagas) provides testable confidence over long time horizons, unlike simple CRUD timers <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2700s">[45:00]</a>.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Refactoring Strategy:</strong> Employ the strangler fig pattern to incrementally replace old components while maintaining live production service.</li>
+<li><strong>Documentation:</strong> Implement Architecture Decision Records (ADRs) early in engineering sprints to document problems, proposed solutions, and validation methods.</li>
+<li><strong>Authorization Improvement:</strong> Move away from monolithic authorization policies within Razor Pages toward building a scopable and testable system using MBC controllers for fine-grained permissioning <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2400s">[40:00]</a>.</li>
+<li><strong>Data Handling:</strong> Embrace Command Query Responsibility Segregation (CQRS) by distilling specific view contexts rather than relying on single, complex data models.</li>
+<li><strong>Testing Improvement:</strong> When fixing zero effective test coverage, start with end-to-end user scenario testing using tools like Playwright to establish a baseline for functional correctness before deep refactoring <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2700s">[45:00]</a>.</li>
+<li><strong>Billing/State Management:</strong> For long-running business processes (like subscriptions), model them as finite state machines or Sagas rather than relying on simple timer-based CRUD operations <a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2700s">[45:00]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=600s">[10:00]</a> - Demonstration of the generic repository pattern and its inflexibility.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=1200s">[20:00]</a> - Explanation of Cartesian explosion caused by inefficient data fetching on a public page.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2100s">[35:00]</a> - Introduction to the strangler fig pattern as the primary refactoring strategy.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2400s">[40:00]</a> - Comparison between stringified policy code and the new stackable authorization system using resource descriptors.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=deke8dAsLTI&amp;t=2700s">[45:00]</a> - Detailed look at modeling subscriptions as long-running finite state machines with Oca.net.</li>
+</ul>
+</main>
+</body>
+</html>

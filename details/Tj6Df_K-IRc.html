@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic Engineering: Notes from Building and Shipping with Agents</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=Tj6Df_K-IRc">Watch video</a></nav>
+  <h1>Agentic Engineering: Notes from Building and Shipping with Agents</h1>
+  <div class="meta">NDC Conferences · 2026-07-01T13:52:59+00:00 · Agentic Engineering: Notes from Building and Shipping with Agents - Mats Oustad - NDC AI 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides an in-depth overview of agentic engineering, detailing the evolution of using coding agents over the past 18 months. The central theme is a shift away from simple prompt engineering toward building robust, durable workflows that blend product management principles with development practices. While initial excitement around &quot;vibe&quot; coding has waned, the focus must now be on strategic direction and systematic quality assurance to ensure agent-generated output is safe and valuable in production environments.</p>
+<p>The discussion emphasizes that while iteration speed has dramatically increased—reducing proof-of-concept time from years to minutes—the human role evolves into that of a conductor or orchestrator. This requires developers to focus heavily on defining goals, structuring processes using reusable &quot;skills,&quot; and implementing rigorous verification steps, such as automated testing and cross-model checks, rather than just writing code themselves.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation outlines several key shifts in the field of agentic engineering. Initially, the focus was on prompt engineering, where users spent significant time crafting perfect prompts using tools like ChatGPT or Claude in a browser <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=320s">[5:20]</a>. This has shifted; now, developers shape plans collaboratively with coding agents.</p>
+<p>A major advancement noted is the introduction of plan modes in tools like Cloud Code <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=363s">[6:03]</a>, which has evolved into more powerful workflows via plugins such as Superpowers. These plugins facilitate brainstorming and maintain a human-in-the-loop process between steps, allowing users to build context together rather than just feeding raw context into the tool <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=400s">[6:40]</a>. This makes iteration much cheaper and faster.</p>
+<p>A critical shift involves prioritizing deterministic tools over pure inference when possible. The speaker argues that expensive token usage should be avoided for tasks that can be solved deterministically using scripts or CLI tools <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=501s">[8:21]</a>. For example, extracting emails from a data file using an LLM took about 20 seconds and used many tokens; in contrast, using the JQ tool was substantially faster and consumed far fewer tokens <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=696s">[11:36]</a>.</p>
+<p>The concept of &quot;skills&quot; is presented as essential for making repetitive tasks reproducible. A naive approach to fixing a failing test might work once, but when complex policies (like banker&#x27;s rounding) are involved, a skilled agent using specific skills—such as &quot;pricing policy research&quot;—will produce a more robust and correct fix <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1177s">[19:37]</a>. The speaker demonstrates a custom &quot;research skill&quot; that pulls data from sources like YouTube via the YT DLP CLI to generate a verdict file containing key facts and applicability for knowledge base integration <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1266s">[21:06]</a>.</p>
+<p>Regarding output presentation, the speaker advocates for HTML over Markdown when presenting agentic loops or workflows because it is visually superior and allows for interaction, which can be further enhanced by creating skills that dictate presentation style <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1453s">[24:13]</a>. Furthermore, using tools like Anthropic&#x27;s playground plugin enables contextual feedback on generated content, allowing users to iterate on slides or web outputs directly within the session <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1577s">[26:17]</a>.</p>
+<p>The workflow is moving toward orchestrating multiple agents across projects. The speaker uses `tmux` to manage separate sessions for different projects, increasing bandwidth by running many agents concurrently while maintaining fresh context for each session <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1800s">[30:00]</a>. Finally, quality assurance requires automated verification; the agent must verify its own work through tests and validations rather than relying solely on human review of what it *said* versus what it *did* <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1847s">[30:47]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Agentic engineering has evolved from simple prompt engineering to shaping complex plans with coding agents.</li>
+<li>Prioritize using deterministic CLI tools (like JQ) over pure LLM inference for tasks that can be solved programmatically to save tokens and time.</li>
+<li>&quot;Skills&quot; are crucial for making repetitive, common problems reproducible within agent workflows.</li>
+<li>The role of the developer is shifting from code writer to conductor or orchestrator, focusing on goal setting and process design.</li>
+<li>Verification must be automated through tests and validations; agents need mechanisms to verify their own output quality.</li>
+<li>Utilizing multiple models for cross-checking plans can help uncover subtle errors before human review.</li>
+<li>For complex tasks, workflows are becoming capable of running autonomously for extended periods (e.g., 21 minutes or over an hour).</li>
+<li>Security requires careful human oversight in the looping process to prevent data leakage, as model output might not always reflect actual actions taken.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Tool Usage:</strong> Favor CLI tools like JQ for structured data manipulation over LLM inference when dealing with JSON/data files <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=696s">[11:36]</a>.</li>
+<li><strong>Workflow Enhancement:</strong> Implement skills (e.g., &quot;pricing policy research&quot;) to enforce specific business logic or processes consistently across agent runs <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1187s">[19:47]</a>.</li>
+<li><strong>Local vs. Cloud Models:</strong> Consider running smaller, local models (like Gemma 4) on developer machines for simple tasks to reduce reliance on expensive cloud APIs, provided the hardware supports it (e.g., 32-64GB RAM) [49:04, 55:31].</li>
+<li><strong>Process Management:</strong> Use tools like `tmux` to manage multiple agent sessions concurrently across different projects while maintaining isolated contexts <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1800s">[30:00]</a>.</li>
+<li><strong>Security/Quality Check:</strong> When planning complex tasks, split large plans into discrete issues in an issue tracker (like GitHub) and use a second model to review the plan before execution <a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1935s">[32:15]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=696s">[11:36]</a> Demonstration comparing LLM inference vs. JQ for data extraction efficiency.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1177s">[19:37]</a> Comparison of naive agent approach versus skilled agent approach when handling complex rounding policies.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1266s">[21:06]</a> Demo showcasing a custom &quot;research skill&quot; that pulls and evaluates external content like blog posts or YouTube videos.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=1453s">[24:13]</a> Visual comparison between Markdown and HTML output for presenting agentic workflows, highlighting the benefits of visual structure.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=2220s">[37:00]</a> Demonstration of a full-feature application built by an agent running autonomously for over an hour.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=Tj6Df_K-IRc&amp;t=2944s">[49:04]</a> Comparison of using cloud models (Sonnet) versus local models (Gemma 4) for solving simple coding tasks.</li>
+</ul>
+</main>
+</body>
+</html>

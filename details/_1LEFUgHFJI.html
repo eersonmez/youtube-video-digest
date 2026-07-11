@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The speaker discusses evolving software engineering practices, moving away from outdated architectural patterns toward more modern, human-centric approaches.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=_1LEFUgHFJI">Watch video</a></nav>
+  <h1>The speaker discusses evolving software engineering practices, moving away from outdated architectural patterns toward more modern, human-centric approaches.</h1>
+  <div class="meta">NDC Conferences · 2026-07-03T10:39:17+00:00 · Stop writing software like it&#x27;s 1999! - Hannes Lowette - NDC Copenhagen 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video presents a critique of established, yet outdated, software engineering practices that persist in modern development environments. The speaker argues that many current methodologies resemble those from the late 1990s and are creating unnecessary friction for developers. He addresses two major architectural pitfalls: rigid layered architectures and over-reliance on microservices when they aren&#x27;t strictly necessary.</p>
+<p>The core message is a call to adapt software design principles to better suit modern development realities, such as iterative delivery, full-stack team ownership, and the integration of AI tools like Large Language Models (LLMs). The speaker advocates for prioritizing human readability and developer productivity over strict adherence to traditional separation of concerns when that separation introduces excessive complexity.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by noting that many developers still use software structures unfamiliar to those writing code in the late 1990s, a practice often taught in schools <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=0s">[0:00]</a>. The speaker asserts that while these old patterns were logical given past constraints (e.g., waterfall projects and segregated team roles like DBAs), they now hinder modern agile workflows where teams own features end-to-end <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=300s">[5:00]</a>.</p>
+<p><strong>Critique of Layered Architectures:</strong> Layered or tiered architectures organize code by technical concern—UI, controller, business logic, database—<a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=300s">[5:00]</a>. While this promotes code reuse and separation of concerns (SOLID), it forces a developer working on a single feature to navigate blocks across every layer. This results in many empty blocks that merely call the next layer, increasing development friction and context switching <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=600s">[10:00]</a>. In modern full-stack teams, where one person owns the entire flow from UI to database, separating by technical responsibility is counterproductive <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=600s">[10:00]</a>.</p>
+<p><strong>Advocacy for Feature Grouping:</strong> The speaker proposes grouping code by feature or domain/epic rather than by technical layer. This places all necessary components—data access, controller, UI—together in one place <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=600s">[10:00]</a>. Although this leads to some duplicated code, the benefit is that when a developer touches an instance of duplicated code, they are not breaking another unrelated instance, which is acceptable in agile environments where optimizing for human productivity is key <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=600s">[10:00]</a>. Furthermore, structuring code by domain makes it easier for LLMs to manage context effectively <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=1200s">[20:00]</a>.</p>
+<p><strong>Critique of Microservices:</strong> The speaker addresses the trend toward microservices, noting that while they are powerful tools, their adoption often becomes an ideological trap. Microservices were designed to solve problems in very large organizations (e.g., independent scaling or deployment) <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=900s">[15:00]</a>. However, when a single team manages dozens of services, implicit logic emerges in the communication patterns between them <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=900s">[15:00]</a>. This forces developers into constant context switching across numerous small components and managing infrastructure configuration files like YAML or Terraform rather than writing core software <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=900s">[15:00]</a>.</p>
+<p><strong>The Modular Monolith Alternative:</strong> As an alternative to microservices, the speaker advocates for a modular monolith. This approach structures a monolithic application so that its parts function independently while allowing cross-cutting concerns (like security or logging) to be handled once in the main process <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=1200s">[20:00]</a>. This structure allows scaling to support several teams without incurring the operational overhead and communication friction associated with distributed services, making it a strong default for new projects <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=1200s">[20:00]</a>.</p>
+<p><strong>The Importance of Testing:</strong> A significant portion of the talk is dedicated to testing. The speaker argues that neglecting automated tests leads to fear of deploying changes because developers cannot confidently know if their modifications broke existing functionality <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2100s">[35:00]</a>. Relying on manual &quot;test weeks&quot; is inefficient and prone to regressions <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2100s">[35:00]</a>. A proper test pyramid, utilizing inexpensive unit tests, heavier integration tests, and end-to-end scenario tests, provides confidence for continuous delivery <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2100s">[35:00]</a>. Well-written tests also serve as documentation of expected behavior, aiding onboarding and LLM interaction <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2100s">[35:00]</a>.</p>
+<p><strong>Modern Data Patterns (CQS):</strong> The speaker critiques the universal acceptance of strictly normalized relational databases, a practice rooted in constraints of the 1980s regarding storage cost and data integrity <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2400s">[40:00]</a>. The reliance on Object-Relational Mappers (ORMs) often results in expensive database joins, which consume compute resources that are difficult to distribute <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2400s">[40:00]</a>. He proposes Command Query Responsibility Segregation (CQS) as an alternative. In a CQS architecture, the command side processes commands by appending events without updating normalized tables, thus avoiding locks and maintaining full history via append-only operations <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2700s">[45:00]</a>. The query side then reads from optimized read models derived from these events <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2700s">[45:00]</a>. This approach optimizes for limited friction and isolated code components.</p>
+<p><strong>AI and Engineering:</strong> The speaker concludes that AI is a powerful tool, but its effectiveness relies heavily on classical software engineering practices. LLMs are not inherently intelligent; they require structured context, loops, checks, and scripts to function productively <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=3000s">[50:00]</a>. Strong engineering—such as modular design and robust testing—provides the necessary guardrails for agents (LLMs) to operate effectively without causing chaos <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=3000s">[50:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Avoid rigid layered architectures that force developers to jump between technical layers for a single feature, which increases friction.</li>
+<li>Prioritize grouping code by domain or feature over strict separation of concerns when working in full-stack teams.</li>
+<li>Microservices are beneficial for very large organizations but can introduce significant operational overhead and implicit communication logic if applied too broadly.</li>
+<li>Consider using modular monolith patterns as a default structure to gain benefits without the immediate complexity of distributed systems.</li>
+<li>Automated testing is crucial because it builds developer confidence, allows for continuous delivery, and documents code behavior.</li>
+<li>A proper test pyramid should include many inexpensive unit tests, fewer integration tests, and automated end-to-end scenario tests.</li>
+<li>Normalized relational databases can introduce computational friction (joins) and concurrency issues (locks).</li>
+<li>Command Query Responsibility Segregation (CQS) allows for append-only event processing on the command side, eliminating locks and preserving history.</li>
+<li>LLMs are most productive when applied to codebases that exhibit strong classical engineering practices like isolation and testability.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Architectural Choice:</strong> When starting a new project expecting growth, favor structuring it as a modular monolith before introducing microservices to avoid unnecessary friction <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=1200s">[20:00]</a>.</li>
+<li><strong>Data Strategy:</strong> Investigate Command Query Responsibility Segregation (CQS) by separating command processing (which appends events) from the query side (which reads from optimized read models/projections) <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2700s">[45:00]</a>.</li>
+<li><strong>Development Workflow:</strong> Implement Continuous Integration/Continuous Deployment (CI/CD) pipelines to automate testing and deploy code automatically to environments accessible by business users for early feedback <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=1500s">[25:00]</a>.</li>
+<li><strong>Testing Implementation:</strong> Build a test pyramid consisting of numerous unit tests, fewer integration tests, and automated end-to-end feature tests <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2100s">[35:00]</a>.</li>
+<li><strong>AI Integration:</strong> Ensure your codebase is well-structured (e.g., domain-grouped) so that LLMs can manage context effectively when assisting with code changes <a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=1200s">[20:00]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=300s">[5:00]</a> Discussion on the trap of layered code structures and how features traverse all layers.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=600s">[10:00]</a> Explanation contrasting grouping by category versus grouping by feature for human reasoning.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=900s">[15:00]</a> Analysis of microservices, their benefits (scaling/deployment), and associated pitfalls (communication logic).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=1200s">[20:00]</a> Introduction to the modular monolith concept as a middle ground between monolithic layers and microservices.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2100s">[35:00]</a> Detailed discussion on why automated testing is necessary for developer confidence and reducing deployment fear.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=_1LEFUgHFJI&amp;t=2700s">[45:00]</a> Explanation of CQS, event appending, projections, and read models versus traditional normalized databases.</li>
+</ul>
+</main>
+</body>
+</html>

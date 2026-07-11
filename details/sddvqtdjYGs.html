@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This presentation breaks down key Web Content Accessibility Guidelines (WCAG) rules for developers.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=sddvqtdjYGs">Watch video</a></nav>
+  <h1>This presentation breaks down key Web Content Accessibility Guidelines (WCAG) rules for developers.</h1>
+  <div class="meta">NDC Conferences · 2026-07-06T09:18:36+00:00 · Let&#x27;s break some WCAG rules - Elise Kristiansen - NDC Copenhagen 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides a detailed breakdown of key Web Content Accessibility Guidelines (WCAG) for front-end developers, aiming to make complex accessibility concepts easier to remember. The speaker emphasizes that web accessibility is not just about accommodating people with disabilities; it benefits everyone by improving usability across the board. She uses personal anecdotes and examples from gaming communities to illustrate how excluding users through poor design is a failure of development responsibility.</p>
+<p>The presentation systematically covers various WCAG principles, including contrast ratios, semantic HTML usage, keyboard navigation requirements, handling attention/distraction issues, form accessibility, and video captioning standards. The central message is that developers must actively build inclusive products rather than assuming they are designing for everyone by default.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins with a personal introduction and an example from World of Warcraft, highlighting how the game&#x27;s accessible design allowed players like M. Stan to form meaningful connections despite physical limitations [1:50-4:16]. This leads into the core argument that developers actively exclude users when they overlook accessibility.</p>
+<p><strong>WCAG Standards Overview:</strong> The speaker introduces WCAG as the international standard for creating accessible websites, divided into three levels: A, AA, and AAA <a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=438s">[7:18]</a>. Level A is the bare minimum to avoid complete barriers (e.g., keyboard navigation, alt text). Level AA is often the legal requirement (like through the European Accessibility Act) and ensures good usability for most users by scraping away barriers between disabled and non-disabled individuals [8:13-8:45]. The AAA standard represents the highest level of compliance, requiring stricter measures like sign language interpretation for videos or simpler language [8:56-9:09]. For instance, while a presentation might meet Level AA contrast ratios (e.g., 6.27 to 1), it may not meet AAA standards (requiring 9.47 to 1 for small text) [9:22-9:39].</p>
+<p><strong>Common Accessibility Issues:</strong> The speaker notes that nearly 95% of all websites have at least one Level AA issue, with almost 80% having bad contrast or missing alternative text [10:46-11:25]. Examples of poor accessibility include content being completely invisible to users who are visually impaired due to missing alternative text for images (resulting in a &quot;black box&quot; experience) [12:27-13:32], and interactive elements lacking necessary roles or names [12:56-13:01].</p>
+<p><strong>HTML Structure and Semantics:</strong> A major point is the misuse of `div` tags for everything instead of using the rich language of HTML. Developers are encouraged to use appropriate semantic tags, such as `&lt;p&gt;` for paragraphs and `&lt;nav&gt;` for navigation [16:28-17:05]. Regarding headings, they must be used semantically to denote structure, not just for styling. A page needs one `&lt;h1&gt;` (the main title), followed by `&lt;h2&gt;` for new themes/subtitles, and subsequent levels like `&lt;h3&gt;` for sub-themes [18:29-19:07].</p>
+<p><strong>Color and Contrast:</strong> Accessibility is not limited to people with disabilities; it benefits everyone. The speaker discusses color perception differences, noting that some individuals with color blindness perceive certain colors differently (e.g., seeing a number 73 where others see something else) [21:10-22:06]. This reinforces the need to avoid using color as the sole means of conveying important information [23:18-23:49].</p>
+<p><strong>Language and Motor Skills:</strong> Websites must include a correct language attribute specifying the content&#x27;s language, with support for &quot;language of parts&quot; if sections are in different languages (e.g., English vs. Spanish) [24:41-25:26]. For motor skills, keyboard navigation is critical; users must be able to reach all interactive elements using only a keyboard without needing hacks like `tabindex` or absolute positioning that disrupts the natural tab order [25:38-29:10].</p>
+<p><strong>Focus and Interaction:</strong> Visible focus indicators are necessary so keyboard users know where they are on the page, preventing accidental actions and aiding low-vision users [29:19-30:47]. Furthermore, components must not create &quot;keyboard traps,&quot; meaning users cannot get stuck within any component while navigating with a keyboard [30:31-30:35].</p>
+<p><strong>Attention and Distraction:</strong> Users must have the ability to extend, adjust, or disable time limits on tasks to reduce stress and support those with ADHD or anxiety [30:58-31:22]. Additionally, content like auto-updating elements or moving/blinking visuals must be controllable (pause, stop, hide) to prevent cognitive overload. Flashing content should also be kept below a certain threshold to avoid triggering seizures or migraines [32:26-32:54].</p>
+<p><strong>Forms and Memory:</strong> For forms, clear and visible labels are required for input fields, even if placeholder text is descriptive, because users struggling with concentration may forget what they were supposed to enter [33:32-34:17]. Checkboxes and radio buttons must be actual input fields accessible by mouse, keyboard, and screen readers, and the question/label must clearly state what is being accepted or selected [35:02-36:03].</p>
+<p><strong>Icons and Hearing Impairments:</strong> When using icons as links (e.g., a backpack), developers should provide visible text labels because different users have varied associations with symbols, which can lead to confusion [36:34-38:18]. Finally, for hearing impairments, videos require captions in VTT format that cover both speech and important sounds, and sign language interpretation is required under AAA standards [40:36-40:51]. For live video, real-time captioning services or CART (Communication Access Real-Time Translation) should be used [42:41-43:39].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>WCAG provides international standards for web accessibility, categorized into Levels A (basic barrier avoidance), AA (legal requirement/good usability), and AAA (highest standard).</li>
+<li>Accessibility benefits all users, not just those with disabilities, by improving overall site usability.</li>
+<li>Developers should prioritize semantic HTML tags (e.g., `&lt;p&gt;`, `&lt;nav&gt;`) over using `div` elements for everything to ensure proper structure for assistive technologies.</li>
+<li>All non-text content, such as images and icons used in links, must have descriptive alternative text or visible labels so users with visual impairments receive the same context.</li>
+<li>Keyboard navigation must be fully functional; all interactive elements must be reachable via keyboard without requiring hacks like absolute positioning that disrupt tab order.</li>
+<li>Visible focus indicators are mandatory for keyboard users to maintain awareness of their current location on a page.</li>
+<li>Forms require clear, visible labels associated with input fields because users may struggle with concentration or memory and rely on explicit instructions rather than placeholder text.</li>
+<li>Videos must include captions in VTT format that cover both spoken words and important non-speech sounds for pre-recorded content.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Contrast Ratios:</strong> WCAG AA requires 4.5:1 for small text and 3:1 for large text; AAA is stricter (e.g., 7:1 for small text).</li>
+<li><strong>HTML Structure:</strong> Use `&lt;h1&gt;` once per page, followed by `&lt;h2&gt;` to introduce new themes, and `&lt;h3&gt;` for sub-themes within those sections.</li>
+<li><strong>Video Captions:</strong> For pre-recorded videos, captions must be in VTT format, visible/optional, cover speech and important sounds, and have a marked language track (e.g., `&lt;track kind=&quot;captions&quot; src=&quot;captions_en.vtt&quot; srclang=&quot;English&quot;&gt;`).</li>
+<li><strong>Live Video Captions:</strong> Use real-time captioning services or CART to provide accurate captions during broadcasts.</li>
+<li><strong>Development Practices:</strong> Implement accessibility scanners like Axe or Polyci within the development pipeline for proactive issue detection.</li>
+<li><strong>User Testing:</strong> Developers must test their applications using screen readers, as users are not experts in assistive technology.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=110s">[1:50]</a> - Introduction to World of Warcraft&#x27;s inclusive design.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=438s">[7:18]</a> - Explanation of WCAG Levels A, AA, and AAA.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=562s">[9:22]</a> - Demonstration comparing Level AA vs. AAA contrast ratios.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=781s">[13:01]</a> - Example of missing alternative text for images.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=988s">[16:28]</a> - Discussion on using correct semantic HTML tags instead of divs.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=1109s">[18:29]</a> - Detailed explanation of heading tag hierarchy (`&lt;h1&gt;` through `&lt;h6&gt;`).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=1538s">[25:38]</a> - Demonstration of keyboard navigation issues and proper tab order.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=1831s">[30:31]</a> - Explanation of avoiding &quot;keyboard traps.&quot;</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=2012s">[33:32]</a> - Walkthrough of form accessibility requirements (labels vs. placeholders).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=sddvqtdjYGs&amp;t=2436s">[40:36]</a> - Checklist for captions on pre-recorded videos.</li>
+</ul>
+</main>
+</body>
+</html>

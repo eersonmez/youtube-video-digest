@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strategies for improving the defensive coding capabilities of AI agents.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=VUZpQgNaO4s">Watch video</a></nav>
+  <h1>Strategies for improving the defensive coding capabilities of AI agents.</h1>
+  <div class="meta">NDC Conferences · 2026-07-01T14:20:48+00:00 · Teaching your coding agent defensive coding - Erlend Oftedal - NDC AI 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video addresses the inherent security risks associated with using current AI coding agents to generate software. The central argument is that because these agents are trained on vast amounts of internet code, much of which contains vulnerabilities or insecure patterns, they can inadvertently introduce and amplify security flaws into new code. If an agent starts with a flawed codebase, it tends to perpetuate those weaknesses rather than correcting them.</p>
+<p>The discussion pivots from simply scanning generated code for existing issues after creation to implementing proactive defensive coding strategies during the planning phase. The speaker proposes using structured guidance skills—specifically leveraging standards like OWASP Application Security Verification Standard (ASVS)—to instruct agents on secure development practices before they write any functional code, thereby shifting the focus toward building robust security in from the start.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by demonstrating a classic SQL injection vulnerability in a piece of Python code <a class="timestamp" href="https://www.youtube.com/watch?v=VUZpQgNaO4s&amp;t=36s">[0:36]</a>. When this vulnerable code is presented to an AI agent like Claude, it correctly identifies the issue as SQL injection <a class="timestamp" href="https://www.youtube.com/watch?v=VUZpQgNaO4s&amp;t=69s">[1:09]</a>, but the speaker immediately cautions that this simple success does not represent the general case.</p>
+<p>The core problem with current AI agents stems from their probabilistic nature and training data composition <a class="timestamp" href="https://www.youtube.com/watch?v=VUZpQgNaO4s&amp;t=81s">[1:21]</a>. They are trained on all available internet code, which includes insecure examples found in public repositories like GitHub [2:12-2:35]. The models lack clear labeling distinguishing secure code from insecure code. Furthermore, the reinforcement learning process has historically prioritized functional correctness (code that compiles and runs) over security [3:02-3:19].</p>
+<p>A key finding cited is that &quot;AI is an amplifier&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=VUZpQgNaO4s&amp;t=241s">[4:01]</a>, meaning if a developer writes bad code, the AI will likely perpetuate or worsen those poor practices. This was demonstrated by showing how an agent would repeat an existing vulnerability in new functions when prompted to complete them [4:58-5:12].</p>
+<p>The speaker then explores token prediction mechanisms using a small model example for password storage algorithms [5:19-6:09]. By manipulating the context (e.g., adding unrelated system paths), the agent&#x27;s suggestions shift, showing how probability can lead to insecure choices like SHA over bcrypt [6:32-6:47]. This probabilistic nature means that even simple prompts like &quot;make it secure&quot; are insufficient because they lack specific, contextual knowledge of what constitutes modern best practices [8:14-8:30].</p>
+<p>The proposed solution is a paradigm shift from post-generation scanning to proactive guidance during the planning stage [9:16-9:34]. Instead of asking an agent to fix vulnerabilities (a reactive cycle), the goal is to instruct it *before* coding. This is achieved by creating &quot;security guidance skills&quot; based on comprehensive standards like OWASP ASVS, which details hundreds of verification points across various domains such as cryptography and file uploads [11:13-12:03].</p>
+<p>These skills are designed not to dump all 345 verifications into the context, but rather to allow the agent to look up relevant guidance based on its current plan—for instance, pulling database interaction best practices when planning a SQL operation [12:42-12:59]. This provides just-in-time security context.</p>
+<p>The speaker also discusses using &quot;hooks&quot; within the agent&#x27;s coding loop. These hooks inject reminders into the agent’s self-reflection process—for example, reminding it to apply security guidance whenever it edits a file [17:02-18:05]. Testing showed that using such skills leads to consistently better results compared to running agents without them [18:30-18:37].</p>
+<p>Finally, the talk contrasts this structured approach with existing tools. While dedicated security scanners are fast at finding known issues (e.g., Open Grip), relying on agents to run these tools can be token-inefficient. For tasks like dependency scanning, using specialized, fast audit functions (like NPM audit) is more efficient than having an agent parse files and then query external vulnerability databases [19:47-20:18].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>AI coding agents are susceptible to introducing security vulnerabilities because they are trained on large datasets that include insecure code from the internet.</li>
+<li>The &quot;amplifier&quot; effect means AI will reinforce bad coding habits if not explicitly guided toward secure practices.</li>
+<li>Effective mitigation requires shifting focus from post-generation vulnerability scanning to proactive defensive planning during the agent&#x27;s initial stages of work.</li>
+<li>Implementing security guidance skills based on standards like OWASP ASVS allows agents to look up relevant best practices contextually before writing code.</li>
+<li>These skills provide structured, verifiable advice (e.g., &quot;Verify file sizes&quot;) rather than relying on vague prompts like &quot;be secure.&quot;</li>
+<li>Using agent hooks can inject continuous reminders into the coding loop, prompting self-review for security compliance during file edits.</li>
+<li>For specific tasks, such as dependency checking, using dedicated, fast auditing tools is more token and time efficient than tasking an AI agent to perform the analysis itself.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Core Concept:</strong> Implement a &quot;security guidance skill&quot; that interfaces with structured standards like OWASP ASVS <a class="timestamp" href="https://www.youtube.com/watch?v=VUZpQgNaO4s&amp;t=673s">[11:13]</a>.</li>
+<li><strong>Workflow Integration:</strong> The ideal workflow involves the agent entering a planning mode, triggering the security guidance skill based on the planned action (e.g., database interaction), incorporating that advice into the plan, and then writing secure code.</li>
+<li><strong>Skill Design:</strong> Skills should be designed to provide relevant context only when needed, avoiding massive context stuffing from all 345 ASVS verifications [12:18-12:20].</li>
+<li><strong>Agent Customization:</strong> Agents can be customized with internal security guidelines by creating custom skills or using configuration files like `cloud_security_guidance.md` and `securitypatterns.yaml` (as seen in Anthropic&#x27;s implementation) to define specific rules [21:48-22:03].</li>
+<li><strong>Tool Usage:</strong> For known, high-volume tasks like dependency scanning, prioritize established tools (e.g., NPM audit) over agentic attempts to replicate that functionality for efficiency [20:06-20:19].</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li>0:36 - 1:09: Initial demonstration of SQL injection vulnerability and AI identification.</li>
+<li>4:58 - 7:45: Demonstration of how probabilistic token selection can lead to repeating vulnerabilities or insecure choices.</li>
+<li>11:13 - 12:03: Overview of OWASP ASVS structure (categories, verifications).</li>
+<li>12:42 - 13:06: Explanation of integrating security guidance into the agent&#x27;s planning stage via skills.</li>
+<li>17:02 - 18:05: Example of using hooks to inject self-reminders during file editing.</li>
+<li>20:06 - 20:19: Discussion on token efficiency when choosing between AI agents and specialized security tools.</li>
+</ul>
+</main>
+</body>
+</html>

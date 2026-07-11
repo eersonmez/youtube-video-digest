@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building a real-time collaborative text editor for airgapped defense environments.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=VNAYu-8p804">Watch video</a></nav>
+  <h1>Building a real-time collaborative text editor for airgapped defense environments.</h1>
+  <div class="meta">NDC Conferences · 2026-07-03T10:49:29+00:00 · Building a real-time collaborative editor - Mihaela Gheorghe-Roman - NDC Copenhagen 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video details the development of a highly specialized collaborative text editor designed to function within airgapped and disconnected defense environments where internet connectivity is unavailable or strictly prohibited due to security protocols. The core challenge addressed was enabling multiple users across disparate, potentially offline systems to work on shared documents in real time, requiring robust mechanisms for merging changes once servers reconnect after extended periods of isolation.</p>
+<p>The solution goes significantly beyond standard rich text editing by integrating complex security requirements, specifically granular access control down to individual paragraphs or links based on user security clearance levels. Furthermore, the system must maintain compatibility across different versions and deployment types—ranging from laptops to specialized hardware inside military vehicles—while ensuring all users converge on a consistent document state despite concurrent edits occurring offline.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by establishing the context of the application&#x27;s users: personnel operating in various domains (land, air, sea) during mission planning phases <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=300s">[5:00]</a>. These users require real-time access to documentation containing organizational structures, asset details, and target information. A critical requirement is granular security clearance, meaning a user&#x27;s rank dictates access not just to the document generally, but to specific sections, paragraphs, or embedded objects within it <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=600s">[10:00]</a>.</p>
+<p>The development process started by defining what constitutes a rich text editor—a sequence of characters identified by an index and value. Initially, this was reduced to two basic operations: insert and delete, as updates are treated as combinations of these primitives <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=600s">[10:00]</a>. Advanced features were then added, including styling (bold, italics), handling embedded objects like links, pictures, and videos, and implementing classification security at the object/paragraph level <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=600s">[10:00]</a>.</p>
+<p>When evaluating existing market frameworks (like Froala or TinyMCE), the team found that while some offered rich text editing capabilities, none provided a viable solution for the collaborative aspect under their specific constraints <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=900s">[15:00]</a>. The decision to build in-house was driven by licensing restrictions on server counts and the inability of these commercial tools to allow proprietary defense code sharing <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=900s">[15:00]</a>.</p>
+<p>The core problem—real-time collaboration across disconnected nodes—was tackled by aiming for consistency and responsiveness. Initial attempts, modeled after Git conflict resolution (where manual merging is required), were deemed unusable due to the need for automated, seamless operation <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=1200s">[20:00]</a>. The team shifted focus to achieving consistency through mathematical principles of commutativity and idempotency, leading them to adopt Operational Transformation (OT) algorithms <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2100s">[35:00]</a>.</p>
+<p>The OT approach requires transforming indices before applying operations. For example, if User One inserts &quot;collaborative&quot; at position 14, and User Two simultaneously tries to insert &quot;editor&quot; at position 14, the system must transform User Two&#x27;s index based on User One&#x27;s insertion so that both resulting documents are consistent (e.g., &quot;collaborative editor&quot;) <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=1500s">[25:00]</a>. For deletions, OT ensures idempotency by checking if an operation has already been applied to prevent cascading deletes beyond user intent <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2100s">[35:00]</a>.</p>
+<p>The complexity increased with advanced objects and operations. The system extended its JSON action/operation format beyond simple text insertion/deletion to handle object types (tables, lists, images) and complex structural changes like renaming or splitting paragraphs (wrapping operation) <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2400s">[40:00]</a>. Furthermore, cursor synchronization was implemented to track user positions accurately even when insertions shift the document structure <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2700s">[45:00]</a>.</p>
+<p>Finally, security and usability features were layered on. Undo/Redo functionality is managed via a stack manager that reverses operations by inverting them (e.g., reversing an insertion with a deletion) <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2700s">[45:00]</a>. The most stringent requirement involved classification: sensitive information can be encrypted at the system level, rendering it invisible to users without the appropriate clearance, even if they are technically part of the document structure <a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=3000s">[50:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>The editor is specifically engineered for airgapped and disconnected defense environments where internet connectivity is absent or restricted.</li>
+<li>Conflict resolution relies on implementing Operational Transformation (OT) algorithms to ensure consistency between concurrent edits without requiring manual user intervention.</li>
+<li>Security clearance can be applied with high granularity, restricting visibility down to specific paragraphs or embedded objects within a document.</li>
+<li>Operations are managed via custom JSON objects termed &quot;actions&quot; or &quot;operations,&quot; which define the type of change (e.g., insert, delete, rename).</li>
+<li>The system supports complex data structures beyond plain text, including tables, lists, images, and videos, by leveraging tree-based parsing concepts similar to HTML.</li>
+<li>Cursor synchronization is necessary to accurately track user positions within a document that is dynamically changing due to concurrent edits or object insertions.</li>
+<li>Undo/Redo functionality is achieved through a stack manager that reverses operations by applying their inverse transformation.</li>
+<li>Data security is managed at the system level using encryption, ensuring restricted content remains inaccessible but present in the data model for authorized users.</li>
+<li>The architecture supports decentralized operation; each node can act as a master/owner of a document during synchronization events.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Technology Stack:</strong> Backend utilizes Scala and Java, with Microsoft SQL and PostgreSQL databases managed within a Kubernetes cluster. Frontend is built using Angular (with some legacy AngularJS components being migrated).</li>
+<li><strong>Deployment:</strong> Deployment in air-gapped environments is manual or via automation scripts; installation must be triggered by personnel physically present at the deployment site (e.g., inside a vehicle).</li>
+<li><strong>Security Implementation:</strong> Encryption for classified content occurs at the system level, not the user level. Interoperability protocols include additional security layers to manage data transfer across air gaps.</li>
+<li><strong>Backwards Compatibility:</strong> A two-year compatibility policy is maintained; when newer features (like tables) are present in one version and absent in another, information is translated into a displayable format for older systems (e.g., tabular data rendered as tabbed lines).</li>
+<li><strong>AI Usage Policy:</strong> AI is restricted to providing suggestions or alternative scenarios; human judgment must always confirm any changes made based on AI input due to strict defense technology policies and model restrictions.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=0s">[0:00]</a> Introduction and context setting regarding the constraints of building software for defense.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=300s">[5:00]</a> Overview of user types and the need for granular security clearance application.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=600s">[10:00]</a> Initial breakdown of a rich text editor into basic operations (insert/delete) and advanced features.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=1200s">[20:00]</a> Discussion on why Git-like conflict resolution is insufficient and the pivot to automated consistency.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2100s">[35:00]</a> Detailed explanation of how Operational Transformation solves commutativity and idempotency for text edits.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2400s">[40:00]</a> Examination of handling advanced objects (lists, tables) and structural operations like renaming or splitting paragraphs.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=2700s">[45:00]</a> Demonstration/explanation of cursor synchronization logic when document structure changes.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=VNAYu-8p804&amp;t=3000s">[50:00]</a> Explanation of the classification system, including how restricted content is encrypted and displayed as redacted blocks.</li>
+</ul>
+</main>
+</body>
+</html>
