@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A guide on extending a network connection from the house to a detached garage using fiber and UniFi equipment.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=V7n8ifR81IU">Watch video</a></nav>
+  <h1>A guide on extending a network connection from the house to a detached garage using fiber and UniFi equipment.</h1>
+  <div class="meta">Smart Home Solver · 2026-07-12T16:47:24+00:00 · FINALLY! Internet to my Detached Garage (no trenching)</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides a detailed guide on extending a high-speed network connection from a main house to a detached garage or shop without the need for traditional underground trenching. The central challenge addressed is establishing a reliable, fast, and future-proof internet link across a distance where running physical cables might be impractical or undesirable.</p>
+<p>The creator details a solution utilizing fiber optic cable combined with UniFi&#x27;s Building Bridge XG units to create a wireless bridge between the two structures. This approach allows for high data transfer rates while avoiding the complexities of digging trenches, which is particularly relevant for users who need robust connectivity for business operations or advanced smart home technology in remote areas.</p>
+<p>The guide covers not only the networking hardware and configuration but also practical considerations for physical installation, such as safety protocols when working in attics and methods for securing outdoor equipment against environmental factors like water intrusion.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The process begins with the creator addressing personal apprehension regarding attic work [0:15-0:43]. Before starting the technical setup, they outline five rules for safely navigating an attic: 1) Do not die (climbing technique using a ladder), 2) Wear good shoes and gloves, 3) Have adequate lighting (flashlight or headlamp), 4) Limber up by observing the environment, and 5) Take it slow and watch your step [0:54-2:30].</p>
+<p>For the networking core, the creator utilizes a UniFi setup. The main network brain is the Dream Machine Pro located in the house, connected to a 10 gig switch [2:49-3:00]. A second, smaller 10 gig switch is placed in the shop to connect local devices like a wireless access point for Wi-Fi coverage there [3:06-3:14].</p>
+<p>The decision was made between running Ethernet or fiber optic cable. Fiber was chosen as the superior option because it is less susceptible to lightning strikes compared to copper wiring, and it proved to be more cost-effective than anticipated [3:27-3:41]. To achieve maximum speed, the creator opted for UniFi&#x27;s Building Bridge XG units, which can support up to six gigabits per second.</p>
+<p>The initial research into wireless bridging led to understanding that while an SFP plus cable could be used, it was not outdoor rated [4:33-4:46]. The solution involved using outdoor-rated fiber cables and SFP+ modules that connect these fibers into the switches or Building Bridge XGs. The creator specified using LC connectors because they are small and duplex, noting that proper connection is straightforward [5:28-5:39]. A critical learning point was the importance of minimizing connectors on the fiber cable to prevent signal degradation from debris; this led to researching and utilizing fiber cleaning pens for maintenance [5:57-6:18].</p>
+<p>The physical installation involved drilling a large, upward-angled hole through the side of the house to accommodate the fiber and Ethernet cables, ensuring water runoff is managed [7:54-8:05]. These cables were then fed into the shop&#x27;s server rack area. Instead of running directly into the switch, the cables were terminated using a keystone coupler in the wall, allowing for easy replacement of patch cables if necessary [8:36-8:58].</p>
+<p>The Building Bridge XGs were mounted on pole brackets secured to the side of the house using specialized stucco screws [9:08-9:21]. After connecting the fiber and PoE to the unit, it powered on successfully. The process was repeated for the second bridge connection at the shop&#x27;s location, where wire loom tubing was used to protect the cables running down into a mini server rack [9:54-10:16].</p>
+<p>Upon final setup, the creator confirmed 100% signal quality and tested the link using iperf 3, achieving a speed of 2.7 Gbits per second [10:28-12:14]. The connection proved highly reliable over a month of testing, showing zero packet loss [11:52-12:00]. A minor configuration adjustment was needed to set the Wi-Fi power on the shop&#x27;s access point to low to prevent devices in the main house from attempting to connect to it [12:46-13:05]. Finally, the large hole drilled into the side of the house was sealed with clear silicone caulk to keep out water and bugs [11:28-11:36].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>The project successfully extended high-speed internet from a main house to a detached shop without trenching.</li>
+<li>UniFi equipment, specifically the Dream Machine Pro and switches, forms the core network infrastructure in the house.</li>
+<li>Building Bridge XG units were selected for the wireless link due to their capability of reaching up to six gigabits per second.</li>
+<li>Fiber optic cable was chosen over Ethernet for the bridge connection because it is less susceptible to lightning strikes than copper.</li>
+<li>Proper installation requires careful physical work, including safety protocols when working in attics and securing outdoor equipment with appropriate fasteners (e.g., stucco screws).</li>
+<li>The use of SFP+ modules allows fiber optic cables to connect into networking hardware like switches or Building Bridge XGs.</li>
+<li>Fiber optic signal integrity is maintained by minimizing connectors and using cleaning pens to remove debris from the cable and connector ends.</li>
+<li>The final tested speed achieved was 2.7 Gbits per second, demonstrating high reliability with zero packet loss over a month of testing.</li>
+<li>A minor configuration tweak—lowering Wi-Fi power on the shop&#x27;s access point—was necessary to prevent house devices from connecting to the remote AP.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Hardware Used:</strong></p>
+<ul>
+<li>UniFi Dream Machine Pro (Network core in the house)</li>
+<li>10 gig switches (One for the house, one for the shop)</li>
+<li>UniFi Building Bridge XG units (For wireless bridging)</li>
+<li>Outdoor-rated fiber optic cables</li>
+<li>SFP+ modules</li>
+<li>LC connectors</li>
+</ul>
+<p><strong>Installation Steps:</strong></p>
+<ul>
+<li>Drill an upward-angled hole through the side of the house to pass cables, accounting for spray foam in the attic [7:54-8:05].</li>
+<li>Feed the fiber and Ethernet cables down through this hole into the shop&#x27;s server rack area [8:23-8:34].</li>
+<li>Terminate the fiber connection using a keystone coupler inside the house to allow for easy patch cable replacement [8:41-8:58].</li>
+<li>Mount Building Bridge XGs onto pole brackets secured to the exterior surface (e.g., stucco) using specialized screws [9:08-9:27].</li>
+<li>Connect fiber and PoE to the bridge unit, then power it on [9:36-9:48].</li>
+<li>For the shop side, use wire loom tubing to protect cables running down into the mini server rack [10:08-10:12].</li>
+<li>Seal all exterior cable entry points with clear silicone caulk to prevent water and bug ingress [11:28-11:36].</li>
+</ul>
+<p><strong>Caveats/Risks:</strong></p>
+<ul>
+<li>Attic work requires strict adherence to safety rules (gloves, headlamp, slow movement) due to potential hazards like wires and uneven surfaces [0:54-2:30].</li>
+<li>Fiber optic signal quality can degrade if connectors accumulate debris; cleaning pens are necessary maintenance tools [6:12-6:24].</li>
+<li>If the distance were significantly greater, fine-tuning the alignment of the Building Bridge XGs might be required to achieve optimal signal quality [10:49-10:57].</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=V7n8ifR81IU&amp;t=54s">[0:54]</a> - 2:30: For detailed safety rules when working in an attic.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=V7n8ifR81IU&amp;t=207s">[3:27]</a> - 3:41: Discussion comparing Ethernet vs. Fiber for the bridge connection.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=V7n8ifR81IU&amp;t=273s">[4:33]</a> - 5:28: Explanation of SFP+ modules and the necessity of using outdoor-rated fiber cables.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=V7n8ifR81IU&amp;t=369s">[6:09]</a> - 6:24: Demonstration/explanation of cleaning fiber optic connectors with specialized pens.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=V7n8ifR81IU&amp;t=474s">[7:54]</a> - 8:17: Visual demonstration of drilling through the house structure to install cabling.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=V7n8ifR81IU&amp;t=548s">[9:08]</a> - 9:38: Installation and initial power-up sequence for one Building Bridge XG unit.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=V7n8ifR81IU&amp;t=734s">[12:14]</a> - 12:30: Results from the iperf 3 speed test confirming the achieved data rate.</li>
+</ul>
+</main>
+</body>
+</html>

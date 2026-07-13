@@ -1,5 +1,6 @@
 # YouTube Video Digest Archive
 
+- 2026-07-12T16:47:24+00:00 - Smart Home Solver: [FINALLY! Internet to my Detached Garage (no trenching)](https://www.youtube.com/watch?v=V7n8ifR81IU)
 - 2026-07-10T21:11:41+00:00 - OpenAI: [Stampli scales product marketing with ChatGPT Work](https://www.youtube.com/watch?v=yATno77Uo6A)
 - 2026-07-10T16:34:32+00:00 - Smart Home Solver: [30+ Smart Home Questions Answered! (rapid fire)](https://www.youtube.com/watch?v=t8QuoJ_yx6k)
 - 2026-07-10T16:34:06+00:00 - Dwarkesh Patel: [A deep but accessible introduction to general relativity – Adam Brown](https://www.youtube.com/watch?v=QbdbAhaJoCQ)
@@ -59,4 +60,3 @@
 - 2026-07-01T14:29:34+00:00 - NDC Conferences: [AI Agents In-Depth – Function Calling, MCP and Tool Use Under the Hood - Alan Smith - NDC AI 2026](https://www.youtube.com/watch?v=Mvcxa35_PMA)
 - 2026-07-01T14:28:59+00:00 - OpenAI: [Grow With ChatGPT](https://www.youtube.com/watch?v=N3Hzsf2PuHA)
 - 2026-07-01T14:20:48+00:00 - NDC Conferences: [Teaching your coding agent defensive coding - Erlend Oftedal - NDC AI 2026](https://www.youtube.com/watch?v=VUZpQgNaO4s)
-- 2026-07-01T13:52:59+00:00 - NDC Conferences: [Agentic Engineering: Notes from Building and Shipping with Agents - Mats Oustad - NDC AI 2026](https://www.youtube.com/watch?v=Tj6Df_K-IRc)
