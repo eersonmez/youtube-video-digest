@@ -1,6 +1,10 @@
 # YouTube Video Digest Archive
 
+- 2026-07-13T23:07:18+00:00 - OpenAI: [Learning with AI at Any Stage of Life | Fast Campus x OpenAI](https://www.youtube.com/watch?v=-J5KoSMfPLk)
+- 2026-07-13T17:00:06+00:00 - Alex Kantrowitz: [OpenAI Finally Ships Its Superapp, Meta’s AI Price War, ChatGPT Cheating At Brown](https://www.youtube.com/watch?v=qA17304wOiw)
+- 2026-07-13T12:00:32+00:00 - Andrew Huberman: [How to Improve Your Memory & Cognitive Function at Any Age | Dr. Alan Castel](https://www.youtube.com/watch?v=EIhilBpn8Ow)
 - 2026-07-12T16:47:24+00:00 - Smart Home Solver: [FINALLY! Internet to my Detached Garage (no trenching)](https://www.youtube.com/watch?v=V7n8ifR81IU)
+- 2026-07-11T00:44:29+00:00 - OpenAI: [Meet the family running a cereal business from their dining room with GPT-5.6](https://www.youtube.com/watch?v=q571PxpsdoA)
 - 2026-07-10T21:11:41+00:00 - OpenAI: [Stampli scales product marketing with ChatGPT Work](https://www.youtube.com/watch?v=yATno77Uo6A)
 - 2026-07-10T16:34:32+00:00 - Smart Home Solver: [30+ Smart Home Questions Answered! (rapid fire)](https://www.youtube.com/watch?v=t8QuoJ_yx6k)
 - 2026-07-10T16:34:06+00:00 - Dwarkesh Patel: [A deep but accessible introduction to general relativity – Adam Brown](https://www.youtube.com/watch?v=QbdbAhaJoCQ)
@@ -56,7 +60,3 @@
 - 2026-07-02T12:00:35+00:00 - Andrew Huberman: [Essentials: Tools for Hormone Optimization in Males | Dr. Kyle Gillett](https://www.youtube.com/watch?v=O-groYMqrQw)
 - 2026-07-01T18:31:25+00:00 - OpenAI: [Codex for Solutions Engineers: Making AI Tangible for Customers](https://www.youtube.com/watch?v=08hgAtg-P_8)
 - 2026-07-01T15:00:21+00:00 - BeardedTinker: [Home Assistant 2026.7 Finally Fixes This](https://www.youtube.com/watch?v=m4SDwP_l5cc)
-- 2026-07-01T14:36:06+00:00 - NDC Conferences: [10 tips to level up your ai-assisted coding - Aleksander Stensby - NDC AI 2026](https://www.youtube.com/watch?v=K7dBRuSDWTw)
-- 2026-07-01T14:29:34+00:00 - NDC Conferences: [AI Agents In-Depth – Function Calling, MCP and Tool Use Under the Hood - Alan Smith - NDC AI 2026](https://www.youtube.com/watch?v=Mvcxa35_PMA)
-- 2026-07-01T14:28:59+00:00 - OpenAI: [Grow With ChatGPT](https://www.youtube.com/watch?v=N3Hzsf2PuHA)
-- 2026-07-01T14:20:48+00:00 - NDC Conferences: [Teaching your coding agent defensive coding - Erlend Oftedal - NDC AI 2026](https://www.youtube.com/watch?v=VUZpQgNaO4s)
