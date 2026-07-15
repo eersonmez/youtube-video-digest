@@ -1,5 +1,9 @@
 # YouTube Video Digest Archive
 
+- 2026-07-14T23:30:19+00:00 - OpenAI: [The new Codex for developers](https://www.youtube.com/watch?v=eiQgljOrkWU)
+- 2026-07-14T22:35:03+00:00 - OpenAI: [Background Robustness with GPT-Live](https://www.youtube.com/watch?v=matzTxfrhJU)
+- 2026-07-14T20:22:11+00:00 - OpenAI: [Improved Intelligence with GPT-Live](https://www.youtube.com/watch?v=avpZWh6sm9M)
+- 2026-07-14T19:19:36+00:00 - OpenAI: [Build and publish web apps directly in ChatGPT](https://www.youtube.com/watch?v=8zH_O74hZBw)
 - 2026-07-13T23:07:18+00:00 - OpenAI: [Learning with AI at Any Stage of Life | Fast Campus x OpenAI](https://www.youtube.com/watch?v=-J5KoSMfPLk)
 - 2026-07-13T17:00:06+00:00 - Alex Kantrowitz: [OpenAI Finally Ships Its Superapp, Meta’s AI Price War, ChatGPT Cheating At Brown](https://www.youtube.com/watch?v=qA17304wOiw)
 - 2026-07-13T12:00:32+00:00 - Andrew Huberman: [How to Improve Your Memory & Cognitive Function at Any Age | Dr. Alan Castel](https://www.youtube.com/watch?v=EIhilBpn8Ow)
@@ -56,7 +60,3 @@
 - 2026-07-06T09:01:30+00:00 - NDC Conferences: [Is Spec Kit the future for software development - Johan Smarius - NDC Copenhagen 2026](https://www.youtube.com/watch?v=C0H-_zdfXIc)
 - 2026-07-03T10:49:29+00:00 - NDC Conferences: [Building a real-time collaborative editor - Mihaela Gheorghe-Roman - NDC Copenhagen 2026](https://www.youtube.com/watch?v=VNAYu-8p804)
 - 2026-07-03T10:39:17+00:00 - NDC Conferences: [Stop writing software like it's 1999! - Hannes Lowette - NDC Copenhagen 2026](https://www.youtube.com/watch?v=_1LEFUgHFJI)
-- 2026-07-02T18:10:30+00:00 - Alex Kantrowitz: [Big Tech AI Summit Highlights!](https://www.youtube.com/watch?v=cJEiD01ugMM)
-- 2026-07-02T12:00:35+00:00 - Andrew Huberman: [Essentials: Tools for Hormone Optimization in Males | Dr. Kyle Gillett](https://www.youtube.com/watch?v=O-groYMqrQw)
-- 2026-07-01T18:31:25+00:00 - OpenAI: [Codex for Solutions Engineers: Making AI Tangible for Customers](https://www.youtube.com/watch?v=08hgAtg-P_8)
-- 2026-07-01T15:00:21+00:00 - BeardedTinker: [Home Assistant 2026.7 Finally Fixes This](https://www.youtube.com/watch?v=m4SDwP_l5cc)
