@@ -1,5 +1,8 @@
 # YouTube Video Digest Archive
 
+- 2026-07-15T22:50:17+00:00 - OpenAI: [Schedule tasks with ChatGPT](https://www.youtube.com/watch?v=CToxp125mhc)
+- 2026-07-15T19:42:38+00:00 - OpenAI: [Introducing the Codex Micro](https://www.youtube.com/watch?v=m8uUUUsMD3Y)
+- 2026-07-15T17:00:06+00:00 - Alex Kantrowitz: [AI Pioneer Jürgen Schmidhuber: AI Already Feels Pain, Loves, and Is Self-Aware](https://www.youtube.com/watch?v=i-mRanTY6c4)
 - 2026-07-14T23:30:19+00:00 - OpenAI: [The new Codex for developers](https://www.youtube.com/watch?v=eiQgljOrkWU)
 - 2026-07-14T22:35:03+00:00 - OpenAI: [Background Robustness with GPT-Live](https://www.youtube.com/watch?v=matzTxfrhJU)
 - 2026-07-14T20:22:11+00:00 - OpenAI: [Improved Intelligence with GPT-Live](https://www.youtube.com/watch?v=avpZWh6sm9M)
@@ -57,6 +60,3 @@
 - 2026-07-06T12:00:30+00:00 - Andrew Huberman: [Raising a Dog & Mastering Calm Assertive Energy | Cesar Millan](https://www.youtube.com/watch?v=n_qKxNcMvtM)
 - 2026-07-06T11:27:43+00:00 - NDC Conferences: [Let's build an AI agent - Phil Nash - NDC Copenhagen 2026](https://www.youtube.com/watch?v=2r47_vCEkyo)
 - 2026-07-06T09:18:36+00:00 - NDC Conferences: [Let's break some WCAG rules - Elise Kristiansen - NDC Copenhagen 2026](https://www.youtube.com/watch?v=sddvqtdjYGs)
-- 2026-07-06T09:01:30+00:00 - NDC Conferences: [Is Spec Kit the future for software development - Johan Smarius - NDC Copenhagen 2026](https://www.youtube.com/watch?v=C0H-_zdfXIc)
-- 2026-07-03T10:49:29+00:00 - NDC Conferences: [Building a real-time collaborative editor - Mihaela Gheorghe-Roman - NDC Copenhagen 2026](https://www.youtube.com/watch?v=VNAYu-8p804)
-- 2026-07-03T10:39:17+00:00 - NDC Conferences: [Stop writing software like it's 1999! - Hannes Lowette - NDC Copenhagen 2026](https://www.youtube.com/watch?v=_1LEFUgHFJI)
