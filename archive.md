@@ -1,5 +1,7 @@
 # YouTube Video Digest Archive
 
+- 2026-07-17T16:33:09+00:00 - Scott Hanselman: [Who is left behind when AI moves fast? with Dr. Chinasa T. Okolo](https://www.youtube.com/watch?v=M9qo_yJwAKc)
+- 2026-07-17T15:30:37+00:00 - Leonid Kim MD: [Gut Detox: The Fastest Way To Repair Your Gut Naturally (Backed by Science)](https://www.youtube.com/watch?v=9Kltb23c3ic)
 - 2026-07-16T22:15:11+00:00 - OpenAI: [How Shopify Uses ChatGPT Work to Build Faster with AI Agents](https://www.youtube.com/watch?v=OHVu3Y4B3RI)
 - 2026-07-16T18:00:16+00:00 - OpenAI: [ChatGPT can now complete tasks on your computer](https://www.youtube.com/watch?v=dB6pOolO7io)
 - 2026-07-16T17:00:23+00:00 - Alex Kantrowitz: [Demis Hassabis & Sergey Brin: Web's Future, AGI Timeline, AI For Job Interviews, Simulation Theory](https://www.youtube.com/watch?v=-sTinHaatPE)
@@ -58,5 +60,3 @@
 - 2026-07-07T21:15:35+00:00 - Leonid Kim MD: [What 20 Squats a Day Actually Does to Your Body (9 Benefits Explained)](https://www.youtube.com/watch?v=wIpH6LVuyQ4)
 - 2026-07-07T17:15:23+00:00 - OpenAI: [How TPG Is Accelerating Investment Research with ChatGPT](https://www.youtube.com/watch?v=SRXJevuTnNI)
 - 2026-07-07T16:30:01+00:00 - Alex Kantrowitz: [Why Specialized AI Models Are Challenging the Frontier Labs — With DeepL CEO Jarek Kutylowski](https://www.youtube.com/watch?v=16UIISJV4NU)
-- 2026-07-07T11:38:02+00:00 - NDC Conferences: [POC Prison: Why agentic systems never escape the lab and how to fix that in 90 days - Luise Freese](https://www.youtube.com/watch?v=L-J29rWtnkY)
-- 2026-07-07T09:57:47+00:00 - NDC Conferences: [Responsibly Abandoning Open Source Projects - Jason Turner - NDC Copenhagen 2026](https://www.youtube.com/watch?v=drPP5Yyzxp8)
