@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A case study of Gili Kamma stabilizing and scaling a legacy embedded smart-metering system.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=7U4JhVVuE9U">Watch video</a></nav>
+  <h1>A case study of Gili Kamma stabilizing and scaling a legacy embedded smart-metering system.</h1>
+  <div class="meta">NDC Conferences · 2026-07-20T13:34:47+00:00 · Boosting Software Efficiency : A Case Study of 100% Performance Improvement in ... - Gili Kamma</div>
+  <h2>What This Video Is About</h2>
+<p>This is Gili Kamma’s case study of repairing and scaling a legacy embedded smart-metering system. In the system, wireless water meters installed in homes transmitted consumption readings at configured intervals, ranging from roughly 16 seconds to several minutes. A concentrator mounted near a large antenna collected those readings, performed processing, and forwarded the resulting data to the READy Manager backend through a cellular modem or Ethernet connection. The data was used for billing, so missing readings meant lost revenue and could lead to fines [1:27–3:24].</p>
+<p>The product originally worked well with fewer than 1,000 meters. Later, sales began offering it for much larger neighborhoods after a hardware calculation suggested that the unit could support up to 7,500 meters. In real deployments with more than 5,000 meters, however, it suffered unexplained crashes, resets, memory failures, occasional network-related data loss, and long periods in which no meter readings arrived. None of the failures could initially be reproduced in the office [3:32–5:13].</p>
+<p>Kamma’s approach was not to replace the hardware or rewrite the product. The unit had only 32 MB of RAM, an old Linux kernel and distribution image, and a C++/Qt codebase that encouraged dynamic allocation. Because the hardware was already installed at many sites, he instead instrumented the existing software, built an internal load simulator, reproduced failures at scale, and applied targeted changes. The result was a product that ran for eight months without resets, supported up to 10,000 water meters instead of about 5,000, and moved from a six-month release cycle involving three engineers to releases every two or three months [46:10–46:48].</p>
+<h2>Detailed Walkthrough</h2>
+<h3>The system’s business and technical constraints</h3>
+<p>Kamma begins by explaining the end-to-end system. A water meter in each home measured consumption and periodically transmitted a wireless reading. In a neighborhood containing hundreds or thousands of homes, those readings were collected by a concentrator installed high up, next to a large antenna. The concentrator received the wireless data, applied its own processing, and forwarded it to the backend through cellular connectivity or Ethernet [2:04–3:16].</p>
+<p>The important operational fact was that the business depended on the data. A missing reading was not merely a software defect: it could mean missing billing information, lost money, and potential fines [3:16–3:24]. That made both stability and data preservation more important than simply keeping the process alive.</p>
+<p>The original product had been designed and tested around a much smaller deployment. It worked properly with fewer than 1,000 meters. Later, a hardware assessment concluded that the unit could support up to 7,500 meters, and the product was sold for larger projects. Once those sites were installed, the software became unstable. Customers saw crashes and missing readings, while developers received failures that could not be reproduced in the office [3:32–5:13].</p>
+<p>The platform was particularly constrained. It used an old Linux kernel and a distribution supplied as an image without accessible sources. The unit had 32 MB of RAM. The code was nominally C++17, but it was written in a C++11-or-earlier style, without modern smart pointers. It also used Qt. Kamma described Qt as making embedded programming feel easier because it provided a high-level framework, but it also made frequent object allocation easy without providing garbage collection to clean up forgotten objects [5:13–6:28].</p>
+<h3>Starting with a hypothesis, then testing it</h3>
+<p>Kamma’s initial goal was to eliminate data loss and make the product stable. His first plan was conventional: understand the code, identify the main modules and flows, find the logs and breakpoint locations, reproduce the failures on a desk, and then fix the causes [6:35–7:23].</p>
+<p>His first code inspection produced a strong but incorrect hypothesis. He saw many uses of `new` and `delete` and assumed that the product’s main problem was memory leakage and fragmentation. He explains fragmentation with a simple example: if 100 bytes are divided into allocations of 40, 20, and 40 bytes, then the two 40-byte blocks are released, there may be 80 free bytes in total but no contiguous 50-byte block. A new 50-byte allocation can fail even though the system technically has enough free memory [7:33–8:32].</p>
+<p>He initially assumed that failed allocations led to null-pointer use and uncontrolled resets. After investigating, he found that there were some small leaks, but not enough to explain the field failures. He also found no meaningful memory fragmentation. The first lesson was therefore methodological: an explanation that fits the symptoms is not the same as a measured root cause [8:40–9:14].</p>
+<h3>Building an allocation profiler for an old platform</h3>
+<p>Because the Linux kernel was too old for a standard memory profiler, Kamma built a small profiler inside the application. He overrode the C++ `new` and `delete` operators so that every allocation and release passed through his own implementation [9:20–9:52].</p>
+<p>The profiler recorded allocation counts, sizes, and peaks. He tracked allocations per second, current and maximum numbers of live allocations, current and maximum bytes allocated, and current and maximum allocation counts grouped by allocation size. Stable maximum values would suggest that memory usage had reached a steady state. A maximum that continued rising would indicate that allocations were not being released [10:36–11:43].</p>
+<p>The size-based measurements had two uses. If one particular allocation size continued increasing, it could point toward a specific leaking object. It could also help investigate fragmentation, because many allocations of different sizes are more likely to leave unusable gaps than repeated allocations of the same size [11:47–12:27].</p>
+<p>The implementation required only a small amount of metadata. For every allocation, the custom `new` implementation allocated the requested size plus four additional bytes. It stored the allocation size in those first four bytes, updated the profiler, and returned a pointer four bytes later to the application. When `delete` received the application pointer, it moved back four bytes, read the stored size, updated the accounting, and released the original block [12:42–14:07].</p>
+<p>Kamma spent about two weeks finding and cleaning up minor leaks. That work improved the code, but it did not explain the major resets. The profiler therefore served its main purpose: it disproved the original assumption that a large leak or fragmentation was the central problem [14:07–14:35].</p>
+<h3>Reproducing thousands of meters on a desk</h3>
+<p>The second tool was an internal load simulator. Kamma had about 300 real water meters available in the office, but the failures appeared at sites with thousands of meters. Instead of acquiring special hardware or building an external radio simulator, he modified the production software so that it could multiply real messages internally [14:39–15:10].</p>
+<p>A received meter message contained an operation code, a unique meter ID, and a measurement value. When simulator mode was enabled, the receive path still accepted a real message and placed it on the normal processing queue. The simulator then duplicated that message, changed the meter ID to a unique fake ID, and placed each duplicate on the same queue as the original. It could create up to 100 fake messages for every real message [15:46–17:30].</p>
+<p>Simulator mode was enabled by placing a file on the Linux unit. Removing the file disabled it, so no separate build or special test image was required. The implementation was approximately ten lines of code and exercised the same downstream processing path used by real messages.</p>
+<p>Kamma also made the timing configuration more aggressive. For example, a message normally sent once per hour could be sent every five minutes; a ten-minute message could be sent every four minutes; and a five-minute message could be sent every two minutes. This increased pressure on message creation, encryption, compression, queues, and network handling [17:41–18:18].</p>
+<p>The result was a reproducible failure. With approximately 6,000 simulated meters and aggressive timing, the unit crashed on his desk. The simulator was valuable not because it modeled every aspect of a real radio network, but because it quickly reproduced the scale-dependent workload inside the real application [18:27–19:04].</p>
+<h3>Finding the concurrent allocation failure</h3>
+<p>The first major failure involved repeated resets at large sites. Units with more than 5,000 meters could crash every few minutes. The hardware appeared to be fine when returned to the office, which pointed toward a software problem related to the number of meters rather than a physical defect [19:10–20:06].</p>
+<p>With the simulator running, Kamma added a conditional breakpoint that stopped when a pointer became null. This allowed him to stop immediately before the failure rather than inspecting the system after a reset had already destroyed the evidence. Repeating the test made the behavior reproducible [20:16–21:02].</p>
+<p>The debugger showed that two threads were trying to construct large messages at the same time. Each message required approximately 5 MB. The second allocation failed because the system did not have enough available memory [21:02–21:24].</p>
+<p>The first fix was to remove the concurrency at that point. Instead of two threads preparing and sending messages in parallel, one thread prepared and sent message A, then prepared and sent message B. This changed the peak requirement from approximately 10 MB to 5 MB and stopped that immediate failure [21:43–22:14].</p>
+<p>That was not enough, because the original goal was to support the larger deployment rather than merely avoid a crash at the existing capacity. Kamma then traced the message size to the number of meters being handled. The application collected the data for all subscribed meters, built a large JSON message, encrypted it, and compressed it. With 5,000 meters, the peak could reach approximately 5 MB. With 1,000 meters, the peak was closer to 1 MB. The system had roughly 2 MB available in the relevant configuration, which explained why two smaller messages could coexist while two large messages could not [22:32–23:38].</p>
+<p>The next change was to split the payload into batches of up to 1,000 meters. Each batch was collected and compressed separately, reducing the peak working memory from a single 5 MB operation to repeated operations of about 1 MB [23:43–24:12].</p>
+<p>Kamma also reduced memory usage in the message-preparation path by limiting the use of Qt types. He described the relevant difference as Qt characters using two bytes where the corresponding C++ representation used one byte. This reduced the approximate requirement for the message path from 1 MB to half a megabyte [24:24–24:57].</p>
+<p>Finally, because the message buffer now had a known bounded size, he replaced dynamic allocation in that bottleneck with a static array. That meant the critical path no longer depended on a dynamic allocation succeeding. These changes together more than doubled the supported scale, ultimately taking the unit from about 5,000 meters to 10,000 [25:07–25:27].</p>
+<h3>Making reset diagnostics survive the reset</h3>
+<p>The next problem was not necessarily preventing every reset immediately; it was learning what had happened before one. The unit already had application logs stored in nonvolatile memory, so the logs survived a reset. However, the old Linux system did not provide remote access to those logs from the office [25:34–26:04].</p>
+<p>There was an event mechanism that periodically collected interesting events and sent them to the backend. Unfortunately, that mechanism kept its queue in RAM. During a memory-related failure, the unit might not have enough memory to allocate an event, construct its message, and transmit it. After the reset, the in-memory event queue was empty, leaving only evidence that a reset had occurred [26:04–27:03].</p>
+<p>Kamma used the existing event mechanism in a different way. When the unit started after a reset, it read the last 100 lines of the application log, using the equivalent of `tail -n 100`, placed those lines into a short-log event, and sent them to the backend along with the reset reason [27:03–27:46].</p>
+<p>He deliberately sent the log tail every time rather than trying to determine whether it was necessary. That was a conscious “good enough” decision: a small amount of extra diagnostic data was preferable to spending much more effort designing a perfect conditional system. The result gave him visibility into what happened immediately before a reset [27:46–28:18].</p>
+<h3>Separating application logic from network delivery</h3>
+<p>The product also lost data intermittently during network problems. The original design kept outgoing data in RAM while it waited for processing or transmission. An unstable network could cause that data to accumulate until memory was exhausted. A reset could then discard everything still held in RAM [28:28–29:17].</p>
+<p>Kamma separated the application’s scheduling and data-generation responsibilities from network delivery. One thread remained responsible for deciding when data should be sent, creating the outgoing message, and placing it in a nonvolatile queue. A separate sender thread repeatedly examined that queue, attempted to transmit the oldest message, and removed it only after a successful acknowledgment [29:17–30:14].</p>
+<p>If transmission failed because of a timeout or a bad acknowledgment, the message remained in the queue. The sender waited approximately one minute and tried again. The same loop ran regardless of the current network state [30:14–30:36].</p>
+<p>This avoided two unreliable assumptions. First, a network check could become invalid milliseconds after it succeeded. Second, a local network connection could be available while the backend itself was unreachable. A successful local connectivity check did not guarantee that the message would be accepted by the other side [30:36–31:07].</p>
+<p>In Kamma’s once-per-hour example, storing a reading durably and deleting it only after acknowledgment limited the unacknowledged interval to roughly one hour. A unit could be offline for 23 hours and send the backlog when connectivity returned. He also gave the example of a SIM card that was not paid for two weeks: once service returned, the stored data could still be transmitted. After this change, the product no longer experienced significant data loss from these network interruptions [31:16–32:15].</p>
+<h3>Recovering from UART desynchronization</h3>
+<p>Another failure involved the RF receiver connected to the concentrator through a UART serial port. The receiver translated radio frames into messages and sent them to the concentrator. After a unit had operated correctly for weeks, it could suddenly stop receiving meter frames even though it remained connected to the backend and appeared alive [32:25–33:31].</p>
+<p>The first workaround was to reset the software after one hour of silence. A controlled reset restored normal operation, so the team knew the problem was related to the software or its interaction with the receiver. Kamma later reduced the silence threshold to four minutes, which made the customer-visible outage much shorter, although he recognized that this was only a workaround rather than a root-cause fix [33:40–35:07].</p>
+<p>Later, while examining logs, he found that the RF receiver itself had reset. The concentrator received some junk data during the receiver’s restart, and its UART driver lost alignment with the next valid frame. The receiver continued transmitting frames, but the concentrator could no longer parse them correctly [35:16–35:41].</p>
+<p>The real fix was to reinitialize the UART when the concentrator detected the silence, rather than resetting the entire application. A full reset had worked because startup initialization also reinitialized all drivers. Reinitializing only the UART provided the same recovery with less disruption [35:41–36:12]. The sequence illustrates a practical debugging pattern: use a temporary recovery mechanism to limit customer impact, then use logs to replace it with a narrower and more appropriate recovery action.</p>
+<h3>Turning operational events into fleet monitoring</h3>
+<p>Initially, the team learned about failures through customer complaints. They would inspect the event service and backend records and often found little useful information. In many cases, resetting the unit solved the problem, but it did not explain why the failure occurred [36:20–37:05].</p>
+<p>Kamma began actively reviewing the event data instead of waiting for complaints. The existing interface was inconvenient, so a colleague wrote a script that retrieved all events and saved them to a local text file. Kamma then wrote a Python script to analyze the text and export it as CSV. The CSV could be opened in Excel, where sorting, filtering, and graphing made longer-term patterns easier to see [37:14–38:20].</p>
+<p>This made it possible to examine behavior over days, weeks, and months rather than only looking at a few hours of logs. For example, if the unit was supposed to send data every hour, the analysis could calculate gaps between transmissions. Kamma also collected periodic memory-usage reports and graphed memory behavior over longer periods, making gradual increases or unusual patterns visible [38:32–39:39].</p>
+<p>At first, he manually ran the analysis for about ten minutes each morning. When a unit looked suspicious, he involved the support person and helped connect the issue to the customer. He added more units and more parameters over time, but individual graphs stopped scaling once the fleet reached tens, hundreds, or thousands of units [39:49–40:27].</p>
+<p>The solution was a summary row for every unit. The summary made outliers easy to identify: a unit running an older firmware version than the rest, one reporting 87 errors while its peers reported zero, or one whose last-seen timestamp was nine hours behind the others. The summary did not explain every root cause, but it quickly directed attention to the units requiring deeper inspection [40:33–42:02].</p>
+<p>The last-seen check was particularly useful because every concentrator was expected to report to the backend continuously. When one unit had a substantially older last-seen time, the likely causes were often a power or network problem. Kamma eventually automated the analysis to run overnight and send summarized results by email in the morning, reducing the need to inspect thousands of records manually [42:02–42:23].</p>
+<h3>Replacing a manual release process with continuous testing</h3>
+<p>When Kamma was ready to release the improved software, he discovered that the previous release process depended on a 100-page manual test document. The team told him that three engineers had spent six months on the earlier release [42:30–43:12].</p>
+<p>He converted the manual test plan into automated tests. The initial conversion took about a week, with a group of students implementing the tests under his direction. The team separated the tests into two pipelines: one for short tests that completed in minutes and another for long tests that took hours. This prevented long-running tests from blocking quick feedback [43:12–44:09].</p>
+<p>Both pipelines ran continuously. The purpose was not to assume that identical tests would randomly produce different results, but to ensure that the suite remained stable and non-flaky over time. If a new test behaved inconsistently, Kamma removed it from the pipeline immediately and returned it for repair rather than accepting occasional failures. The goal was for a green result to mean genuinely green and a red result to mean genuinely red [44:09–45:05].</p>
+<p>The system testing also used dedicated units running continuously. Approximately ten units operated with the internal simulator and aggressive configuration, while another ten ran with the normal configuration. The point was not merely to keep the hardware powered. Monitoring verified both failure absence and expected positive behavior. If a task was supposed to happen once per hour, the long-running test confirmed that it continued to happen once per hour over extended periods [45:16–46:01].</p>
+<h3>Results and the broader engineering lessons</h3>
+<p>After eight months, Kamma reported that the product had operated without resets and supported up to 10,000 water meters instead of approximately 5,000. After two years, test automation and partially automated monitoring allowed releases every two or three months, compared with the previous six-month cycle involving three engineers. The improved stability also made it possible to add features and improvements that had previously been too risky [46:10–46:48].</p>
+<p>His final recommendations were consistent with the case study. Measure instead of assuming. Make software robust against inputs and environments that cannot be controlled. If the system cannot fulfill a request, it is preferable to decline or defer the work than to crash. Split large messages, use fixed-size storage where the size is bounded, separate application logic from network operations, and avoid adding threads unless they are necessary [46:57–47:54].</p>
+<p>The question-and-answer session adds important context. Kamma said that upgrading the RAM was not an option because this was a fixed product already deployed at thousands of sites. The product had been developed around 2010, and when he joined in 2017 it had not been tested at the larger scale later promised to customers. The original team had generally approached it from a functional rather than embedded-systems perspective, and the local test setup of roughly 300 meters did not expose the large-site failures [48:36–51:46; 54:32–55:12].</p>
+<p>He was also asked about fixed-size memory pools. He had not used them because they would have required more code and a broader change to a working legacy product. He preferred targeted solutions that minimized both implementation time and the amount of existing code touched. He did not claim that pools were inferior; he simply chose not to introduce them in this project [56:30–58:08].</p>
+<p>Finally, Kamma explained that management support came from the business pain. The team was frustrated, customers were affected, and he initially refused to add new features to an unstable product. Stabilizing the system was easier to justify when connected to customer complaints, release speed, and the ability to resume feature development [58:39–1:00:26].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Measure before deciding what is wrong. Kamma initially blamed memory leaks and fragmentation, but profiling showed that those were not the main causes of the field resets.</li>
+</ul>
+<ul>
+<li>When standard tooling is unavailable, instrument the application itself. Overriding `new` and `delete` provided allocation counts, sizes, current usage, and peak usage on an old Linux platform.</li>
+</ul>
+<ul>
+<li>Reproduce production scale through the same processing path. The internal simulator duplicated real meter messages, assigned unique IDs, and placed them on the normal queue instead of relying on special external hardware.</li>
+</ul>
+<ul>
+<li>Peak memory matters more than total memory in concurrent systems. Two simultaneous 5 MB message builds exhausted the available memory even though each operation could succeed independently.</li>
+</ul>
+<ul>
+<li>Reduce peak working sets before attempting a broad rewrite. Serializing message work, splitting payloads into batches, reducing Qt-related representation overhead, and using a static buffer solved the bottleneck incrementally.</li>
+</ul>
+<ul>
+<li>Use fixed or static storage when the working size is bounded. Removing dynamic allocation from the critical message path eliminated one class of allocation failures.</li>
+</ul>
+<ul>
+<li>Treat network delivery as unreliable and independent from application logic. Persist outgoing messages in nonvolatile storage, retry failed transmissions, and delete data only after acknowledgment.</li>
+</ul>
+<ul>
+<li>Design diagnostics to survive the failure being investigated. Sending the last 100 application-log lines after startup gave the backend evidence from immediately before a reset.</li>
+</ul>
+<ul>
+<li>Temporary workarounds are useful, but they should remain identifiable as workarounds. The four-minute silence reset reduced customer impact, but UART reinitialization was the actual fix.</li>
+</ul>
+<ul>
+<li>Fleet monitoring should surface outliers and expected behavior, not just explicit errors. Firmware mismatches, abnormal error counts, memory trends, transmission gaps, and last-seen times all helped prioritize investigation.</li>
+</ul>
+<ul>
+<li>Continuous testing is more valuable when it includes long-running load. Running aggressive simulated workloads and normal workloads 24/7 exposed problems that short manual tests could miss.</li>
+</ul>
+<ul>
+<li>The objective of testing is not to prove that no bug exists. It is to make sure a bug is found by the development process before it is found by a customer.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Reproduce the workload first.</strong> Capture or use real meter messages, then duplicate them inside the application. Keep the fake messages on the same queue and processing path as real messages. A simple file-based switch can make simulator mode available on the deployed unit without creating a separate build. Increase both the number of simulated meters and message frequency so the system is tested against the combined load that caused field failures.</p>
+<p><strong>Instrument allocation at the application boundary.</strong> In a constrained C++ application, wrapping `new` and `delete` can provide useful measurements without requiring a modern profiler. Store the allocation size in a small header before the returned pointer, record allocation and release events, and report current and maximum counts and bytes. Grouping allocations by size is useful for distinguishing a repeated leak from general fragmentation. The case study shows why this data should be used to challenge an assumption rather than confirm one.</p>
+<p><strong>Reduce memory peaks in stages.</strong> First remove unnecessary simultaneous work. In this case, serializing two competing message builders reduced the peak from roughly 10 MB to 5 MB. Next, split large payloads into bounded batches, such as groups of up to 1,000 meters. Then reduce the representation overhead in the hottest path and replace dynamic allocation with a static buffer when the maximum size is known. Kamma chose these targeted changes instead of refactoring the whole Qt codebase.</p>
+<p><strong>Use durable queue semantics for outbound data.</strong> The application logic should create and enqueue a message in nonvolatile storage. A sender should process the queue independently, retain the message on timeout or bad acknowledgment, retry later, and remove it only after successful acknowledgment. The speaker’s one-hour loss bound depends on his once-per-hour collection example; it should not be treated as a universal bound for every sampling interval. The talk does not specify the nonvolatile queue’s capacity or storage-wear strategy, so those would need separate design decisions in another product.</p>
+<p><strong>Preserve evidence during startup.</strong> Existing nonvolatile logs can be made remotely useful even when direct remote access is unavailable. On startup after a reset, read a bounded tail of the application log, such as `tail -n 100`, and send it through an event path that already reaches the backend. Kamma intentionally sent the log tail unconditionally because the simple approach provided more value than a more elaborate decision process.</p>
+<p><strong>Use targeted recovery before full resets.</strong> A reset can be an effective temporary recovery method, but it may hide the subsystem that failed and cause unnecessary disruption. In the UART case, the full reset worked because it reinitialized every driver. Once the receiver-reset and framing problem was understood, reinitializing only the UART provided a narrower recovery action.</p>
+<p><strong>Build monitoring around summaries and time series.</strong> Export events to a machine-readable format such as CSV, then analyze them with scripts and spreadsheet tools such as Excel. Track transmission gaps, memory trends, firmware versions, error counts, reset reasons, and last-seen times. Graphs are useful for individual units and short investigations; fleet-wide summaries are better for finding outliers across thousands of units. Automating the analysis overnight and emailing a summary preserves human review while removing repetitive collection work.</p>
+<p><strong>Separate short feedback from long confidence tests.</strong> Maintain a short test pipeline for rapid development feedback and a long pipeline for hours-long scenarios. Run both continuously. A flaky test should be repaired or removed from the trusted pipeline, not tolerated as occasional noise. For system testing, combine normal configuration with aggressive simulated load and monitor that expected periodic operations continue, not merely that the unit avoids crashes.</p>
+<p><strong>Match the solution to the legacy product’s constraints.</strong> Kamma did not upgrade the RAM, introduce fixed-size pools, or rewrite the system from scratch. He selected changes that were small enough to implement quickly and safe enough to apply to a deployed product. That tradeoff favored targeted improvements over architectural perfection. The appropriate choice depends on the product’s remaining lifetime, deployment scale, customer pain, and the resources available to maintain it.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li>[9:20–14:35] The custom allocation profiler, including the allocation metrics and the `new`/`delete` instrumentation strategy.</li>
+</ul>
+<ul>
+<li>[14:39–19:04] The internal load simulator, its message duplication approach, file-based activation, and aggressive timing configuration.</li>
+</ul>
+<ul>
+<li>[19:10–25:27] The conditional breakpoint that exposed two simultaneous 5 MB allocations, followed by serialization, batching, reduced message representation, and static storage.</li>
+</ul>
+<ul>
+<li>[25:34–28:18] The reset-diagnostics design that sends the last 100 application-log lines through the existing event service.</li>
+</ul>
+<ul>
+<li>[28:28–32:15] The nonvolatile outbound queue, acknowledgment-based deletion, retry behavior, and network-independent architecture.</li>
+</ul>
+<ul>
+<li>[32:25–36:12] The UART silence problem, the temporary reset workaround, and the eventual UART reinitialization fix.</li>
+</ul>
+<ul>
+<li>[36:20–42:23] The progression from customer complaints to Python/CSV analysis, Excel-based investigation, fleet summaries, and automated email reports.</li>
+</ul>
+<ul>
+<li>[42:30–46:01] The conversion of the 100-page manual test process into separate short and long continuous pipelines and 24/7 system testing.</li>
+</ul>
+<ul>
+<li>[46:10–48:19] The final results and the recommendations about measurement, fixed-size storage, fewer threads, proactive monitoring, and early simulator use.</li>
+</ul>
+<ul>
+<li>[48:36–1:00:26] The Q&amp;A about fixed hardware, the original scale assumptions, why fixed-size pools were not used, and how customer pain justified the stabilization work.</li>
+</ul>
+</main>
+</body>
+</html>
