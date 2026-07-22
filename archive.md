@@ -1,5 +1,7 @@
 # YouTube Video Digest Archive
 
+- 2026-07-21T18:00:39+00:00 - OpenAI: [Plugins in ChatGPT](https://www.youtube.com/watch?v=pKwRNdDtai0)
+- 2026-07-21T11:45:11+00:00 - Nick Chapsas: [I Built the Future of Learning for Developers](https://www.youtube.com/watch?v=BR-LFsDDfjk)
 - 2026-07-20T16:30:06+00:00 - Alex Kantrowitz: [Kimi K3 & AI’s Price War, What’s Happening To Google?, OpenAI’s Partner Trouble](https://www.youtube.com/watch?v=jPbN5m2iQ_M)
 - 2026-07-20T16:24:11+00:00 - OpenAI: [How Virgin Atlantic Uses ChatGPT Work to Turn Weeks of Work Into Hours](https://www.youtube.com/watch?v=WwxZeU4WH14)
 - 2026-07-20T15:04:34+00:00 - Alex Kantrowitz: [Inside The Rise of Physical AI — With Amir Khoshniyati](https://www.youtube.com/watch?v=vadrwcprLFI)
@@ -58,5 +60,3 @@
 - 2026-07-08T17:33:31+00:00 - OpenAI: [Listening & Speaking with GPT-Live](https://www.youtube.com/watch?v=K-fYBO8t3-A)
 - 2026-07-08T17:33:31+00:00 - OpenAI: [Temporal awareness with GPT-Live](https://www.youtube.com/watch?v=8vvWTz6N7Qg)
 - 2026-07-08T17:23:27+00:00 - OpenAI: [This is the new ChatGPT Voice, powered by GPT-Live](https://www.youtube.com/watch?v=EAN5Cj347PY)
-- 2026-07-08T15:25:08+00:00 - OpenAI: [OpenAI Academy: Parent-Coaches with the San Antonio Spurs](https://www.youtube.com/watch?v=94cXnSu6kUQ)
-- 2026-07-08T15:25:04+00:00 - OpenAI: [OpenAI Academy x Veterans Forge | Building with ChatGPT: Practical AI Skills for Veterans](https://www.youtube.com/watch?v=J2ZNjSplGd8)

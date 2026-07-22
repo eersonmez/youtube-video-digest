@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The video showcases Dometrain, an AI-first, hands-on learning platform for software developers.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=BR-LFsDDfjk">Watch video</a></nav>
+  <h1>The video showcases Dometrain, an AI-first, hands-on learning platform for software developers.</h1>
+  <div class="meta">Nick Chapsas · 2026-07-21T11:45:11+00:00 · I Built the Future of Learning for Developers</div>
+  <h2>What This Video Is About</h2>
+<p>Nick Chapsas presents Dometrain as a developer-learning platform rebuilt around active practice rather than passive video watching. He says the platform spent its first several years primarily offering video courses, but its learning experience changed substantially over the preceding six months. The new approach puts learners directly into browser-based coding exercises, system-design diagrams, Git workflows, and AI-assisted lessons.</p>
+<p>The central argument is that developers learn better by doing the work themselves, while still having access to the guidance of an experienced instructor. Dometrain’s AI agents are intended to provide that guidance inside the learning environment: they can offer hints, execute a confirmed solution, explain changes, run tests, quiz the learner, and relate lessons to the learner’s existing progress. Chapsas describes this as learning “with the agent,” rather than simply asking an agent for answers.</p>
+<p>The video also introduces video-course assistance, personalized learning paths, public profiles, achievements, skill assessments, and an MCP integration for Pro members. It explains the platform’s broad product direction and subscription boundaries, but it does not provide the promised technical deep dive into the underlying architecture, agent implementation, costs, or security. Chapsas says those subjects will be covered in a separate video.</p>
+<h2>Detailed Walkthrough</h2>
+<h3>From a Video Library to an Interactive Learning Environment</h3>
+<p>At the beginning, Chapsas explains that he has spent roughly seven years teaching .NET and C-related development and has been running Dometrain for about three and a half years. He says the platform previously consisted mainly of video courses in which an author taught a particular topic, such as a programming challenge or a language feature. He reports that approximately 73,000 engineers are actively using the platform.</p>
+<p>His reason for changing the product is both pedagogical and technological. He considers hands-on work the best way to learn, while describing a good video course as the next-best option because it provides instruction from someone with senior-level knowledge. He also argues that software development is becoming increasingly AI-agent-driven, so learning platforms need to adapt to that environment rather than treating AI as a separate, optional tool [0:00-2:14].</p>
+<h3>Browser-Based C# Practice with Monaco and Automated Tests</h3>
+<p>The first major change was the release of a fully hands-on course in January. The example shown is a roughly 20-hour getting-started course for C# that can be completed in the browser. Learners read instructions, work through language features step by step, write code, and run it without opening a separate IDE [2:16-3:09].</p>
+<p>The editor is based on Monaco, the editor engine behind VS Code. It provides IDE-like editing and autocomplete, including support for writing code such as `Console.WriteLine`. The learner can run the code directly in the browser, and the platform executes a set of automated tests. Chapsas describes a sample exercise that runs six test cases and prints their results in the console.</p>
+<p>The intended workflow is incremental: read the explanation, implement the requested change, run the code and tests, inspect the result, and continue to the next feature or exercise. The platform therefore combines instructional text, an editor, execution, and assessment in the same environment.</p>
+<h3>System-Design Exercises Using an Interactive Canvas</h3>
+<p>Dometrain later expanded the hands-on model beyond programming exercises. A system-design course lets learners create an architecture diagram on a canvas [3:17-3:57].</p>
+<p>Chapsas gives the example of placing a client and a service on the canvas, connecting them, and labeling the connection with a protocol such as HTTP. The service might represent an API service, while the client represents the component making the request. The learner is expected to construct the system rather than simply view a completed diagram.</p>
+<p>The platform checks whether the diagram contains required elements and can explain why those elements are needed. This turns system design into an interactive exercise involving nodes, relationships, protocols, and architectural reasoning. The goal is not only to write code but also to understand system architecture and the decisions represented in a diagram.</p>
+<p>The introductory C# course is described as approximately 20 hours, while the introductory system-design course is approximately four hours. Chapsas says both are available free of charge: a user can create an account, claim them, and keep access permanently [3:59-4:18].</p>
+<h3>Subscription Tiers and the Browser-Based Git Terminal</h3>
+<p>Chapsas describes the Light subscription as including the hands-on courses, interview questions, and system-design courses. He says it averages around £10 per month. He contrasts it with Pro, which he says is more expensive partly because Dometrain wants to compensate authors fairly according to video watch time.</p>
+<p>The hands-on environment also includes an in-browser Git terminal, intended to give learners a broader development workflow without requiring a locally configured machine [5:04-6:01]. The terminal supports Git configuration, status checks, branches, source-control information, and command-line operations. The examples mentioned in the video include:</p>
+<ul>
+<li>Initializing a repository.</li>
+<li>Setting the Git username and other configuration.</li>
+<li>Running `git status`.</li>
+<li>Adding files with `git add .`.</li>
+<li>Committing through either the interface or `git commit -m &quot;check in&quot;`.</li>
+<li>Pushing changes after configuring a remote URL where required.</li>
+<li>Reviewing history with `git log`.</li>
+</ul>
+<p>Chapsas says the Git material amounts to roughly seven hours and that the relevant features can be practiced directly in the platform. This makes Git part of the same browser-based learning loop as coding and system design.</p>
+<h3>The AI Agent as a Guided Learning Partner</h3>
+<p>The platform is described as AI-agent-first. Chapsas says the agents have access to course context, integrations, the learner’s profile, and retrieval-augmented generation, or RAG, behind the scenes [6:04-6:24].</p>
+<p>In a coding exercise, a learner who is stuck can ask for a hint rather than immediately requesting the answer. The example hint suggests using a built-in decimal addition method. This supports a back-and-forth conversation in which the agent nudges the learner toward the solution.</p>
+<p>A separate solve action requires two confirmations. Chapsas says this is intended to discourage learners from using the agent as a way to cheat through every exercise. Once confirmed, the agent can write the code, run the tests, show the resulting feedback, and explain the generated code line by line. It also presents the changes as diffs, allowing the learner to see what was added and deleted [6:49-7:27].</p>
+<p>The important distinction for Chapsas is that the agent should operate inside a learning environment. His formulation is that the learner should learn “with the agent,” not simply learn from an agent that provides unexplained answers. The surrounding instructions, tests, diffs, and explanations are meant to make the agent’s intervention inspectable.</p>
+<h3>Agent-Assisted System-Design Solutions</h3>
+<p>The same interaction model applies to diagram exercises. A learner can ask the agent to solve a system-design task, after which the platform animates the construction of the diagram. The agent adds the diagram elements step by step and explains why each element was added [7:27-8:30].</p>
+<p>The transcript describes a displayed explanation for one part of the diagram: the user entry point is restricted to communicating with the service tier so that it does not have direct access to sensitive data or credentials. This is presented as an example of the contextual explanation attached to a solution step. The learner can hover over the relevant item and inspect the rationale.</p>
+<p>The agent also operates in the Git lessons. Chapsas describes it initializing a repository, setting the Git username configuration, progressing through subsequent commands, and providing a summary after completing the lesson. The learner can then ask the agent to quiz them on what happened or what the lesson was intended to teach [8:31-9:10].</p>
+<h3>AI Assistance for Video Courses</h3>
+<p>Video-course access is described as a Pro feature rather than a Light feature, but Chapsas says the agent is also available while watching videos [9:17-10:30]. Its video-related functions include:</p>
+<ul>
+<li>Answering questions about commands or concepts.</li>
+<li>Recapping the lesson or the portion already watched.</li>
+<li>Generating a quiz about the material.</li>
+<li>Searching for a topic within the current course or other courses and returning a timestamp and link.</li>
+<li>Extracting code shown on screen.</li>
+<li>Explaining what is visible in the current video frame.</li>
+</ul>
+<p>For code extraction, the agent captures the current frame and produces the code shown on the screen so the learner can copy it into another environment. For screen explanations, the agent examines the frame at the current playback position and adds explanatory annotations. Chapsas gives an example involving .NET 10 results, methods with a `new` constraint, performance overhead, and associated numbers.</p>
+<p>These functions are intended to make a video course interactive. Instead of pausing the video to search elsewhere, the learner can ask for a recap, retrieve a timestamp, extract a code sample, or request an explanation of the material currently being discussed.</p>
+<h3>Personalized Recommendations and Learning Paths</h3>
+<p>Dometrain also has a global learning agent that uses the learner’s profile and completed work to make recommendations [10:33-11:42]. When asked what to learn next, it can inspect the learner’s existing progress and suggest a relevant course.</p>
+<p>Chapsas demonstrates a more specific request for a learning path covering ASP.NET Core APIs, Minimal APIs, Dapper, Entity Framework Core, and unit testing. The agent checks the available catalog and the learner’s progress, then creates a sequence of milestones. The resulting path includes areas such as EF Core, Dapper, testable code, and unit testing.</p>
+<p>The learner can view and start the generated path, ask the agent to rework it, or share it with a friend or team so that others can follow the same sequence. The path therefore serves both as a personalized curriculum and as a shareable plan.</p>
+<h3>Profiles, Achievements, and Progress Sharing</h3>
+<p>The platform includes daily activities, achievements, public profiles, and a leaderboard. A public profile can show activity, completed lessons, course completions, the date the user joined Dometrain, and collected achievements [11:43-12:24].</p>
+<p>Chapsas says these details are configurable. Users can adjust what is shown or turn the public profile off entirely. The platform also provides a real-time dashboard showing who is completing lessons, which may support group or team-based learning.</p>
+<p>The social features are presented as an extension of the learning workflow: progress is not limited to private course completion but can also be represented through achievements, activity, and shared learning paths.</p>
+<h3>Dometrain MCP for Pro Members</h3>
+<p>Chapsas briefly describes an MCP integration available to Pro members [12:28-12:47]. A user can connect Dometrain’s MCP to an external coding agent and ask it to use Dometrain’s knowledge while building a project.</p>
+<p>His example is a request to build clean architecture using Dometrain’s material. The external agent calls the Dometrain MCP and builds the project according to the way Dometrain’s authors teach the subject. The video does not explain the MCP’s implementation, data flow, pricing impact, or security model; Chapsas reserves those details for the separate architecture discussion.</p>
+<h3>Skill Assessments and Automatically Generated Study Plans</h3>
+<p>A newer feature is the skill score assessment [12:53-14:08]. Chapsas says only around three skills are supported at the time of recording, with plans to add more. Before beginning, the learner describes their level as new, comfortable, experienced, or expert. That selection determines an initial ELO-style rating.</p>
+<p>The assessment presents code or questions, including prompts asking what a piece of code will do. The demonstration uses 20 questions. Chapsas intentionally answers randomly, receives a novice rating of 891, and gets only two answers correct. The result is an illustration of the assessment process rather than a meaningful evaluation of his actual ability.</p>
+<p>Afterward, the learner can share the score on LinkedIn or connect it to their real profile. The transcript says there is a 10-minute opportunity to retake the test to improve the result. The platform identifies knowledge gaps and lets the learner review every question, including why an answer was correct or incorrect, relevant misconceptions, and advice for improvement. It then generates a study plan recommending courses intended to address those gaps.</p>
+<h3>What This Video Does Not Cover</h3>
+<p>Chapsas says the feature list shown is incomplete and that more functionality is in development. Although he initially mentions architecture diagrams, operating costs, and implementation choices, the video focuses on the product experience rather than those technical details.</p>
+<p>He announces a separate video covering how the agents were implemented, the overall architecture, security, and related operational considerations [14:34-14:44]. Those subjects should not be inferred from the demonstrations in this video.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Dometrain is shifting from a primarily video-based course library to an environment centered on hands-on browser practice.</li>
+<li>The coding environment uses Monaco, the editor engine behind VS Code, with autocomplete, code execution, console output, and automated test cases.</li>
+<li>The platform extends hands-on learning to system design through an interactive canvas where learners create, connect, label, and validate architecture diagrams.</li>
+<li>An in-browser Git terminal supports repository initialization, configuration, status checks, staging, commits, pushes, logs, and related practice.</li>
+<li>The AI agent can provide hints before revealing a solution, while the solve action requires confirmation to reduce casual cheating.</li>
+<li>Agent-generated code is accompanied by diffs, test execution, feedback, and line-by-line explanations.</li>
+<li>Diagram solutions are also explained step by step, including the rationale for adding each component or relationship.</li>
+<li>Video-course agents can recap lessons, create quizzes, search for topics with timestamps, extract code from a frame, and explain material visible at the current playback position.</li>
+<li>A global learning agent uses the learner’s profile and catalog progress to generate personalized learning paths, such as a path involving ASP.NET Core APIs, Minimal APIs, Dapper, EF Core, and unit testing.</li>
+<li>Public profiles, achievements, leaderboards, daily activity, and shareable learning paths add social and team-oriented progress features, with controls for disabling public visibility.</li>
+<li>Pro members can connect Dometrain’s MCP to an external coding agent so projects can be built using Dometrain’s instructional approach.</li>
+<li>Skill assessments use an initial self-selected level, question results, identified gaps, explanations, and a generated study plan to direct future learning.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>A transcript-supported way to use the platform is to begin with the free introductory courses, read each exercise’s instructions, implement the requested change in the Monaco editor, and run the included tests. If blocked, the demonstrated progression is to request a hint first, inspect the suggestion, and only use the confirmed solve action when necessary. After a solution is generated, the useful learning artifacts are the diff, test results, line-by-line explanation, and summary rather than the generated code alone.</p>
+<p>For system-design work, the learner creates the architecture directly on the canvas. A representative exercise can involve a client, an API or service node, an HTTP-labeled connection, and any required supporting components. The platform checks the diagram and explains why required elements belong in the design.</p>
+<p>The Git workflow shown includes initializing a repository, setting the username and other configuration, checking status with `git status`, staging with `git add .`, committing with `git commit -m &quot;check in&quot;`, reviewing history with `git log`, and pushing when a remote URL has been configured. Some lessons may therefore require setting up a remote before the push step can work.</p>
+<p>The free introductory C# course is described as approximately 20 hours, and the introductory system-design course as approximately four hours. Light is described as including hands-on courses, interview questions, and system-design courses for approximately £10 per month. Pro is described as the tier that adds video-course access and Dometrain MCP access. The transcript’s promotional pricing is time-sensitive and internally inconsistent: it mentions a `light50` code for 50% off a first month or year, then later mentions a three-day offer of approximately $5.99 for a month. Current terms would need to be verified directly rather than assumed from the video.</p>
+<p>The main learning decision is whether the learner needs only hands-on and interview-oriented material or also wants video courses and MCP access. The transcript also makes clear that the solve function can complete an exercise, so learners who want to preserve the challenge should use hints, explanations, tests, and quizzes before requesting a full solution.</p>
+<p>The platform uses the learner’s progress and profile to personalize recommendations. Users who do not want their progress exposed can adjust the public-profile settings or disable the profile. The video also shows an agent using course knowledge and profile context, but it does not state the retention, privacy, or data-handling policies behind those features.</p>
+<p>The technical architecture remains an open question in this video. The only architecture-related implementation details explicitly mentioned are the use of Monaco, a diagram canvas, a browser Git terminal, AI agents, RAG, integrations, and learner-profile context. Details about services, model providers, isolation, agent permissions, operating costs, and security are deferred to the planned follow-up video.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li>[0:00-2:14] Chapsas explains the change from video courses to a more hands-on and AI-oriented learning model.</li>
+<li>[2:16-3:09] Browser-based C# course demonstration, including Monaco editing, autocomplete, console output, and six automated tests.</li>
+<li>[3:17-3:57] Interactive system-design canvas with client and service nodes, HTTP labeling, validation, and explanations.</li>
+<li>[4:19-5:00] Free introductory courses, Light subscription contents, approximate pricing, and the limited-time discount.</li>
+<li>[5:04-6:01] In-browser Git terminal, source control view, staging, commits, pushes, and Git-learning workflow.</li>
+<li>[6:04-8:30] AI hints, double-confirmed solutions, code diffs, test execution, line explanations, and animated diagram solutions.</li>
+<li>[8:31-9:10] Agent-operated Git lesson and the quiz functionality.</li>
+<li>[9:17-10:30] Pro video-course features: recaps, quizzes, timestamp searches, code extraction, and frame explanations.</li>
+<li>[10:33-11:42] Personalized course recommendations, generated learning paths, and sharing.</li>
+<li>[11:43-12:24] Public profiles, achievements, leaderboards, activity controls, and completion dashboards.</li>
+<li>[12:28-12:47] Dometrain MCP example for building a project using Dometrain’s teaching approach.</li>
+<li>[12:53-14:08] Skill assessment, ELO-style scoring, gap analysis, question review, and generated study plan.</li>
+<li>[14:34-14:44] Announcement of the separate video covering architecture, agents, costs, and security.</li>
+</ul>
+</main>
+</body>
+</html>
