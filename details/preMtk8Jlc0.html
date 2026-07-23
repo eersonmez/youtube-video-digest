@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conor Hoekstra explains algorithm families and function combinators through array-language, Python, and C++ examples.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=preMtk8Jlc0">Watch video</a></nav>
+  <h1>Conor Hoekstra explains algorithm families and function combinators through array-language, Python, and C++ examples.</h1>
+  <div class="meta">NDC Conferences · 2026-07-22T09:00:16+00:00 · Algorithms &amp; Combinators - Conor Hoekstra - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>Conor Hoekstra presents a way to understand and translate algorithms across array languages, Python, C++, and functional languages without relying primarily on their names. His central argument is that algorithms are often better identified by their semantics and argument shapes: whether they receive an integer, a Boolean mask, a unary predicate, a binary predicate, or a key function.</p>
+<p>The main example is a copy family. A single array-language primitive can express what other languages call repeat, compress, replicate, filter, copy_if, or adjacent filtering. These are not unrelated operations; they are related flavors of copying or selecting data, distinguished by the kind of argument controlling the operation. Conversely, familiar names such as `unique` and `adjacent_difference` can hide more general behavior.</p>
+<p>The talk then extends this model to map and cut families. Map variants include ordinary pointwise mapping, binary zip-style mapping, and mapping over adjacent elements. Cuts split one sequence into a sequence of sequences, including fixed-size chunks, sliding windows, strided selections, and groups formed from predicates or keys. Combinators provide the glue for expressing these relationships by flipping, duplicating, composing, or transforming function arguments.</p>
+<h2>Detailed Walkthrough</h2>
+<h3>A semantic lookup tool instead of a name lookup</h3>
+<p>At approximately <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=300s">[5:00]</a>, Hoekstra introduces a cross-language algorithm lookup site. It can search for an algorithm name across programming languages, but it can also work in the reverse direction: given the semantics associated with an algorithm in one language, it can show differently named equivalents elsewhere.</p>
+<p>This distinction is important when moving between C++, Python, Haskell, and array languages. An operation that is called `filter` in one language may be called `copy_if`, `compress`, or something else in another. Hoekstra’s goal is to find the common behavior rather than assume that identical names imply identical semantics.</p>
+<p>He uses an array-language REPL and examples from languages including APL, BQN, and TinyAPL. Binary functions in these languages are generally written in infix form, so the examples make function argument order particularly visible.</p>
+<h3>The copy family: repeat, compress, and replicate</h3>
+<p>The first major family is copying. At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=600s">[10:00]</a>, Hoekstra starts with an operation that takes two arguments. The left argument controls how the elements of the right argument are copied.</p>
+<p>The scalar integer case is presented as the repeat flavor. A scalar such as `3` controls repetition of the supplied data. The talk then distinguishes two related forms:</p>
+<p>```text mask   = 1 0 1 data   = A B C</p>
+<p>compress(mask, data) -&gt; A C ```</p>
+<p>A Boolean mask selects the elements corresponding to true or one values. Hoekstra notes that this form has historically been called `compress` in APL-related terminology.</p>
+<p>An integer count vector supplies a separate copy count for every element:</p>
+<p>```text counts = 1 2 3 data   = A B C</p>
+<p>replicate(counts, data) -&gt; A B B C C C ```</p>
+<p>The first element is copied once, the second twice, and the third three times. The speaker calls this the replicate flavor. The key point is that scalar integers, Boolean masks, and integer count vectors may be treated as separate named algorithms in a conventional library, while an array language can represent them with one primitive whose behavior depends on the type and shape of its left argument.</p>
+<p>The family can therefore be organized by the controlling argument:</p>
+<ul>
+<li>A scalar integer expresses repetition.</li>
+<li>A Boolean vector expresses selection or compression.</li>
+<li>An integer vector expresses per-element replication.</li>
+</ul>
+<p>The exact spelling is less important than recognizing the shared copy semantics.</p>
+<h3>Unary predicates turn copying into filtering</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=900s">[15:00]</a>, Hoekstra adds a unary predicate to the family. A unary predicate is a function that takes one value and returns true or false.</p>
+<p>The demonstration starts with an `iota 5` sequence, representing the values 0 through 4. An odd-number predicate is applied to every element, producing a Boolean mask:</p>
+<p>```text values = 0 1 2 3 4 odd(values) -&gt; 0 1 0 1 0 ```</p>
+<p>That mask is then passed back into the Boolean-mask form of the copy operation:</p>
+<p>```text filter(odd, 0 1 2 3 4) -&gt; 1 3 ```</p>
+<p>This is the usual meaning of `filter`: evaluate a predicate for each element and retain the elements for which it returns true. Hoekstra points out that this is semantically the same as a `copy_if` operation when ignoring execution details. Both copy the elements whose predicate succeeds.</p>
+<p>The distinction between names is also discussed. `filter` can be slightly ambiguous because it does not say whether values are being filtered in or filtered out. `copy_if` is more explicit: it copies an element if its predicate returns true. C++ added a ranges form of `filter` in C++20, while `copy_if` is another established name for the same selection pattern. The speaker explicitly sets aside lazy versus eager behavior for this comparison; a filter view and a copying algorithm can select the same elements while producing them differently.</p>
+<h3>Combinators for argument order and composition</h3>
+<p>The filter example creates a function-composition problem. The Boolean mask must become the left argument to the replicate operation, but the expression that computes the mask naturally appears as a separate function application. Parentheses can solve this, but Hoekstra uses combinators to express the same rearrangement more directly.</p>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=1200s">[20:00]</a>, he introduces the `C` combinator, also known as the cardinal or flip combinator. It takes a binary function and returns another binary function with its arguments exchanged:</p>
+<p>```text flip(f)(x, y) = f(y, x) ```</p>
+<p>The combinator is useful whenever an operation expects its inputs in the opposite order from the one naturally produced by a composition. The talk shows Python and C++ lambda spellings to emphasize that these are not exclusive to symbolic array languages.</p>
+<p>The combinator site also displays arity notation. The notation indicates the arity of the function returned by a combinator and the arities of the functions supplied to it. Hoekstra uses this to make the function transformations explicit.</p>
+<p>Several other combinators are introduced:</p>
+<p>```text W(f)(x) = f(x, x) ```</p>
+<p>`W` takes a binary function and returns a unary function by passing the same argument twice.</p>
+<p>```text B(f, g)(x) = f(g(x)) ```</p>
+<p>`B` is ordinary unary function composition: apply `g`, then apply `f` to its result. A related `B1` form accepts a binary function, applies it to two arguments, and then applies a unary function to the resulting value. Hoekstra notes that generalized forms such as B2, B3, and higher can be discussed, although the most useful cases generally involve unary and binary functions.</p>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=1500s">[25:00]</a>, the talk turns to the `S` and sigma combinators. In the orientation used in the talk, they apply a unary function to one side of a binary operation while retaining the original argument for the other side:</p>
+<p>```text S(f, g)(x)     = f(x, g(x)) sigma(f, g)(x) = f(g(x), x) ```</p>
+<p>The `S` form puts the transformed value on one side; sigma puts it on the other. For filtering in the array-language example, sigma is useful because the predicate result must be supplied as the left argument to replicate, while the original sequence remains the right argument.</p>
+<p>This is a compact way to express:</p>
+<p>```text replicate(predicate(values), values) ```</p>
+<p>without manually repeating or parenthesizing the sequence. The combinators are therefore not just theoretical curiosities. They describe recurring patterns of function manipulation: swap arguments, duplicate an argument, compose functions, or apply a transformation before passing values into another function.</p>
+<h3>The map family: unary, binary, and adjacent mapping</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=1800s">[30:00]</a>, Hoekstra moves from copying to mapping. Mapping applies a function across a sequence, but the number and arrangement of the function’s inputs produce different variants.</p>
+<p>The ordinary unary form applies one function to each element. A binary map, often called `map2`, combines two sequences element by element. In C++, the corresponding family is generally called `transform`. Python’s `map` is variadic, so combining multiple sequences is already part of its usual interface. Hoekstra identifies `zip_with` as a range-v3 name for a binary mapping form and says newer C++ terminology uses `zip_transform`.</p>
+<p>The less commonly recognized member of the map family is adjacent mapping. Instead of applying a function to one element at a time, it applies a binary function to neighboring elements:</p>
+<p>```text adjacent_map(f, A B C D) ```</p>
+<p>The function is applied to `A,B`, then `B,C`, then `C,D`. In the array-language demonstration this is called `stencil`.</p>
+<p>C++ historically called one common version `adjacent_difference`, because its default operation is subtraction. Hoekstra argues that this name obscures the general semantics: the operation does not fundamentally require subtraction. The binary operation can be replaced with addition, comparison, or another relation. He notes that replacing subtraction with addition can be used to calculate Fibonacci numbers, illustrating why a name based on the default operation can be misleading.</p>
+<p>The talk presents `adjacent_transform` as a better C++-era name because it describes the structure of the operation without hard-coding subtraction into the algorithm name.</p>
+<h3>Binary-predicate filtering and the special case of unique</h3>
+<p>The adjacent map operation supplies the missing binary-predicate form of the copy family. At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=2100s">[35:00]</a>, Hoekstra applies an equality test to adjacent elements of a sequence.</p>
+<p>For an input containing repeated neighboring values, adjacent mapping produces a Boolean sequence one element shorter than the input:</p>
+<p>```text values          = A A B C C adjacent_equal  = 1 0 0 1 ```</p>
+<p>A boundary or keep value is added so that the mask has the same length as the original sequence. Depending on whether the mask is complemented, the operation can retain adjacent duplicates or remove them. In the removal version, the first element is retained and later elements that compare equal to their predecessor are discarded:</p>
+<p>```text values          = A A B C C result          = A B C ```</p>
+<p>The transcript describes two endpoint variants, depending on whether the first or last element of an adjacent run is retained. This is a real semantic decision that can be hidden by a short algorithm name.</p>
+<p>When the binary predicate is equality, the familiar name is often `unique`. Hoekstra argues that `unique` is only the common specialization. The more general behavior is adjacent filtering: apply an arbitrary binary predicate to neighboring elements and copy or remove elements according to that result. The same structure could use less-than, less-than-or-equal, or greater-than instead of equality.</p>
+<p>The talk connects this behavior to range-v3’s `adjacent_filter` family. The important lesson is that a well-known name such as `unique` may represent only the most frequent use of a more general algorithmic pattern.</p>
+<h3>Cuts: splitting a sequence into sequences</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=2400s">[40:00]</a>, Hoekstra introduces a larger family called cuts. The term is borrowed from the J language. A cut takes one sequence and divides it into a sequence of sequences, such as a list of chunks, strings, or subarrays.</p>
+<p>He compares this family with other familiar shapes:</p>
+<ul>
+<li>A fold reduces a sequence to one result.</li>
+<li>A map applies an operation across a sequence.</li>
+<li>A cut or split produces a sequence of sequences.</li>
+</ul>
+<p>Chunking is treated as a subset of the broader cuts family.</p>
+<p>#### Boolean partitioning</p>
+<p>The first chunk-related example uses a Boolean-mask operation called `partition` in TinyAPL. Hoekstra explicitly warns that this is not the same operation as the conventional C++ algorithm named `partition`.</p>
+<p>He uses the operation while setting up a maximum-consecutive-ones problem: given a sequence of zeroes and ones, determine the longest run of ones. The transcript shows the generation of a random binary sequence and the partitioning setup. One form treats marked positions as chunk boundaries and can discard the boundary marker; a `partition and close` form keeps the values and starts a new chunk whenever a marked one is encountered.</p>
+<p>The supplied excerpt does not include the complete final expression that calculates the maximum run length. It supports the role of partitioning in exposing contiguous runs, but not a full implementation of the maximum-consecutive-ones solution.</p>
+<p>#### Integer chunks, slides, and strides</p>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=2700s">[45:00]</a>, the talk moves to integer chunking. Given an integer chunk size, the sequence is split into consecutive groups of that many elements. If the sequence length is not evenly divisible by the chunk size, the final chunk is partial rather than discarded.</p>
+<p>Conceptually:</p>
+<p>```text values = 0 1 2 3 4 5 6 7 8 9 size = 3</p>
+<p>chunk -&gt; [0 1 2] [3 4 5] [6 7 8] [9] ```</p>
+<p>Hoekstra places ordinary chunking alongside two related operations controlled by chunk length and stride length:</p>
+<ul>
+<li>Chunking takes groups of several elements and advances by the same amount as the group length.</li>
+<li>Striding takes a small group, often one element, and advances by a larger step, producing values such as positions 0, 3, 6, and 9.</li>
+<li>Sliding uses an overlapping group and advances by one position, producing windows such as `[0 1 2]`, `[1 2 3]`, and `[2 3 4]`.</li>
+</ul>
+<p>Thus, chunk, stride, and slide can be viewed as different settings of the same two-parameter idea. The distinction is not merely naming; it determines overlap, spacing, and the shape of the result.</p>
+<p>The talk relates integer chunking to the C++ ranges vocabulary, including the C++23-era `chunk` operation.</p>
+<p>#### Chunking by an adjacent binary relation</p>
+<p>At approximately [45:00-50:00], Hoekstra introduces `chunk_by`, also called `group_by` or `partition` in some languages. It takes a binary predicate and applies it to neighboring elements. When the predicate is false, a new chunk begins.</p>
+<p>With equality as the predicate:</p>
+<p>```text values = 1 1 2 2 2 3</p>
+<p>chunk_by(equal, values) -&gt; [1 1] [2 2 2] [3] ```</p>
+<p>This is contiguous grouping. Replacing equality with another relation changes the rule that determines whether adjacent values remain in the same chunk.</p>
+<p>The implementation follows the same pattern as adjacent filtering:</p>
+<ul>
+<li>Apply a binary predicate to neighboring elements with an adjacent-map or stencil operation.</li>
+<li>Convert the resulting relation values into chunk boundaries.</li>
+<li>Feed the boundaries into a partitioning or splitting operation.</li>
+</ul>
+<p>The difference is the final consumer. Adjacent filtering uses a copy or replicate operation to retain or remove individual values, while chunking uses partitioning to produce nested sequences.</p>
+<p>#### Chunking by a unary key</p>
+<p>The final major variant is `chunk_by_key`. Instead of directly comparing neighboring values, it applies a unary operation to each value and groups adjacent elements whose key results are equal.</p>
+<p>A Boolean predicate is one possible key function, but the key can return any comparable value. For example, a parity key can divide a sequence into contiguous runs of odd and even values:</p>
+<p>```text key(x) = odd(x)</p>
+<p>values = 1 3 5 2 4 7 result = [1 3 5] [2 4] [7] ```</p>
+<p>The grouping is based on contiguous runs. It does not mean that all odd values from the entire sequence are collected into one global group.</p>
+<p>There is an implementation trap here. If the key is applied first and `chunk_by` is run on the resulting key sequence, the original values are lost. The desired operation is to compare keys while still chunking the original sequence.</p>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=3000s">[50:00]</a>, Hoekstra uses the `SI` or side combinator to build that comparison:</p>
+<p>```text side(equal, key)(x, y) = equal(key(x), key(y)) ```</p>
+<p>This produces a binary relation that applies the same unary key to both arguments before comparing them. `chunk_by` can then receive the original sequence and use this generated relation.</p>
+<p>Hoekstra connects this pattern to projections in C++20 ranges. A projection applies a unary operation before a binary comparison. For example, sorting strings by their lengths means comparing `size(left)` and `size(right)` rather than comparing the strings lexicographically. A custom comparator that repeatedly calls `.size()` on both arguments is expressing the same underlying pattern as the side combinator.</p>
+<h3>Integer grouping and array-language primitives</h3>
+<p>Near <a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=3300s">[55:00]</a>, Hoekstra mentions another TinyAPL primitive called `group`. It takes an integer mask or integer labels and places elements with the same integer into the same group. Because equal labels can be grouped even when their original positions are not contiguous, he describes this as an out-of-order form of chunking and notes that it arguably belongs outside the contiguous chunk family.</p>
+<p>The talk closes by returning to the design of array languages. Integer and Boolean-mask forms naturally have dedicated primitives because arrays and masks are their native data model. Predicate-based forms are often expressed through higher-order functions and combinators instead of a separate primitive.</p>
+<p>Hoekstra also attributes some array-language performance to Boolean and SIMD-oriented implementation techniques. That performance discussion is architectural rather than a detailed benchmark within this talk; the main point is that compact array-language notation and efficient execution are connected to the same array-native representation.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Algorithm names are not reliable semantic identifiers. The same operation may be called repeat, compress, replicate, filter, copy_if, adjacent_filter, or unique in different contexts.</li>
+</ul>
+<ul>
+<li>The copy family can be classified by its controlling argument: a scalar integer repeats, a Boolean mask selects, and an integer count vector copies each corresponding element a specified number of times.</li>
+</ul>
+<ul>
+<li>A unary-predicate filter can be understood as two steps: map the predicate over the input to create a Boolean mask, then use the mask to copy the selected elements.</li>
+</ul>
+<ul>
+<li>`filter` and `copy_if` have the same element-selection semantics when lazy versus eager execution is ignored. Their execution model and naming conventions can still differ.</li>
+</ul>
+<ul>
+<li>The `C` combinator flips the arguments of a binary function. `W` duplicates one argument, `B` composes functions, and `B1` applies a binary function before a unary function.</li>
+</ul>
+<ul>
+<li>`S` and sigma apply a unary function to one side of a binary operation while retaining the original value on the other side. This lets a computed mask be placed on the correct side of replicate without repeatedly spelling the input.</li>
+</ul>
+<ul>
+<li>Map has several useful shapes: unary map, binary zip-style map, and adjacent map. C++ generally uses `transform` for the first two, while array languages often make mapping implicit.</li>
+</ul>
+<ul>
+<li>`adjacent_difference` describes only the subtraction specialization of adjacent mapping. `adjacent_transform` better captures the fact that any binary operation can be applied to neighboring elements.</li>
+</ul>
+<ul>
+<li>`unique` is a common equality-based specialization of a more general adjacent-filtering pattern. Changing the binary predicate changes the algorithm’s behavior without changing its overall structure.</li>
+</ul>
+<ul>
+<li>Cuts split one sequence into a sequence of sequences. Fixed-size chunks, sliding windows, strided selections, Boolean partitions, binary `chunk_by`, and unary-key chunking are related but have different overlap and boundary semantics.</li>
+</ul>
+<ul>
+<li>The side combinator constructs a relation such as `equal(key(x), key(y))`, which is the same general pattern represented by a unary projection followed by a binary comparator in C++ ranges.</li>
+</ul>
+<ul>
+<li>When translating algorithms, classify the argument type, output shape, adjacency behavior, overlap, endpoint policy, and laziness before searching for a library name.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>A useful implementation workflow is to describe the operation semantically before choosing an API. First identify whether the result is a filtered sequence, a transformed sequence, or a sequence of sequences. Then identify whether the controlling input is an integer, mask, unary predicate, binary predicate, or key function. Finally, check whether the operation is contiguous, adjacent, overlapping, strided, lazy, or eager.</p>
+<p>The core relationships can be represented with language-neutral pseudocode:</p>
+<p>```text filter(predicate, values): mask = map(predicate, values) return compress(mask, values)</p>
+<p>adjacent_filter(relation, values): comparisons = adjacent_map(relation, values) keep = boundary_marker plus complement(comparisons) return compress(keep, values)</p>
+<p>chunk_by(relation, values): comparisons = adjacent_map(relation, values) boundaries = convert comparisons into chunk starts return partition_and_close(boundaries, values)</p>
+<p>chunk_by_key(key, values): relation(x, y) = equal(key(x), key(y)) return chunk_by(relation, values) ```</p>
+<p>For the adjacent-filter example, the complement and the initial boundary marker depend on whether a true comparison means “remove this element” or “keep this element,” and whether the first or last member of a run should be retained. These endpoint decisions should be made explicit rather than assumed.</p>
+<p>The combinator patterns can also be written in ordinary lambda-style pseudocode:</p>
+<p>```text flip(f)(x, y) = f(y, x)</p>
+<p>duplicate(f)(x) = f(x, x)</p>
+<p>compose(f, g)(x) = f(g(x))</p>
+<p>binary_then_unary(f, g)(x, y) = g(f(x, y))</p>
+<p>right_transformed(f, g)(x) = f(x, g(x))</p>
+<p>left_transformed(f, g)(x) = f(g(x), x)</p>
+<p>side(equal, key)(x, y) = equal(key(x), key(y)) ```</p>
+<p>The talk relates these patterns to concrete library vocabulary:</p>
+<ul>
+<li>C++20 ranges includes a `filter` form, while `copy_if` expresses the eager copying version.</li>
+<li>C++ uses `transform` for unary and binary mapping variants.</li>
+<li>Range-v3 is described as using `zip_with` for a binary mapping form; newer C++ terminology uses `zip_transform`.</li>
+<li>C++’s older `adjacent_difference` name emphasizes subtraction, while the talk favors `adjacent_transform` for the general adjacent-map behavior.</li>
+<li>C++23-era ranges terminology includes fixed-size `chunk` behavior and `chunk_by`-style grouping.</li>
+<li>C++20 ranges projections express the “apply a unary operation before binary comparison” pattern used by `chunk_by_key`.</li>
+</ul>
+<p>There are several important semantic risks when porting code:</p>
+<ul>
+<li>Do not confuse TinyAPL’s Boolean `partition` behavior with the conventional C++ `partition` algorithm.</li>
+<li>Do not treat `chunk_by` as global grouping; in the talk it groups contiguous runs according to adjacent comparisons.</li>
+<li>Distinguish chunking, sliding, and striding by both group length and step length.</li>
+<li>Decide whether a partial final chunk is retained. The integer chunk example retains it.</li>
+<li>Check whether an adjacent filter retains the first or last item in a run.</li>
+<li>Check whether a filter produces a lazy view or eagerly copies values.</li>
+<li>Preserve the original sequence when using a key function; apply the key inside the comparison relation rather than chunking only the key results.</li>
+<li>Treat `group` with integer labels as distinct from contiguous chunking because it can collect equal labels out of their original order.</li>
+</ul>
+<p>The transcript does not provide shell commands or complete copy-pastable Python or C++ implementations. The pseudocode above captures the demonstrated semantics, while the exact array-language glyphs and library syntax should be verified in the relevant language.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=300s">[5:00]</a> The cross-language algorithm lookup site and its reverse search by semantics rather than by algorithm name.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=600s">[10:00]</a> The live copy-family examples showing scalar repetition, Boolean-mask compression, and integer-count replication.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=900s">[15:00]</a> The construction of `filter` from a unary predicate, a Boolean mask, and the copy operation, including the comparison with `copy_if`.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=1200s">[20:00]</a> The `C` combinator, arity notation, argument flipping, and the introductions to `W`, `B`, and `B1`.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=1500s">[25:00]</a> The `S` and sigma combinators and how they place a transformed argument on the required side of a binary operation.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=1800s">[30:00]</a> The map family, binary zip-style mapping, C++ `transform`, and adjacent mapping through `stencil`.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=2100s">[35:00]</a> The adjacent-equality filtering demonstration, including mask construction, removal of adjacent duplicates, and the broader meaning behind `unique`.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=2400s">[40:00]</a> The Boolean partition setup for the maximum-consecutive-ones problem. The excerpt provides the setup and partition behavior but not the complete final calculation.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=2700s">[45:00]</a> Integer chunking and the distinction between chunks, slides, and strides, including treatment of a partial final chunk.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=3000s">[50:00]</a> `chunk_by`, `chunk_by_key`, the side combinator, and the connection to C++ ranges projections.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=preMtk8Jlc0&amp;t=3300s">[55:00]</a> The integer-label `group` primitive, array-language design choices, performance comments, and the closing questions.</li>
+</ul>
+</main>
+</body>
+</html>
