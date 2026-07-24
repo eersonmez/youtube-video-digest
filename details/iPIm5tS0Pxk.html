@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The presentation explores expression-based programming techniques for improving code quality and structure.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=iPIm5tS0Pxk">Watch video</a></nav>
+  <h1>The presentation explores expression-based programming techniques for improving code quality and structure.</h1>
+  <div class="meta">NDC Conferences · 2026-07-23T10:30:27+00:00 · Expression-based Programming for Better Code? - Jason Turner - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video presents a case for shifting from traditional statement-based programming paradigms to an expression-based paradigm when writing code, particularly in C++. The central argument is that by treating control flow structures—such as `if/else` blocks and `switch` statements—as expressions that always return a value, developers can significantly improve code quality, reduce duplication, and better leverage compiler optimizations.</p>
+<p>The discussion centers on how this approach facilitates the use of Return Value Optimization (RVO), copy elision, and tail call elimination. The goal is to structure logic such that it inherently generates values rather than merely expressing intent through sequential actions, leading to cleaner, more efficient codebases. While acknowledging limitations regarding undefined behavior in certain generalized scenarios, the core premise advocates for encapsulating logic into functions or lambdas to enforce structural discipline and benefit from compiler capabilities.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins with a brief discussion on coding standards, noting that while some teams impose hard limits (e.g., 50 lines of code) on function size, there is no universal standard enforced by the language itself <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=374s">[6:14]</a>. The speaker then introduces Return Value Optimization (RVO), explaining it through C++ examples where two identifiers referring to a returned object can be treated as the same object—the same memory location—even when they appear distinct in the code [10:59, 11:24].</p>
+<p>The concepts of RVO, copy elision, move elimination, and elision are related terms; specifically, the speaker notes that guaranteed RVO/move semantics must be present for certain constructs, while others (like those on lines 9 and 10 in an example) are only &quot;100% likely&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=753s">[12:33]</a>. It is clarified that these optimizations often stem from how calling conventions work at the machine level (ABI), not just compiler flags.</p>
+<p>Tail Call Elimination (TCE) is presented as another optimization where a function call or recursion can be eliminated by transforming it into a jump, preventing stack overflow possibilities <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=861s">[14:21]</a>. The speaker demonstrates this with an example of summing a range of integers, showing how the compiler transforms recursion into a loop, and further demonstrating that Clang can convert recursive structures into closed-form loops without explicit looping constructs [16:06, 18:58].</p>
+<p>The core distinction between expressions and statements is defined: an expression evaluates to a value, while a statement expresses intent or performs an action <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=1325s">[22:05]</a>. The speaker contrasts two implementation options for achieving a result based on a condition (Option A vs. Option B). In Option A, the return value is constructed directly in the return statement; in Option B, a default construction occurs followed by an assignment and then returning that object [23:01-23:51]. The speaker argues that while both might compile to similar binaries, Option A leverages guaranteed RVO more reliably across different toolchains.</p>
+<p>The discussion moves to treating control flow structures as expressions. For instance, the `switch` statement is treated as if it returns a value, with every possible path returning something, thus eliminating the need for `break` statements <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=2269s">[37:49]</a>. Similarly, the speaker proposes generalizing this idea to loops, suggesting that a loop expression should return the result of its last operation. However, attempts to generalize this universally fail when dealing with empty ranges, leading back to issues where not all control paths guarantee a return value [48:03-48:20].</p>
+<p>The final practical application involves refactoring an infix expression evaluator. The initial structure using `while` loops and `switch` statements is refactored by making every control path result in a return statement, often utilizing expected-based logic to handle potential missing values <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=3378s">[56:18]</a>. This results in fewer lines of code and better separation of concerns compared to the original version where each case was lengthy <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=3329s">[55:29]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>The central proposal is to treat control flow structures like `if/else` blocks and `switch` statements as expressions that always return a value.</li>
+<li>This expression-based approach allows developers to better leverage compiler optimizations such as Return Value Optimization (RVO) and copy elision.</li>
+<li>Encapsulating logic into functions or lambdas helps enforce code standards, limits function sizes, and aids in leveraging RVO.</li>
+<li>Tail Call Elimination (TCE) is a known optimization where compilers can transform recursion into iterative loops, reducing stack usage.</li>
+<li>The distinction between expressions (which evaluate to values) and statements (which express intent/action) is fundamental to this paradigm shift.</li>
+<li>While the goal is to make every control path return a value, generalizing this concept across all structures (like `for` loops) can lead to undefined behavior if edge cases like empty ranges are not handled correctly.</li>
+<li>For C++ programmers dealing with known values (e.g., enumerations), using functions that return string views is highly efficient and safe due to compiler optimization potential.</li>
+<li>The speaker advocates for treating `break` statements as equivalent to a `return` in this paradigm.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>RVO/Copy Elision:</strong> When designing code, favor structures where the returned object is constructed directly within the return statement (Option A) over patterns involving default construction followed by assignment and return (Option B), especially when targeting broad compiler support <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=1431s">[23:51]</a>.</li>
+<li><strong>Tail Call Elimination (TCE):</strong> TCE relies on language features, compiler flags, and optimization levels. It is not guaranteed for all recursive structures; the transformation into a closed-form loop depends on the specific compiler version and context [14:21, 18:58].</li>
+<li><strong>Code Structure:</strong> The ultimate goal of expression-based programming is to make every control statement its own function or lambda, which helps enforce function size limitations often required by corporate coding standards <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=3378s">[56:18]</a>.</li>
+<li><strong>C++ Specific Advice:</strong> When converting known values (like enums) to strings in C++, strongly encourage using functions that return `std::string_view` for maximum efficiency and safety <a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=2097s">[34:57]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=594s">[9:54]</a> Introduction to Return Value Optimization (RVO) demonstration.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=753s">[12:33]</a> Clarification on related terms like NRVO, RVO, copy elimination, etc.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=842s">[14:02]</a> Discussion on the relationship between optimizations and ABI/calling conventions.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=966s">[16:06]</a> Demonstration of Tail Call Elimination transforming recursion into a loop.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=1325s">[22:05]</a> Core definition distinguishing expressions from statements.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=2269s">[37:49]</a> Treating `switch` as an expression where every case returns a value.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=iPIm5tS0Pxk&amp;t=3098s">[51:38]</a> Example of refactoring a `while/switch` structure into an expression-based evaluator.</li>
+</ul>
+</main>
+</body>
+</html>

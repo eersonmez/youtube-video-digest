@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The benefits of non-intrusive programming techniques in software development.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=2qehFlXTBr8">Watch video</a></nav>
+  <h1>The benefits of non-intrusive programming techniques in software development.</h1>
+  <div class="meta">NDC Conferences · 2026-07-23T11:30:24+00:00 · On the benefits of non-intrusiveness - Patrice Roy - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video discusses the architectural trade-offs in software development when extending existing code or adding new functionality to types where modification is not possible or undesirable. The central theme is advocating for &quot;non-intrusive&quot; programming techniques—methods that allow developers to add behavior or express constraints without altering the original source code of a type.</p>
+<p>The speaker contrasts these non-intrusive approaches with traditional, intrusive methods like adding base classes or implementing interfaces directly onto existing types. While intrusive solutions are often taught early on and provide clear structure, they can impose significant costs, especially when applied retroactively to large, established codebases that require extensive refactoring and recompilation. Non-intrusiveness offers freedom and independence in code evolution, which is crucial when dealing with external libraries or immutable types.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The discussion begins by illustrating a common problem: needing to query properties of fundamental types (like the maximum value of an integer) that are not natively supported across different languages or type systems <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=0s">[0:00]</a>. The speaker notes that while some languages provide this via built-in classes, others require specific mechanisms. In C#, for instance, support was added later via a contract like IMaxValue&lt;T&gt;, but applying such interfaces retroactively to older classes requires modification of the original code <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=300s">[5:00]</a>.</p>
+<p>The core argument is that when a language lacks a native mechanism to express a desired capability, resorting to an intrusive solution forces costly refactoring. The speaker contrasts this with traditional object-oriented patterns like using base classes or interfaces, which are teachable and provide clear structure for new developers <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=600s">[10:00]</a>. However, these methods require modifying the original code.</p>
+<p>The video then explores advanced language features that enable non-intrusive extensions. In C#, extension methods allow adding behavior to types externally without altering their definition <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=300s">[5:00]</a>. The speaker demonstrates attempts to enforce constraints using custom interfaces (e.g., IConvertibleTo&lt;T, U&gt;). Initially, these attempts sometimes resulted in complex or unintuitive error messages because the language&#x27;s idioms did not perfectly align with the desired constraint expression <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=900s">[15:00]</a>.</p>
+<p>The discussion moves into C++ concepts like unconstrained templates and traits for compile-time reasoning about types. Traits allow developers to infer information (like whether a type is constant, or if it has a `max` function) based on its structure without modifying the type itself <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=2100s">[35:00]</a>. This allows for adding &quot;code documentation&quot; that is fully compiled.</p>
+<p>The speaker highlights modern language features like C++ concepts and C#&#x27; s extension methods as solutions to these long-standing problems, providing syntactic constraints that allow developers to express intent—such as requiring a type to be &quot;addable&quot;—without altering the underlying types <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=3000s">[50:00]</a>. Finally, the video touches upon using wrappers or decorators to achieve similar goals when direct code modification is impossible, balancing design trade-offs between intrusive and non-intrusive approaches <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=3600s">[1:00:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Non-intrusive solutions grant freedom and independence from existing code structures by adding functionality externally.</li>
+<li>Intrusive changes to existing types can necessitate costly refactoring and recompilation, especially in large projects.</li>
+<li>Generic programming concepts allow for expressing requirements without modifying original types.</li>
+<li>Extension methods (e.g., in C#) enable the addition of behavior to types from outside their definition.</li>
+<li>Traits (in C++) allow compile-time reasoning about a type&#x27;s properties (like size or conversion capabilities) based on its structure, acting as external documentation.</li>
+<li>Modern language features like concepts provide syntactic constraints that check if an expression is valid for a given type without requiring the type to implement specific interfaces.</li>
+<li>Wrapping existing classes in wrapper types can allow new functionality to be added externally when direct modification is prohibited.</li>
+<li>The choice between intrusive and non-intrusive methods involves significant design trade-offs regarding code purity versus implementation complexity.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>C# Extension Methods:</strong> These are used to add functions that appear as member functions of a type but are actually defined outside the class, provided they only use public members <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=300s">[5:00]</a>.</li>
+<li><strong>C++ Traits:</strong> Used for compile-time introspection; they allow querying properties of types (e.g., `std::numeric_limits`) without altering the type definition itself <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=2100s">[35:00]</a>.</li>
+<li><strong>C++ Concepts:</strong> These are language features that allow constraints to be placed on template parameters, effectively stating &quot;this function works if T is addable,&quot; which checks validity at compile time <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=3000s">[50:00]</a>.</li>
+<li><strong>Wrapper/Decorator Pattern:</strong> When direct modification is impossible, wrapping the original class in a new type that implements necessary interfaces allows external code to interact with it as if it had those capabilities <a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=3600s">[1:00:00]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=300s">[5:00]</a> Discussion on retroactively adding contracts/interfaces and the cost of refactoring.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=600s">[10:00]</a> Explanation of traditional intrusive patterns (base classes, interfaces).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=900s">[15:00]</a> Demonstrations involving custom interface constraints in C# and resulting error messages.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=2100s">[35:00]</a> Introduction to traits as a mechanism for compile-time type introspection in C++.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=3000s">[50:00]</a> Detailed look at how concepts provide syntactic constraints on types, similar to desired language features.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=2qehFlXTBr8&amp;t=3600s">[1:00:00]</a> Examples of using wrappers and decorators to achieve external code modification without altering the original class definition.</li>
+</ul>
+</main>
+</body>
+</html>

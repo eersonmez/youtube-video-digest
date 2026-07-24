@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benchmarking and optimizing the Carbon compiler, focusing heavily on hash table performance.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=hN6KcAKfTN0">Watch video</a></nav>
+  <h1>Benchmarking and optimizing the Carbon compiler, focusing heavily on hash table performance.</h1>
+  <div class="meta">NDC Conferences · 2026-07-23T11:00:29+00:00 · Benchmarking and optimizing the Carbon compiler - Chandler Carruth - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video details a deep dive into the process of benchmarking and optimizing the C++ implementation of the Carbon compiler, focusing heavily on performance bottlenecks within its data structures, specifically hash tables used by the lexer. The central theme is that effective optimization requires rigorous, context-aware benchmarking rather than relying on general performance metrics. The speaker uses the lexer&#x27;s identifier hash table as a case study to illustrate how misleading incorrect benchmarks can be and how critical it is to tailor tests to real-world usage patterns within a specific application like a compiler.</p>
+<p>The presentation moves beyond simple timing by employing hardware performance counters and sophisticated source code generation techniques to simulate realistic compilation workloads. The goal is not just to make the hash table faster in isolation, but to understand its impact on overall compile time across different phases of compilation (lexing, parsing, semantic analysis). Ultimately, it serves as a guide for software engineers on how to engineer robust benchmarks that accurately reflect production behavior and drive meaningful performance improvements.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The speaker begins by profiling a handwritten Carbon example and discovers that the lexer is significantly slower than other compiler components <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=35s">[0:35]</a>. The primary culprit identified was the identifier hash table, which stores every unique identifier encountered during compilation for interning purposes. This finding was surprising as lexers are often considered simple parts of compilers.</p>
+<p>To address this, a custom wrapper API was defined to benchmark specific operations like `insert` and `lookup`, rather than general hash table performance <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=300s">[5:00]</a>. The lookup operation was specifically designed to require accessing the stored value (e.g., checking if it&#x27;s non-empty for strings), ensuring the test reflects real usage, as a simple existence check is insufficient <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=338s">[5:38]</a>.</p>
+<p>The benchmarking process utilizes Google&#x27;s benchmark library. Key parameters controlled in the benchmarks include the size of the hash table and the number of distinct keys being looked up <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=540s">[9:00]</a>. A crucial technique discussed for accurate measurement is suppressing compiler optimizations on loop indices during the benchmark execution, as compilers are adept at optimizing loops in ways that invalidate performance measurements <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=634s">[10:34]</a>.</p>
+<p>For measuring latency—the time from starting an operation to receiving a result—a specific trick is employed. Instead of incrementing the loop index `I`, the value added to it is dynamically derived from the result of the hash table lookup itself. This forces the CPU to execute the full lookup and examine the resulting value before proceeding, preventing speculative execution from masking true latency <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=822s">[13:42]</a>.</p>
+<p>Another meaningful test for insertion speed is cycle detection, analogous to depth-first search in graph algorithms. The benchmark inserts a sequence of keys until it attempts to insert one that already exists (a collision), thereby testing the failure path of the hash table&#x27;s insertion logic <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=900s">[15:00]</a>.</p>
+<p>When benchmarking the entire compiler, the granularity shifts from individual keys to source files. Source code is generated on the fly using specialized generators whose API shapes (number of methods, fields, etc.) can be controlled via parameters like class and type use configurations <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=2040s">[34:00]</a>. The generator supports deterministic sampling based on histograms derived from real-world distributions, rather than uniform random selection, to ensure source code represents reality <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=2700s">[45:00]</a>.</p>
+<p>The compiler benchmark measures throughput metrics such as bytes per second, lines per second, and tokens per second. Instead of timing the start and end of a phase in isolation, the measurement captures the total time taken to reach the end of that specific phase (e.g., after lexing) <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=2140s">[35:40]</a>.</p>
+<p>Finally, optimizations discussed include table-based dispatch for the lexer. This technique builds a function pointer table indexed by the first byte read from the source file; instead of using traditional switch statements or gotos, it branches directly to the appropriate token handling routine based on this index, which is noted as being significantly faster than compiler-generated alternatives <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=3600s">[1:00:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>The lexer&#x27;s identifier hash table was identified as a major performance bottleneck in the Carbon compiler during initial profiling.</li>
+<li>Custom wrapper APIs must be created to benchmark specific, relevant operations (like lookup hit vs. miss) rather than general API performance.</li>
+<li>Benchmarks should use techniques like suppressing loop optimizations on indices to prevent the compiler from optimizing away the measurement target <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=634s">[10:34]</a>.</li>
+<li>To measure true latency in tight loops, the next iteration&#x27;s input must be dependent on the result of the current operation (e.g., using lookup results to determine the next key) <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=822s">[13:42]</a>.</li>
+<li>Cycle detection provides a meaningful way to benchmark insertion speed by forcing the hash table into its collision/failure path <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=900s">[15:00]</a>.</li>
+<li>When benchmarking compilers, throughput metrics like lines per second are often more relevant than microsecond latency measurements for large workloads.</li>
+<li>Source code generation must use deterministic sampling based on histograms derived from real-world distributions to ensure benchmark validity across runs <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=2700s">[45:00]</a>.</li>
+<li>Table-based dispatch is a highly effective optimization technique in the lexer, replacing switch statements with direct function pointer lookups indexed by input bytes <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=3600s">[1:00:00]</a>.</li>
+<li>It is crucial to invest significant effort into engineering high-quality benchmarks, as they are necessary to discover and validate performance optimizations.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Hash Table Benchmarking:</strong></p>
+<ul>
+<li>Use Google&#x27;s benchmark library for implementation.</li>
+<li>Define wrapper APIs for `insert` and `lookup`. The lookup must access the stored value (e.g., check if a string is non-empty).</li>
+<li>Control test dimensionality by varying hash table size and number of distinct keys looked up.</li>
+<li>For latency measurement, dynamically derive the next loop index from the result of the current operation to prevent speculative execution from masking true latency.</li>
+</ul>
+<p><strong>Compiler Benchmarking:</strong></p>
+<ul>
+<li>Benchmark granularity should be set at the source file level rather than the key level for compiler phases.</li>
+<li>Source code generation must control API shape (e.g., number of methods/fields per class) and use weighted sampling based on histograms to mimic real-world distributions, avoiding uniform random selection <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=2700s">[45:00]</a>.</li>
+<li>When measuring compilation phases, measure the total time taken to reach the end of a phase; do not attempt to start and stop timers mid-phase as this adds noise.</li>
+</ul>
+<p><strong>Optimization Techniques:</strong></p>
+<ul>
+<li>Table-based dispatch involves creating an array of function pointers indexed by input bytes (e.g., the first byte of a symbol) to achieve faster routing than switch/goto statements <a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=3600s">[1:00:00]</a>.</li>
+<li>The speaker suggests that for hash tables, specializing the implementation rather than trying to create a general-purpose abstraction is often more effective.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=300s">[5:00]</a> - Introduction to custom wrapper APIs and defining benchmark operations.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=634s">[10:34]</a> - Techniques for suppressing compiler optimizations on loop indices during benchmarking.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=822s">[13:42]</a> - Detailed explanation of the latency measurement trick using lookup results to drive subsequent iterations.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=900s">[15:00]</a> - Cycle detection as a meaningful way to benchmark hash table insertion speed.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=2040s">[34:00]</a> - Overview of source code generation and controlling API shapes for compiler benchmarks.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=hN6KcAKfTN0&amp;t=3600s">[1:00:00]</a> - Demonstration and explanation of the table-based dispatch optimization in the lexer.</li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The misconception that Big O notation is the most important factor in algorithm performance.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=4tM8Jc4pH1s">Watch video</a></nav>
+  <h1>The misconception that Big O notation is the most important factor in algorithm performance.</h1>
+  <div class="meta">NDC Conferences · 2026-07-23T10:00:25+00:00 · The Biggest Misconception of Computer Science - Alex Dathskovsky - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video addresses a fundamental misconception in computer science education: the belief that Big O notation is the sole determinant of an algorithm&#x27;s performance. The speaker argues that treating every operation as having a uniform cost overlooks critical real-world factors dictated by underlying hardware architecture, such as CPU design and memory hierarchy. While theoretical analysis provides complexity classes (like O(n^2) or O(log n)), actual execution speed is heavily influenced by how an algorithm interacts with the physical constraints of modern processors.</p>
+<p>The central theme is that algorithms do not run in isolation; they execute on CPUs, which have specific characteristics regarding instruction sets, memory access patterns, and caching mechanisms. An algorithm with a theoretically worse Big O complexity can outperform a seemingly superior one if it is better optimized for the actual hardware being used. The talk aims to bridge the gap between abstract theoretical computer science and practical systems engineering performance.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by setting up a scenario where a developer replaces an O(n^2) function with an O(n log n) solution, only to find that the original quadratic code runs faster in practice because it was better suited for the hardware at hand <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=91s">[1:31]</a>. This illustrates the core argument: Big O notation assumes algorithms are isolated beasts without interference from the execution environment.</p>
+<p>The speaker explains how complexity is calculated using Big O rules—where each operation has a cost of one, leading to linear (O(n)), logarithmic (log n), or quadratic (O(n^2)) classifications <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=307s">[5:07]</a>. However, this model fails when comparing functions with different operational costs. For instance, a function running in constant time might be slower than a linear function if the constant-time operation involves heavy memory access <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=390s">[6:30]</a>.</p>
+<p>The discussion moves to data structures, noting that while Binary Search Trees offer logarithmic average complexity, they can degrade to O(n) if unbalanced <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=462s">[7:42]</a>. A simple problem of removing elements from one vector based on another is shown. The naive solution is O(N*M), but using a hash table (unordered set) brings it down to linear time, O(M+N) <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=513s">[8:33]</a>.</p>
+<p>The complexity analysis for Dijkstra&#x27;s algorithm is detailed, showing contributions from initialization (O(V)), heap extraction (V log V), edge relaxation (E), and key decrease (E log V) <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=722s">[12:02]</a>. This theoretical approach often leads to overly complex solutions that ignore practical realities.</p>
+<p>The concept of amortized time is introduced using the vector&#x27;s push operation. While a single reallocation might be expensive (copying all existing data), by employing potential functions, we can argue that the average cost per push remains constant <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=812s">[13:32]</a>. However, this theoretical constancy does not negate runtime costs during actual execution.</p>
+<p>The talk then covers complexity classes derived from Turing machines, introducing P (polynomial time) and NP (non-deterministic polynomial time). It explains that while problems like Sudoku are easy to verify in polynomial time, proving they are NP-hard requires complex reductions, such as reducing Sudoku to 3-SAT <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1138s">[18:58]</a>.</p>
+<p>The focus shifts heavily to hardware. Modern CPUs evolved from simple machines with control and arithmetic units into pipelined architectures that allow multiple instructions to be processed concurrently <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1382s">[23:02]</a>. To overcome stalls caused by memory access latency, out-of-order execution was invented, allowing the CPU to reorder independent calculations <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1499s">[24:59]</a>.</p>
+<p>Further hardware optimizations include recognizing different instruction costs; for example, integer multiplication is significantly faster than division <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1566s">[26:06]</a>. Furthermore, branch prediction attempts to guess the outcome of conditional jumps to keep the pipeline full. SIMD (Single Instruction, Multiple Data), such as AVX, allows a single instruction to operate on multiple data points simultaneously using vector units <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1812s">[30:12]</a>.</p>
+<p>Cache friendliness is highlighted as crucial for performance. Caches use policies like LRU (Least Recently Used) to manage limited space. Algorithms that access memory linearly and fit within cache lines perform vastly better than non-linear accesses, even if the latter has a theoretically lower Big O complexity <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=2042s">[34:02]</a>. Finally, parallelization is discussed; while multi-threading can offer speedup on modern multi-core CPUs, excessive threading leads to overhead from context switching and cache contention, causing performance degradation (the valley) <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=2111s">[35:11]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Big O notation provides a theoretical upper bound but fails to capture real-world execution time because it ignores hardware constraints.</li>
+<li>Modern CPU performance relies heavily on architectural features like instruction pipelining, out-of-order execution, and specialized units (ALUs/FPUs).</li>
+<li>Memory access patterns are critical; algorithms must be designed to be cache-friendly to keep data in fast L1/L2 caches rather than slow main memory.</li>
+<li>Techniques like SIMD vectorization allow modern CPUs to perform multiple operations in a single instruction cycle, significantly boosting throughput for suitable workloads.</li>
+<li>Branchless computing is preferred over traditional branching when targeting vectorized units or GPUs because branches cause pipeline stalls and flushing.</li>
+<li>Amortized analysis provides a mathematical framework to treat expensive occasional operations (like vector reallocation) as having an average constant cost, but this does not guarantee runtime speedup in practice.</li>
+<li>Parallel execution benefits diminish rapidly beyond a certain point due to overhead from context switching and cache contention across multiple cores.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>CPU Architecture:</strong> Modern CPUs utilize pipelines (e.g., four stages initially) and out-of-order execution to maximize instruction throughput, meaning the code executed by the CPU may not match the source code order <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1448s">[24:08]</a>.</li>
+<li><strong>Instruction Efficiency:</strong> Micro-optimizations involve replacing expensive operations with cheaper ones; for example, dividing by a power of two is equivalent to a faster bitwise shift operation <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1639s">[27:19]</a>.</li>
+<li><strong>SIMD Implementation:</strong> While C++ standards are evolving to simplify SIMD usage, developers must account for the overhead involved in copying data into and out of SIMD vectors before realizing performance gains <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1853s">[30:53]</a>.</li>
+<li><strong>Cache Optimization:</strong> Algorithms should be structured to exhibit linear memory access patterns. When using structures like hash tables or unordered maps, non-linear data placement can cause CPU to load unnecessary &quot;garbage&quot; bytes into the cache line, leading to premature eviction of useful data <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=2461s">[41:01]</a>.</li>
+<li><strong>Parallelism Tradeoffs:</strong> For large datasets (e.g., 10 million members), single-threaded execution optimized with SIMD might outperform parallel implementations due to avoiding context switching overhead and maintaining better cache locality <a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=2243s">[37:23]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=100s">[1:40]</a> - Initial story illustrating the gap between theoretical complexity and practical performance.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=307s">[5:07]</a> - Explanation of basic Big O rules (linear, quadratic, etc.).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=390s">[6:30]</a> - Comparison of constant time vs. linear time operations considering memory access cost.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=722s">[12:02]</a> - Detailed breakdown of Dijkstra&#x27;s algorithm complexity components.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=812s">[13:32]</a> - Explanation and mathematical derivation of amortized analysis using potential functions (vector push).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1499s">[24:59]</a> - Discussion on out-of-order execution in modern CPUs.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1812s">[30:12]</a> - Demonstration of SIMD vectorization capabilities (AVX).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=1930s">[32:10]</a> - Explanation and demonstration of branchless computing using ternary operators/select instructions.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=2042s">[34:02]</a> - Visual explanation of cache behavior, including LRU eviction policies.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=2111s">[35:11]</a> - Graph showing performance scaling with threads versus cores, highlighting the &quot;valley&quot; caused by cache misses.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=4tM8Jc4pH1s&amp;t=2368s">[39:28]</a> - Histogram example demonstrating how vectorization improves cache friendliness compared to standard hash table implementations.</li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This video demonstrates how IT administrators can manage ChatGPT work at scale using new admin APIs.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=t8Ej9aeW388">Watch video</a></nav>
+  <h1>This video demonstrates how IT administrators can manage ChatGPT work at scale using new admin APIs.</h1>
+  <div class="meta">OpenAI · 2026-07-23T20:50:48+00:00 · How IT Admins can manage ChatGPT Work at scale | OpenAI</div>
+  <h2>What This Video Is About</h2>
+<p>This video demonstrates how new administrative APIs from OpenAI enable IT administrators to manage the use of ChatGPT across an organization at a large scale. As artificial intelligence becomes integrated into daily professional workflows, the role of the IT administrator is evolving to become more strategic, focusing on managing access, monitoring expenditure, and measuring the actual value derived from these tools.</p>
+<p>The core purpose of this demonstration is to showcase how these APIs allow automated agents to perform complex oversight tasks that were previously difficult or impossible to manage manually across a large user base. It covers workflows for tracking adoption, identifying usage hotspots, analyzing spending patterns relative to organizational averages, and proactively managing costs through recommended limits.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The demonstration begins with the setup required to enable secure management via an agent. The presenter first creates a scoped admin key and saves it securely in Keychain <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=19s">[0:19]</a>. This allows the &quot;work agent&quot; to interact with the API safely. Once authenticated, the administrator can query which groups and users are most active daily <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=27s">[0:27]</a>, allowing the system to summarize adoption and pinpoint where usage is concentrated, thereby indicating teams that might need more support <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=35s">[0:35]</a>.</p>
+<p>Next, the focus shifts to financial oversight. The agent is queried to determine the average spend per user and group, specifically asking which groups are exceeding the overall workspace average <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=44s">[0:44]</a>. The system then highlights these spending outliers, facilitating early investigation before costs escalate into a problem <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=57s">[0:57]</a>. For a high-spending group, the workflow progresses to cost control recommendations. The agent is asked to recommend a monthly per-user cap and provide a projected impact analysis for that change <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=65s">[1:05]</a>. This provides the administrator with clear context for review before any action is taken. Finally, after reviewing the recommendation, the administrator confirms the change through the system, which applies the cap. The process concludes by verifying the applied cap within the admin UI to ensure administrative control remains intact over all modifications <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=73s">[1:13]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>New admin APIs provide the capability for large-scale management of ChatGPT usage across an organization.</li>
+<li>Administrators can use agents powered by these APIs to monitor which groups and users are most active daily, summarizing adoption trends.</li>
+<li>The system identifies spending outliers by comparing individual group or user spend against the overall workspace average.</li>
+<li>Automated workflows allow administrators to request recommendations for monthly per-user caps on high-spending groups.</li>
+<li>These recommendations include a projected impact analysis, giving admins context before making changes.</li>
+<li>Administrators retain ultimate control as they must confirm all proposed changes within the admin UI after reviewing them.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>Implementation involves creating and securely storing a scoped admin key <a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=19s">[0:19]</a>. The workflows demonstrated involve querying usage data (adoption summary, average spend per user/group) and requesting proactive cost management actions (recommending monthly per-user caps with projected impact). A critical decision point is that all changes suggested by the agent must be manually confirmed by the administrator in the UI to maintain oversight.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=19s">[0:19]</a> - Setup of creating and saving a scoped admin key.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=35s">[0:35]</a> - Viewing adoption summaries and usage concentration across teams.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=44s">[0:44]</a> - Querying average spend per user/group and identifying outliers.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=t8Ej9aeW388&amp;t=65s">[1:05]</a> - Requesting and reviewing the projected impact analysis for recommended caps.</li>
+</ul>
+</main>
+</body>
+</html>

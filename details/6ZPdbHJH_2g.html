@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This presentation demonstrates how to write a functional Windows kernel driver in a short timeframe.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=6ZPdbHJH_2g">Watch video</a></nav>
+  <h1>This presentation demonstrates how to write a functional Windows kernel driver in a short timeframe.</h1>
+  <div class="meta">NDC Conferences · 2026-07-23T12:00:26+00:00 · Writing a Windows Kernel Driver in an hour or two - Pavel Yosifovich - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides a rapid demonstration of how to construct a functional Windows kernel driver and a corresponding user-mode client application within a short timeframe. The central problem addressed is the inability of standard user-mode applications, even those running with administrator privileges, to inspect sensitive data, specifically listing loaded Dynamic Link Libraries (DLL) within protected processes like CSRSS (Client-Server Runtime Subsystem). Kernel drivers operate in system space with elevated privileges, granting them the necessary power to bypass these security restrictions. However, this high level of privilege comes with significant risk; improper implementation can lead to a Blue Screen of Death (BSOD), making careful development crucial.</p>
+<p>The goal of the demonstration is to build a driver that grants access to DLS within CSRSS processes. This is achieved by creating a device object exposed via a symbolic link, allowing user-mode applications to interact with the kernel component using standard I/O mechanisms like Device Control. The presentation covers the fundamental concepts of kernel programming, the necessary API calls for inter-process communication between user and kernel mode, and the practical steps required to bring this custom driver online and test its functionality against protected system processes.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The process begins by establishing a use case: creating an application named &quot;list DLS&quot; designed to list DLL modules in a specific process ID (PID). Initially, attempts are made using standard user-mode functions like OpenProcess on processes such as CSRSS <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=120s">[2:00]</a>. These attempts fail with error number five, which signifies &quot;Access Denied,&quot; indicating insufficient privilege for the required operations.</p>
+<p>To overcome this limitation, a kernel driver is necessary to obtain a powerful handle to the target process. The communication between user mode and the driver relies on creating a device object within the kernel that the driver exposes <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=600s">[10:00]</a>. From the user-mode perspective, this involves calling CreateFile, which acts as an abstraction to connect to the driver&#x27;s exposed device. This connection is established by referencing a symbolic link in the `\\?\` namespace, such as `\\.\ProcessPower` <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=1200s">[20:00]</a>.</p>
+<p>The core interaction mechanism chosen for bidirectional communication is Device Control, as Read File and Write File are unidirectional <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=1200s">[20:00]</a>. The user-mode application calls DeviceControl, passing an input buffer containing the PID and expecting a handle to be returned in the output buffer. This requires defining a specific control code, such as `IOCTL_OPEN_PROCESS` <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=1500s">[25:00]</a>.</p>
+<p>On the kernel side, the driver&#x27;s entry point is the Driver Entry function, which initializes the driver <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=900s">[15:00]</a>. The driver must then create a device object using ICreateDevice and subsequently create a symbolic link pointing to that device object in the `\\?\` namespace using IOCreateSymbolicLink <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=2100s">[35:00]</a>. Furthermore, the driver must register support for specific operations by filling out an array of function pointers (dispatch routines), specifically supporting Create, Close, and Device Control <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=900s">[15:00]</a>.</p>
+<p>The implementation of the Create and Close handlers involves completing the I/O Request Packet (IRP) with a success status to allow handle creation <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=1800s">[30:00]</a>. The critical functionality resides in the OnDeviceControl dispatch routine. Within this function, the driver extracts the control code from the IRP&#x27;s IO Stack Location <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=2700s">[45:00]</a>. If the code matches `IOCTL_OPEN_PROCESS`, the kernel-mode equivalent of OpenProcess, ZwOpenProcess, is called using elevated privileges to obtain a powerful handle to the specified PID <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=3000s">[50:00]</a>. This handle is then copied back into the user-mode buffer for the client application to use in its subsequent DLS listing operation.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Kernel drivers operate in system space with full kernel privileges, making them necessary for accessing protected processes like CSRSS that are inaccessible from user mode <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=120s">[2:00]</a>.</li>
+<li>Communication between user mode and a driver is facilitated by creating a device object within the kernel and exposing it via a symbolic link (e.g., `\\.\ProcessPower`) in the `\\?\` namespace [10:00, 20:00].</li>
+<li>Device Control is the preferred method for bidirectional communication between user mode and a driver, as Read File and Write File are unidirectional <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=1200s">[20:00]</a>.</li>
+<li>The kernel API is strictly designed and uniform, contrasting with the often messy nature of the Windows User Mode API; developers should use NTDK.h for kernel declarations <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=900s">[15:00]</a>.</li>
+<li>A driver must implement a Driver Entry function to initialize itself and register supported operations (e.g., Create, Device Control) in its dispatch routine array <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=900s">[15:00]</a>.</li>
+<li>To enable user-mode access, the driver must manually create a device object using ICreateDevice and then create a matching symbolic link using IOCreateSymbolicLink [35:00, 40:00].</li>
+<li>The OnDeviceControl routine is where the core logic resides; it inspects the control code from the IRP&#x27;s IO Stack Location to determine the requested operation <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=2700s">[45:00]</a>.</li>
+<li>Kernel-mode functions like ZwOpenProcess can be used within the driver to obtain powerful handles to processes, bypassing user-mode security restrictions <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=3000s">[50:00]</a>.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Development Environment:</strong> To begin development, install Windows 10/11 SDK and WDK (Windows Driver Kit). For modern projects, use Visual Studio with appropriate templates <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=1200s">[20:00]</a>.</li>
+<li><strong>Kernel API Header:</strong> The primary header file for kernel programming is NTDK.h, which serves a function similar to windows.h in user mode <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=900s">[15:00]</a>.</li>
+<li><strong>String Handling:</strong> Kernel APIs utilize counted strings (UTF-16), consisting of a pointer to the wide string and an explicit length in bytes, rather than relying solely on null termination <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=900s">[15:00]</a>. Functions like RtlInitUnicodeString are used for initialization <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=2100s">[35:00]</a>.</li>
+<li><strong>Driver Structure:</strong> A driver requires an unload routine for cleanup, even if it is initially empty. The Driver Entry function must return a success status to indicate proper initialization <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=900s">[15:00]</a>.</li>
+<li><strong>Device Exposure:</strong> For user-mode interaction, the device object created by the driver must be exposed via a symbolic link in the `\\?\` namespace (e.g., `\\.\ProcessPower`). The name used for this link *must* match what is referenced in the user-mode application&#x27;s CreateFile call <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=2400s">[40:00]</a>.</li>
+<li><strong>Installation:</strong> For simple, software-only drivers, installation can be performed manually via registry manipulation (setting service type and binary path) rather than requiring an INF file <a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=3300s">[55:00]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=120s">[2:00]</a> - Initial problem setup and the need for kernel privileges.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=600s">[10:00]</a> - Explanation of user-mode to kernel mode communication via device objects.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=1200s">[20:00]</a> - Detailed explanation of using CreateFile with symbolic links (`\\.\`) to connect to a driver.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=2100s">[35:00]</a> - Walkthrough of ICreateDevice and IOCreateSymbolicLink within the driver entry point.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=2700s">[45:00]</a> - Deep dive into accessing request details via the IRP&#x27;s IO Stack Location in OnDeviceControl.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=3000s">[50:00]</a> - Demonstration of using ZwOpenProcess inside the kernel driver to gain elevated process handles.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=6ZPdbHJH_2g&amp;t=3300s">[55:00]</a> - Final testing, installation steps (using SC command), and successful demonstration of listing DLS in CSRSS.</li>
+</ul>
+</main>
+</body>
+</html>
