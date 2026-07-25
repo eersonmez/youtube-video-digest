@@ -1,5 +1,7 @@
 # YouTube Video Digest Archive
 
+- 2026-07-24T19:47:16+00:00 - OpenAI: [Build Hour: Valuemaxxing with GPT-5.6](https://www.youtube.com/watch?v=jyuyY86GJnA)
+- 2026-07-24T09:12:21+00:00 - OpenAI: [Building at the pace of AI innovation | Grant Lee, Gamma](https://www.youtube.com/watch?v=PB7DBemxl3E)
 - 2026-07-23T20:50:48+00:00 - OpenAI: [How IT Admins can manage ChatGPT Work at scale | OpenAI](https://www.youtube.com/watch?v=t8Ej9aeW388)
 - 2026-07-23T20:23:01+00:00 - OpenAI: [How Enterprise Teams Use ChatGPT Work | Zapier, Shopify & Virgin Atlantic](https://www.youtube.com/watch?v=zq88iLsSfMA)
 - 2026-07-23T19:40:16+00:00 - OpenAI: [Building with ChatGPT Voice | OpenAI](https://www.youtube.com/watch?v=E0ZMOschrTU)
@@ -58,5 +60,3 @@
 - 2026-07-11T00:44:29+00:00 - OpenAI: [Meet the family running a cereal business from their dining room with GPT-5.6](https://www.youtube.com/watch?v=q571PxpsdoA)
 - 2026-07-10T21:11:41+00:00 - OpenAI: [Stampli scales product marketing with ChatGPT Work](https://www.youtube.com/watch?v=yATno77Uo6A)
 - 2026-07-10T16:34:32+00:00 - Smart Home Solver: [30+ Smart Home Questions Answered! (rapid fire)](https://www.youtube.com/watch?v=t8QuoJ_yx6k)
-- 2026-07-10T16:34:06+00:00 - Dwarkesh Patel: [A deep but accessible introduction to general relativity – Adam Brown](https://www.youtube.com/watch?v=QbdbAhaJoCQ)
-- 2026-07-10T16:02:41+00:00 - OpenAI: [RingCentral Scales Customer Programs with ChatGPT Work](https://www.youtube.com/watch?v=nep5byxmr_M)
