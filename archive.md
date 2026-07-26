@@ -1,5 +1,6 @@
 # YouTube Video Digest Archive
 
+- 2026-07-26T00:55:58+00:00 - Scott Hanselman: [Stack Overflow for the Agent Era - with VP of Product Alex Lato](https://www.youtube.com/watch?v=sMCd2oobnHs)
 - 2026-07-24T19:47:16+00:00 - OpenAI: [Build Hour: Valuemaxxing with GPT-5.6](https://www.youtube.com/watch?v=jyuyY86GJnA)
 - 2026-07-24T09:12:21+00:00 - OpenAI: [Building at the pace of AI innovation | Grant Lee, Gamma](https://www.youtube.com/watch?v=PB7DBemxl3E)
 - 2026-07-23T20:50:48+00:00 - OpenAI: [How IT Admins can manage ChatGPT Work at scale | OpenAI](https://www.youtube.com/watch?v=t8Ej9aeW388)
@@ -59,4 +60,3 @@
 - 2026-07-12T16:47:24+00:00 - Smart Home Solver: [FINALLY! Internet to my Detached Garage (no trenching)](https://www.youtube.com/watch?v=V7n8ifR81IU)
 - 2026-07-11T00:44:29+00:00 - OpenAI: [Meet the family running a cereal business from their dining room with GPT-5.6](https://www.youtube.com/watch?v=q571PxpsdoA)
 - 2026-07-10T21:11:41+00:00 - OpenAI: [Stampli scales product marketing with ChatGPT Work](https://www.youtube.com/watch?v=yATno77Uo6A)
-- 2026-07-10T16:34:32+00:00 - Smart Home Solver: [30+ Smart Home Questions Answered! (rapid fire)](https://www.youtube.com/watch?v=t8QuoJ_yx6k)
