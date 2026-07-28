@@ -1,5 +1,12 @@
 # YouTube Video Digest Archive
 
+- 2026-07-27T22:45:28+00:00 - Leonid Kim MD: [6 Health Investments Actually Worth Your Money (Doctor Explains)](https://www.youtube.com/watch?v=eNgjsvekdf4)
+- 2026-07-27T12:37:15+00:00 - OpenAI: [Navigating AI Transformation in the Legal Industry | Jonathan Williams, Head of France, Legora](https://www.youtube.com/watch?v=oXu6JGxW_YM)
+- 2026-07-27T12:00:06+00:00 - Andrew Huberman: [Your Top Health Questions Answered](https://www.youtube.com/watch?v=ssP31IenzYA)
+- 2026-07-27T09:58:27+00:00 - NDC Conferences: [Most Expensive Design Mistakes (Ever) and how to avoid them - Clarissa Rodrigues](https://www.youtube.com/watch?v=ImXMNTPXu8w)
+- 2026-07-27T08:58:47+00:00 - NDC Conferences: [How to Lie with AI: Understanding Bias, Ethics, and the Hidden Risks in ML - Clarissa Rodrigues](https://www.youtube.com/watch?v=ooaSTz6zL4w)
+- 2026-07-27T08:03:30+00:00 - NDC Conferences: [Optimizing your HttpClient usage - Nico Vermeir - NDC Copenhagen 2026](https://www.youtube.com/watch?v=AcmtKr4ly4E)
+- 2026-07-27T05:35:00+00:00 - Scott Hanselman: [Stack Overflow for the Agent Era - with VP of Product Alex Lato](https://www.youtube.com/watch?v=Adz24tjuC-0)
 - 2026-07-26T00:55:58+00:00 - Scott Hanselman: [Stack Overflow for the Agent Era - with VP of Product Alex Lato](https://www.youtube.com/watch?v=sMCd2oobnHs)
 - 2026-07-24T19:47:16+00:00 - OpenAI: [Build Hour: Valuemaxxing with GPT-5.6](https://www.youtube.com/watch?v=jyuyY86GJnA)
 - 2026-07-24T09:12:21+00:00 - OpenAI: [Building at the pace of AI innovation | Grant Lee, Gamma](https://www.youtube.com/watch?v=PB7DBemxl3E)
@@ -53,10 +60,3 @@
 - 2026-07-14T23:30:19+00:00 - OpenAI: [The new Codex for developers](https://www.youtube.com/watch?v=eiQgljOrkWU)
 - 2026-07-14T22:35:03+00:00 - OpenAI: [Background Robustness with GPT-Live](https://www.youtube.com/watch?v=matzTxfrhJU)
 - 2026-07-14T20:22:11+00:00 - OpenAI: [Improved Intelligence with GPT-Live](https://www.youtube.com/watch?v=avpZWh6sm9M)
-- 2026-07-14T19:19:36+00:00 - OpenAI: [Build and publish web apps directly in ChatGPT](https://www.youtube.com/watch?v=8zH_O74hZBw)
-- 2026-07-13T23:07:18+00:00 - OpenAI: [Learning with AI at Any Stage of Life | Fast Campus x OpenAI](https://www.youtube.com/watch?v=-J5KoSMfPLk)
-- 2026-07-13T17:00:06+00:00 - Alex Kantrowitz: [OpenAI Finally Ships Its Superapp, Meta’s AI Price War, ChatGPT Cheating At Brown](https://www.youtube.com/watch?v=qA17304wOiw)
-- 2026-07-13T12:00:32+00:00 - Andrew Huberman: [How to Improve Your Memory & Cognitive Function at Any Age | Dr. Alan Castel](https://www.youtube.com/watch?v=EIhilBpn8Ow)
-- 2026-07-12T16:47:24+00:00 - Smart Home Solver: [FINALLY! Internet to my Detached Garage (no trenching)](https://www.youtube.com/watch?v=V7n8ifR81IU)
-- 2026-07-11T00:44:29+00:00 - OpenAI: [Meet the family running a cereal business from their dining room with GPT-5.6](https://www.youtube.com/watch?v=q571PxpsdoA)
-- 2026-07-10T21:11:41+00:00 - OpenAI: [Stampli scales product marketing with ChatGPT Work](https://www.youtube.com/watch?v=yATno77Uo6A)
