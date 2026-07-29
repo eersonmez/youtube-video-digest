@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The talk explains how behavioral economics can improve secure software development by addressing developer behaviors that produce insecure code.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=F0TTj2zeBM0">Watch video</a></nav>
+  <h1>The talk explains how behavioral economics can improve secure software development by addressing developer behaviors that produce insecure code.</h1>
+  <div class="meta">NDC Conferences · 2026-07-28T12:00:03+00:00 · Threat Modeling Developer Behaviour: The Psychology of Bad Code - Tanya Janca</div>
+  <h2>What This Video Is About</h2>
+<p>Tanya Janca argues that insecure software is often the result of predictable human behavior rather than a simple lack of secure-coding knowledge. Developers may intend to write secure code, but deadlines, poor tooling, legacy systems, unclear ownership, limited training, and organizational incentives can make insecure shortcuts easier than secure decisions.</p>
+<p>The talk applies behavioral economics to software security. Instead of blaming developers or trying to manipulate them, security teams can change the environment around development so that secure choices become the easiest and most visible choices. Examples include secure defaults, known-good templates, security activities throughout the software development life cycle, automated checks, social learning, reminders, and recognition for the maintenance work that teams often overlook.</p>
+<p>Janca’s central challenge is to stop measuring security education by attendance or training completion and instead measure whether developer behavior changes. The goal is more secure fixes, fewer repeated mistakes, more meaningful reviews, better testing, and earlier collaboration with security.</p>
+<h2>Detailed Walkthrough</h2>
+<h3>The premise: threat-model the humans [0:00]</h3>
+<p>Janca describes the talk as an attempt to understand why developers make decisions that commonly result in insecure code. The idea grew from her reading about behavioral economics and applying its interventions in an AppStack program. She then selected ten developer behaviors that she considered common, often insecure, and familiar from her own experience.</p>
+<p>She distinguishes behavioral interventions from social engineering. In her framing, an intervention helps people make a choice that is better for them by changing how the choice is presented or supported. It should not pressure, deceive, intimidate, or trick them. Her example is a doctor trying to convince a patient not to smoke: the doctor is attempting to show why one choice is better, not manipulate the patient into it.</p>
+<p>The talk therefore treats developers as people operating inside systems. “Threat modeling the humans” means asking what developers actually do under pressure, what incentives they face, what information is available at the moment of decision, and what the surrounding tools make easy or difficult.</p>
+<h3>Why secure-coding knowledge is not enough [5:00]</h3>
+<p>Janca criticizes the typical expectation that developers should deliver software extremely quickly, learn large amounts of new material independently, work with inadequate tools, and then be treated as incompetent whenever they make mistakes. She says this combination does not set people up for success.</p>
+<p>She does not believe application security is failing primarily because developers do not know what secure code looks like. The obstacles she names include legacy applications, large backlogs of unfixed work, rapid technological change, very little training, and security tools that report problems late in the development life cycle. Organizations may also send contradictory signals: they claim security is important while tying rewards to shipping a feature by a particular deadline.</p>
+<p>Behavioral economics helps explain why people knowingly make choices that conflict with their long-term interests. Janca uses familiar examples such as eating snacks placed at eye level, failing to save enough for retirement, and responding negatively to nagging while responding better to a nudge. In software development, the equivalent question is why a developer skips documentation, testing, review, or security analysis when they know those activities are useful.</p>
+<p>She distinguishes a bias from a heuristic. A bias is described as a preconceived judgment or assumption; a heuristic is an automatic mental habit. Her example is moving to a new neighborhood and accidentally driving or walking to an old apartment because the brain follows the previous routine automatically.</p>
+<h3>Why developer behavior becomes an organizational security problem [10:00]</h3>
+<p>Janca argues that technical controls alone cannot scale indefinitely against human behavior. Developers may comply with security controls because policy requires it, but they can often route around controls when the surrounding process makes that attractive. She characterizes those controls as reactive, while changing behavior is proactive.</p>
+<p>A shortcut also rarely remains an isolated individual problem. If a team lead skips a security activity, the team may adopt the same practice. A behavior becomes “the way we do it here,” then spreads across teams and the organization. Small shortcuts can compound into larger weaknesses, undermine investments in security tooling, and normalize bypassing controls.</p>
+<p>This is why the talk focuses on changing environments and processes rather than simply repeating that developers should be more careful.</p>
+<h3>What a behavioral nudge means [10:00-15:00]</h3>
+<p>Janca defines a nudge as a subtle change in how a choice is presented that predictably influences behavior on average without removing options or significantly changing incentives. The purpose is to make the desired decision easier, not to forbid alternatives or manipulate people.</p>
+<p>Her food example illustrates the mechanism: fruit placed visibly on a counter is easier to choose than a chocolate bar hidden in a high cupboard. The chocolate remains available, but selecting it requires more deliberate effort.</p>
+<p>She describes three broad categories of intervention:</p>
+<ul>
+<li>Technical nudges, such as secure defaults, templates, and development tools.</li>
+<li>Positive reinforcement, such as praise or rewards for fixing security issues and contributing useful maintenance work.</li>
+<li>Deliberate cultural changes, such as regular security discussions, peer learning, and team expectations around testing and review.</li>
+</ul>
+<p>She also uses automatic enrollment examples, including retirement savings and organ donation, to show how opt-out defaults can produce different results from opt-in systems. In software, a secure default removes the need for developers to remember every security decision or summon extra willpower at the end of a busy sprint.</p>
+<h3>First program-level intervention: secure defaults [15:00]</h3>
+<p>Janca’s first concrete recommendation is to set secure defaults instead of relying on secure intentions. Intentions require memory, time, attention, and willpower. Defaults happen automatically, and choosing an insecure alternative requires someone to actively undo the safer setup.</p>
+<p>For database access, she contrasts parameterized queries with concatenating user input into SQL and sending the resulting string to a database. A suitable object-relational mapping framework, configured so that normal database access uses parameterized queries, can make the safer pattern the standard path. The developer could still deliberately bypass the framework if there is a legitimate reason, but insecure inline SQL would no longer be the effortless default.</p>
+<p>The same principle applies to reusable secure coding templates, libraries, and shared components. If a team repeatedly needs authentication, session management, input validation, or other security-sensitive behavior, it should prefer known-good organizational patterns over asking each developer to recreate them from memory.</p>
+<h3>Second intervention: security throughout the SDLC [20:00]</h3>
+<p>The talk recommends adding a security activity to every phase of the software development life cycle rather than waiting until the end. Janca names the usual phases as requirements gathering, design, coding, testing, and release.</p>
+<p>At requirements time, teams should identify security requirements alongside functional requirements. When choosing languages or frameworks, the security team should provide guidance or be available through an obvious process. During design, teams can conduct a threat model: discuss what bad things could happen and add mitigations. Janca describes this as a secure design review with less paperwork and more discussion.</p>
+<p>During implementation, IDE tooling can flag risky functions or behaviors. A pull request template can remind reviewers which security questions to consider. A pre-commit hook can scan code as it is checked in and stop developers from accidentally committing something that looks like a password, hash, or other secret.</p>
+<p>CI/CD checks can look for security issues later in the process and may block a merge. Janca acknowledges that this is later than ideal, but still better than having no check at all. She also notes that some security IDE plugins can slow development and are not yet perfect, so tool selection and placement matter.</p>
+<p>She recommends making security debt visible through a dashboard that developers can see. Security debt includes known medium- and high-severity vulnerabilities, as well as work that would make the system more secure but is not scheduled. One example is replacing custom authentication, authorization, and session-management code in older applications with a managed identity service, which she refers to using examples rendered in the transcript as “octa” and “incognito.”</p>
+<h3>Third intervention: ongoing learning and cultural change [25:00]</h3>
+<p>Janca rejects a single long security-training session each year as an adequate way to change behavior. She recommends shorter, more frequent learning opportunities, such as a monthly community of practice in which developers teach one another.</p>
+<p>The learning should focus on patterns developers can recognize in their own work, not merely memorizing a vulnerability list or the functions they should avoid. Reviewing good and bad code can be more practical than memorizing vulnerability names. Training should explain why the safer approach makes code easier, stronger, or more robust.</p>
+<p>She suggests social formats such as security champions programs, pair programming, community events, cheat sheets, and recurring reminders in team meetings. Challenges, leaderboards, and other forms of gamification may work for some teams, although she says she is personally not enthusiastic about gamification.</p>
+<p>Security information should appear where decisions are made. If developers must search through an unfamiliar wiki to locate security guidance, they are less likely to use it. A pull request checklist, IDE hint, secure template, or local example can place the guidance directly in the workflow.</p>
+<p>Janca prefers positive reinforcement over loss framing. Recognition could include praise, a raise for fixing many security bugs, badges, or visible acknowledgment of documentation and maintenance work. In this framework, positive reinforcement is separate from a technical nudge: a secure default changes the path of least resistance, while a reward changes how desired work is recognized.</p>
+<p>She also recommends measuring outcomes rather than participation. Useful measures include fixing more vulnerabilities, seeing fewer repeated mistakes, observing better code, and seeing developers contact the security team more often. Training attendance, time spent in a course, or spending the training budget are not evidence that behavior changed.</p>
+<h3>Vibe coding and automation bias [30:00]</h3>
+<p>The first detailed behavior is what Janca calls “vibe coding.” Her definition is not simply using an AI assistant. She is concerned about cases where the AI writes almost all of the code and the developer reviews little or none of it. That is different from using AI to accelerate development and then rewriting, understanding, and taking ownership of every part of the result.</p>
+<p>She associates this behavior with automation bias and cognitive offloading. Automation bias reflects the tendency to trust an automated output, while cognitive offloading is the broader tendency to delegate work to technology so that humans can focus on other tasks. Janca does not characterize this as mere laziness; she notes that using technology to remove repetitive work is a normal goal for technologists.</p>
+<p>AI-generated code is particularly easy to trust because it often looks clean, professional, plausible, and syntactically correct. It may compile quickly and appear confident even when its security assumptions are wrong. The visual polish of the output can make insufficient review feel justified.</p>
+<p>Her proposed countermeasures include using a secure-coding prompt consistently when asking an AI assistant to generate code. She mentions free prompts at securemyvibe.ca. She also suggests a retrieval-augmented generation setup containing the organization’s known-good examples for authentication, session management, input validation, and similar patterns. The idea is for the AI system to consult local, approved examples before relying on general material found on the internet.</p>
+<p>Finally, developers still need to manually review AI-generated code. A prompt or retrieval system can improve the starting point, but it does not eliminate the need for a human to understand and assess the result.</p>
+<h3>Tight deadlines and insecure shortcuts [35:00]</h3>
+<p>The next behavior is rushing because of a deadline. Janca associates this with present bias, also called hyperbolic discounting: immediate rewards such as shipping on time, earning money, or avoiding job consequences feel more concrete than a possible security incident in the future.</p>
+<p>People may also assume that the incident will happen to another organization rather than their own. The future consequence is therefore discounted while the immediate feature deadline receives attention.</p>
+<p>Janca mentions time-based nudges and returns to secure-by-default templates as a practical response. A known-good secure coding library, reusable component, or shared library can help developers move quickly without recreating risky code under pressure. Secure defaults are therefore not only a security control; they can also be a speed strategy.</p>
+<h3>Copying code from forums or AI without context [35:00]</h3>
+<p>Copying and pasting from online forums is linked to authority bias and the availability heuristic. A highly visible or highly voted answer, especially on Stack Overflow, can look authoritative. A solution encountered repeatedly can feel correct simply because it is familiar and easy to find.</p>
+<p>Janca warns that a highly voted answer is not automatically safe for production. She also describes finding incorrect advice repeated across many blogs, sometimes because people copy one another. Repetition and popularity are not substitutes for understanding the context in which code was written.</p>
+<p>She recommends using linters and static-analysis tools as a second check, along with ordinary code review. She compares these tools to a spell checker: they are not the author and do not replace judgment, but they can identify obvious problems that a quick review misses.</p>
+<h3>Obsession with shiny new technology [35:00-40:00]</h3>
+<p>Novelty bias and fear of missing out can push teams toward new technology before its security implications are understood. Janca says engineers may associate status with being fluent in the newest tools and may want to demonstrate that they already know the latest technology.</p>
+<p>Security practices often lag behind the pace of technology adoption. Her proposed workflow is to add a security review to the technology-adoption process, but not necessarily ask the security team to evaluate every experiment immediately.</p>
+<p>A team can provide a sandbox separated from production, ideally air-gapped so that experiments cannot affect production systems. Developers can try new tools there, discard much of what proves unsuitable, and request security assessment for the smaller set of technologies that survive experimentation. This preserves room for innovation while creating a deliberate checkpoint before adoption.</p>
+<h3>Documentation debt and the tragedy of the commons [40:00]</h3>
+<p>Avoiding documentation is associated with effort discounting and the tragedy of the commons. Effort discounting means undervaluing work that requires effort now but produces benefits later. Documentation, refactoring, and maintenance often have no immediate feature payoff, so they are easy to defer.</p>
+<p>The tragedy-of-the-commons pattern appears when everyone benefits from a shared resource but no individual feels responsible for maintaining it. A developer may reasonably think, “This documentation will help everyone, but I receive no credit for writing it.” The work remains invisible until missing documentation causes a problem.</p>
+<p>Janca recommends making this work visible and valued. Teams can recognize documentation contributions through badges or leaderboards, include documentation debt in sprint reviews, put it on project schedules, discuss it during team meetings, and include it in performance conversations. The exact mechanism matters less than ensuring that maintenance is treated as real work rather than an invisible personal favor.</p>
+<h3>Satisficing and weak error handling [40:00]</h3>
+<p>Janca uses “satisficing” to describe settling for the first solution that is good enough rather than searching for the best solution. Code that compiles or appears to work may be accepted even when the developer knows the error handling is incomplete, repetitive, or poorly structured.</p>
+<p>She pairs satisficing with optimism bias: the belief that a bad outcome is less likely to happen to one’s own team than to someone else. A solution that worked last time feels safe enough, even though the surrounding conditions may have changed.</p>
+<p>IDE plugins, linters, static analysis, and CI checks can flag missing error handling, duplicate logic, and poor-quality code. These tools move the issue from a subjective argument about whether the code “looks fine” to a repeatable signal that deserves attention.</p>
+<p>As an illustration of maintainability problems, she recalls reviewing code from another co-op student who had rewritten the same logic several times instead of extracting a function. Her manager asked for the code to be made less terrible before it was reviewed again. The broader point is that “it works” is not the same as maintainable or secure.</p>
+<h3>Committing untested code [40:00-45:00]</h3>
+<p>The transcript then addresses committing code without testing or moving directly toward production. The reasoning Janca describes is essentially, “If it seems to work, it must be fine.” She also notes that surviving a last-minute project is luck, not proof that the process was sound.</p>
+<p>She uses an anecdote about older development practices to show how insecure habits can persist. When she learned to code in the 1990s, she was taught to store database passwords and connection strings in code for different environments so they would not be lost. She presents that as an example of outdated practice that can remain embedded in the habits of developers who have not received updated training.</p>
+<p>The concrete control she recommends is a CI gate. A merge should require evidence that the relevant unit tests and other required tests actually ran and passed. Merely running a test command is not enough if the tests fail or their results are ignored.</p>
+<p>She also recommends using postmortems to spread lessons from incidents. If one team makes a mistake, the rest of the organization can learn from it rather than repeating the same failure. The transcript does not clearly provide a separate named cognitive bias for this behavior, so the explanation is limited to the stated “it seems to work” reasoning, deadline luck, and the proposed testing and learning controls.</p>
+<h3>Overengineering and showing off [45:00]</h3>
+<p>Overengineering is connected to signaling theory and status-driven behavior. Signaling theory describes choices made partly to communicate something about oneself, while status-driven behavior involves gaining or protecting status within a team or professional community.</p>
+<p>Developers may equate complex code with intelligence or expertise. Janca contrasts this with simpler code that is easier to read but may be undervalued because it does not appear as impressive. She recalls the old idea that making software extremely difficult to understand could protect someone’s job, then says that approach did not work well.</p>
+<p>Her recommendation is to reward simplicity in pull-request discussions and retrospectives. If senior engineers cannot understand what code is doing, the code should be sent back for clarification or simplification. Cleverness is not automatically quality, and readability should be treated as an engineering benefit.</p>
+<h3>Ignoring compiler and security warnings [45:00-50:00]</h3>
+<p>Ignoring warnings is associated with normalcy bias: assuming that conditions will continue as they have in the past and discounting warnings because nothing bad has happened yet. A team may have hundreds of compiler or security warnings and continue because the application still compiles and production has not yet failed.</p>
+<p>Janca recommends elevating high-risk warnings and setting explicit expectations for recurring warnings. A team might define a tolerable number of compiler warnings, using five or ten as illustrative examples, and require developers to address warnings beyond that level. A warning that persists across multiple versions should either be explained as a false positive or fixed.</p>
+<p>She also describes making warnings concrete. For example, if a security tool reports a missing security header, she has shown real-world exploits associated with the missing protection. She cautions that using exploits to persuade colleagues may not make the security person popular, but concrete consequences can make an abstract warning more meaningful.</p>
+<h3>Fake or superficial code review [50:00]</h3>
+<p>The final behavior is reviewing code superficially or not reviewing it at all, a problem Janca highlights in connection with AI-generated code. She cites an Anthropic study that she says measured how long people reviewed code changes and found roughly 96 percent of reviews took less than one second. Her conclusion is that the supposed human-in-the-loop review is often not actually happening.</p>
+<p>She connects this to diffusion of responsibility: when several people are responsible, each person assumes someone else will catch the issue. She also describes moral licensing, where completing one good task becomes an excuse to skip another. For example, a developer may reason that writing unit tests all day means documentation or close review can be skipped.</p>
+<p>Janca recommends enforcing review accountability, but carefully. If a security incident follows code written by one person and approved by another, both roles may need to be examined. However, a postmortem that humiliates people can cause teams to avoid the security group and hide problems. Review duration can be measured as a signal; consistently sub-second reviews should prompt a conversation about what review actually occurred, not automatically be treated as proof of misconduct.</p>
+<h3>Closing reframing and resources [50:00-55:00]</h3>
+<p>Janca closes with three reframings:</p>
+<ul>
+<li>Replace reliance on secure intentions with secure defaults.</li>
+<li>Replace annual security training with regular behavioral reinforcement and cultural change.</li>
+<li>Replace training-completion metrics with evidence that behavior is changing.</li>
+</ul>
+<p>She mentions behavioral economics books, including Nudge, as background reading. She also points viewers toward her newsletter, free cheat sheets, secure-coding prompts, a short secure-coding podcast, and the presentation slides. The transcript says that QR codes and slide links are provided during the presentation.</p>
+<p>She also discusses a petition to the House of Commons for a secure-coding law covering government departments, agencies, and Crown corporations. She identifies it as petition 7115 and says it closes on May 26, urging Canadian viewers to contact their member of Parliament.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Insecure code should be treated as a behavioral and cultural problem as well as a technical one. Developers can know the right practice and still choose a shortcut when the surrounding system rewards speed or makes security difficult.</li>
+</ul>
+<ul>
+<li>Secure intentions do not scale. Secure defaults, templates, libraries, and frameworks reduce dependence on memory, time, and willpower.</li>
+</ul>
+<ul>
+<li>Security should appear in every SDLC phase: security requirements, secure technology selection, threat modeling during design, coding guidance, testing, CI/CD checks, and release decisions.</li>
+</ul>
+<ul>
+<li>A threat model should include human behavior. Ask what developers will do when deadlines, unclear ownership, poor tools, or conflicting incentives make the insecure path attractive.</li>
+</ul>
+<ul>
+<li>AI-generated code is especially risky when the developer does not review it. Vibe coding can create automation bias and cognitive offloading because the output looks clean, confident, and plausible.</li>
+</ul>
+<ul>
+<li>Organization-specific examples can improve AI-assisted development. A retrieval-augmented system containing approved authentication, session-management, and input-validation patterns gives the AI a better local reference than generic internet examples.</li>
+</ul>
+<ul>
+<li>Popular or frequently repeated code is not automatically safe. Stack Overflow votes, blog repetition, and AI confidence do not provide the context that a linter, static analysis, and meaningful review are intended to supply.</li>
+</ul>
+<ul>
+<li>Documentation, refactoring, testing, and security fixes need to be visible. Adding them to sprint reviews, schedules, performance conversations, dashboards, and recognition systems counters effort discounting and the tragedy of the commons.</li>
+</ul>
+<ul>
+<li>Simpler, readable code should be rewarded rather than dismissed as unsophisticated. Complexity used for signaling or status makes review and maintenance harder.</li>
+</ul>
+<ul>
+<li>Tests and reviews should have enforceable quality gates, but accountability must not become public blame. Postmortems should help every team learn without making developers hide problems.</li>
+</ul>
+<ul>
+<li>Security training should be shorter, more regular, social, and connected to real code and decisions. Communities of practice, security champions, pair programming, reminders, and cheat sheets are proposed mechanisms.</li>
+</ul>
+<ul>
+<li>The most useful security metrics describe changed behavior: more vulnerabilities fixed, fewer repeated mistakes, more secure code, more meaningful reviews, and more collaboration with security.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>The talk stays at the level of architecture, process, tooling, and organizational behavior. It does not provide shell commands, CI configuration files, or copy-and-paste code. Any implementation would need to choose tools, thresholds, and policies appropriate to the organization.</p>
+<p>A rollout consistent with the talk would begin with a behavioral assessment. Talk with developers and team leads, inspect where security work is skipped, and identify which of the recurring patterns is most damaging. Janca also suggests starting with improvements that help everyone even when the organization has not yet identified its worst behavior. The assessment should avoid treating developers as the problem; the purpose is to find where the environment makes insecure behavior predictable.</p>
+<p>For secure defaults, select frameworks and shared components that make safer behavior standard. A database access layer or ORM should support parameterized queries rather than making string-built SQL the normal path. Create known-good templates and libraries for recurring security-sensitive tasks. For AI-assisted coding, provide a standard secure-coding prompt and consider a retrieval-augmented setup containing approved local examples for authentication, session management, and input validation.</p>
+<p>For the SDLC, define at least one security activity for each phase. Requirements should include security requirements. Technology selection should have a security-guidance process. Design should include threat modeling or an informal secure design review. Coding should be supported by IDE guidance and pull-request review prompts. Commits can be checked for secrets such as passwords, hashes, or other credentials. CI/CD can run security analysis and block merges when agreed-upon conditions fail. Testing should be a merge requirement, with evidence that required tests ran and passed.</p>
+<p>A practical toolchain mentioned in the talk includes pre-commit hooks, linters, static-analysis tools, security IDE plugins, CI/CD security checks, pull-request templates, and security-debt dashboards. The speaker notes that IDE plugins can slow developers down and are not perfect. CI checks occur later than IDE or pre-commit feedback, but she considers them better than having no automated check. Teams must decide which findings are actionable and which should be documented as false positives rather than allowing warning noise to become normal.</p>
+<p>Security debt should be visible to developers, not only to security managers. It can include known medium- and high-severity vulnerabilities, overdue security improvements, and older custom authentication, authorization, or session-management implementations that the organization intends to replace with managed identity services. The dashboard should support prioritization rather than merely creating another list of problems.</p>
+<p>For new technology, provide a sandbox separated from production, with the strongest separation possible so experiments cannot escape into live systems. Let developers test and discard unsuitable options before asking security to assess the smaller set of technologies proposed for adoption. This creates a decision point between experimentation and production use without preventing experimentation altogether.</p>
+<p>For learning and culture, replace the one-day annual session with shorter recurring activities. A monthly community of practice can let developers teach one another. Security champions and pair programming create social reinforcement. Cheat sheets and reminders should appear where decisions happen, such as pull requests, IDEs, or team meetings. Reviewing real good and bad code is preferred to relying only on memorized vulnerability categories.</p>
+<p>Recognition should cover work that is often invisible. Teams can discuss documentation debt and security debt in sprint reviews, place maintenance work on schedules, and recognize contributions through praise, badges, leaderboards, performance discussions, or other locally appropriate mechanisms. The talk favors positive reinforcement over loss framing and warns indirectly that rewards focused only on feature delivery will continue to produce shortcuts.</p>
+<p>Several thresholds require local decisions. Teams must define which security findings block a merge, which tests are mandatory, how many recurring compiler warnings are acceptable, when a repeated warning must be resolved, and what constitutes a meaningful code review. Review duration can be a useful signal, especially when reviews are consistently under one second, but it should lead to investigation and coaching rather than automatic punishment.</p>
+<p>Postmortems should be used to distribute lessons across teams. They need to examine how the process allowed the mistake, including the writer’s assumptions, the reviewer’s actions, the available tooling, and the deadline or incentive structure. The speaker stresses that accountability must be handled carefully: humiliating people can make them avoid security staff and reduce future reporting.</p>
+<p>Finally, measure behavior rather than participation. Useful indicators from the talk include whether vulnerabilities are being fixed more often, whether the same mistakes recur less frequently, whether developers ask security questions earlier, whether tests pass before merge, whether warnings are addressed, and whether code reviews are substantive. Training attendance alone cannot establish that secure development improved.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0TTj2zeBM0&amp;t=0s">[0:00]</a> The opening explanation of behavioral-economic interventions and how Janca distinguishes them from pressure, manipulation, and social engineering.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=F0TTj2zeBM0&amp;t=300s">[5:00]</a> The argument that current AppSec practices overload developers with speed expectations, poor tools, limited training, late feedback, and contradictory incentives.</li>
+</ul>
+<ul>
+<li>[5:00-10:00] The slide summarizing the ten insecure behaviors and their associated biases and heuristics. Janca explicitly says the summary is intended to be photographed or revisited.</li>
+</ul>
+<ul>
+<li>[15:00-25:00] The secure-default examples, including the parameterized-query and ORM discussion, followed by the SDLC security activities.</li>
+</ul>
+<ul>
+<li>[20:00-25:00] The threat-modeling explanation, pull-request review prompts, pre-commit secret scanning, IDE and CI/CD checks, and security-debt dashboard examples.</li>
+</ul>
+<ul>
+<li>[25:00-30:00] The discussion of monthly communities of practice, security champions, pair programming, cheat sheets, positive reinforcement, and behavior-focused measurement.</li>
+</ul>
+<ul>
+<li>[30:00-35:00] The definition of vibe coding, the difference between using AI as an assistant and delegating nearly all coding to it, and the suggested secure prompts and retrieval-augmented setup.</li>
+</ul>
+<ul>
+<li>[35:00-40:00] The examples involving deadline pressure, copying from Stack Overflow or other sources without context, and the sandbox workflow for evaluating new technology.</li>
+</ul>
+<ul>
+<li>[40:00-45:00] The sections on documentation debt, satisficing error handling, untested commits, CI test gates, and postmortems.</li>
+</ul>
+<ul>
+<li>[45:00-50:00] The discussion of overengineering, ignoring compiler or security warnings, warning thresholds, and the risks of superficial reviews.</li>
+</ul>
+<ul>
+<li>[50:00-55:00] The final three reframings, resource list, slide and QR-code references, newsletter and podcast information, and the petition discussion.</li>
+</ul>
+</main>
+</body>
+</html>

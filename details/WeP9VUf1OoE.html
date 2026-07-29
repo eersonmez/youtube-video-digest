@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenAI&#x27;s introduction of gpt-transcribe and gpt-live-transcribe for file-based and real-time transcription.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=WeP9VUf1OoE">Watch video</a></nav>
+  <h1>OpenAI&#x27;s introduction of gpt-transcribe and gpt-live-transcribe for file-based and real-time transcription.</h1>
+  <div class="meta">OpenAI · 2026-07-28T21:49:18+00:00 · Introducing gpt-transcribe and gpt-live-transcribe</div>
+  <h2>What This Video Is About</h2>
+<p>The video introduces two OpenAI transcription models built for different audio workflows. gpt-transcribe accepts a completed audio file and returns a full transcript, while gpt-live-transcribe maintains an open connection and emits text continuously as audio arrives. The main product decision is therefore whether an application can wait for a finished recording or needs transcription output with low latency.</p>
+<p>Both models are presented as improvements for difficult recognition cases, including accents, multilingual speech, very short answers, names, and numbers. Developers can provide prompts and specialized vocabulary so important words—such as proper nouns, code terms, or industry terminology—are more likely to be recognized correctly.</p>
+<p>The models are also intended to remain focused in noisy environments and to handle language changes within a session. The batch model is positioned for call archives, podcasts, and other completed-file workflows, while the live model is intended for captions, dictation, and voice interfaces where delay directly affects the user experience.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The video begins by defining the two ways to build with the new models <a class="timestamp" href="https://www.youtube.com/watch?v=WeP9VUf1OoE&amp;t=0s">[0:00]</a>. gpt-transcribe works on a completed recording: an application provides an audio file and receives the full transcript. gpt-live-transcribe uses a live, open connection and returns text as the audio arrives [0:06-0:14]. This is the fundamental distinction between asynchronous or batch processing and continuous streaming transcription.</p>
+<p>The models share support for 57 languages and are described as being better at several areas where transcription commonly fails [0:20-0:28]. The examples include accented speech, multilingual speech, very short answers, names, and numbers. These cases matter because a transcript can be broadly understandable while still being unusable if it changes a person’s name, misses a short response, or misrecognizes a number.</p>
+<p>Developers can give the models additional context in the form of a prompt and a vocabulary list [0:28-0:46]. The vocabulary can contain words, proper nouns, or code terms that are particularly important to transcribe correctly. For the demonstration, the speaker supplied a prompt about transcription models and terms including “phishing,” “ARR,” and “A1C.” These examples span cybersecurity, sales, and healthcare, illustrating how specialized vocabulary can be supplied for a particular domain rather than relying only on general-language recognition.</p>
+<p>The video next discusses background noise [0:51-1:00]. The models are intended to be less likely to interpret side conversations or ambient music as the primary speaker’s words. The speaker gives examples such as recording in a loud cafe, a busy conference hall, or beside a talkative coworker. The stated goal is for the transcript to remain focused on the intended speech. The video does not provide quantitative noise benchmarks or an absolute guarantee of separation.</p>
+<p>Language hints are available when developers want to guide recognition, but the models can also follow multilingual speech automatically by default [1:10-1:20]. The demonstration switches from English to Spanish and then back to English in the same session. The Spanish segment is transcribed while the live connection continues, and the return to English is also followed without starting a new session [1:20-1:29]. This illustrates that a live session can accommodate language changes rather than requiring a separate connection for each language.</p>
+<p>The video then turns to gpt-transcribe with a completed meeting recording <a class="timestamp" href="https://www.youtube.com/watch?v=WeP9VUf1OoE&amp;t=91s">[1:31]</a>. The recording is described as approximately 30 minutes long, and the speaker says it takes a little less than a minute to process before the transcript is ready [1:38-1:52]. The example is used to position gpt-transcribe for call archives, podcasts, and larger batch jobs where the application can wait for the complete file and prioritize accuracy and throughput.</p>
+<p>The closing comparison returns to the streaming model <a class="timestamp" href="https://www.youtube.com/watch?v=WeP9VUf1OoE&amp;t=121s">[2:01]</a>. gpt-live-transcribe is described as a better fit for captions, dictation, and voice interfaces, where latency meaningfully affects the experience. In those applications, waiting for a complete recording would prevent text from appearing when the user needs it, so the open connection and incremental output are central to the design.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>gpt-transcribe processes a completed audio file and returns a full transcript.</li>
+<li>gpt-live-transcribe keeps a live connection open and produces text as audio arrives.</li>
+<li>The main selection criterion is workflow timing: use the batch model when a complete file is available, and the live model when users need immediate transcription.</li>
+<li>Both models support 57 languages.</li>
+<li>The models specifically target difficult cases such as accents, multilingual speech, very short answers, names, and numbers.</li>
+<li>Developers can supply prompts and specialized vocabulary, including proper nouns and code terms, to highlight words that matter to a particular application.</li>
+<li>The demonstration vocabulary includes “phishing,” “ARR,” and “A1C,” showing that domain-specific recognition can span cybersecurity, sales, and healthcare terminology.</li>
+<li>Background noise handling is intended to reduce side conversations and ambient music being transcribed as the main speech.</li>
+<li>Language hints can be supplied, but the models can also follow language changes automatically within one session.</li>
+<li>A roughly 30-minute meeting recording was processed in a little less than a minute in the demonstrated batch workflow.</li>
+<li>gpt-transcribe is positioned for archives, podcasts, and larger batch jobs.</li>
+<li>gpt-live-transcribe is positioned for captions, dictation, and voice interfaces where latency matters.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>For a completed recording workflow, the implementation sequence described by the video is to capture or obtain the audio file, send it to gpt-transcribe, wait for processing to finish, and pass the resulting full transcript to the next step. Suitable downstream uses include call archiving, podcast transcription, and other batch jobs. The demonstrated processing time was a little less than a minute for an approximately 30-minute meeting recording, but the video does not establish a general performance guarantee.</p>
+<p>For an interactive workflow, maintain the gpt-live-transcribe connection while audio is being captured, send audio as it arrives, and consume the returned text incrementally. This architecture is appropriate when text must appear during the conversation, such as in live captions, dictation, or a voice interface. The transcript does not provide connection setup details, API endpoints, authentication instructions, audio formats, or code examples, so those implementation specifics cannot be derived from the video.</p>
+<p>Supply a prompt and vocabulary list when particular terms are important to the application. Include relevant proper nouns, specialized industry language, and code terms rather than relying only on the model’s general vocabulary. The example terms are “phishing,” “ARR,” and “A1C.” Language hints can also be provided when the expected language is known, although the demonstration indicates that automatic language following can handle a switch between English and Spanish in one live session.</p>
+<p>For recordings made in noisy settings, the models’ background-noise handling can be treated as part of the transcription design, especially when side conversations or ambient music are possible. The video does not provide error rates, environmental limits, speaker-separation guarantees, or a comparison against other transcription systems, so applications should validate performance using their own recordings.</p>
+<p>The transcript establishes support for 57 languages but does not list them individually. It also does not discuss pricing, output schemas, speaker diarization, punctuation controls, word-level timestamps, moderation, retention, or privacy. Those should be evaluated separately before selecting a production architecture.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li>[0:00-0:14] The introduction of both models and the distinction between completed-file and live-connection transcription.</li>
+<li>[0:20-0:46] Supported languages, difficult recognition cases, prompts, and specialized vocabulary.</li>
+<li>[0:51-1:00] The discussion of side conversations, ambient music, and noisy recording environments.</li>
+<li>[1:10-1:29] The live English-to-Spanish-to-English language-switching demonstration.</li>
+<li>[1:31-1:52] The approximately 30-minute meeting recording and the stated processing time of just under a minute.</li>
+<li>[2:01-2:09] The final use-case comparison between batch transcription and low-latency streaming.</li>
+</ul>
+</main>
+</body>
+</html>
