@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The interview examines how advanced AI agents change cyberattacks and how defenders can exploit their weaknesses.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=td7mqrD7J0A">Watch video</a></nav>
+  <h1>The interview examines how advanced AI agents change cyberattacks and how defenders can exploit their weaknesses.</h1>
+  <div class="meta">Alex Kantrowitz · 2026-07-29T15:00:25+00:00 · How AI&#x27;s Top New Models Transform Cybersecurity (And Where They Don&#x27;t) — With Snehal Antani</div>
+  <h2>What This Video Is About</h2>
+<p>Alex Kantrowitz interviews Snehal Antani, CEO and co-founder of Horizon3, about whether recent frontier AI models represent a genuine transformation in cybersecurity or mostly a new wave of marketing and fear. Antani’s central distinction is between performance in laboratories, capture-the-flag exercises, and cyber ranges, versus performance inside production networks that change, defend themselves, and contain deliberate deception. He argues that the newest models can be impressive in controlled settings while remaining unreliable against active defenses.</p>
+<p>The interview presents deception as an unexpectedly strong countermeasure. In research described by Antani, expert human penetration testers interacted with decoys 37% of the time, while the tested AI models interacted with them 92% of the time. When the decoys were placed in especially attractive locations, the models interacted with them 95% to 100% of the time. Antani says this makes fake credentials, data files, and other honey tokens a cheap way to expose agentic attackers. At the same time, he identifies patch-diff analysis as a legitimate AI-enabled escalation: attackers can use models to reverse-engineer newly fixed vulnerabilities faster than customers can apply the patches.</p>
+<p>The discussion then broadens to insecure “vibe-coded” applications, overprivileged agents connected to tools such as Gmail and Google Calendar, prompt injection, model-training integrity, and automated offensive cyber systems. Antani’s conclusion is cautiously optimistic but demanding: organizations should not wait for a magical defensive AI system. They need rapid patching, virtual patching, detection, containment, eradication, deception, least privilege, segmentation, and realistic incident-response training. The conversation is explicitly presented as being brought to viewers by Horizon3, so the research figures and Horizon3 performance claims are presented through the company’s own representative and are not independently substantiated within the transcript.</p>
+<h2>Detailed Walkthrough</h2>
+<h3>The gap between laboratory capability and production reality</h3>
+<p>The interview opens with discussion of several newly prominent frontier models and the widespread claim that they could radically change cyberattacks. Antani separates the hype from what practitioners are seeing in real environments <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=0s">[0:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=124s">[2:04]</a>.</p>
+<p>His view is not that AI has no cybersecurity value. Rather, he says models perform well when they operate in controlled laboratories, cyber ranges, and other environments resembling their training data. They perform much worse in networks that are actively defending themselves, changing during the attack, and filled with deception. Their training data, in his assessment, consists heavily of public information, capture-the-flag tasks, and Hack The Box-style environments rather than the messier data generated inside real production networks.</p>
+<p>This distinction explains why Antani is skeptical of claims that the newest model alone could cause a global cyber collapse. He says an attacker did not need the newest frontier model to compromise organizations. The more credible question is how much faster and more scalable existing attack methods become when agents can perform reconnaissance, analyze code, and repeat actions without constant human labor.</p>
+<h3>Why deception is unusually effective against agents</h3>
+<p>The strongest empirical claim in the interview concerns decoys and honey tokens <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=151s">[2:31]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=422s">[7:02]</a>. Antani says an expert human hacker or penetration tester clicked on deceptive artifacts 37% of the time in Horizon3 research. The AI models tested clicked on them 92% of the time, more than twice as often. With decoys placed in particularly attractive locations, the interaction rate rose to between 95% and 100%.</p>
+<p>The examples are designed around how an attacker behaves after gaining an initial foothold. Rather than immediately deploying an unusual tool, an attacker may “live off the land”: inspect shared drives, browse file systems, and search for information that legitimate users might have left behind. Examples include a file named password.ext, a keystore containing cloud login information, fake AWS credentials, fake Azure tokens, or a database dump containing apparently sensitive business data.</p>
+<p>A decoy is an artifact that is made to look valuable. A honey token is a decoy that generates an alert when someone interacts with it. Antani compares the mechanism to a Ring camera with a motion sensor: the important event is not necessarily that the attacker has already stolen data, but that something interacted with an object it should not have touched. The defender can then generate a signal for the security team and begin incident response.</p>
+<p>Antani says the models sometimes recognize that an item may be a trap and still open it. He attributes this to two weaknesses. First, the models have limited exposure to production environments containing active defenses. Second, they tend to be “greedy”: they commit to an attractive path early rather than patiently adapting when the environment changes. This behavior makes deception particularly useful against an automated attacker that is operating quickly but not reasoning reliably about consequences.</p>
+<p>The practical placement of a decoy matters. Antani says fake user IDs, passwords, and data files should be placed where an attacker using ordinary discovery and lateral-movement techniques is likely to encounter them. The goal is to make the artifact sufficiently interesting to trigger interaction while producing enough signal for the security team to respond.</p>
+<h3>Patch-diff analysis is the more credible AI escalation</h3>
+<p>After arguing that deception can expose many automated attackers, Antani turns to a threat he considers genuinely serious: using AI to analyze software patches <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=427s">[7:07]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=577s">[9:37]</a>.</p>
+<p>He gives a hypothetical example involving Palo Alto Networks and firewall vulnerabilities associated in the conversation with the Glass Wing project. Suppose a vendor uses AI to find a large number of vulnerabilities, fixes them, and then ships a patch. An attacker can compare the new binary or code with the previous version. By examining the changes, the attacker can infer which modifications were likely security fixes and reverse-engineer the vulnerabilities that the vendor just repaired.</p>
+<p>Human vulnerability researchers already perform this kind of binary comparison. Antani says Horizon3’s researchers do it as part of their work, and attackers do it as well. The change introduced by AI is speed: a model can help reverse-engineer a patch and develop a weaponized exploit in a fraction of the time previously required.</p>
+<p>The vulnerability remains useful because the release of a patch does not mean every customer has installed it. Antani cites a figure that approximately 50% of CISA known exploited vulnerabilities, or KEVs, remain unpatched two months after notification <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=584s">[9:44]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=659s">[10:59]</a>. The transcript does not identify the precise report or methodology behind that figure, but the operational point is clear: the period between patch availability and patch deployment is an attack window.</p>
+<p>Antani recommends three defensive responses. Organizations should improve the speed of full patch deployment. They should use virtual patching when necessary, such as adding a firewall rule or improving an EDR detection without immediately applying the complete software update. They should also become better at containment and eradication, because an attacker may enter during the period when a permanent fix is not yet deployed.</p>
+<p>He connects these measures with decoys, microsegmentation, zero-trust network design, and least-privilege access control. These controls do not necessarily prevent the first compromise, but they can limit how far an attacker moves and how much damage the attacker can cause.</p>
+<h3>“Infinite cyber bullets” are mostly a scaling problem</h3>
+<p>Kantrowitz revisits an earlier metaphor: AI gives attackers something like infinite cyber bullets because an agent can repeat tasks far faster and more cheaply than a human <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=707s">[11:47]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=954s">[15:54]</a>. Antani agrees that an automated system can potentially launch a very large number of concurrent attempts. He describes Horizon3’s own AI cyber system as something that could, in principle, run 1,000 or even 100,000 instances against a target without humans in or above the loop.</p>
+<p>However, Antani says the limiting resource is not simply the model. It is the training data and the surrounding system, or “harness,” that makes the model useful in a specific operational environment. Horizon3 deliberately did not build its offensive systems as wrappers around frontier laboratory models. Instead, he says the company spent six years collecting behind-the-firewall production data and used that data to train custom attack models.</p>
+<p>His broader design claim is that model weights are replaceable, while the harness and training data are durable assets. A new model may be substituted, but a system with relevant operational data and a workflow for interacting with real environments is more difficult to reproduce.</p>
+<p>Antani links this issue to adversarial AI. While working with the Department of Defense on Project Maven, he says there was concern that an adversary could corrupt training data so that an aircraft carrier group was classified as a flock of pigeons. He also mentions a story about QR codes being placed on Ukrainian vehicles so that Russian drones might scan them and automatically order goods to a Russian leader’s home, but he explicitly says he does not know whether the story is true. The story is therefore presented as an illustration, not evidence.</p>
+<p>The larger point is that attackers and defenders can manipulate the data a model sees or the data used to train it. Antani believes frontier models are not especially resilient to such adversarial techniques, which creates an opportunity for defenders as well as a risk for attackers.</p>
+<h3>Agents are powerful assistants, not yet reliable one-click attackers</h3>
+<p>Kantrowitz offers a concrete scaling scenario involving public information, employee names, usernames, and repeated attempts against an employee portal <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=963s">[16:03]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1066s">[17:46]</a>. His example is meant to illustrate how an agent could automate many routine steps that previously consumed human time.</p>
+<p>Antani describes agents as giving an expert “unlimited interns” <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1066s">[17:46]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1152s">[19:12]</a>. An expert hacker can use them to accelerate open-source intelligence collection, target selection, reconnaissance, analysis of technologies and protocols, vulnerability research, exploit development, and patch-diff analysis. The expert still has to direct and manage the work, but the amount of routine labor available to that expert increases dramatically.</p>
+<p>He does not believe current frontier models can reliably stitch together the entire attack chain in a changing, defended environment. Connecting open-source intelligence, reconnaissance, exploit development, perimeter compromise, internal movement, and final objectives remains difficult. Horizon3’s own systems, he says, can take an initial foothold and find multiple paths toward full network control without human involvement, but even that is different from starting with no access and autonomously improvising the entire operation.</p>
+<p>This distinction is important. AI can make a known or partially understood attack process much faster without inventing a completely new form of cyber reasoning. The resulting increase in volume and speed may still be extremely dangerous, especially when defenders have limited time to identify and contain each attempt.</p>
+<h3>Vibe-coded applications expand the attack surface</h3>
+<p>The conversation next turns to applications built quickly with AI coding tools and to agents connected to enterprise systems <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1161s">[19:21]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1354s">[22:34]</a>. Kantrowitz describes using AI tools to build websites and internal workflow applications, storing code in GitHub, and connecting an AI assistant to Gmail and Google Calendar without knowing whether all security practices were followed correctly.</p>
+<p>Antani says this creates a large new collection of applications whose security quality is uncertain. He cites a research paper claiming that 86% of the tokens spent by Claude Code are used to fix mistakes Claude Code made, while only 14% are spent creating value. The transcript does not identify the paper or explain its methodology.</p>
+<p>He uses the phrase “vibecoded crap applications” to describe the kinds of applications he believes are produced when speed replaces disciplined engineering. The specific problems he names include hard-coded credentials, privilege escalation, and broken access control. He also describes applications built by nondevelopers and placed online without realizing that basic authentication was configured incorrectly.</p>
+<p>The result, in his view, is a fleet of shadow applications inside and outside enterprises. This explains the renewed importance of application security testing, source-code scanning, and black-box application testing. The problem is not simply that one AI-generated application might contain a bug; it is that many such applications can be created quickly, connected to sensitive systems, and forgotten.</p>
+<h3>Agents resemble privileged insider threats</h3>
+<p>Antani argues that AI agents should be treated as an extension of an organization’s insider-threat program. He defines an insider threat as an employee who has too many privileges, can be manipulated or become malicious, and has the access and motivation to cause harm.</p>
+<p>He says agents have similar characteristics: excessive permissions, the ability to move quickly, and susceptibility to prompt injection. Once an agent goes off course, it may create a large token bill, leak data, or perform other damaging actions before a human realizes what happened.</p>
+<p>This comparison changes the security question. Instead of treating an agent only as a software feature, an organization should ask what an insider-threat team would ask about a privileged employee: what systems can this entity access, what actions can it perform, how is its activity monitored, and how quickly can its access be revoked?</p>
+<h3>Prompt injection works in both directions</h3>
+<p>Prompt injection is presented as both an offensive risk and a defensive opportunity <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1361s">[22:41]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1456s">[24:16]</a>. An attacker can place instructions in content that an agent will read, attempting to break the agent’s guardrails or make it expose sensitive data.</p>
+<p>Antani describes the reverse approach as “hacking the hackers.” A defender might put instructions inside a fake password file or database dump. When an attacking agent opens the file, the embedded instructions could ask the agent to reveal its identity or delete its own attacker infrastructure. The transcript presents this as a clever deception technique, not as a demonstrated production control.</p>
+<p>He also describes a possible resource-exhaustion tactic: make a fake AWS credential or password file extremely large, perhaps 30 gigabytes, so that an agent spends thousands of dollars in tokens trying to parse it. This illustrates a second risk beyond data theft: an agent can be manipulated into wasting time and money.</p>
+<p>The dual-use nature is the main point. Attackers can use prompt injection to make a defensive agent leak information or bypass safeguards. Defenders can use prompt injection inside decoys to induce an attacking agent to reveal information. The transcript provides no safety procedure, deployment guidance, or measured success rate for the defensive technique.</p>
+<h3>Model integrity and training-data corruption</h3>
+<p>The discussion then moves from runtime prompt injection to the integrity of the models themselves <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1472s">[24:32]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1550s">[25:50]</a>. Antani mentions rising frontier-model costs, export controls, and European companies evaluating Chinese models as alternatives. He refers to research asking whether a model deliberately corrupted with a secret trigger phrase could be detected.</p>
+<p>The proposed scenario resembles a “Manchurian candidate”: a hidden phrase causes a model to behave maliciously. Antani says such corruption could be extremely difficult, perhaps impossible, to detect reliably. He identifies intentional or accidental training-data corruption as a major future concern for banks and other organizations that need to trust models with sensitive operations.</p>
+<p>The implication is that model procurement involves more than comparing capabilities and price. Organizations may also need to consider the provenance and integrity of training data, the possibility of hidden behaviors, and how much autonomy to grant a model whose internal behavior cannot be fully audited.</p>
+<h3>The defensive answer is still operational discipline</h3>
+<p>When asked whether cyber defense is moving from human-versus-human toward AI-versus-AI, Antani says the deception research made him more optimistic <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1565s">[26:05]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1679s">[27:59]</a>. He had previously expected attackers to operate fully out of the loop and defenses to lag behind. The models’ tendency to interact with well-placed decoys gives defenders a chance to detect them.</p>
+<p>That opportunity increases the burden on defenders. Antani repeatedly emphasizes detection, containment, and eradication. He also says security teams must “train like they fight”: they should build incident-response muscle memory before an actual incident rather than attempting to learn procedures during one.</p>
+<p>His conclusion is that there is no single defensive AI button. Organizations that master the fundamentals can still limit the damage caused by AI-enabled attackers, even if they cannot prevent every initial intrusion.</p>
+<h3>Horizon3’s position in the discussion</h3>
+<p>The closing section is a description of Horizon3’s commercial and technical positioning <a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1685s">[28:05]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1801s">[30:01]</a>. Antani says the company pioneered AI hackers without simply wrapping frontier models. He attributes its claimed resilience in actively defended environments to its production training data and purpose-built harness.</p>
+<p>He says Horizon3 has roughly 6,500 customers globally and expects approximately 10,000 by the end of the year. He also claims that the company runs more penetration tests than major consulting firms run in a year and that it compromised a defense-technology company in 77 seconds without human involvement. These are company claims made during a sponsored interview, not independently verified findings within the transcript.</p>
+<p>Antani says Horizon3’s objective is to use AI hackers to improve customer defenses and eventually create learning loops between attack and defense, with humans involved by exception rather than at every step.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Frontier models can perform strongly in laboratories and cyber ranges while struggling in production networks that change, defend themselves, and contain deception.</li>
+</ul>
+<ul>
+<li>In Horizon3 research described by Antani, human expert testers interacted with decoys 37% of the time, compared with 92% for the tested AI models. Well-placed decoys reportedly raised model interaction rates to 95% to 100%.</li>
+</ul>
+<ul>
+<li>Deception works by making fake credentials, tokens, keystores, database dumps, or other files look valuable during an attacker’s “live off the land” activity, then alerting when they are opened.</li>
+</ul>
+<ul>
+<li>Patch-diff analysis is presented as a genuine AI-enabled escalation. Models can help attackers identify and weaponize vulnerabilities fixed in newly released software patches.</li>
+</ul>
+<ul>
+<li>The delay between a patch being released and customers applying it creates an exploitation window. Antani cites a claim that about half of CISA KEVs remain unpatched two months after notification.</li>
+</ul>
+<ul>
+<li>Defenders need both rapid full patching and temporary mitigations such as firewall changes or improved EDR detections when a full patch cannot be deployed immediately.</li>
+</ul>
+<ul>
+<li>Agents currently resemble unlimited assistants for experts more than fully autonomous, one-click attackers capable of reliably completing every phase of an operation in a changing network.</li>
+</ul>
+<ul>
+<li>The durable advantage in specialized cyber AI may come from the harness and operational training data rather than from any particular frontier model’s weights.</li>
+</ul>
+<ul>
+<li>AI-generated applications can expand the attack surface through hard-coded credentials, broken access control, privilege escalation, weak authentication, and large numbers of poorly tracked shadow applications.</li>
+</ul>
+<ul>
+<li>Agents should be handled as potential privileged insider threats because they may have excessive permissions, move quickly, and be manipulated through prompt injection.</li>
+</ul>
+<ul>
+<li>Prompt injection is bidirectional: attackers can use it against defensive agents, while defenders can place reverse prompt injections in decoys to mislead or identify attacking agents.</li>
+</ul>
+<ul>
+<li>Detection, containment, eradication, segmentation, zero trust, least privilege, patching, and realistic training remain central even in an AI-versus-AI security environment.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p>A defensive workflow implied by the interview begins with identifying applications, agents, connectors, and systems that may have been created or connected without formal security review. Code scanning and black-box application security testing are specifically mentioned as ways to find problems in vibe-coded applications. The named failure modes to look for are hard-coded credentials, broken access control, privilege escalation, and incorrectly configured authentication.</p>
+<p>Deception can then be added to locations that an attacker using ordinary file and share discovery is likely to inspect. The transcript names fake AWS credentials, fake Azure tokens, fake user IDs, fake passwords, fake keystores, and fake database files. These objects should produce a clear security signal when accessed, allowing the event to enter the organization’s incident-response process. The transcript does not provide deployment commands, vendor configurations, alert thresholds, or guidance for preventing accidental interaction by legitimate users.</p>
+<p>Patch management should treat CISA KEVs as an urgent signal, according to Antani. The practical decision is not simply whether a vendor has released a fix, but how quickly the organization can apply it across its actual environment. While waiting, the interview supports considering virtual patching through firewall rules or improved EDR detections. If neither a full patch nor a virtual mitigation is immediately available, containment and eradication become more important. Microsegmentation, zero-trust architecture, and least-privilege access are presented as ways to reduce lateral movement and limit the consequences of compromise.</p>
+<p>Agents connected to Gmail, Google Calendar, GitHub, cloud systems, or other enterprise tools should be treated as privileged identities. The transcript supports reviewing what each agent can read, modify, or transmit and reducing permissions where possible. The insider-threat comparison also implies monitoring for unusual access, rapid high-volume actions, unexpected data movement, and sudden token-cost increases.</p>
+<p>Prompt injection defenses should assume that external files and retrieved content may contain instructions intended for the agent rather than information intended for the user. Antani presents reverse prompt injection and oversized decoy files as experimental ways to disrupt or identify attacking agents, but the interview provides no implementation safeguards or evidence that these techniques are reliable. They should therefore be understood as research ideas rather than turnkey controls.</p>
+<p>Incident-response teams should rehearse detection, containment, and eradication before an AI-enabled incident occurs. “Train like they fight” means practicing against changing conditions and automated activity instead of relying on a written plan that has never been exercised.</p>
+<p>The transcript contains no command-line examples, code, deployment diagrams, or detailed product configurations. Its numerical claims also have important limits: the decoy study’s sample size, exact model identities, test environment, decoy placement, and statistical methodology are not given; the 50% KEV figure is attributed generally to cited industry reporting; the Claude Code token split comes from an unnamed research paper; and Horizon3’s customer, penetration-testing, and 77-second compromise figures are company claims.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=28s">[0:28]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=124s">[2:04]</a> — Antani’s distinction between frontier-model hype, laboratory capability, and performance in actively defended production networks.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=151s">[2:31]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=215s">[3:35]</a> — The decoy research, including the 37% human interaction rate, 92% model interaction rate, and 95% to 100% rate for well-placed decoys.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=278s">[4:38]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=422s">[7:02]</a> — The explanation of live-off-the-land behavior, honey tokens, fake credentials, and how decoy interaction creates an incident signal.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=463s">[7:43]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=699s">[11:39]</a> — The patch-diff scenario, the vulnerability window created by delayed patching, virtual patching, EDR, containment, and eradication.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=780s">[13:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=954s">[15:54]</a> — The “infinite cyber bullets” discussion, production training data, purpose-built cyber models, and adversarial AI.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=963s">[16:03]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1152s">[19:12]</a> — The hypothetical reconnaissance workflow and the description of agents as “unlimited interns.”</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1161s">[19:21]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1354s">[22:34]</a> — Vibe-coded applications, Claude Code’s cited token usage, shadow applications, and the comparison between agents and insider threats.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1361s">[22:41]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1550s">[25:50]</a> — Prompt injection, reverse prompt injection, token-exhaustion decoys, and the risk of corrupted model training data.</li>
+</ul>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1593s">[26:33]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=td7mqrD7J0A&amp;t=1801s">[30:01]</a> — The defensive conclusion about detection, containment, eradication, training, and Horizon3’s claims about its AI hackers.</li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,5 +1,10 @@
 # YouTube Video Digest Archive
 
+- 2026-07-29T22:37:43+00:00 - OpenAI: [Using Voice in ChatGPT Work](https://www.youtube.com/watch?v=_Gd9yzAc-WI)
+- 2026-07-29T17:23:02+00:00 - OpenAI: [We're giving 100,000 academic researchers free access to our frontier models](https://www.youtube.com/watch?v=MLehRytu9Zo)
+- 2026-07-29T15:00:25+00:00 - Alex Kantrowitz: [How AI's Top New Models Transform Cybersecurity (And Where They Don't) — With Snehal Antani](https://www.youtube.com/watch?v=td7mqrD7J0A)
+- 2026-07-29T15:00:03+00:00 - BeardedTinker: [I Stopped Using My Phone](https://www.youtube.com/watch?v=puy7BpaNLFM)
+- 2026-07-29T11:00:23+00:00 - NDC Conferences: [Fine-Grained Authorization: The Missing Piece in Agentic AI Security - Shivay Lamba - NDC Sydney](https://www.youtube.com/watch?v=OK5xPUuco6o)
 - 2026-07-28T21:49:18+00:00 - OpenAI: [Introducing gpt-transcribe and gpt-live-transcribe](https://www.youtube.com/watch?v=WeP9VUf1OoE)
 - 2026-07-28T14:25:26+00:00 - OpenAI: [ChatGPT Work for Sales: Revenue Intelligence for Sales Leaders](https://www.youtube.com/watch?v=g-g6E-qtCjA)
 - 2026-07-28T14:23:31+00:00 - OpenAI: [ChatGPT Work for Sales: Account Research and Customer Outreach](https://www.youtube.com/watch?v=5DbZAMGZ5oM)
@@ -55,8 +60,3 @@
 - 2026-07-16T18:00:16+00:00 - OpenAI: [ChatGPT can now complete tasks on your computer](https://www.youtube.com/watch?v=dB6pOolO7io)
 - 2026-07-16T17:00:23+00:00 - Alex Kantrowitz: [Demis Hassabis & Sergey Brin: Web's Future, AGI Timeline, AI For Job Interviews, Simulation Theory](https://www.youtube.com/watch?v=-sTinHaatPE)
 - 2026-07-16T17:00:16+00:00 - OpenAI: [What racing reveals about working with AI — the OpenAI Podcast Ep. 22](https://www.youtube.com/watch?v=KNPjRpNtQ7s)
-- 2026-07-16T16:32:56+00:00 - Scott Hanselman: [Who is left behind when AI moves fast? with Dr. Chinasa T. Okolo](https://www.youtube.com/watch?v=JUzFlvs-BKI)
-- 2026-07-16T15:37:36+00:00 - OpenAI: [The AI Era Needs a Different Kind of Talent | Peter Steinberger | OpenAI France](https://www.youtube.com/watch?v=Xk-X1TI2pQ4)
-- 2026-07-16T15:37:30+00:00 - OpenAI: [Think AI-First: Emmanuel Marill on Building AI-Native Companies | OpenAI France](https://www.youtube.com/watch?v=Fu3WWi-pAv4)
-- 2026-07-16T15:37:20+00:00 - OpenAI: [Stop Prompting. Start Giving AI Goals. | Katia Gil Guzman | OpenAI France](https://www.youtube.com/watch?v=1fL_lwsdMd4)
-- 2026-07-16T15:37:16+00:00 - OpenAI: [From AI Pilots to Production | François Weider on Enterprise Adoption | OpenAI France](https://www.youtube.com/watch?v=W0mU8zgop60)

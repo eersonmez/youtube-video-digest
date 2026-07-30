@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fine-grained authorization for securing agentic AI systems and retrieval-augmented generation applications.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=OK5xPUuco6o">Watch video</a></nav>
+  <h1>Fine-grained authorization for securing agentic AI systems and retrieval-augmented generation applications.</h1>
+  <div class="meta">NDC Conferences · 2026-07-29T11:00:23+00:00 · Fine-Grained Authorization: The Missing Piece in Agentic AI Security - Shivay Lamba - NDC Sydney</div>
+  <h2>What This Video Is About</h2>
+<p>The video explains why agentic AI systems need runtime authorization, not just prompts, login checks, or broad user roles. Unlike a conventional language model that returns text in response to a prompt, an agent can plan, make decisions, retrieve information, and call external tools. If it is connected to a company knowledge base or APIs, it must be constrained according to the identity of the requester, the specific resource being accessed, and the action being attempted.</p>
+<p>The central security concern is sensitive information disclosure. A RAG assistant may be connected to internal API documentation, financial reports, sales data, HR records, and confidential technical material. Without authorization checks, an agent may retrieve information simply because it exists in the connected database, regardless of whether the user is entitled to see it. The talk focuses on enforcing those permissions at runtime, especially before private documents reach the language model.</p>
+<p>The speaker compares access-control approaches from ACLs and RBAC through ABAC and ReBAC, arguing that relationship-based access control is particularly suitable for hierarchical documents and agent actions. OpenFGA is presented as one open-source ReBAC implementation inspired by Google’s Zanzibar paper. Demonstrations cover a permission-aware RAG assistant and task-level authorization for agent tool calls, including a Slack action that requires explicit, scoped user approval.</p>
+<h2>Detailed Walkthrough</h2>
+<h3>Why agents need security boundaries</h3>
+<p>The talk opens with two Sydney-based analogies. The Harbor Bridge can be walked across or driven over by the public, but climbing it or jumping from it requires a different kind of permission and should not be treated as an ordinary user action. Bondi Beach is publicly accessible, but lifeguards restrict swimming to designated areas because of dangerous tides. These examples illustrate the basic idea that a system can be broadly available while still enforcing boundaries around particular actions <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=0s">[0:00]</a>.</p>
+<p>The speaker then places agents in the broader development of AI systems. Neural-network research goes back decades, while developments such as AlexNet, GPT APIs, and ChatGPT helped make modern AI capabilities widely accessible. Current models can generate more than text, offer built-in tool calling, and support increasingly agentic workflows <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=0s">[0:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=300s">[5:00]</a>.</p>
+<p>A conventional LLM receives a text prompt and produces a response. An agent is more autonomous: it can plan, decide, and act, potentially in the background without a person approving every intermediate step. The speaker distinguishes between human-in-the-loop systems, where a person must approve certain actions, and fully autonomous systems. The choice depends on the organization and use case, but human approval is recommended for security-sensitive operations <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=300s">[5:00]</a>.</p>
+<p>RAG extends these systems by allowing a model to work with documents that were not part of its original training data. Those documents may contain private company information, so RAG also creates an authorization problem: the agent must retrieve only the information that the current user is allowed to access.</p>
+<h3>The security problem is broader than model quality</h3>
+<p>The speaker presents the talk as primarily a security discussion rather than a general introduction to AI. Enterprise adoption of agents is slower than the pace of model development partly because agents create new attack surfaces. The speaker cites recent incidents involving AI tools receiving excessive access and exposing workspace secrets as examples of the type of problem that stronger guardrails might prevent <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=300s">[5:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=600s">[10:00]</a>.</p>
+<p>The risks mentioned include sensitive information disclosure, system-prompt leakage, prompt injection, model poisoning, supply-chain attacks, and hallucinated or misleading information. Hallucinations can be especially damaging in legal, financial, or healthcare contexts. The talk narrows its focus to sensitive information disclosure because application developers can directly address much of that problem through identity, permission, and data-access design <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=600s">[10:00]</a>.</p>
+<p>A finance employee asking for private API endpoint information is used as an example. If the agent does not know who is asking or does not check the user’s permissions, it may retrieve and return the information without considering the user’s role. The same problem occurs in a centralized company knowledge base: an intern, a finance employee, a developer, and a CEO should not automatically have the same access simply because they use the same chatbot.</p>
+<p>The speaker summarizes four runtime concerns for an agent. The system must verify who is making the request, check which systems and APIs the agent is allowed to use on the user’s behalf, understand the steps and interactions in the agent’s workflow, and enforce access control for the actual data resources being accessed. The final point is the focus of the talk: the model must respect permissions for each document or resource rather than treating the entire data store as equally available <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=600s">[10:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=900s">[15:00]</a>.</p>
+<p>The intended policy is that an agent might access public records by default, but private records only when the user is explicitly authorized. It should also be prevented from modifying records or accessing confidential records belonging to other employees unless those actions are permitted.</p>
+<h3>How access control evolved from ACLs to ReBAC</h3>
+<p>The speaker uses increasingly fine coffee grounds as an analogy for the evolution from coarse to fine-grained authorization <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=900s">[15:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1200s">[20:00]</a>.</p>
+<p>The earliest model discussed is an access control list. The system asks a direct question such as whether Kate has read access to a particular file. This is simple and workable when the number of users, applications, and files is limited.</p>
+<p>Role-based access control, or RBAC, assigns each user a role. A company might define roles such as product manager, software engineer, CEO, CFO, or intern, with each role receiving a predefined set of permissions. RBAC simplifies administration because an application can make decisions based on a user’s role rather than maintaining a separate permission entry for every user and action.</p>
+<p>The weakness is role proliferation. In a large organization, there may be hundreds or more roles, each with slightly different combinations of access. Maintaining those roles and keeping them synchronized with organizational changes can become difficult. A role that is convenient for one department may be too broad or too narrow for a particular resource.</p>
+<p>Attribute-based access control, or ABAC, adds more context. Instead of considering only a user’s role, a policy can use attributes such as department, working hours, or other properties. The speaker gives examples such as checking whether Kate belongs to product management, whether she is within her allowed working hours, or even whether she is allowed to eat in a cafeteria. ABAC is more expressive because policies can combine multiple attributes rather than relying on one role <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1200s">[20:00]</a>.</p>
+<p>The speaker then describes a limitation that can arise when the data itself is deeply hierarchical. Imagine a parent folder containing several levels of subfolders. A user may be authorized through the first three levels but denied at the fourth. In the speaker’s example, determining that outcome could require multiple database checks through the hierarchy before the system discovers that the final document is inaccessible. This is presented as a niche but practical problem when the organization’s data structure contains many nested relationships.</p>
+<p>Relationship-based access control, or ReBAC, addresses these cases by representing users, groups, folders, documents, tenants, and permissions as a relationship graph. Instead of expressing access only as a role or a collection of independent attributes, the system records facts such as:</p>
+<ul>
+<li>A user is a viewer of a folder.</li>
+<li>A document belongs to a folder.</li>
+<li>A user owns a document.</li>
+<li>A department has access to a particular resource.</li>
+<li>A user can read or write a specific object.</li>
+</ul>
+<p>The authorization system can then traverse those relationships to answer more detailed questions. For example, it can determine whether Kate is in the product department, whether a roadmap document is inside the product folder, and whether the product department has viewer access to that document <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1200s">[20:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1500s">[25:00]</a>.</p>
+<p>The important feature is inheritance. If a user is a viewer of a folder, the authorization model can infer that the user is also a viewer of documents contained in that folder. The speaker presents ReBAC as the best fit for AI applications that need detailed control over documents and agent actions.</p>
+<h3>OpenFGA and the Zanzibar-style model</h3>
+<p>OpenFGA is introduced as an open-source implementation of ReBAC. The speaker says it is associated with Okta and inspired by Google’s Zanzibar paper, which describes authorization at large scale. Google Drive is presented as an example of a system using a Zanzibar-style relationship approach. SpiceDB is mentioned as another system based on a similar principle <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1500s">[25:00]</a>.</p>
+<p>The distinction between an ordinary application and one using an external authorization service is described as follows. In a conventional application, a user authenticates through an identity provider, receives an access token, and sends that token to the application. The application validates the request, performs its authorization logic, retrieves data from the database, and returns the result.</p>
+<p>With an external ReBAC service, the identity-provider flow remains, but the application also asks the authorization service whether the user has a particular relationship to the requested resource. The check might ask whether the user is a viewer or owner of a document, or whether the user can perform a write action. Only after the check succeeds does the application retrieve or modify the resource <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1500s">[25:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1800s">[30:00]</a>.</p>
+<p>This separates authorization policy from application-specific data-access code and provides a centralized place to extend permissions when new features are introduced. The application still performs the data retrieval, but the decision about whether the user may access the resource is represented in the authorization model.</p>
+<p>The example OpenFGA model contains three conceptual types: user, folder, and document. A folder can have an owner and viewers. A document has a parent folder and an owner. A document’s viewer relationship can be satisfied by a direct viewer, its owner, or a viewer inherited from the parent folder. In other words, a user who is a viewer of a folder can automatically become a viewer of the documents inside that folder <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1800s">[30:00]</a>.</p>
+<p>The model defines the kinds of relationships that are possible. Relationship tuples then instantiate those relationships. For example, a tuple can state that Kate is a viewer of the product folder. Another can state that the roadmap document has the product folder as its parent. An access check can then ask whether Kate is a viewer of the roadmap document. The system can infer the answer through the folder relationship even if there is no direct Kate-to-roadmap tuple.</p>
+<p>This distinction between the authorization model, relationship tuples, and access checks is central to the approach. Developers define the rules and the known relationships; the ReBAC engine derives the resulting access decisions instead of requiring every inherited permission to be manually stored.</p>
+<h3>Applying ReBAC to a RAG knowledge assistant</h3>
+<p>The main application example is a centralized company knowledge base. It contains API documentation, sales and profit reports, HR documents, and other internal material. Different personas require different access:</p>
+<ul>
+<li>A CEO may be allowed to access most or all of the material.</li>
+<li>A finance user may need financial reports but not private engineering endpoint information.</li>
+<li>An engineering user may need technical documentation.</li>
+<li>A junior developer or intern may be limited to reading public or API documentation.</li>
+<li>An intern should not be able to modify API documentation or view confidential financial data.</li>
+</ul>
+<p>The knowledge base is organized into folders and documents, with permissions represented at both levels. Folder-level viewer access can be inherited by documents inside the folder, while document-level relationships provide more specific control <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2100s">[35:00]</a>.</p>
+<p>The talk briefly explains the underlying RAG pipeline. Documents are split into chunks, converted into vectors, and stored in a vector database. When the user submits a question, the question is converted into a vector and compared with stored vectors to retrieve the most relevant results. In the demonstration, the chunks are stored in a local Chroma database <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2100s">[35:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2400s">[40:00]</a>.</p>
+<p>The security decision is where authorization is inserted into that pipeline. The speaker contrasts post-filtering and pre-filtering.</p>
+<p>With post-filtering, the process is:</p>
+<ul>
+<li>The user asks a question.</li>
+<li>The vector database performs a search and returns its top results.</li>
+<li>OpenFGA checks the user’s permissions.</li>
+<li>Unauthorized documents are removed from the retrieved set.</li>
+<li>The remaining documents are passed to the LLM as context.</li>
+</ul>
+<p>For example, if the vector search returns ten documents but the user is authorized to see only three, the authorization layer reduces the set to those three before the final response is generated. The demo code described at <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2700s">[45:00]</a> follows this general post-filtering approach: it enables the OpenFGA client, obtains the authorized document set for the user, and filters the vector-search results by document ID before sending the remaining context to the model.</p>
+<p>The speaker considers pre-filtering safer. In this design, the application first determines the documents the user is allowed to access and converts that result into a metadata filter. The filter might be based on a user ID, role ID, or authorized document IDs. That filter is passed into the vector search itself, so the vector database returns only documents that satisfy the authorization condition.</p>
+<p>The pre-filtering flow is therefore:</p>
+<ul>
+<li>Authenticate the user.</li>
+<li>Ask OpenFGA which documents or relationships are authorized.</li>
+<li>Build a vector-search metadata filter.</li>
+<li>Run the vector search with that filter.</li>
+<li>Send only authorized results to the LLM.</li>
+</ul>
+<p>The security advantage is that unauthorized documents are never returned by the retrieval operation and never become part of the model’s context. The speaker describes metadata pre-filters and similar mechanisms as available in modern vector databases and frameworks such as LangChain <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2400s">[40:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2700s">[45:00]</a>. Post-filtering can still demonstrate the permission boundary, but the speaker recommends pre-filtering when the goal is to minimize exposure.</p>
+<h3>What the RAG demonstration shows</h3>
+<p>The described demo contains several user personas and document categories, including public, internal, and confidential material. The presenter can enable or disable the FGA authorization layer and test the same questions as different users <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2700s">[45:00]</a>.</p>
+<p>With authorization disabled, a finance-oriented user can ask an API-related question and still receive technical information. This illustrates the problem with allowing the vector search and model to operate without a resource-level permission check.</p>
+<p>With FGA enabled, the same general workflow becomes permission-aware. A request for system-design information can be denied for a user who lacks that access. When an intern persona asks about financial information, the system refuses the request, while a CEO persona can access a broader set of documents. In the comparison described by the speaker, a finance director can access financial reports but still cannot access the company’s private endpoint information.</p>
+<p>The demo is intentionally simple, but it demonstrates the key property: the answer depends on the relationship between the current user and the requested documents, not merely on whether the documents are present in the vector database.</p>
+<h3>Extending authorization to agent tool calls</h3>
+<p>The final section applies the same ideas to agents that call tools. An agent may have API credentials that technically allow it to interact with a system, but those credentials should not automatically mean the agent can perform every possible action for every user. The authorization model should also consider the user, the task, the tool, and the parameters of the call <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3000s">[50:00]</a>.</p>
+<p>The speaker describes a task-based authorization model. A tool can have a “can call” relationship, and individual tasks can represent different operations. For Slack, listing available channels might be one task, while sending a message to a particular channel is another. A user may be allowed to list channels without being allowed to post messages.</p>
+<p>The authorization check can therefore ask a more precise question: can this user perform task one, which sends a message, to this particular Slack channel? This is more restrictive than simply checking whether the agent possesses a valid Slack token.</p>
+<p>The demonstration uses the task “summarize this development project and post it on the private team channel.” Rather than automatically making the tool call, the agent asks the user for permission when the FGA check determines that explicit approval is required. The user can allow the action once, allow it always, or allow it only for the current session. The approval scope becomes part of the authorization decision <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3000s">[50:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3300s">[55:00]</a>.</p>
+<p>If the authorization check already grants the required permission, the agent can make the tool call without asking for additional approval. If the check denies the action but permits an approval workflow, the agent requests consent before proceeding. This provides a practical human-in-the-loop boundary for high-impact actions.</p>
+<p>The talk closes by noting that OpenFGA can also be used outside AI applications. It offers APIs for managing authorization models, relationship tuples, assertions, and checks, and the speaker mentions support for JavaScript, Python, .NET, and Go, along with GitHub Actions and documentation for agent and MCP-related use cases <a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3300s">[55:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Agentic AI needs runtime authorization because agents can plan, retrieve data, and call tools rather than merely generate text.</li>
+<li>Authentication identifies the requester; authorization must determine what that requester may access or do.</li>
+<li>Sensitive information disclosure is a major application-level risk when an agent is connected to internal company data.</li>
+<li>RBAC is simple for common organizational roles but can become difficult to maintain when a large organization accumulates many roles.</li>
+<li>ABAC adds useful context such as department, working hours, and other attributes, but deeply nested resource hierarchies can make permission evaluation more complicated.</li>
+<li>ReBAC represents users, groups, folders, documents, tenants, tasks, and actions as relationships in a graph.</li>
+<li>In a ReBAC model, access can be inherited: a user who can view a folder can become a viewer of documents inside that folder.</li>
+<li>OpenFGA is presented as an open-source ReBAC option inspired by Google’s Zanzibar authorization model; SpiceDB is mentioned as another related option.</li>
+<li>Pre-filtering vector searches is safer than post-filtering because unauthorized documents are excluded before retrieval and are not passed to the LLM.</li>
+<li>A post-filtering implementation can still remove unauthorized documents before generation, but it allows those documents to enter the retrieval path first.</li>
+<li>Agent permissions should be checked at the task and parameter level, not only at the broad tool or API-credential level.</li>
+<li>Human approval can be scoped to one action, an entire session, or future actions, depending on the risk of the tool call.</li>
+<li>ReBAC and OpenFGA address authorization and data-access control; they do not replace defenses against prompt injection, model poisoning, supply-chain attacks, or hallucinations.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Model the authorization domain first.</strong> Identify the subjects, such as users or groups, and the objects, such as folders, documents, tenants, Slack channels, or tasks. Define the relationships that matter: owner, viewer, reader, writer, parent, member, or allowed task. For hierarchical knowledge bases, represent the parent folder explicitly so that permissions can be inherited rather than duplicated for every document.</p>
+<p><strong>Keep identity and authorization separate.</strong> The application can use an identity provider to authenticate the user and receive an access token. It should then pass the authenticated user identity to the authorization layer for resource-specific checks. The video’s architecture places an external FGA check between the application request and the data or action being accessed.</p>
+<p><strong>Use an authorization model plus relationship tuples.</strong> The model defines valid relationship types and inheritance rules. Tuples record facts such as “Kate is a viewer of the product folder” or “the roadmap document belongs to the product folder.” Access checks then ask whether a given subject has a given relationship to a given object. The transcript does not provide a complete runnable OpenFGA file or exact installation commands, so the model described here should be treated as a conceptual schema rather than copy-and-paste syntax.</p>
+<p><strong>Apply permissions before RAG retrieval when possible.</strong> Store the necessary permission information alongside document metadata or derive an authorized document-ID set from OpenFGA. Use that set as a vector-search filter. The demonstration uses Chroma as a local vector database and refers to metadata pre-filtering in vector-search frameworks such as LangChain. The presenter’s code example performs post-filtering, but the stated preference is pre-filtering.</p>
+<p><strong>Do not rely on the model to enforce document permissions.</strong> The agent should not be given all retrieved documents and told through a prompt to hide some of them. The permission check should occur in application code or an authorization service before the documents are supplied as model context.</p>
+<p><strong>Represent tool actions as separate permissions.</strong> For an agent, distinguish between viewing a Slack channel, listing channels, sending a message, and sending a message to a private channel. A broad “agent can use Slack” permission is less precise than task- and parameter-level checks.</p>
+<p><strong>Use approval for sensitive actions.</strong> If the authorization model does not grant an action automatically, the agent can request explicit approval. The demo distinguishes one-time approval, always-allow approval, and session-limited approval. This is especially relevant for actions that modify records, publish messages, or affect private systems.</p>
+<p><strong>Choose the access-control model according to the data structure.</strong> RBAC may be sufficient for simple role-based applications. ABAC is useful when decisions depend on multiple user or environmental attributes. ReBAC is the approach emphasized for nested folders, inherited permissions, document-level access, and action relationships.</p>
+<p><strong>Relevant tools mentioned in the video include</strong> OpenFGA, SpiceDB, Chroma, LangChain, the OpenAI SDK, OpenFGA’s web playground at play.fga.dev, SDKs for JavaScript, Python, .NET, and Go, and GitHub Actions integrations. The video does not provide shell commands, deployment steps, or a complete production configuration.</p>
+<p><strong>Treat the RAG example as a security pattern rather than a complete production design.</strong> The demonstration is intentionally small and uses simplified personas and documents. The transcript does not discuss performance measurements, failure handling, or deployment topology. It also makes clear that authorization is only one part of the broader AI-security problem.</p>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=0s">[0:00]</a> The Harbor Bridge and Bondi Beach analogies, which establish the idea of permissions and safety boundaries.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=300s">[5:00]</a> The distinction between ordinary LLM prompting, human-in-the-loop agents, autonomous agents, and RAG.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=600s">[10:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=900s">[15:00]</a> The security risks discussed and the four runtime questions around identity, tool permissions, workflow behavior, and data access.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=900s">[15:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1500s">[25:00]</a> The progression from ACLs to RBAC, ABAC, and ReBAC, including the nested-folder example.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1500s">[25:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2100s">[35:00]</a> The OpenFGA and Zanzibar discussion, including the identity-provider flow and external authorization checks.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=1800s">[30:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2100s">[35:00]</a> The authorization model, relationship tuples, folder inheritance, and derived document permissions.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2100s">[35:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2700s">[45:00]</a> The RAG knowledge-base architecture and the comparison between post-filtering and pre-filtering.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=2700s">[45:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3000s">[50:00]</a> The persona-based RAG demonstration, including the behavior with FGA disabled and enabled and the described Chroma/vector-search code.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3000s">[50:00]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3300s">[55:00]</a> Task-based agent authorization, Slack permissions, and scoped user approval.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=OK5xPUuco6o&amp;t=3300s">[55:00]</a> The closing list of OpenFGA resources, SDKs, APIs, GitHub Actions support, and MCP-related documentation.</li>
+</ul>
+</main>
+</body>
+</html>
