@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The discussion examines how organizations can secure AI-generated code, coding agents, and software supply chains.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=IvZp4mA6JGs">Watch video</a></nav>
+  <h1>The discussion examines how organizations can secure AI-generated code, coding agents, and software supply chains.</h1>
+  <div class="meta">Scott Hanselman · 2026-07-30T16:31:52+00:00 · Varun Badhwar</div>
+  <h2>What This Video Is About</h2>
+<p>Scott Hanselman and Varun Badhwar discuss how AI coding agents, citizen developers, and increasingly automated software assembly are changing the software security problem. More people are producing more code, but much of that code is assembled from dependencies, packages, models, agent skills, GitHub Actions, and other components. The result is a larger and less familiar software supply chain, not simply a faster version of traditional programming.</p>
+<p>The most urgent shift is that the developer workstation itself has become a high-value attack target. Workstations may contain cloud credentials, Git credentials, package-manager access, MCP tools, CI access, SSH keys, and coding agents with significant autonomy. A malicious package or agent skill can attempt to steal those secrets immediately, before the code reaches a repository, pull request, or CI/CD pipeline.</p>
+<p>Badhwar’s proposed response is zero-trust development combined with a mature SDLC. Security checks should run while an agent is generating code, not only after code reaches a pull request or release candidate. He argues that deterministic static and program analysis should provide application context and security intelligence to an LLM, allowing the LLM to reason about remediation without making the entire security process expensive, slow, and nondeterministic. The intended end state is automated remediation with humans serving as the final verification layer.</p>
+<h2>Detailed Walkthrough</h2>
+<h3>More people are producing more software</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=43s">[00:43]</a>, Badhwar describes two simultaneous pressures. The first is that more people are writing code than ever before. Software production is no longer limited to trained software professionals; he gives the example of a financial analyst building a forecasting application using platforms such as Vercel or Replit. Even if the person does not think of themselves as a software developer, the resulting application still contains code, dependencies, and security risk.</p>
+<p>The second pressure is the industry’s shift from discussing AI primarily as a productivity tool to discussing model safety and cybersecurity. Even if a particular frontier model is restricted because of its potential cyber capabilities, Badhwar argues that open-source models available through places such as Hugging Face may still be capable enough to perform many relevant tasks. Organizations therefore need guardrails for the speed, scale, and variety of AI-assisted development rather than assuming that restricting one model solves the problem.</p>
+<p>He describes the current situation as starting close to “ground zero” on guardrails and safety harnesses. Security has historically been added after major technology shifts, although he believes it is being discussed earlier in the AI transition than it was during the cloud transition. His optimistic point is that the same agents creating concern could also be used to apply security controls and remediation at a scale that humans cannot manage alone.</p>
+<h3>AI-generated code should be treated like untrusted open-source code</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=149s">[02:29]</a>, Hanselman asks whether organizations should treat code written by an agent in the same way they treat code from an unknown open-source contributor. Badhwar agrees with the underlying zero-trust comparison but points out that even mature open-source programs offices historically focused mainly on license compliance and known vulnerabilities.</p>
+<p>The newer risk is that malicious or accidentally malicious code can attack the developer at installation time. A package may execute on the developer’s machine when it is installed, long before the package is reviewed, committed to a repository, or examined by CI/CD controls. This changes the security boundary: a security program that checks only repositories and release artifacts may miss an attack that has already stolen credentials from the workstation.</p>
+<p>Badhwar says AI-generated code has similar trust characteristics because the models learned from decades of code on GitHub and the wider internet. That training data contains good, bad, and ugly code. The model does not automatically know which patterns are secure for a particular application. Treating generated code as implicitly trusted is therefore no safer than implicitly trusting code from a stranger on the internet.</p>
+<h3>Software is increasingly assembled from opaque components</h3>
+<p>The volume and variety of supply-chain inputs are also expanding. Badhwar contrasts the handful of packages a developer might previously have installed in a week with a modern environment that may include packages from npm and Python ecosystems, Hugging Face models, GitHub Actions, agent skills, MCP tools, and other components. Some of the code may appear to be first-party because an agent generated it, even though it depends on external packages and services.</p>
+<p>Hanselman describes this as moving from writing software to assembling software. The application is built on a pyramid consisting of executable instructions, first-party code, dependencies, opaque libraries and binaries, open-source packages, and deployed bytes. An AI agent can even hallucinate a package name that does not exist. Hanselman points out that an attacker could potentially register such a package later, creating a package-squatting opportunity.</p>
+<p>The challenge is amplified by citizen developers. At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=294s">[04:54]</a>, Badhwar recounts a CIO’s experience with a finance team that had built applications containing vulnerabilities. When the security team asked the finance team to update the applications, the response was essentially, “What’s a vulnerability?” Security processes must therefore account for people who can create and deploy software without having traditional software-security training.</p>
+<h3>The developer workstation is now a primary attack surface</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=379s">[06:19]</a>, Badhwar explains why developer workstations have become attractive targets. Traditional software assurance programs focused on scanning source code for accidental vulnerabilities. Attackers, including nation-state actors, are also targeting developers because a workstation may contain unusually valuable access.</p>
+<p>The workstation may run a coding agent with high privileges and the ability to act autonomously. It may also contain credentials for the cloud environment, Git repositories, package managers, CI systems, and other tools. Badhwar calls developers “crown jewels” because compromising one workstation can provide access well beyond that machine.</p>
+<p>The attack sequence he describes is deliberately simple:</p>
+<ul>
+<li>A developer runs an install operation such as `npm install` or a comparable Python package installation.</li>
+<li>The package contains malicious behavior.</li>
+<li>The package searches the workstation for environment variables, credentials, keys, or other secrets.</li>
+<li>The information is sent to the attacker within seconds.</li>
+</ul>
+<p>Badhwar says the exfiltration can happen in approximately five seconds, before a pull-request check has any chance to run. The attacker does not need the malicious package to survive into the company’s CI/CD pipeline. If the developer has access to a Git repository, that repository may also contain many additional keys, giving the attacker a much larger foothold.</p>
+<p>The Station 9 research team at Endor Labs has also observed agent-skill attacks. In the example discussed at <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=496s">[08:16]</a>, a skill can look legitimate and popular while containing simple English instructions telling a coding agent to export SSH keys or environment variables. The attack does not necessarily require sophisticated obfuscation or an exploit; it relies on the agent following instructions.</p>
+<p>Hanselman characterizes this as a “smash and grab” attack. A malicious actor may repeatedly target many developers with automation or a bot swarm. The attacker only needs one developer to have a production storage credential or another valuable secret in an environment variable.</p>
+<h3>Attackers are moving faster than conventional software processes</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=577s">[09:37]</a>, Badhwar argues that attackers are adopting new AI capabilities faster than organizations can approve and deploy them. An organization may spend time evaluating models, obtaining approval from an AI council, running an RFP, and designing an internal evaluation process. Attackers do not need to wait for those governance steps.</p>
+<p>He cites a dramatic change in the time required to create an exploit for a known vulnerability, or CVE: approximately two years in 2008, 23 days the previous year, and 10 hours in the current year. The exact figures are presented as part of the interview’s argument, but the operational conclusion is clear: a company that takes weeks or months to discover, triage, fix, test, and ship a vulnerability is operating too slowly for the current threat environment.</p>
+<p>Hanselman observes that this makes the problem less about AI specifically and more about whether an organization has a healthy software development lifecycle. Badhwar agrees, adding that security must be shifted left into engineering rather than left as a release-stage report.</p>
+<p>The old pattern was to scan release candidates, produce a report or a set of Jira tickets, and expect developers to fix the findings later. Badhwar says that approach does not scale. Security checks should run on the code an agent produces before the agent considers the work complete. Simple issues should be fixed autonomously at that stage. A more thorough review can occur at the pull request, with the system providing feedback and applying additional fixes before release.</p>
+<p>He compares this to the movement from quality assurance toward quality engineering. Developers are expected to deliver working features, not merely code that might eventually work. The same expectation should apply to secure, working features.</p>
+<h3>LLM-only security scanning is expensive and context-poor</h3>
+<p>Hanselman challenges the idea that an LLM can reliably detect security flaws when the same models may generate insecure code. Badhwar corrects the discussion’s initial 60-percent figure and says Endor Labs’ benchmark testing found that 70 to 80 percent of code recommended by even sophisticated models was insecure by default.</p>
+<p>He distinguishes between generating secure code and finding security problems. An LLM may be good at identifying some issues, but that does not mean it will identify the right issues for a particular application, understand the application’s operating context, or do so at an acceptable cost.</p>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=840s">[14:00]</a>, Badhwar gives an example of a company that ran a model he calls Mythos against 32 repositories for approximately a month and received a bill of one million dollars. He also says that some LLM-based pull-request scans can take 20 to 30 minutes and are nondeterministic. Those costs and delays make it impractical to run a large model indiscriminately throughout the development workflow.</p>
+<p>The underlying problem is context. Badhwar says LLMs tend to treat a large codebase as if it were a flat body of text. A real application is a graph: first-party code connects to one library, which connects to many other libraries and transitive dependencies. He uses an example involving one library connected to 77 others. A scan that looks only at a manifest or a simple import list may not understand which components are actually reachable or relevant to the application’s behavior.</p>
+<h3>Static analysis and LLM reasoning should be combined</h3>
+<p>Badhwar’s proposed solution is a hybrid architecture. Static analysis and program analysis can extract the application’s structure, relationships, and a security “heat map.” That context can then be supplied to an LLM so that the model reasons over a more accurate representation of the software.</p>
+<p>He says this combination of static analysis and LLM reasoning can reduce the average analysis time from approximately 20 minutes per pull request to 64 seconds per pull request. The figures are presented as Endor Labs’ results, not as independently verified measurements in the transcript.</p>
+<p>The division of labor is important. Deterministic tools should handle tasks that can be handled deterministically. Badhwar uses the analogy that if a calculation can be done with a calculator, there is no reason to use an LLM for it. LLMs can then be used for contextual reasoning, explanation, and remediation where those capabilities add value.</p>
+<p>Badhwar says Endor Labs has 14 PhDs working on static analysis and that the company has developed security-focused datasets accumulated over many years. These datasets label vulnerabilities in open-source code, identify the relevant lines, and track which later releases fixed them. When this information is supplied to a model that recommends vulnerable code, the system can guide the model toward a corrected implementation.</p>
+<p>He describes this as making the LLM more powerful at lower cost rather than repeatedly increasing model size or token usage. The interview’s architecture is therefore not “use another AI to fix the AI problem.” It is deterministic analysis plus application context plus security-specific data plus targeted model reasoning.</p>
+<h3>The modern supply chain is a graph with excessive access</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1118s">[18:38]</a>, Badhwar explains how open-source security programs evolved. They began primarily around license compliance, then expanded into vulnerability management, and are now being pushed toward broader software supply-chain security.</p>
+<p>He estimates that legacy applications might have been 20 to 30 percent open source, while modern applications may be 80 to 90 percent open source. He goes further by arguing that 99 percent or even 99.9 percent of the code in a modern application may not be newly written by a developer. These figures are his characterization of the shift, not a methodology explained in the transcript.</p>
+<p>The set of components also changes quickly. Agent skills, MCP, GitHub Actions, npm, Python packages, and command-line interfaces all create different paths into the development process. Badhwar says the system must be understood as a graph rather than as a collection of manifest files. Simply seeing an import does not necessarily establish the full security impact in a modern application architecture.</p>
+<p>The access available from the workstation is another concern. At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1235s">[20:35]</a>, Hanselman lists GitHub write access, package-manager credentials, MCP tools, cloud credentials, and CI access. Badhwar agrees that developers often have more access than they need. The discussion does not prescribe a specific workstation product or remote-development architecture, but it clearly argues that development environments must be treated as security-sensitive rather than as harmless preparation areas.</p>
+<h3>Security has a cost, but delaying it costs more</h3>
+<p>Hanselman asks whether the response will be to lock down workstations so heavily that developers must remote into a controlled cloud environment. Badhwar says there is no perfect solution because security imposes a cost. The practical question is whether the cost is tolerable.</p>
+<p>He rejects relying on security through obscurity. If increasingly capable models can discover vulnerabilities rapidly, organizations cannot assume that a weakness will remain hidden. He mentions models he calls Mythos, Fable, and GPT55 while making the point that vulnerabilities may eventually be found regardless of whether an organization chooses to look for them.</p>
+<p>Badhwar contrasts two unacceptable extremes: an 800-page web-inspection report that takes another six months to address, and a platform producing five million findings every six months. The objective is to find the lowest-cost point at which security can be inserted into the development workflow without generating an unmanageable backlog.</p>
+<p>His analogy is automobile manufacturing. A recall after 50,000 cars have been sold is expensive, while correcting a defect on the assembly line is cheaper. In software, the earliest and least expensive place to address many problems is the agentic workflow itself.</p>
+<h3>Security should be part of the agent’s generation loop</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1401s">[23:21]</a>, Badhwar describes the intended workflow:</p>
+<ul>
+<li>A developer provides a specification.</li>
+<li>A coding agent creates a plan and begins building the software.</li>
+<li>Security intelligence and deterministic checks run while the agent is generating code.</li>
+<li>The agent receives instructions about what to fix and applies the remediation.</li>
+<li>The pull request receives a deeper review and additional analysis.</li>
+<li>The release artifact is produced only after the earlier stages have reduced the remaining risk.</li>
+</ul>
+<p>Badhwar describes Endor Labs “REI” as a security-intelligence layer for coding agents. He presents it as a combination of deterministic analysis, probabilistic model reasoning, and Endor-specific security knowledge.</p>
+<p>The central design principle is to avoid turning increased AI code generation into increased human ticket generation. If agents create code and humans merely receive thousands of post-generation security tickets, the organization has increased administrative work without achieving acceleration. Agents can follow instructions and use tools, so the system should tell them which issues to fix while they are still working.</p>
+<h3>The industry must address existing vulnerability debt</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1562s">[26:02]</a>, Badhwar says organizations face two related problems. First, AI-assisted analysis may uncover a large backlog of vulnerabilities accumulated over many years. He describes the task of fixing 20 years of software vulnerabilities over the next six to 18 months as painful and says that the volume of findings will be excessive.</p>
+<p>He cites an Anthropic update he calls “Project Glasswing” and associates it with approximately 40,000 reported CVEs, using the example to illustrate the burden placed on open-source maintainers. Maintainers may have created software as a side project or public contribution and may not have the resources to repair years of newly identified issues immediately.</p>
+<p>Badhwar says Endor Labs has partnered with Anthropic, the Linux Foundation, Microsoft, and others on a community effort to help maintainers address accumulated security problems. His greatest concern is not only large technology companies that can usually patch their own products, but critical infrastructure such as water systems and nuclear power plants that depend on open-source software.</p>
+<p>The second problem is the continuing expansion of the software supply chain. Badhwar expects attacks involving packages, skills, MCP, GitHub Actions, and other components to continue until organizations broadly adopt zero-trust development and treat developer workstation security as a first-class concern.</p>
+<h3>Secure code is more achievable, but never final</h3>
+<p>At <a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1748s">[29:08]</a>, Badhwar says secure code is more achievable than it has been in the past, but not perfectly secure code. Annual security training is unlikely to make 10,000 developers follow the same secure practices consistently. Agents, by contrast, are good at following consistent instructions and rules when those instructions and tools are embedded into their workflow.</p>
+<p>Security remains an evergreen problem because more time, cost, and compute will reveal more issues. Code that appears secure today may be broken tomorrow. For that reason, the more important capability is not a one-time claim of perfect security but a mature CI/CD pipeline, security automation, and agentic remediation.</p>
+<p>The desired operational improvement is to resolve the next major vulnerability in roughly 30 minutes rather than create a weeks-long or months-long war room, as happened with Log4j. Badhwar’s long-term model is that agents perform 90 to 95 percent of the routine security work, while humans remain the final verification and trust layer.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li><strong>The code supply chain is expanding rapidly.</strong> Software now includes first-party code, AI-generated code, npm and Python packages, models, GitHub Actions, agent skills, MCP tools, and opaque binaries.</li>
+</ul>
+<ul>
+<li><strong>AI-generated code should not receive implicit trust.</strong> The models learned from decades of public code containing secure and insecure patterns, so generated code should be handled with the same skepticism as untrusted open-source code.</li>
+</ul>
+<ul>
+<li><strong>Developer workstations are high-value targets.</strong> They may contain cloud, Git, package-manager, CI, SSH, and other credentials, while coding agents may have the privileges to use those credentials autonomously.</li>
+</ul>
+<ul>
+<li><strong>A malicious package can bypass repository security controls.</strong> An install-time attack can exfiltrate environment variables or keys before the package reaches a pull request or CI/CD pipeline.</li>
+</ul>
+<ul>
+<li><strong>Agent skills create a new natural-language attack surface.</strong> A skill can appear legitimate while instructing a coding agent to export secrets or perform another harmful action.</li>
+</ul>
+<ul>
+<li><strong>Security must move into the generation loop.</strong> Checks that run only on release candidates produce reports and tickets too late. Agents should receive security feedback and remediation instructions while they are creating code.</li>
+</ul>
+<ul>
+<li><strong>LLM-only scanning is not a dependable default.</strong> Badhwar cites Endor Labs benchmarks in which 70 to 80 percent of recommended AI code was insecure by default, along with high cost, slow scans, and nondeterministic results.</li>
+</ul>
+<ul>
+<li><strong>Application context matters.</strong> Modern applications are dependency graphs rather than flat source trees. Static and program analysis can identify relevant relationships and provide an LLM with a more useful security context.</li>
+</ul>
+<ul>
+<li><strong>Deterministic analysis and LLM reasoning are complementary.</strong> Static analysis should handle predictable checks, while LLMs can help interpret context, explain findings, and produce remediation when supplied with suitable security intelligence.</li>
+</ul>
+<ul>
+<li><strong>Organizations have substantial vulnerability debt.</strong> More capable analysis will uncover years of accumulated problems, creating pressure on both companies and open-source maintainers to automate remediation.</li>
+</ul>
+<ul>
+<li><strong>Zero trust must include development environments.</strong> Packages, skills, models, tools, and workstation access should not be treated as implicitly safe merely because they are used during development rather than production.</li>
+</ul>
+<ul>
+<li><strong>The goal is rapid, repeatable remediation rather than perfect code.</strong> Humans should verify the result, but automated systems should handle most routine fixes quickly enough to respond to newly discovered vulnerabilities.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Treat the developer workstation as part of the security boundary.</strong> The discussion specifically identifies GitHub write access, package-manager credentials, cloud credentials, CI access, MCP tools, SSH keys, and environment variables as potentially exposed assets. A zero-trust development approach should account for what can happen when a developer installs a package or activates an agent skill. The transcript’s `npm install` example is an attack scenario, not a recommendation to run an untrusted command.</p>
+<p><strong>Do not rely on pull-request or CI/CD checks as the first line of defense.</strong> Those checks may be valuable for repository and release assurance, but they occur after an install-time package or agent skill may already have accessed the workstation. The proposed control sequence begins earlier, inside the coding-agent workflow.</p>
+<p><strong>Add security checks before an agent considers its output complete.</strong> The agent should receive tools and instructions that identify problems during code generation, apply fixes, and repeat the checks before the work moves to a pull request. The pull request should then receive a more thorough review rather than serving as the first moment security is considered.</p>
+<p><strong>Use a hybrid analysis architecture.</strong> The architecture described in the interview has four parts: deterministic static or program analysis, extraction of the application’s dependency and execution context, security-specific vulnerability data, and LLM reasoning for contextual remediation. This avoids sending every problem to an expensive general-purpose model.</p>
+<p><strong>Use specialized security data to guide remediation.</strong> Endor Labs’ described datasets track vulnerable lines of code and the releases that fixed them. That kind of information can help an agent replace an insecure recommendation with a known remediation pattern rather than merely asking a general model to try again.</p>
+<p><strong>Choose the analysis method according to the problem.</strong> Badhwar’s “calculator” analogy means that deterministic tasks should remain deterministic. Large models should be reserved for reasoning tasks where context and explanation matter. The interview presents this as a way to reduce token cost, latency, and nondeterminism.</p>
+<p><strong>Build for automated remediation, not only vulnerability reporting.</strong> A workflow that produces a large backlog of security tickets leaves humans responsible for the most repetitive part of the work. The intended design is for agents to handle routine fixes and for humans to validate the changes, particularly at the pull-request or release boundary.</p>
+<p><strong>Prepare for rapid vulnerability response.</strong> The cited reduction in exploit-development time means that organizations need a mature CI/CD pipeline capable of discovering, triaging, fixing, testing, and shipping a response quickly. Badhwar uses approximately 30 minutes as an aspiration for handling future issues rather than repeating the prolonged response associated with Log4j.</p>
+<p><strong>Make tradeoffs explicit.</strong> Security has a cost in developer time, model usage, latency, and operational complexity. The relevant decision is not whether security costs nothing, but whether the cost of early controls is lower and more tolerable than the cost of a compromised workstation, a late vulnerability discovery, or a large remediation backlog.</p>
+<p><strong>Account for citizen developers.</strong> The finance-team example shows that security tooling and feedback cannot assume every code producer understands vulnerability terminology. The workflow must give actionable remediation guidance to people who may have assembled an application without traditional software-development training.</p>
+<p>The transcript does not provide a concrete configuration, product deployment procedure, shell script, or complete control checklist. Its named components include npm, Python package installation, Hugging Face models, GitHub Actions, MCP tools, agent skills, Endor Labs REI, Station 9 research, static analysis, and CI/CD. The benchmark figures and performance claims are presented by Badhwar as Endor Labs research or examples from the discussion; the transcript does not provide their methodology.</p>
+<h2>What To Revisit In The Video</h2>
+<p>The transcript does not describe a clearly documented live product demo. These sections are worth revisiting for the main arguments, terminology, and workflow:</p>
+<ul>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=43s">[00:43]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=142s">[02:22]</a></strong> — The two forces driving the problem: more people producing code and the shift from AI productivity discussions to security and safety.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=149s">[02:29]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=371s">[06:11]</a></strong> — Why AI-generated code resembles untrusted open-source code, how citizen developers change the audience, and how software is increasingly assembled from dependencies.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=379s">[06:19]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=532s">[08:52]</a></strong> — The developer workstation as a “crown jewel,” install-time secret theft, and malicious agent skills that use plain-English instructions.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=577s">[09:37]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=737s">[12:17]</a></strong> — The acceleration of exploit development and the case for a healthy CI/CD pipeline with security checks inside the coding loop.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=745s">[12:25]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1056s">[17:36]</a></strong> — The 70-to-80-percent insecure-code claim, the cost of LLM-only scanning, application-graph context, and the static-analysis-plus-LLM approach.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1118s">[18:38]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1244s">[20:44]</a></strong> — The evolution from license compliance to supply-chain security and the growing set of tools and credentials available from development environments.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1276s">[21:16]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1552s">[25:52]</a></strong> — Security-versus-speed tradeoffs, the “shift left” cost argument, REI, agent instructions, and automated remediation.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1562s">[26:02]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1737s">[28:57]</a></strong> — Vulnerability debt, pressure on open-source maintainers, critical-infrastructure concerns, and the case for zero-trust development.</li>
+<li><strong><a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1748s">[29:08]</a>-<a class="timestamp" href="https://www.youtube.com/watch?v=IvZp4mA6JGs&amp;t=1855s">[30:55]</a></strong> — Why perfect security is not promised, why automation is still essential, and the proposed division of labor between agents and human reviewers.</li>
+</ul>
+</main>
+</body>
+</html>

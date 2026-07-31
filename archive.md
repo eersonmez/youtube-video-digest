@@ -1,5 +1,7 @@
 # YouTube Video Digest Archive
 
+- 2026-07-30T16:31:52+00:00 - Scott Hanselman: [Varun Badhwar](https://www.youtube.com/watch?v=IvZp4mA6JGs)
+- 2026-07-30T12:00:03+00:00 - Andrew Huberman: [Essentials: How to Become Resilient, Forge Your Identity & Lead Others | Jocko Willink](https://www.youtube.com/watch?v=lxDf8uEypJU)
 - 2026-07-29T22:37:43+00:00 - OpenAI: [Using Voice in ChatGPT Work](https://www.youtube.com/watch?v=_Gd9yzAc-WI)
 - 2026-07-29T17:23:02+00:00 - OpenAI: [We're giving 100,000 academic researchers free access to our frontier models](https://www.youtube.com/watch?v=MLehRytu9Zo)
 - 2026-07-29T15:00:25+00:00 - Alex Kantrowitz: [How AI's Top New Models Transform Cybersecurity (And Where They Don't) — With Snehal Antani](https://www.youtube.com/watch?v=td7mqrD7J0A)
@@ -58,5 +60,3 @@
 - 2026-07-17T15:30:37+00:00 - Leonid Kim MD: [Gut Detox: The Fastest Way To Repair Your Gut Naturally (Backed by Science)](https://www.youtube.com/watch?v=9Kltb23c3ic)
 - 2026-07-16T22:15:11+00:00 - OpenAI: [How Shopify Uses ChatGPT Work to Build Faster with AI Agents](https://www.youtube.com/watch?v=OHVu3Y4B3RI)
 - 2026-07-16T18:00:16+00:00 - OpenAI: [ChatGPT can now complete tasks on your computer](https://www.youtube.com/watch?v=dB6pOolO7io)
-- 2026-07-16T17:00:23+00:00 - Alex Kantrowitz: [Demis Hassabis & Sergey Brin: Web's Future, AGI Timeline, AI For Job Interviews, Simulation Theory](https://www.youtube.com/watch?v=-sTinHaatPE)
-- 2026-07-16T17:00:16+00:00 - OpenAI: [What racing reveals about working with AI — the OpenAI Podcast Ep. 22](https://www.youtube.com/watch?v=KNPjRpNtQ7s)
