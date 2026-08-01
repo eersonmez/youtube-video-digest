@@ -1,5 +1,12 @@
 # YouTube Video Digest Archive
 
+- 2026-07-31T12:16:14+00:00 - NDC Conferences: [From LLM Theory to Practical Agentic Implementations - Seth Juarez](https://www.youtube.com/watch?v=rYBAyvaF3Yo)
+- 2026-07-31T12:09:11+00:00 - NDC Conferences: [Legacy Architecture Migration Patterns with DDD - Nick Tune - NDC Toronto 2026](https://www.youtube.com/watch?v=np6R0wE68oI)
+- 2026-07-31T12:02:33+00:00 - NDC Conferences: [Prompt-Jacking: The Rise of a New Supply Chain Risk - Kasimir Schulz & Kenneth Yeung](https://www.youtube.com/watch?v=SsTtp_Nrmn4)
+- 2026-07-31T11:54:06+00:00 - NDC Conferences: [Use a Rust SAT Solver to play better pickleball! -  Bob McNaughton - NDC Toronto 2026](https://www.youtube.com/watch?v=GcyiiCRSfWs)
+- 2026-07-31T10:47:05+00:00 - NDC Conferences: [Building AI That Learns and Adapts: A Case Study in MRI Diagnostics - Agata Chudzińska](https://www.youtube.com/watch?v=dWQMhrIt5XE)
+- 2026-07-31T10:35:23+00:00 - NDC Conferences: [Everything you learned about SSL is deprecated - Todd Gardner - NDC Toronto 2026](https://www.youtube.com/watch?v=-9KiLFr8_hI)
+- 2026-07-31T10:25:55+00:00 - NDC Conferences: ["Looks Good to Me": A Practical Guide to Handling AI-Generated Code - Roman Zhukov](https://www.youtube.com/watch?v=LnZDY6XC5pA)
 - 2026-07-30T16:31:52+00:00 - Scott Hanselman: [Varun Badhwar](https://www.youtube.com/watch?v=IvZp4mA6JGs)
 - 2026-07-30T12:00:03+00:00 - Andrew Huberman: [Essentials: How to Become Resilient, Forge Your Identity & Lead Others | Jocko Willink](https://www.youtube.com/watch?v=lxDf8uEypJU)
 - 2026-07-29T22:37:43+00:00 - OpenAI: [Using Voice in ChatGPT Work](https://www.youtube.com/watch?v=_Gd9yzAc-WI)
@@ -53,10 +60,3 @@
 - 2026-07-20T15:04:34+00:00 - Alex Kantrowitz: [Inside The Rise of Physical AI — With Amir Khoshniyati](https://www.youtube.com/watch?v=vadrwcprLFI)
 - 2026-07-20T13:42:57+00:00 - OpenAI: [How BNY CEO Robin Vince Turns AI Optimism Into Action](https://www.youtube.com/watch?v=MmYCdNhrhfA)
 - 2026-07-20T13:34:47+00:00 - NDC Conferences: [Boosting Software Efficiency : A Case Study of 100% Performance Improvement in ... - Gili Kamma](https://www.youtube.com/watch?v=7U4JhVVuE9U)
-- 2026-07-20T13:05:40+00:00 - NDC Conferences: [Algorithms & Combinators - Conor Hoekstra - NDC Toronto 2026](https://www.youtube.com/watch?v=ZoRbkIzdb2I)
-- 2026-07-20T12:11:58+00:00 - NDC Conferences: [Carbon: graduating from the experiment - Chandler Carruth - NDC Toronto 2026](https://www.youtube.com/watch?v=56t8iQ4qUog)
-- 2026-07-20T12:00:13+00:00 - Andrew Huberman: [Accelerate Learning & Increase Cognitive Capacity | Dr. Tommy Wood](https://www.youtube.com/watch?v=bPd9NnOzx78)
-- 2026-07-17T16:33:09+00:00 - Scott Hanselman: [Who is left behind when AI moves fast? with Dr. Chinasa T. Okolo](https://www.youtube.com/watch?v=M9qo_yJwAKc)
-- 2026-07-17T15:30:37+00:00 - Leonid Kim MD: [Gut Detox: The Fastest Way To Repair Your Gut Naturally (Backed by Science)](https://www.youtube.com/watch?v=9Kltb23c3ic)
-- 2026-07-16T22:15:11+00:00 - OpenAI: [How Shopify Uses ChatGPT Work to Build Faster with AI Agents](https://www.youtube.com/watch?v=OHVu3Y4B3RI)
-- 2026-07-16T18:00:16+00:00 - OpenAI: [ChatGPT can now complete tasks on your computer](https://www.youtube.com/watch?v=dB6pOolO7io)

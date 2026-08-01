@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The progression from Large Language Model theory to practical agentic implementations using runtime control.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=rYBAyvaF3Yo">Watch video</a></nav>
+  <h1>The progression from Large Language Model theory to practical agentic implementations using runtime control.</h1>
+  <div class="meta">NDC Conferences · 2026-07-31T12:16:14+00:00 · From LLM Theory to Practical Agentic Implementations - Seth Juarez</div>
+  <h2>What This Video Is About</h2>
+<p>This video demystifies the concept of Large Language Models (LLMs) by moving beyond the abstract idea that they are autonomous agents. The central thesis is that an LLM, at its core, is fundamentally a next-token predictor—a sophisticated mathematical function operating on tokens. True &quot;agency&quot; in AI applications does not reside within the model itself but is entirely imbued by the developer through the surrounding runtime environment or harness.</p>
+<p>The discussion details how simple text completion evolves into complex agentic systems. This evolution involves structuring LLM outputs, implementing branching logic, managing state via context threading, enforcing policies with guardrails, and enabling external interaction through tool calls. The speaker demonstrates a progression from basic intent mapping to building a multi-role system that orchestrates research, drafting, and review by passing persistent state between different model invocations.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by establishing the fundamental nature of LLMs: they are giant machine learning algorithms designed solely to predict the next token <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=15s">[0:15]</a>. Tokens are vector representations of word pieces in hyperdimensional space. When an LLM generates text, it is simply predicting one token after another based on the input sequence.</p>
+<p>The training process involves minimizing a loss function by comparing the model&#x27;s predicted output probability distribution against the actual correct next token. This optimization process updates the model&#x27;s weights <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=300s">[5:00]</a>. Early applications relied on &quot;completions,&quot; where the model simply finished text. However, modern implementations use structured approaches to gain control.</p>
+<p>The speaker introduces an application called Draft Flow, which illustrates nine progressively complex scenarios of agentic implementation.</p>
+<p><strong>Mode 1: Simple Completion (Stateless)</strong> In this initial mode, the LLM operates in a standard completion format, receiving a system message and a user command <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=570s">[9:30]</a>. The model is stateless; every interaction starts fresh, knowing nothing about previous turns unless explicitly provided in the prompt. Early uses of intent mapping involved asking the LLM to classify input (e.g., &quot;support&quot; vs. &quot;sales&quot;) so the runtime could branch execution accordingly <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=600s">[10:00]</a>.</p>
+<p><strong>Mode 2: Structured Output (Branching)</strong> The next step involves forcing the LLM&#x27;s output into a specific structure, such as JSON <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=870s">[14:30]</a>. When the model is constrained to return structured data, the runtime can parse this output and use it for control flow decisions. This introduces rudimentary agency because the runtime acts upon the model&#x27;s structured prediction (e.g., parsing JSON fields) <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=900s">[15:00]</a>. The speaker emphasizes that the *runtime* imbues the model with agency through branching based on its output, not the model itself.</p>
+<p><strong>Mode 3: Full Chat/Context Threading (State Management)</strong> To maintain conversation history, a concept called a &quot;thread&quot; or message array is introduced <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=1080s">[18:00]</a>. This thread object is passed back and forth to the LLM in each turn, providing it with context from previous interactions. The model processes this entire sequence of tokens (user and assistant messages) as its input context. While this allows for conversational flow, the speaker notes that the last message in the user role often receives the most attention <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=1230s">[20:30]</a>.</p>
+<p><strong>Mode 4: Tool Calling / Function Calling (Code Execution)</strong> The system becomes truly agentic when structured output is shaped to resemble a function call with parameters and values. The LLM suggests an action, such as &quot;fetch Azure Foundry,&quot; which the runtime recognizes as a tool request <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=1500s">[25:00]</a>. This initiates the <strong>agentic loop</strong>: the runtime executes the suggested tool, places the result back onto the thread, and feeds it back to the LLM for its next decision. The binding mechanism maps these abstract function calls (e.g., &quot;fetch&quot;) to actual executable code within the service <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=2280s">[38:00]</a>.</p>
+<p><strong>Mode 5: Memory Management (Context Augmentation)</strong> Memory is implemented by treating memory retrieval as another tool call, such as `use_memory` <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=2400s">[40:00]</a>. This allows the LLM to access stored information. The speaker distinguishes between short-term context (in the prompt), episodic memory (facts about users/entities), and procedural memory (the defined tools themselves). A critical failure point is highlighted when an LLM suggests using data from one user ID when it should be restricted to another, leading into the need for guardrails <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=2580s">[43:00]</a>.</p>
+<p><strong>Mode 6 &amp; 7: Guardrails and Bindings (Policy Enforcement)</strong> Guardrails are custom functions within the runtime that inspect suggested actions before execution. For instance, a memory guardrail can block access if the requested user ID does not match the current session&#x27;s ID <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=2700s">[45:00]</a>. Bindings solve the problem of requiring dynamic data like `user_id` or `session_id`. Instead of asking the LLM to guess these values, bindings inject them into the function call parameters before execution, removing the cognitive load from the model <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=2940s">[49:00]</a>.</p>
+<p><strong>Mode 8: Steering (External Input)</strong> Steering involves introducing an external queue of messages that the LLM can &quot;drain&quot; into its thread at specific points within the agentic loop. This allows the system to react to asynchronous events, similar to how Copilot might pull in background information <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=3120s">[52:00]</a>.</p>
+<p><strong>Mode 9: Composition (Multi-Agent Workflow)</strong> The final stage is composition, where multiple distinct LLM prompts (each with a specific role—e.g., Researcher, Drafter, Reviewer) operate concurrently or sequentially on the *same shared thread* <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=3240s">[54:00]</a>. The runtime manages the handoff between these specialized agents while maintaining a single state across all of them. Furthermore, Prompty allows for &quot;implicit orchestration via tool call,&quot; where one LLM can decide to invoke another LLM as a tool call (sequential orchestration) <a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=3390s">[56:30]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>LLMs are fundamentally next-token predictors; agency is entirely provided by the surrounding runtime harness, not inherent in the model itself.</li>
+<li>Agency emerges when the runtime uses structured outputs from the LLM to trigger branching logic or tool execution.</li>
+<li>Memory is managed by carefully injecting relevant historical data into the LLM&#x27;s context thread for each turn.</li>
+<li>Structured output (like JSON) allows developers to impose control flow decisions onto the model&#x27;s predictions, moving beyond simple text generation.</li>
+<li>The agentic loop is defined as a `while` loop where the runtime repeatedly executes tool calls suggested by the LLM and feeds the results back into the thread until no more tools are called.</li>
+<li>Guardrails allow developers to enforce policies (e.g., user ID checks) on proposed actions within the execution loop.</li>
+<li>Bindings automate the injection of dynamic context (like `user_id`) into function parameters, preventing the LLM from needing to infer session details.</li>
+<li>Steering allows an agent running in a loop to process external, asynchronous queues of messages that are then integrated into its thread context.</li>
+<li>Composition involves designing multiple specialized prompts/agents that share and pass state through one persistent thread.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Tool Definition:</strong> Tools must be defined with clear parameters and bindings (e.g., specifying a `string` type for a parameter). The runtime maps these definitions to actual executable code (delegates or function pointers in C#).</li>
+<li><strong>Agentic Loop Structure:</strong> A typical agent loop involves: while there are tool calls, execute the call -&gt; place result on thread -&gt; feed updated thread back to LLM.</li>
+<li><strong>Memory Implementation:</strong> Memory is achieved by creating a dedicated memory tool that interacts with external storage and returns relevant context into the prompt&#x27;s input thread.</li>
+<li><strong>Guardrail Logic:</strong> Guardrails are implemented as checks within the runtime loop, inspecting proposed actions (e.g., checking if `user_id` in a suggested tool call matches the current session ID) before execution proceeds.</li>
+<li><strong>Binding Implementation:</strong> Bindings map external context variables (like `current_user`) to specific input parameters of defined tools, ensuring the LLM operates on pre-validated data rather than guessing required metadata.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=600s">[10:00]</a> - Discussion on Intent Mapping and simple branching using completions.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=870s">[14:30]</a> - Demonstration of forcing structured output (JSON) to enable runtime parsing.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=1200s">[20:00]</a> - Explanation of the thread object and how context is passed across turns in a chat interface.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=1500s">[25:00]</a> - Introduction to tool calling by shaping JSON output into function signatures.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=1800s">[30:00]</a> - Detailed walkthrough of the agentic loop (Mode 5) involving fetching data and setting titles sequentially.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=2700s">[45:00]</a> - Demonstration of a memory guardrail blocking unauthorized access attempts based on user ID.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=3120s">[52:00]</a> - Example showing how steering allows an LLM to process messages from an external queue during its loop execution.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=rYBAyvaF3Yo&amp;t=3240s">[54:00]</a> - Overview of the composition workflow where multiple specialized agents share one thread context.</li>
+</ul>
+</main>
+</body>
+</html>

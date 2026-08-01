@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This presentation discusses patterns and strategies for migrating legacy systems using Domain-Driven Design (DDD), incorporating modern practices like AI.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=np6R0wE68oI">Watch video</a></nav>
+  <h1>This presentation discusses patterns and strategies for migrating legacy systems using Domain-Driven Design (DDD), incorporating modern practices like AI.</h1>
+  <div class="meta">NDC Conferences · 2026-07-31T12:09:11+00:00 · Legacy Architecture Migration Patterns with DDD - Nick Tune - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides an in-depth discussion on architectural patterns and strategies for modernizing legacy systems, particularly when applying Domain-Driven Design (DDD) principles. The central theme is that while established patterns exist, real-world legacy migrations involve numerous granular decisions that these high-level patterns do not fully cover. The speaker details fundamental &quot;building blocks&quot; required to manage the transition from an old system to a new one, addressing challenges like data model translation and maintaining consistency between parallel systems.</p>
+<p>The discussion also explores how modern practices, specifically Artificial Intelligence (AI), can be integrated into this complex migration process. It is emphasized that while AI can assist in managing large, multi-codebase projects, deterministic tools and human insight remain crucial for ensuring the reliability of the modernization effort. The presentation uses examples from the company Payit to illustrate these concepts in practice.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The speaker begins by framing legacy system modernization as a process requiring constant micro-decisions rather than just following established patterns <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=0s">[0:00]</a>. When modernizing, one must decide how to handle operations—whether to move consumers writing to the old system to the new one (write operation migration) or build and migrate read operations from the old API to a new one <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=94s">[1:34]</a>.</p>
+<p>Key building blocks for modernization include managing domain concepts across systems that may have evolved over time, running the new and old systems in parallel, defining request routing between them, and critically, mapping models—deciding what functionality to keep, evolve, or discard <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=300s">[5:00]</a>. Furthermore, even years into a project, one must continually revisit the legacy system to understand core functionalities that might not have been documented <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=338s">[5:38]</a>.</p>
+<p>Regarding implementation depth, there are two main approaches: rewriting the entire legacy system in a new language while keeping its structure, or migrating and improving pieces incrementally <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=724s">[12:04]</a>. Modularity is another challenge; legacy systems often have scattered dependencies that do not fit neatly into modern architectures <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=938s">[15:38]</a>.</p>
+<p>The speaker then discusses synchronization strategies necessary when both old and new systems operate concurrently. The primary methods are Domain Events and Change Data Capture (CDC), though batch import jobs or shared databases can also be used <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=964s">[16:04]</a>. At Payit, the team moved toward an event-driven architecture but found that relying solely on publishing events from legacy code was risky because of numerous undocumented workflows or infrequent processes like monthly batch imports <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=1388s">[23:08]</a>. CDC addresses this by using database triggers to publish changes automatically upon modification, though it risks losing business context associated with a data change <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=1574s">[26:14]</a>.</p>
+<p>DDD patterns offer further guidance. The &quot;Bubble&quot; pattern suggests starting with a new domain model and potentially a new data store, synchronizing at the data level (e.g., using CDC or outbox patterns) <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=1808s">[30:08]</a>. Another variation involves keeping the legacy system as is but migrating piece by piece while fixing and improving things simultaneously <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=766s">[12:46]</a>. The choice between these approaches hinges on how much of the legacy code one wishes to touch versus building fresh components, which relates directly to the domain model <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=2100s">[35:00]</a>.</p>
+<p>When running systems in parallel, challenges arise, notably asymmetrical validation. For instance, if the new system enforces stricter rules (e.g., disallowing emojis in emails), it may receive data from the legacy system that violates those new rules, forcing short-term compromises <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=1548s">[25:48]</a>.</p>
+<p>The speaker details two primary migration tracks used at Payit&#x27;s employee management domain. One track focused on migrating the &quot;right model first&quot; (the concept of an Employee/Collaborator), building a new autonomous bubble (System C) to become the source of truth for personal information, and then synchronizing this data out to legacy systems A and B <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=2284s">[38:04]</a>. The other track involved prioritizing events first, where the legacy system published events based on its existing model, forcing consuming domains to translate that legacy model into their new domain models <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=2712s">[45:12]</a>. Despite the apparent simplicity of event-first migration, it proved complex due to numerous undocumented workarounds and use cases embedded in the legacy system&#x27;s data structure across different countries <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=2880s">[48:00]</a>.</p>
+<p>Finally, AI was applied to streamline cleanup tasks within a modernization program. The team created a project management tool using a Git repository populated with Markdown files containing front matter YAML for status tracking. This allowed AI agents access to raw project data without needing external APIs <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=3092s">[51:32]</a>. To ensure reliability, the speaker stressed building deterministic tools—using OpenAPI specs instead of asking AI to discover endpoints, and forcing AI instructions with specific algorithms (e.g., detailing file traversal from API route to service layer) rather than just stating an end goal <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=3424s">[57:04]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Legacy modernization requires addressing numerous micro-decisions beyond what high-level architectural patterns fully cover.</li>
+<li>Core building blocks include deciding on write operation migration versus read operation migration, managing domain concept translation, and defining request routing between old and new systems.</li>
+<li>Synchronization strategies between parallel systems primarily involve Domain Events or Change Data Capture (CDC), though other methods exist.</li>
+<li>The &quot;Bubble&quot; pattern offers choices regarding where data model mapping occurs: either entirely in code during synchronization or at the data level via scripts/CDC.</li>
+<li>Running systems in parallel introduces challenges like asymmetrical validation when new systems enforce stricter rules than legacy ones.</li>
+<li>AI can accelerate migration by managing complex, multi-codebase projects, but its effectiveness relies on building harnesses around it.</li>
+<li>A key principle for using AI reliably is prioritizing deterministic tools (like reading OpenAPI specs) over asking the AI to discover information autonomously.</li>
+<li>When instructing AI, providing a highly specific algorithm or end state with required steps yields better results than simply stating an objective.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Migration Approaches:</strong> Two main strategies discussed are rewriting the legacy system in a new language while maintaining its structure, versus migrating and improving pieces incrementally <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=766s">[12:46]</a>.</li>
+<li><strong>Data Synchronization Choices:</strong> Use Domain Events or CDC to keep data consistent between systems with different databases.</li>
+<li><strong>Model Mapping Decision Point:</strong> Decide whether to start by building a new write model (Right Model First) or by consuming events from the legacy system and translating them into the new domain model (Events First).</li>
+<li><strong>AI Implementation Detail:</strong> To make AI useful, structure project data in Git repositories using Markdown files with YAML front matter for status tracking.</li>
+<li><strong>Reliability Technique:</strong> When analyzing code with AI, force it to follow a specific sequence of steps (e.g., API route -&gt; controller -&gt; service -&gt; data access) and reference line numbers rather than allowing it free optimization <a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=3544s">[59:04]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=754s">[12:34]</a> - Discussion on the two different approaches to modernization depth.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=964s">[16:04]</a> - Comparison of Domain Events vs. CDC for synchronization.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=2284s">[38:04]</a> - Detailed walkthrough of the &quot;Right Model First&quot; migration track at Payit.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=2712s">[45:12]</a> - Explanation of the &quot;Events First&quot; approach and its associated complexities.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=np6R0wE68oI&amp;t=3092s">[51:32]</a> - Demonstration of using Git repositories with Markdown files for AI project management.</li>
+</ul>
+</main>
+</body>
+</html>

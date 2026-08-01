@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using Rust and Constraint Satisfaction Problem solvers to optimize pickleball tournament scheduling.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=GcyiiCRSfWs">Watch video</a></nav>
+  <h1>Using Rust and Constraint Satisfaction Problem solvers to optimize pickleball tournament scheduling.</h1>
+  <div class="meta">NDC Conferences · 2026-07-31T11:54:06+00:00 · Use a Rust SAT Solver to play better pickleball! -  Bob McNaughton - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video explores the theoretical foundations of NP-complete problems, specifically Boolean Satisfiability (SAT), and demonstrates a practical application using constraint satisfaction problem (CSP) solvers. The central topic is applying advanced computational techniques to solve complex real-world scheduling issues, exemplified by organizing a pickleball tournament with teams of three while minimizing skill variance across groups.</p>
+<p>The discussion moves from abstract computer science theory—such as the Cook-Levin theorem and the definitions of P and NP complexity classes—to concrete implementation using the SCIP library within Rust. The goal is to move beyond simple elimination formats to create a fairer competition by optimizing team composition based on player skill ratings.</p>
+<p>Ultimately, the video serves as an illustration of how powerful optimization tools can tackle problems that are computationally difficult in the general case, while also providing practical insights into the performance limitations when scaling these solutions to very large instances.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins with a discussion on the Boolean Satisfiability problem being NP-complete <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=35s">[0:35]</a>. This concept is linked to the Cook-Levin theorem, which proves that SAT is NP-hard and can be mapped polynomially to any other NP-hard problem <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=264s">[4:24]</a>, making it useful for proving other problems are also NP-hard.</p>
+<p>The speaker then defines a Constraint Satisfaction Problem (CSP) as consisting of three elements: a set of variables, a domain for each variable, and a set of constraints that reduce the allowable range of those domains <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=426s">[7:06]</a>. Boolean Satisfiability is presented as a subset of CSP where the domain is restricted to only true or false.</p>
+<p>The complexity classes P (problems solvable in polynomial time) and NP (nondeterministic polynomial time—meaning a solution can be verified in polynomial time, even if finding it might require guessing) are explained <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=491s">[8:11]</a>. The practical implication for programmers is that encountering an NP-complete problem suggests it may not be solvable efficiently in the general case <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=688s">[11:28]</a>.</p>
+<p>The speaker contrasts exhaustive search with more efficient techniques like backtracking and backjumping when solving SAT problems, which reduce the exponential complexity by pruning branches of a decision tree <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=1247s">[20:47]</a>.</p>
+<p>A shift occurs to practical tools. While Z3 (from Microsoft) is mentioned as a solver for Boolean Satisfiability that can be used via Python <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=908s">[15:08]</a>, the core demonstration uses SCIP, a library designed for solving constraint integer problems and implemented in Rust <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=1494s">[24:54]</a>. SCIP allows modeling using both binary (zero or one) and continuous variables.</p>
+<p>The pickleball scheduling problem is modeled by defining a two-dimensional array of binary variables where axes represent groups and players <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=2835s">[47:15]</a>. Constraints are added to enforce that every player belongs to exactly one group <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=2902s">[48:22]</a> and that every group has exactly three players <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=2934s">[48:54]</a>. The objective function then minimizes the deviation in skill level between groups by comparing the average skill of each group against a target average <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=2982s">[49:42]</a>.</p>
+<p>Testing with 99 players resulted in 33 groups, achieving minimal variance across most teams. However, performance testing revealed limitations; while it solved the problem for 99 players quickly (around 100 seconds), instances like 120 or 111 did not converge within a reasonable timeframe <a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=3168s">[52:48]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Boolean Satisfiability is NP-complete, meaning finding a general solution can take exponential time relative to the problem size.</li>
+<li>Constraint Satisfaction Problems (CSPs) are a generalization of SAT, allowing for variables with domains larger than just true/false (e.g., integers or floats).</li>
+<li>The SCIP library in Rust is used to model and solve integer programming problems, which is necessary for optimization tasks like minimizing skill deviation.</li>
+<li>A successful test case involved scheduling 99 players into 33 groups of three using SCIP, resulting in a minimized variance in average team skill.</li>
+<li>Performance degrades significantly with larger inputs; the solver struggled to converge on instances such as 120 or 111 players within practical time limits.</li>
+<li>Optimization problems require defining variables (e.g., binary indicators for player assignment) and constraints (e.g., each player in exactly one group, groups must have three members).</li>
+<li>SAT solvers are best suited when the goal is merely to determine if a solution exists; SMT/CSP solvers like SCIP are necessary for finding the *best* solution among many possibilities.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Tools:</strong> Z3 (from Microsoft) and SCIP (Solving Constraint Integer Programs, from Zeus Institute in Berlin). Both can be interfaced with Rust or Python.</li>
+<li><strong>Modeling Approach:</strong> For the pickleball problem, a two-dimensional array of binary variables was used to represent player assignment across groups. Continuous variables were introduced to track skill level deviation for optimization.</li>
+<li><strong>Constraints Implemented:</strong> 1) Each player must belong to exactly one group. 2) Every group must contain exactly three players.</li>
+<li><strong>Optimization Goal:</strong> Minimize the difference between the average skill level of each group and the overall average skill across all groups (minimizing variance).</li>
+<li><strong>Caveats/Risks:</strong> The SCIP library is single-threaded, meaning performance gains from multi-core CPUs are limited to the core&#x27;s processing power. Larger problem sizes lead to non-convergence within reasonable timeframes.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=35s">[0:35]</a> - Introduction to NP-complete problems and SAT.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=264s">[4:24]</a> - Explanation of the Cook-Levin theorem.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=426s">[7:06]</a> - Formal definition of a Constraint Satisfaction Problem (CSP).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=908s">[15:08]</a> - Demonstration of using Z3 for Boolean Satisfiability in Python.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=1494s">[24:54]</a> - Introduction to SCIP as a general constraint integer problem solver implemented/used with Rust.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=2811s">[46:51]</a> - Detailed walkthrough of defining the model, variables (binary and continuous), and constraints for the pickleball scheduling problem.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=GcyiiCRSfWs&amp;t=3159s">[52:39]</a> - Performance testing results showing time taken for different tournament sizes.</li>
+</ul>
+</main>
+</body>
+</html>

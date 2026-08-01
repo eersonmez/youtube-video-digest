@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The presentation details a case study on implementing continual learning in MRI diagnostics for detecting Focal Cortical Dysplasias (FCDs).</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=dWQMhrIt5XE">Watch video</a></nav>
+  <h1>The presentation details a case study on implementing continual learning in MRI diagnostics for detecting Focal Cortical Dysplasias (FCDs).</h1>
+  <div class="meta">NDC Conferences · 2026-07-31T10:47:05+00:00 · Building AI That Learns and Adapts: A Case Study in MRI Diagnostics - Agata Chudzińska</div>
+  <h2>What This Video Is About</h2>
+<p>This video presents a case study on implementing continual learning within the field of medical imaging, specifically for diagnosing Focal Cortical Dysplasias (FCDs) from Magnetic Resonance Imaging (MRI) scans. The central theme is addressing the &quot;missing piece&quot; in current AI training—the ability of an AI to learn and adapt continuously without forgetting previously acquired knowledge. FCDs are structural errors in brain development that cause epilepsy, and while they are potentially operable, identifying them on MRI is extremely difficult due to subtle features like blurry boundaries and unusual brain foldings.</p>
+<p>The presentation details the challenges inherent in medical AI projects, including data acquisition and annotation difficulties. The solution involves applying classical machine learning techniques combined with continual learning methodologies to build a robust system capable of pre-screening for FCDs. This approach aims to move beyond static models that perform well on initial datasets but fail when encountering new or evolving real-world patient data.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The discussion begins by establishing the context: AI in 2026 is moving beyond LLMs toward fundamental machine learning concepts like continual learning [0:32, 0:47]. The speaker introduces a project focused on FCD detection from MRI scans, noting that FCDs are faulty brain tissue responsible for over 70% of drug-resistant epilepsy cases globally [3:52, 4:01].</p>
+<p>The process starts with data collection and annotation. The team gathered datasets including T1 and FLAIR MRI sequences, incorporating suboptimal quality images to mimic real-life conditions [9:06, 9:31]. Data was augmented by including normal cases and other non-epilepsy pathologies for discrimination purposes [8:47, 8:56].</p>
+<p>The data preprocessing involved three key steps. First, brain tissue segmentation was performed to isolate relevant structures and remove extraneous data like the skull <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=669s">[11:09]</a>. Second, specialized filters were applied, inspired by methods from epileptologists, including a junction filter based on standard deviation and mean of pixel intensities to expose hyperintensities, and an extension method designed to enhance existing blur [12:08, 12:24]. Finally, the input for the neural network was constructed by combining T1, FLAIR, and these two custom filters into four channels <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=772s">[12:52]</a>.</p>
+<p>The chosen architecture was a variant of the encoder-decoder structure, which aims to compress image information (encoding) and then reconstruct or segment it (decoding). This approach proved more effective than newer architectures like transformers in this specific application [13:09, 14:39]. To combat overfitting due to limited data, a variation decoder was used during training <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=879s">[14:39]</a>.</p>
+<p>Initial validation using standard metrics showed a recall of 70% and a precision of 54%. However, prospective clinical validation revealed significant issues. While the model outperformed neurologists in detection (model detected seven cases vs. three by doctors), it suffered from high false positives (86 false positives reported by the model compared to five by doctors) [17:25, 17:59]. Analysis showed errors were often triggered by artifacts from patient movement, similarly looking lesions, or biases in the training data distribution—the dataset was heavily skewed towards FCD presence, unlike real-world prevalence [18:48, 19:35].</p>
+<p>To address these issues, continual learning was introduced. The team first corrected the data distribution to better mimic real life (making FCDs a minority class) <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=2002s">[33:22]</a>. They then compared two strategies: retraining from scratch using all accumulated data versus training incrementally using only new batches of data without access to old patient records (privacy-friendly) [35:14, 36:03]. The continual learning model showed better specificity and higher recall in the final evaluation phase compared to the initial model, demonstrating improved robustness against false positives while maintaining sensitivity [37:18, 38:11].</p>
+<p>The presentation concludes by outlining three main areas for continual learning: regularization-based methods (penalizing parameter changes), replay/memory-based methods (storing and replaying old data, potentially using generative models to create synthetic data), and architecture-based methods (dynamically expanding the network) [28:20, 31:43].</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Continual learning is presented as a critical architectural choice for production ML systems where data evolves, privacy is paramount, or high computational costs prevent retraining from scratch.</li>
+<li>FCD detection in MRI scans is challenging due to subtle visual features like blurry boundaries and unusual brain foldings, making automated diagnosis difficult even for experts <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=312s">[5:12]</a>.</li>
+<li>The initial AI model suffered from high false positive rates during clinical validation because it reacted strongly to artifacts (like patient movement) and data distribution biases present in the training set [18:48, 19:35].</li>
+<li>Continual learning allowed the model to improve specificity by adapting to new data distributions while retaining its ability to detect FCDs, leading to better performance on false positives [37:18, 38:27].</li>
+<li>The three primary methods for implementing continual learning are regularization-based (protecting important parameters), memory-based (replaying or synthesizing old data), and architecture-based (dynamically expanding the network) [28:20, 32:02].</li>
+<li>For medical applications, privacy constraints often preclude storing all historical patient data in a memory buffer, making generative models for synthetic data highly relevant to replay methods <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=1892s">[31:32]</a>.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Data Preprocessing Workflow:</strong> Brain tissue segmentation -&gt; Application of specialized filters (Junction filter using standard deviation/mean; Extension method) -&gt; Combination into four input channels (T1 + FLAIR + 2 custom filters).</li>
+<li><strong>Model Architecture:</strong> A variant of the encoder-decoder structure was used, which compresses high-dimensional image data into a small representation before decoding it back to segmentation masks.</li>
+<li><strong>Evaluation Metrics:</strong> Standard metrics included precision and recall; explainability via segmentation mask output (voxel level) is crucial for medical certification [15:03, 15:48].</li>
+<li><strong>Continual Learning Strategy Used:</strong> The team employed a regularization-based approach initially, specifically adapting the data distribution to make FCDs a minority class before applying incremental training strategies [33:51, 35:54].</li>
+<li><strong>Risks/Caveats:</strong> Medical data sensitivity requires strict adherence to privacy regulations; using LLMs for this work is currently difficult because the lineage of the training data must be traceable for certification [20:49, 21:13].</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li>For an overview of FCD features and initial diagnostic challenges: <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=304s">[5:04]</a> to <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=448s">[7:28]</a></li>
+<li>For detailed explanation of preprocessing steps (segmentation and filters): <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=662s">[11:02]</a> to <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=766s">[12:46]</a></li>
+<li>For the architecture description and training setup: <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=781s">[13:01]</a> to <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=879s">[14:39]</a></li>
+<li>For initial validation results and clinical challenges: <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=908s">[15:08]</a> to <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=1212s">[20:12]</a></li>
+<li>For a detailed comparison of continual learning methods (regularization, replay, architecture): <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=1670s">[27:50]</a> to <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=1985s">[33:05]</a></li>
+<li>For the final comparative results using continual learning in the FCD case study: <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=2170s">[36:10]</a> to <a class="timestamp" href="https://www.youtube.com/watch?v=dWQMhrIt5XE&amp;t=2339s">[38:59]</a></li>
+</ul>
+</main>
+</body>
+</html>

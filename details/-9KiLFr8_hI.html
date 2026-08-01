@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The evolution and deprecation of traditional SSL/TLS security infrastructure.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=-9KiLFr8_hI">Watch video</a></nav>
+  <h1>The evolution and deprecation of traditional SSL/TLS security infrastructure.</h1>
+  <div class="meta">NDC Conferences · 2026-07-31T10:35:23+00:00 · Everything you learned about SSL is deprecated - Todd Gardner - NDC Toronto 2026</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides a comprehensive overview of the evolution, inherent flaws, and radical changes occurring within the traditional security infrastructure that secures internet communication (SSL/TLS). The speaker argues that nearly everything learned about securing web traffic is now deprecated due to persistent vulnerabilities, evolving threats like mass surveillance capabilities, and shifts in industry standards.</p>
+<p>The discussion traces the history from early certificate requests—which often felt like paying a &quot;protection racket&quot; to Certificate Authorities (CAs)—to modern automated solutions. It details how foundational concepts like RSA key usage, long-lived certificates, and the self-regulating CA browser forum model have been undermined by security breaches, government surveillance revelations, and unilateral actions taken by major browser developers.</p>
+<p>Ultimately, the video outlines a necessary transition toward automation, shorter certificate lifetimes, and new cryptographic standards to combat systemic weaknesses in the current system.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by contrasting historical methods with modern realities <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=10s">[0:10]</a>. In the past, securing a website required obtaining a Certificate Signing Request (CSR) from a CA, often involving payment, which felt like paying protection money <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=72s">[1:12]</a>. The speaker notes that outdated commands for generating CSR keys—such as requesting an RSA key of 2048 bits or three-year certificates—are obsolete <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=131s">[2:11]</a>.</p>
+<p>The original SSL handshake involved the browser and server negotiating cipher suites, with the server returning a certificate to prove its identity. This certificate contained subject information, issuer details, validity dates (often three years or more), and an algorithm used for signing <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=325s">[5:25]</a>. Trust was established through a chain of certificates linking the end-entity certificate back to a globally bundled root certificate in the browser <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=365s">[6:05]</a>.</p>
+<p>The speaker critiques the term RSA extensively, noting it is often misused as an acronym for various unrelated concepts (e.g., key exchange vs. signature algorithm) <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=393s">[6:33]</a>. Certificate validation levels include Domain Validation (DV), Organizational Validation (OV), and Extended Validation (EV), with EV historically offering a visual indicator in the URL bar that no longer exists [7:42, 8:00].</p>
+<p>The traditional CA model relied on CAs being audited annually for standards compliance called WebTrust to be included in major browsers like Google and Microsoft. This self-regulating body was known as the CA browser forum <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=544s">[9:04]</a>. However, this system faced challenges; for instance, a Dutch CA, Diginoar, was compromised due to unpatched software and lack of network segmentation, leading to rogue certificates being issued for google.com <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=795s">[13:15]</a>.</p>
+<p>A major turning point came with the revelations from Edward Snowden regarding mass surveillance operations (Project Prism and Project Tempora) <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=862s">[14:22]</a>. These operations proved that encrypted traffic could be recorded now and decrypted later if the server&#x27;s private key was stolen, as the old handshake used a long-lived private key for both identity proof and encryption <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1011s">[16:51]</a>. In response, Perfect Forward Secrecy (PFS) was introduced in 2013. PFS separates these functions, using ephemeral keys generated per session via Diffie-Hellman to encrypt data, meaning a stolen long-term private key cannot decrypt past traffic [17:16, 18:45].</p>
+<p>The CA model faced further pressure from unilateral actions by browsers. Google published RFC 6962 mandating Certificate Transparency (CT) logs, requiring all CAs to publicly log every certificate issued so that entities like Google could monitor issuance <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1252s">[20:52]</a>. This was enforced by Chrome starting in 2015 for EV certificates and later expanded to all certificates in 2018.</p>
+<p>Cryptographic weaknesses also emerged. Researchers noted theoretical vulnerabilities in the SHA-1 hashing algorithm, which could lead to collisions—where two different inputs produce the same hash <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1443s">[24:03]</a>. While CAs initially dismissed this as theoretical, Microsoft declared it a critical error in 2013, leading to browser mandates against SHA-1 certificates after 2016. Later, Google proved a full collision for SHA-1 in 2017 <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1592s">[26:32]</a>.</p>
+<p>The system&#x27;s failure was further exposed by Heartbleed in 2014, an OpenSSL buffer overflow that allowed attackers to extract sensitive data like private keys from vulnerable servers <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1648s">[27:28]</a>. While PFS mitigated the risk of decryptable past traffic for affected systems, it highlighted the broken nature of certificate revocation. Traditional methods like Certificate Revocation Lists (CRLs) were too large and slow, while the Online Certificate Status Protocol (OCSP) was unreliable or revealed user browsing patterns <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1753s">[29:13]</a>.</p>
+<p>In response to these failures, Let&#x27;s Encrypt emerged in 2015, utilizing the Automated Certificate Management Environment (ACME) protocol. ACME allows for fully automated, machine-to-machine certificate issuance using challenges like DNS records or file hosting, resulting in free certificates with short lifetimes—a direct challenge to the traditional paid, manual process <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1981s">[33:01]</a>.</p>
+<p>The trend toward shorter lifespans accelerated when Google unilaterally proposed reducing certificate lifetimes from three years to one year in 2017. When the CA browser forum failed to achieve consensus due to vested interests, Apple took decisive action in February 2020 by stating they would no longer trust certificates over 398 days on iPhones <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=2517s">[41:57]</a>. This forced the entire industry to align with shorter lifetimes, as browsers threatened to abandon the CA model entirely.</p>
+<p>The current trajectory involves aggressive shortening of certificate lifespans (e.g., dropping to 200 days in March 2026) <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=2588s">[43:08]</a>. While renewal automation is progressing via tools like Certbot or ACME clients, deployment across complex infrastructure remains a significant manual hurdle, as demonstrated by incidents where expired certificates caused widespread outages despite automated renewals [45:14, 46:13]. Finally, the speaker warns that future quantum computing advancements are expected to break Diffie-Hellman exchange, necessitating another major cryptographic overhaul in the coming years <a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=2952s">[49:12]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Traditional SSL/TLS practices, such as using RSA keys of 2048 bits or relying on three-year certificates, are deprecated due to security vulnerabilities.</li>
+<li>Perfect Forward Secrecy (PFS), introduced in 2013, fundamentally changed security by ensuring that a stolen long-term private key cannot decrypt previously recorded traffic.</li>
+<li>Certificate Transparency (CT) logs were implemented as a mechanism for public auditing of all certificates issued by CAs, forcing greater accountability.</li>
+<li>The traditional CA browser forum model, which relied on self-regulation and audits, has been undermined by security breaches and unilateral actions from major browsers like Google and Apple.</li>
+<li>Automated certificate issuance via protocols like ACME (used by Let&#x27;s Encrypt) directly challenges the historical paid, manual process of obtaining certificates.</li>
+<li>Certificate revocation mechanisms (CRLs and OCSP) have proven unreliable or insufficient to handle large-scale security incidents effectively.</li>
+<li>The industry is moving toward extremely short certificate lifetimes (e.g., 200 days, dropping further), making automated lifecycle management essential for operations.</li>
+<li>Future threats from quantum computing are expected to compromise current Diffie-Hellman exchange methods, requiring another major cryptographic update.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Obsolete Practices:</strong> Do not use RSA keys of 2048 bits or three-year certificates in new implementations based on historical advice.</li>
+<li><strong>Automation Tools:</strong> For implementing automated certificate management, tools like Certbot, Posh Acme, or ACME clients are mentioned for various deployment scenarios (e.g., initial setup vs. complex clusters).</li>
+<li><strong>Implementation Phases:</strong> Certificate lifecycle management is often broken down into phases: Phase 1 (single server validation), Phase 2 (Java keystores/conversion scripting), Phase 3 (wildcard certificates requiring DNS credentials), and Phase 4 (multi-node web clusters requiring shared file systems).</li>
+<li><strong>Risk Mitigation:</strong> A full certificate lifecycle management system is required to handle discovery, issuance, and distribution across complex environments; ad hoc scripts are prone to failure.</li>
+<li><strong>Future Planning:</strong> Organizations must prepare for future cryptographic shifts due to quantum computing threats, which will require updating software and generating new certificates again.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=114s">[1:54]</a> - Breakdown of outdated CSR generation commands (RSA 2048, SHA-1, three years).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=393s">[6:33]</a> - Explanation of the various contexts in which &quot;RSA&quot; is used in security.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=795s">[13:15]</a> - The Diginoar CA compromise example.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1036s">[17:16]</a> - Detailed explanation of Perfect Forward Secrecy (PFS) and its role against retroactive decryption.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1252s">[20:52]</a> - How Certificate Transparency logs function and how they were mandated by Google Chrome.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=1981s">[33:01]</a> - The mechanism of the ACME protocol used by Let&#x27;s Encrypt for automated issuance.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=2517s">[41:57]</a> - Apple&#x27;s unilateral decision to enforce shorter certificate lifetimes, which shifted industry momentum.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=-9KiLFr8_hI&amp;t=2773s">[46:13]</a> - Example of a real-world outage caused by manual deployment failure despite automated renewal.</li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The presentation discusses the emerging risks of prompt-jacking and indirect injections in AI agents.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=SsTtp_Nrmn4">Watch video</a></nav>
+  <h1>The presentation discusses the emerging risks of prompt-jacking and indirect injections in AI agents.</h1>
+  <div class="meta">NDC Conferences · 2026-07-31T12:02:33+00:00 · Prompt-Jacking: The Rise of a New Supply Chain Risk - Kasimir Schulz &amp; Kenneth Yeung</div>
+  <h2>What This Video Is About</h2>
+<p>This video explores emerging security risks associated with AI agents, moving beyond traditional prompt injection vulnerabilities. The central theme is that many modern agentic systems are vulnerable due to fundamental design choices in how they are architected, which contrasts sharply with the security training employed by state-of-the-art model providers. The presentation details various attack vectors—including indirect injections hidden in seemingly benign data sources like README files or PDFs—and discusses sophisticated defense mechanisms such as instruction hierarchy and guardrails.</p>
+<p>The discussion emphasizes that AI agents process all input, whether it is intended as an instruction or raw data, as a single stream of text. This fundamental characteristic means that traditional security assumptions are often insufficient against these new classes of vulnerabilities. The speakers provide concrete examples of how attackers can leverage file inputs, tool execution capabilities, and even the structure of system prompts to achieve unauthorized actions like data exfiltration.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by establishing that AI agent vulnerabilities stem from design flaws rather than just prompt injection <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=0s">[0:00]</a>. The speaker notes that while some attacks are twists on traditional exploits, others represent entirely new styles of vulnerability. An example is provided using a coding assistant environment where an attacker embedded malicious code within the raw content of a README file, which the model processed during project setup <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=300s">[5:00]</a>. This attack succeeded because the system was reading the raw file input rather than the rendered output.</p>
+<p>The discussion then moves to tool execution and command injection. In one instance involving Cursor, attackers exploited a lack of checks for specific types of command chaining (like using dollar signs and parentheses) within an allow-listed tool <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=300s">[5:00]</a>. When moving beyond code editors, indirect prompt injections are highlighted as &quot;watering hole attacks&quot; hidden in sources like websites or PDFs. An early example involved white text embedded in Yahoo and Bing responses that caused the model to respond with a specific phrase when asked to summarize the site <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=600s">[10:00]</a>.</p>
+<p>Data exfiltration techniques are detailed using PDF generation libraries, specifically WeezyPrint <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=900s">[15:00]</a>. A vulnerability was found where an HTML attachment object could be pointed at a local file system path, causing that file to be attached to the generated PDF without being rendered. This allowed for extensive information gathering via repeated API requests against the library&#x27;s functionality <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=900s">[15:00]</a>.</p>
+<p>Defensive strategies are introduced through instruction hierarchy <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1200s">[20:00]</a>. This concept involves segmenting the language model&#x27;s context window into distinct parts: the system prompt (the &quot;golden rule&quot; defining capabilities and constraints), user/assistant levels for interaction, and a tool call level for external data. The critical aspect is ensuring that inputs from documents or third-party sources cannot override the core instructions set in the system prompt <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1200s">[20:00]</a>.</p>
+<p>The concept of control sequences versus control tokens is explained <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1500s">[25:00]</a>. Control tokens are special characters that do not render as words, while control sequences are defined by developers and used for tasks like &quot;spotlighting&quot; specific text segments. An attack vector was demonstrated where extra user query tags were introduced into a tool call response, causing the language model to derail its expected behavior and respond with an unintended output <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1500s">[25:00]</a>.</p>
+<p>Further attacks target agent frameworks. For instance, in Open Web UI&#x27;s RAG queries, the system prompt lacked proper segmentation, allowing an attacker to inject instructions by closing the existing user query tag and adding new directives <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1800s">[30:00]</a>. Another attack involved exploiting JSON formatting; since models treat data and control plane inputs similarly, an attacker could use a simple &quot;end of JSON&quot; instruction within a description field to force the agent to leak private repository information via automated issue triagers <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=2100s">[35:00]</a>.</p>
+<p>Finally, guardrails are discussed. Two main types exist: LLM as a judge (a second LLM analyzing input) and classification models (smaller, faster text classifiers). However, these defenses can be bypassed through recursive prompt injection or tokenization attacks like adding an &#x27;F&#x27; before &quot;instruction,&quot; which causes left-to-right greedy tokenizers to misclassify the input <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=3000s">[50:00]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>AI agents are susceptible to vulnerabilities rooted in their design architecture, not solely traditional prompt injections.</li>
+<li>Indirect prompt injections can be hidden within seemingly benign data sources such as README files, PDFs, and website content (watering hole attacks).</li>
+<li>Data exfiltration can occur by exploiting features of libraries used for tasks like PDF generation, allowing local file system access via attachment objects.</li>
+<li>Instruction hierarchy is a key defense mechanism that separates the model&#x27;s core instructions (system prompt) from user input and external data sources.</li>
+<li>Control sequences are developer-defined markers; manipulating these tags can cause language models to deviate from their intended behavior.</li>
+<li>Guardrails, such as LLM as a judge or classification models, are necessary but can be bypassed by sophisticated attacks targeting tokenization processes (e.g., prefix manipulation).</li>
+<li>A primary defense strategy is the strict separation of instructions from all forms of input data.</li>
+<li>System prompt hardening should be implemented to make potential injection points easier for other security systems to detect.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>File Input Risk:</strong> Do not render raw file inputs (like README files) directly into agent processing pipelines; always validate the content against expected schemas before ingestion <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=300s">[5:00]</a>.</li>
+<li><strong>Tool Whitelisting/Allow Listing:</strong> When setting up agents, rigorously define and restrict tools to an allow list. Be aware that vulnerabilities can exist within the tool implementations themselves, even if they are whitelisted <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=600s">[10:00]</a>.</li>
+<li><strong>PDF Generation Security:</strong> If using libraries like WeezyPrint for PDF generation, be aware of historical vulnerabilities allowing local file system access via HTML attachment objects; ensure you use patched versions or implement custom fetchers/file handlers that strictly limit scope <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=900s">[15:00]</a>.</li>
+<li><strong>Instruction Hierarchy Implementation:</strong> Structure the agent&#x27;s context window into distinct segments (System Prompt, User Message, Assistant Response, Tool Output) to prevent data from overriding core instructions. The system prompt must be immutable by user input <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1200s">[20:00]</a>.</li>
+<li><strong>Guardrail Selection:</strong> Choose between LLM as a judge (high understanding, high cost/latency) or classification models (low understanding, low cost/fast). Be aware that both can be attacked recursively <a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=3000s">[50:00]</a>.</li>
+<li><strong>System Prompt Hardening:</strong> Design system prompts to be easily detectable for injection attempts by external monitoring systems.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=300s">[5:00]</a> Demonstration of attack via raw README file input in a coding assistant setup.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=600s">[10:00]</a> Discussion on indirect prompt injections hidden in web responses and PDFs.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=900s">[15:00]</a> Explanation of the WeezyPrint vulnerability allowing local file exfiltration through PDF attachments.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1200s">[20:00]</a> Detailed breakdown of instruction hierarchy (System Prompt, User/Assistant Level, Tool Call Level).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=1800s">[30:00]</a> Example of escaping spotlighting by manipulating user query tags in agent frameworks like Open Web UI.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SsTtp_Nrmn4&amp;t=3300s">[55:00]</a> Demonstration of attacks against guardrails using tokenization tricks (e.g., prefix manipulation) and echogram techniques.</li>
+</ul>
+</main>
+</body>
+</html>

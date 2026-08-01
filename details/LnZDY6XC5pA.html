@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A practical guide on managing AI-generated code contributions in software development.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=LnZDY6XC5pA">Watch video</a></nav>
+  <h1>A practical guide on managing AI-generated code contributions in software development.</h1>
+  <div class="meta">NDC Conferences · 2026-07-31T10:25:55+00:00 · &quot;Looks Good to Me&quot;: A Practical Guide to Handling AI-Generated Code - Roman Zhukov</div>
+  <h2>What This Video Is About</h2>
+<p>This video provides a practical guide on managing the increasing presence of AI-generated code contributions within software development workflows, applicable to both open source and corporate environments. The central theme is that while AI tools are rapidly changing the Software Development Life Cycle (SDLC) toward continuous agentic flows, they introduce significant challenges related to quality, security, and governance. The speaker addresses real-world examples where bots have contributed substantially to projects, highlighting the need for proactive strategies rather than reactive measures.</p>
+<p>The discussion moves beyond simply acknowledging AI&#x27;s capability; it focuses on establishing robust processes—such as clear policies, secure prompting, automated quality gates, and enhanced vulnerability response—to ensure that AI remains a powerful tool under human control, not an autonomous replacement for developers. It serves as a guide for security professionals and maintainers navigating this new reality where AI-assisted code is becoming the norm.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The presentation begins by illustrating the shift in contribution patterns with examples from open source projects <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=10s">[0:10]</a>, noting instances of bots making numerous commits and even advertising their services to project maintainers <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=38s">[0:38]</a>. This trend contrasts with older, more human-centric development cycles <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=383s">[6:23]</a>. A key observation is that some projects are now seeing a high percentage of AI-generated Pull Requests (PRs), with one report suggesting close to 70% of PRs might be purely AI generated based on specific instructions added by maintainers <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=175s">[2:55]</a>.</p>
+<p>The speaker then outlines the evolution from traditional, healthy pull request conversations—where exchanges are brief and focused on minor fixes <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=392s">[6:32]</a>—to a more complex landscape where AI-assisted contributions require significant reviewer effort to validate or correct <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=529s">[8:49]</a>. This shift is not sustainable in its current form.</p>
+<p>The discussion pivots to security concerns, noting that even bug bounty programs face pressure from AI-era reporters who might submit fabricated reports or use AI to overwhelm maintainers with non-substantive conversations [11:31, 12:27]. The speaker contrasts healthy vulnerability reporting exchanges with those where the reporter uses AI to evade direct answers, leading some projects (like Curl) to shut down programs entirely—a decision deemed detrimental to security posture <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=764s">[12:44]</a>.</p>
+<p>To manage this influx of contributions and reports, several policy approaches are presented:</p>
+<ul>
+<li><strong>Zero Tolerance:</strong> A permanent ban on all generative AI content <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=829s">[13:49]</a>.</li>
+<li><strong>Permissive with Rules:</strong> Establishing responsible contribution policies, exemplified by the Fedora project&#x27;s 18-month process to create a healthy system <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=868s">[14:28]</a>.</li>
+<li><strong>Acceptance and Structuring:</strong> Accepting partial AI contributions and mandating structured PR templates (e.g., in YAML format) so that AI agents contribute predictably [15:31, 16:03].</li>
+</ul>
+<p>The speaker emphasizes the need for a multi-pillar approach to handling AI-assisted code:</p>
+<ul>
+<li><strong>Clear Policy:</strong> Setting expectations for AI usage <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1348s">[22:28]</a>. Initial policies can be simple (e.g., &quot;AI assisted,&quot; not &quot;co-created&quot;) <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1496s">[24:56]</a>. Red Hat&#x27;s internal policy includes seven rules, such as requiring human-in-the-loop approval and preventing the exposure of sensitive information <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1578s">[26:18]</a>.</li>
+<li><strong>Secure AI Coding Guidelines:</strong> Developers must learn security practices specifically for interacting with AI tools. This involves using secure prompts, assuming AI code has bugs, and asking the AI to review its own work <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1743s">[29:03]</a>. A concrete example is prompting an AI assistant in Python to use prepared statements instead of vulnerable functions when handling user input to prevent SQL injection or XSS <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1898s">[31:38]</a>.</li>
+<li><strong>Framework Tools and Quality Gates:</strong> Implementing automated checks. The speaker mentions the open-source project PQSS Anti-Slope, which scores PRs based on 31 checks (e.g., checking for excessive emojis) to flag likely AI generation <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2841s">[47:21]</a>. Furthermore, tools like Trapidust allow for LLM red teaming and integrate with CI/CD pipelines <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2970s">[49:30]</a>.</li>
+<li><strong>Accelerated Vulnerability Response:</strong> For security teams dealing with the exponential growth of CVE reports, tools like Edges AI leverage generative AI to automate repetitive triage tasks, such as performing CVSS scoring or detecting PII in incoming vulnerability reports <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=3308s">[55:08]</a>.</li>
+</ul>
+<p>The workflow demonstration shows a maintainer using an AI code assistant to review a new PR. The tool analyzes the change and produces a security review table recommending rejection due to issues like SQL injection, suggesting specific remediation steps for the contributor <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2703s">[45:03]</a>. This demonstrates how skills catalogs (like those from OpenSSF) can be leveraged by the reviewer&#x27;s own AI assistant to perform deep analysis <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2465s">[41:05]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>AI-assisted coding is a current reality, with estimates suggesting over 60% of new code in open source may be AI assisted <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1052s">[17:32]</a>.</li>
+<li>The primary bottleneck remains the human effort required for code review; AI generates code cheaply but does not make review cheap <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1301s">[21:41]</a>.</li>
+<li>A comprehensive strategy requires addressing four pillars: clear policy, secure coding guidelines, quality gates/tools, and accelerated vulnerability response <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1348s">[22:28]</a>.</li>
+<li>When documenting AI contributions, use terms like &quot;AI assisted&quot; or &quot;assisted by AI&quot; rather than &quot;co-created&quot; to avoid legal pitfalls regarding authorship <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1514s">[25:14]</a>.</li>
+<li>Security practices for AI coding involve guiding the AI with security-focused prompts (e.g., mandating prepared statements) and verifying its output rigorously [30:08, 31:38].</li>
+<li>Automated tools like PQSS Anti-Slope can help flag potentially AI-generated PRs by scoring them based on various heuristics, such as emoji count or commit patterns <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2841s">[47:21]</a>.</li>
+<li>For vulnerability management, LLM-driven tools (like Edges AI) can automate repetitive triage tasks, including impact analysis and PII detection in security reports <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=3308s">[55:08]</a>.</li>
+<li>Deterministic automation (e.g., static analysis scanners) should not be replaced by AI; rather, AI should be used to wrap and enhance these existing deterministic quality gates <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=3072s">[51:12]</a>.</li>
+</ul>
+<h2>Practical Notes</h2>
+<p><strong>Policy Implementation:</strong></p>
+<ul>
+<li>Start with a simple policy, such as requiring all contributions to be labeled &quot;AI assisted&quot; or &quot;assisted by AI,&quot; before moving to complex governance documents <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1444s">[24:04]</a>.</li>
+<li>Red Hat&#x27;s internal policy includes seven rules: human-in-the-loop approval, preventing sensitive info exposure, and adhering to upstream project policies <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1578s">[26:18]</a>.</li>
+</ul>
+<p><strong>Security Practices:</strong></p>
+<ul>
+<li>Reference the OpenSSF guide for secure AI coding instructions. A basic example is instructing an AI assistant in Python to use safe APIs and prepared statements when handling user input to mitigate SQL injection risks <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1898s">[31:38]</a>.</li>
+<li>Utilize skills catalogs (e.g., those from Red Hat/OpenSSF) that embed specific security actions, such as &quot;input output sanitization&quot; or &quot;fuzzing harness generation,&quot; into the AI assistant&#x27;s workflow <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2270s">[37:50]</a>.</li>
+</ul>
+<p><strong>Tool Usage:</strong></p>
+<ul>
+<li>PQSS Anti-Slope is an open-source tool that scores PRs based on 31 checks to flag potential AI contributions <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2841s">[47:21]</a>.</li>
+<li>Trapidust allows for LLM red teaming and integrates with CI/CD pipelines for security scanning <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2970s">[49:30]</a>.</li>
+<li>Edges AI leverages generative AI for deep security analysis of CVE advisories, automating tasks like CVSS scoring and PII detection during the intake phase <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=3308s">[55:08]</a>.</li>
+</ul>
+<p><strong>Decision Points:</strong></p>
+<ul>
+<li>Organizations must decide where they fall on the spectrum regarding AI contributions: zero tolerance, permissive with rules, or full acceptance/structuring [13:49-16:26].</li>
+<li>For enterprises unable to close bug bounty programs, leveraging advanced security analysis tools is necessary to manage the exponential growth of vulnerability reports <a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=3268s">[54:28]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=10s">[0:10]</a> - Early examples of bot contributions and self-advertising.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=175s">[2:55]</a> - Discussion on the high percentage of AI-generated PRs in open source.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=392s">[6:32]</a> - Contrast between traditional, healthy PR conversations and current complexity.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=691s">[11:31]</a> - Example of vulnerability reporting from an &quot;AI era&quot; perspective.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=844s">[14:04]</a> - Examples of different AI coding policy approaches (Zero Tolerance vs. Permissive).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1743s">[29:03]</a> - Core security practices for developers using AI tools.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=1898s">[31:38]</a> - Concrete example of a secure AI prompt to prevent injection attacks.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2841s">[47:21]</a> - Demonstration/explanation of the PQSS Anti-Slope tool.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=3308s">[55:08]</a> - Overview of Edges AI for automated vulnerability triage.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=LnZDY6XC5pA&amp;t=2623s">[43:43]</a> - Demo showing an AI assistant reviewing a PR and providing security recommendations.</li>
+</ul>
+</main>
+</body>
+</html>
