@@ -1,5 +1,6 @@
 # YouTube Video Digest Archive
 
+- 2026-08-01T16:48:57+00:00 - Smart Home Solver: [I’m never mowing my lawn again! Segway Navimow X430](https://www.youtube.com/watch?v=6RC0x-oFQnA)
 - 2026-07-31T12:16:14+00:00 - NDC Conferences: [From LLM Theory to Practical Agentic Implementations - Seth Juarez](https://www.youtube.com/watch?v=rYBAyvaF3Yo)
 - 2026-07-31T12:09:11+00:00 - NDC Conferences: [Legacy Architecture Migration Patterns with DDD - Nick Tune - NDC Toronto 2026](https://www.youtube.com/watch?v=np6R0wE68oI)
 - 2026-07-31T12:02:33+00:00 - NDC Conferences: [Prompt-Jacking: The Rise of a New Supply Chain Risk - Kasimir Schulz & Kenneth Yeung](https://www.youtube.com/watch?v=SsTtp_Nrmn4)
@@ -59,4 +60,3 @@
 - 2026-07-20T16:24:11+00:00 - OpenAI: [How Virgin Atlantic Uses ChatGPT Work to Turn Weeks of Work Into Hours](https://www.youtube.com/watch?v=WwxZeU4WH14)
 - 2026-07-20T15:04:34+00:00 - Alex Kantrowitz: [Inside The Rise of Physical AI — With Amir Khoshniyati](https://www.youtube.com/watch?v=vadrwcprLFI)
 - 2026-07-20T13:42:57+00:00 - OpenAI: [How BNY CEO Robin Vince Turns AI Optimism Into Action](https://www.youtube.com/watch?v=MmYCdNhrhfA)
-- 2026-07-20T13:34:47+00:00 - NDC Conferences: [Boosting Software Efficiency : A Case Study of 100% Performance Improvement in ... - Gili Kamma](https://www.youtube.com/watch?v=7U4JhVVuE9U)

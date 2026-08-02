@@ -117,24 +117,6 @@
 <span class="tag">finance</span></div>
   <p class="quality">Transcript-backed scheduled digest summary. Transcript source: renderedTranscriptUi; usable timestamped rows: 9; rendered keyframes captured: 2.</p>
 </article>
-<article>
-  <h2><a href="https://www.youtube.com/watch?v=7U4JhVVuE9U">A case study of Gili Kamma stabilizing and scaling a legacy embedded smart-metering system.</a></h2>
-  <div class="meta">NDC Conferences · 2026-07-20T13:34:47+00:00</div>
-  <p><strong>Boosting Software Efficiency : A Case Study of 100% Performance Improvement in ... - Gili Kamma</strong></p>
-  <p>In 2017, Gili Kamma inherited a legacy embedded smart-metering concentrator that collected wireless water-meter readings and forwarded them to READy Manager. Running on a 32 MB, older Linux/C++/Qt platform, it suffered unexplained resets, memory leaks, data loss, and poor scalability. Kamma instrumented allocations by overriding new/delete, built a small internal simulator that multiplied real messages, and reproduced failures at high load. A reproducible breakpoint exposed two threads allocating roughly 5 MB messages simultaneously; serializing the work and using fixed/static storage reduced memory pressure and doubled capacity from about 5,000 to 10,000 meters. He persisted outgoing data, retried until acknowledgment, sent recent logs after resets, reinitialized the UART after receiver-induced silence, and added proactive fleet monitoring. Continuous load tests and automation followed. After eight months the product had no resets, and release cycles improved from six months with three engineers to every two or three months, while enabling new features.</p>
-  <ul><li>Built an internal simulator that multiplied real meter messages to reproduce failures at high load.</li>
-<li>Measured allocation counts, sizes, and peaks to investigate memory leaks, fragmentation, and exhaustion.</li>
-<li>Serialized large-message processing and used fixed or static storage, increasing capacity from about 5,000 to 10,000 meters.</li>
-<li>Stored outgoing data in nonvolatile memory and retried transmission until acknowledgment to prevent significant data loss.</li>
-<li>Added reset diagnostics, UART recovery, fleet summaries, proactive monitoring, and continuous load testing.</li></ul>
-  <p class="actions"><a href="../details/7U4JhVVuE9U.html">Detailed brief</a><a href="https://www.youtube.com/watch?v=7U4JhVVuE9U">Watch video</a></p>
-  <div class="tags"><span class="tag">embedded-systems</span>
-<span class="tag">performance</span>
-<span class="tag">smart-metering</span>
-<span class="tag">memory-management</span>
-<span class="tag">load-testing</span></div>
-  <p class="quality">Transcript-backed scheduled digest summary. Transcript source: renderedTranscriptUi; usable timestamped rows: 457; rendered keyframes captured: 12.</p>
-</article>
 </main>
 </body>
 </html>
