@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The potential for compute costs to increase significantly due to rapid growth in AI model value.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=oZBGAuANX6I">Watch video</a></nav>
+  <h1>The potential for compute costs to increase significantly due to rapid growth in AI model value.</h1>
+  <div class="meta">Dwarkesh Patel · 2026-08-03T17:36:16+00:00 · Why compute might get 10x+ more expensive in coming years</div>
+  <h2>What This Video Is About</h2>
+<p>This video explores the potential divergence between the rapid growth of AI model value and the slower annual increase in lab compute capacity. The central premise is that while leading AI labs like Anthropic have seen their revenue grow tenfold year-over-year for three consecutive years, the underlying computational resources (lab compute) are only increasing threefold annually. This significant gap suggests a fundamental shift in the economics of AI development.</p>
+<p>The discussion centers on what must happen to sustain this trend: either lab profit margins must increase substantially, the cost of compute itself must rise, or labs must shift more of their workload from training to inference. The speaker argues that while margin increases are occurring, the most probable outcome is a significant escalation in compute prices as AI models become increasingly efficient at monetizing hardware.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The analysis begins by establishing the core trend: Anthropic&#x27;s revenue has grown 10x year-over-year for three years, with projections suggesting it could reach 100 billion to150 billion this year <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=0s">[0:00]</a>. For this trajectory to continue, a massive increase in AI utility is assumed. Contrasting this is the trend of lab compute growth, which only increases 3x per year <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=39s">[0:39]</a>.</p>
+<p>To bridge the gap between 10x revenue growth and 3x compute growth, one of three conditions must be met:</p>
+<ul>
+<li>Lab margins must increase <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=46s">[0:46]</a>. Anthropic&#x27;s inference margins reportedly rose from 40% mid-last year to over 80% for Fable <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=65s">[1:05]</a>.</li>
+<li>The price of compute must increase <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=46s">[0:46]</a>. Spot prices for compute are already more than 40% higher than the February trough earlier this year <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=74s">[1:14]</a>.</li>
+<li>The percentage of compute spent on inference versus training must increase <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=56s">[0:56]</a>. In 2024, OpenAI was spending about a quarter of its compute on inference, but this is likely closer to 50% or more now <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=84s">[1:24]</a>.</li>
+</ul>
+<p>The speaker notes that labs prefer not to rely heavily on the third option because excessive reliance on inference revenue suggests AI progress has stalled, making the business less compelling than building AGI. Therefore, the focus shifts to the first two options. While high margins (potentially over 90%) are possible if a leading model is vastly superior, the speaker finds it difficult to believe that intelligence could sustain such extreme margins without competition eroding them <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=166s">[2:46]</a>.</p>
+<p>This leaves the increase in compute price as the most likely escape valve. This effect is amplified when considering frontier labs that require massive scale and security, meaning they cannot rely solely on spot instances. For instance, Google pays $900 million a month for 110,000 GPUs (a mix of GB200s and GB300s), which is twice the spot price per hour <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=229s">[3:49]</a>.</p>
+<p>A key conclusion drawn is that as AI models become smarter, they will better monetize the same amount of compute. If a human-level software engineer could run on an H100 equivalent, that hardware should rent for over $250K annually—more than 15 times the current spot price—because AIs can work continuously <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=251s">[4:11]</a>. The speaker dismisses the &quot;lump of labor fallacy&quot; argument against this valuation increase.</p>
+<p>Furthermore, achieving superior model efficiency allows labs to charge higher premiums due to what is termed the Alchian-Allen effect. If a lab trains a model that achieves the same result using less compute, they have effectively created more compute, thereby increasing its value <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=341s">[5:41]</a>. This advancement means current popular AI applications may become priced out because large entities like Google or Anthropic will pay high token costs to automate AI research, whereas individuals might not be willing to pay for &quot;AI slop talk&quot; <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=381s">[6:21]</a>.</p>
+<p>Finally, the speaker addresses the limitations of the 3x compute scaling. The 3x growth is composed of 1.4x from Moore&#x27;s Law (which is unlikely to continue), 1.2x from building new fabs, and 1.8x from AI absorbing wafer allocation previously used for smartphones/PCs <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=476s">[7:56]</a>. This absorption rate is expected to hit a wall by the end of next year when leading-edge N3 nodes at TSMC move from 60% to 86% utilization for AI <a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=510s">[8:30]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Anthropic&#x27;s revenue growth (10x YoY) significantly outpaces lab compute growth (3x YoY).</li>
+<li>Sustaining this divergence requires either massive margin increases or a substantial increase in the price of compute.</li>
+<li>Increased model intelligence allows for greater monetization of existing hardware, potentially leading to much higher rental prices for GPUs.</li>
+<li>The Alchian-Allen effect suggests that models achieving results with less compute inherently increase the perceived value of that scarce input.</li>
+<li>Frontier labs require massive scale and security, making them less reliant on volatile spot pricing than smaller entities.</li>
+<li>Current 3x compute scaling is constrained by factors like Moore&#x27;s Law limitations and the saturation of leading-edge wafer allocation for AI.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Compute Cost Drivers:</strong> The current trend suggests that as models become more efficient at utilizing hardware, the value derived from each unit of compute increases dramatically.</li>
+<li><strong>Market Examples:</strong> Google is reportedly paying $900 million monthly for 110,000 GPUs (GB200s and GB300s), which is double the spot price per hour.</li>
+<li><strong>Efficiency Impact:</strong> A model that requires fewer tokens to achieve a specific outcome effectively increases the supply of usable compute relative to its cost.</li>
+<li><strong>Scaling Bottlenecks:</strong> The 3x annual scaling factor for compute is constrained by Moore&#x27;s Law progression, fab construction timelines (bottleneck potentially up to 2030 due to ASML EUV machines), and the absorption rate of leading-edge wafer capacity (expected to hit a wall when N3 nodes at TSMC reach 86% AI utilization).</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=65s">[1:05]</a> - Discussion on Anthropic&#x27;s inference margins increasing.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=229s">[3:49]</a> - Case study of Google renting GPUs from SpaceX and the associated pricing.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=251s">[4:11]</a> - Conceptual argument regarding the potential $250K annual rental value for an H100 equivalent based on human-level AI efficiency.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=341s">[5:41]</a> - Explanation of the Alchian-Allen effect in relation to model efficiency and compute value.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=oZBGAuANX6I&amp;t=476s">[7:56]</a> - Detailed breakdown of the components contributing to the 3x annual compute scaling (Moore&#x27;s Law, fab construction, wafer allocation shift).</li>
+</ul>
+</main>
+</body>
+</html>

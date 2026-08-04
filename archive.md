@@ -1,5 +1,9 @@
 # YouTube Video Digest Archive
 
+- 2026-08-03T21:30:15+00:00 - Leonid Kim MD: [5 Foods Feeding Silent Inflammation (and What to Eat Instead)](https://www.youtube.com/watch?v=GEP2f9BloeM)
+- 2026-08-03T17:36:16+00:00 - Dwarkesh Patel: [Why compute might get 10x+ more expensive in coming years](https://www.youtube.com/watch?v=oZBGAuANX6I)
+- 2026-08-03T15:00:26+00:00 - Alex Kantrowitz: [How Much Water AI Data Centers Actually Use. And What Can Be Done About It. — With Christophe Beck](https://www.youtube.com/watch?v=GyShwh9z0gw)
+- 2026-08-03T12:00:30+00:00 - Andrew Huberman: [How Your Immune System Works & How to Improve It | Dr. Max Krummel](https://www.youtube.com/watch?v=s_tkMm5U9aY)
 - 2026-08-01T16:48:57+00:00 - Smart Home Solver: [I’m never mowing my lawn again! Segway Navimow X430](https://www.youtube.com/watch?v=6RC0x-oFQnA)
 - 2026-07-31T12:16:14+00:00 - NDC Conferences: [From LLM Theory to Practical Agentic Implementations - Seth Juarez](https://www.youtube.com/watch?v=rYBAyvaF3Yo)
 - 2026-07-31T12:09:11+00:00 - NDC Conferences: [Legacy Architecture Migration Patterns with DDD - Nick Tune - NDC Toronto 2026](https://www.youtube.com/watch?v=np6R0wE68oI)
@@ -56,7 +60,3 @@
 - 2026-07-22T08:00:34+00:00 - NDC Conferences: [Carbon: graduating from the experiment - Chandler Carruth - NDC Toronto 2026](https://www.youtube.com/watch?v=WJl4ftb5Fxg)
 - 2026-07-21T18:00:39+00:00 - OpenAI: [Plugins in ChatGPT](https://www.youtube.com/watch?v=pKwRNdDtai0)
 - 2026-07-21T11:45:11+00:00 - Nick Chapsas: [I Built the Future of Learning for Developers](https://www.youtube.com/watch?v=BR-LFsDDfjk)
-- 2026-07-20T16:30:06+00:00 - Alex Kantrowitz: [Kimi K3 & AI’s Price War, What’s Happening To Google?, OpenAI’s Partner Trouble](https://www.youtube.com/watch?v=jPbN5m2iQ_M)
-- 2026-07-20T16:24:11+00:00 - OpenAI: [How Virgin Atlantic Uses ChatGPT Work to Turn Weeks of Work Into Hours](https://www.youtube.com/watch?v=WwxZeU4WH14)
-- 2026-07-20T15:04:34+00:00 - Alex Kantrowitz: [Inside The Rise of Physical AI — With Amir Khoshniyati](https://www.youtube.com/watch?v=vadrwcprLFI)
-- 2026-07-20T13:42:57+00:00 - OpenAI: [How BNY CEO Robin Vince Turns AI Optimism Into Action](https://www.youtube.com/watch?v=MmYCdNhrhfA)
