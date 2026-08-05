@@ -1,5 +1,7 @@
 # YouTube Video Digest Archive
 
+- 2026-08-04T20:29:24+00:00 - OpenAI: [How AI Helps Solve Medical Mysteries at Boston Children’s Hospital | OpenAI Forum](https://www.youtube.com/watch?v=SJJBPwlPpww)
+- 2026-08-04T17:43:45+00:00 - OpenAI: [Meet Birding Pal](https://www.youtube.com/watch?v=r64krUavXJU)
 - 2026-08-03T21:30:15+00:00 - Leonid Kim MD: [5 Foods Feeding Silent Inflammation (and What to Eat Instead)](https://www.youtube.com/watch?v=GEP2f9BloeM)
 - 2026-08-03T17:36:16+00:00 - Dwarkesh Patel: [Why compute might get 10x+ more expensive in coming years](https://www.youtube.com/watch?v=oZBGAuANX6I)
 - 2026-08-03T15:00:26+00:00 - Alex Kantrowitz: [How Much Water AI Data Centers Actually Use. And What Can Be Done About It. — With Christophe Beck](https://www.youtube.com/watch?v=GyShwh9z0gw)
@@ -58,5 +60,3 @@
 - 2026-07-22T09:00:16+00:00 - NDC Conferences: [Algorithms & Combinators - Conor Hoekstra - NDC Toronto 2026](https://www.youtube.com/watch?v=preMtk8Jlc0)
 - 2026-07-22T08:30:07+00:00 - NDC Conferences: [Boosting Software Efficiency : A Case Study of 100% Performance Improvement in ... - Gili Kamma](https://www.youtube.com/watch?v=9VlnCMAvTYo)
 - 2026-07-22T08:00:34+00:00 - NDC Conferences: [Carbon: graduating from the experiment - Chandler Carruth - NDC Toronto 2026](https://www.youtube.com/watch?v=WJl4ftb5Fxg)
-- 2026-07-21T18:00:39+00:00 - OpenAI: [Plugins in ChatGPT](https://www.youtube.com/watch?v=pKwRNdDtai0)
-- 2026-07-21T11:45:11+00:00 - Nick Chapsas: [I Built the Future of Learning for Developers](https://www.youtube.com/watch?v=BR-LFsDDfjk)

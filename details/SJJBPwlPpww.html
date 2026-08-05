@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-driven workflow collaboration between Boston Children’s Hospital and OpenAI aids in diagnosing rare diseases.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #1d1f20;
+      --muted: #62676b;
+      --panel: #ffffff;
+      --line: #d9dddf;
+      --accent: #006d77;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111416; --fg: #eceff1; --muted: #a7afb5; --panel: #191d20; --line: #2b3338; --accent: #5cc8d7; }
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--fg); }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; }
+    nav { margin-bottom: 22px; }
+    a { color: var(--accent); }
+    h1 { line-height: 1.15; margin-bottom: 8px; }
+    h2 { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .timestamp { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">Back to digest</a> · <a href="https://www.youtube.com/watch?v=SJJBPwlPpww">Watch video</a></nav>
+  <h1>AI-driven workflow collaboration between Boston Children’s Hospital and OpenAI aids in diagnosing rare diseases.</h1>
+  <div class="meta">OpenAI · 2026-08-04T20:29:24+00:00 · How AI Helps Solve Medical Mysteries at Boston Children’s Hospital | OpenAI Forum</div>
+  <h2>What This Video Is About</h2>
+<p>This video details a research collaboration between the Manton Center for Orphan Disease Research at Boston Children’s Hospital and OpenAI, focusing on how an AI-driven workflow can accelerate the diagnosis of rare diseases. Rare conditions present significant challenges because the diagnostic journey—often called a &quot;diagnostic odyssey&quot;—can take many years, sometimes spanning six to seven years on average, as families struggle to correlate complex symptoms with genetic data <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=25s">[0:25]</a>.</p>
+<p>The core problem addressed is the massive volume of genetic information; a human analyst must sift through vast datasets containing hundreds of thousands to millions of potential genetic data points derived from whole genome sequencing. While next-generation sequencing allows for comprehensive analysis, the sheer scale makes manual review incredibly time-consuming and prone to missing subtle connections <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=391s">[6:31]</a>.</p>
+<p>The research demonstrates that by leveraging large language models (LLMs), researchers can intersect clinical phenotypes—represented by numerical codes describing symptoms like weakness or foot drop—with extensive gene knowledge. This process dramatically narrows down the search space from thousands of potential genetic variants to a small, focused list of promising candidates for expert review, thereby offering hope and clarity to families facing undiagnosed conditions <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1268s">[21:08]</a>.</p>
+<h2>Detailed Walkthrough</h2>
+<p>The discussion begins by framing the problem through personal experience, with Stav Rones sharing his journey where it took at least five years to move from recognizing neurological issues in his teenage years to receiving a genetic diagnosis <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=225s">[3:45]</a>. This highlights the frustration of the diagnostic odyssey.</p>
+<p>The panel then discusses the technical bottleneck faced by geneticists. A human analyst must systematically review known genes, check for *de novo* mutations (variants not present in either parent), examine parental carrier status, and look at large genomic changes like deletions or duplications <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=488s">[8:08]</a>. After identifying an interesting variant, the analyst must cross-reference it against databases to ensure it is not a common variant and then delve into scientific literature to determine if it is disease-causing—a process that can take hours for one variant [9:39, 10:07].</p>
+<p>The AI workflow was designed to accelerate this exhaustive process. The team focused on prompting the model with specific instructions regarding desired output and pitfalls to avoid when analyzing complex genetic data and symptoms <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1018s">[16:58]</a>. The input combines two main components:</p>
+<ul>
+<li>Genetic Data: A dataset containing hundreds of thousands of rows, where each row details a different genetic change (e.g., commonality in the population, gene impact, predicted damaging nature) across many genes <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1164s">[19:24]</a>. After initial filtering for common variants, this still leaves several thousand potential variants <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1214s">[20:14]</a>.</li>
+<li>Clinical Phenotype Data: This is represented by numerical ontological codes that define the patient&#x27;s clinical presentation (e.g., a code for weakness or foot drop) <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1237s">[20:37]</a>.</li>
+</ul>
+<p>The LLM’s role is to intersect these two data sets based on its extensive knowledge base, correlating known clinical presentations with changes in specific genes. The model nominates a small, focused list of potential genetic changes—typically between two and half a dozen—for human analysts to prioritize <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1294s">[21:34]</a>.</p>
+<p>The study utilized this workflow first on already diagnosed cases to test the model&#x27;s accuracy. After iterating on prompting to mitigate technical errors (such as false positives due to insufficient sequencing depth), the model’s success rate increased to approximately 80-90% in correctly identifying known patterns [22:18, 23:07]. When applied to unsolved cases, the AI surfaced new leads. For example, it identified a gene association for vitiligo and transposition of the great vessels by referencing an old paper from around 26 years prior that human researchers might overlook while sifting through pages of literature [24:51, 25:05].</p>
+<p>The ultimate goal is to transition this research tool into a widely accessible product so that clinicians do not need to be at major tertiary medical centers to evaluate variants properly <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1639s">[27:19]</a>. Furthermore, the model can be rerun on existing patient data as new scientific knowledge emerges, allowing for continuous re-evaluation of previously unsolved cases <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1745s">[29:05]</a>.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>The average time required for a definitive diagnosis in rare diseases is substantial, often reaching six to seven years due to the complexity of genetic data analysis.</li>
+<li>Whole genome sequencing generates massive datasets (hundred of thousands to millions of data points) that overwhelm manual review processes.</li>
+<li>The AI workflow functions by intersecting numerical clinical phenotype codes with vast knowledge bases about gene function and disease correlation.</li>
+<li>LLMs are used not to replace diagnosticians, but to dramatically lower the search space for human experts, narrowing down possibilities from thousands of variants to a manageable few.</li>
+<li>Initial testing involved using known cases to train and refine prompts, leading to high accuracy (80-90%) in identifying established patterns.</li>
+<li>The AI demonstrated capability beyond simple pattern matching by synthesizing information to propose novel hypotheses, such as linking S1PR1 to vitiligo via historical literature review <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1531s">[25:31]</a>.</li>
+<li>A key limitation and area of focus is ensuring the model avoids technical errors inherent in genetic data analysis, such as false positives.</li>
+<li>The long-term vision involves creating a secure, accessible tool that can be run by clinicians outside major research centers to continuously re-evaluate patient cases against evolving scientific knowledge.</li>
+</ul>
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Model Used:</strong> OpenAI GPT-4 (or similar state-of-the-art models at the time of the study).</li>
+<li><strong>Data Input Structure:</strong> The model receives two primary inputs: 1) Genetic data, which is a reduced set of variants (e.g., 10,000 variants across hundreds of genes), and 2) Clinical Phenotype Data, which consists of numerical ontological codes describing the patient&#x27;s symptoms.</li>
+<li><strong>Workflow:</strong> The process involves curating the input data and designing specific prompts that instruct the LLM on what to look for (correlations between phenotypes and gene changes) while explicitly instructing it on error modes to avoid (e.g., false positives from low sequencing depth).</li>
+<li><strong>Implementation Goal:</strong> To develop a secure, accessible tool allowing any clinician with genomic analysis knowledge to run these evaluations without needing access to specialized tertiary medical center infrastructure.</li>
+<li><strong>Cost/Accessibility Note:</strong> Whole genome sequencing is becoming increasingly affordable, sometimes costing less than $1,000, which contrasts sharply with the cost of traditional diagnostic imaging like MRIs <a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=2028s">[33:48]</a>.</li>
+</ul>
+<h2>What To Revisit In The Video</h2>
+<ul>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=128s">[2:08]</a> - Stav Rones&#x27; personal narrative on the duration and frustration of his diagnostic search.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=375s">[6:15]</a> - Explanation of the scale of the human genome (three billion bases encoding ~20,000 genes) versus current analytical capabilities.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1170s">[19:30]</a> - Detailed breakdown of the genetic data structure input into the system (rows representing variants, columns representing metadata).</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1258s">[20:58]</a> - Explanation of how clinical phenotypes are translated into numerical codes for AI processing.</li>
+<li><a class="timestamp" href="https://www.youtube.com/watch?v=SJJBPwlPpww&amp;t=1491s">[24:51]</a> - Example of the model finding a historical link to S1PR1 that was missed in recent literature reviews.</li>
+</ul>
+</main>
+</body>
+</html>
